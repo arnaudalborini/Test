@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCardGame.a  CMakeFiles/CardGame.dir/src/hello.cpp.o
+/usr/bin/ranlib libCardGame.a

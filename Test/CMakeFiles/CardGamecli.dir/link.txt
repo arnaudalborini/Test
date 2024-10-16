@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/CardGamecli.dir/main.cpp.o  -o CardGamecli  ../CardGame/libCardGame.a 

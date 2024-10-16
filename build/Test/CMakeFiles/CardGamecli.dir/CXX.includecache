@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../CardGame/include/CardGame.hpp
+string
+-
+iostream
+-
+map
+-
+vector
+-
+list
+-
+
+../CardGame/include/Carte/Carte.hpp
+CardGame.hpp
+../CardGame/include/Carte/CardGame.hpp
+
+../CardGame/include/hello.hpp
+
+../Test/include/hello_test.hpp
+hello.hpp
+../Test/include/hello.hpp
+
+/workspaces/Test/Test/src/hello_test.cpp
+hello_test.hpp
+/workspaces/Test/Test/src/hello_test.hpp
+Carte.hpp
+/workspaces/Test/Test/src/Carte.hpp
+
