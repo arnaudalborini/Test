@@ -1,0 +1,4 @@
+/workspaces/Test/build/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/CMakeFiles/edit_cache.dir
+/workspaces/Test/build/CMakeFiles/CardGamecli.dir
+/workspaces/Test/build/CMakeFiles/CardGamelib.dir

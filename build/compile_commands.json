@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/workspaces/Test/build",
+  "command": "/usr/bin/g++   -I/workspaces/Test/include  -g   -o CMakeFiles/CardGamecli.dir/main.cpp.o -c /workspaces/Test/main.cpp",
+  "file": "/workspaces/Test/main.cpp"
+},
+{
+  "directory": "/workspaces/Test/build",
+  "command": "/usr/bin/g++   -I/workspaces/Test/include  -g   -o CMakeFiles/CardGamelib.dir/hello.cpp.o -c /workspaces/Test/hello.cpp",
+  "file": "/workspaces/Test/hello.cpp"
+}
+]
