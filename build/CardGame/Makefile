@@ -152,6 +152,33 @@ src/Carte/Carte.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.s
 .PHONY : src/Carte/Carte.cpp.s
 
+src/Joueur/Joueur.o: src/Joueur/Joueur.cpp.o
+
+.PHONY : src/Joueur/Joueur.o
+
+# target to build an object file
+src/Joueur/Joueur.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o
+.PHONY : src/Joueur/Joueur.cpp.o
+
+src/Joueur/Joueur.i: src/Joueur/Joueur.cpp.i
+
+.PHONY : src/Joueur/Joueur.i
+
+# target to preprocess a source file
+src/Joueur/Joueur.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.i
+.PHONY : src/Joueur/Joueur.cpp.i
+
+src/Joueur/Joueur.s: src/Joueur/Joueur.cpp.s
+
+.PHONY : src/Joueur/Joueur.s
+
+# target to generate assembly for a file
+src/Joueur/Joueur.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.s
+.PHONY : src/Joueur/Joueur.cpp.s
+
 src/hello.o: src/hello.cpp.o
 
 .PHONY : src/hello.o
@@ -191,6 +218,9 @@ help:
 	@echo "... src/Carte/Carte.o"
 	@echo "... src/Carte/Carte.i"
 	@echo "... src/Carte/Carte.s"
+	@echo "... src/Joueur/Joueur.o"
+	@echo "... src/Joueur/Joueur.i"
+	@echo "... src/Joueur/Joueur.s"
 	@echo "... src/hello.o"
 	@echo "... src/hello.i"
 	@echo "... src/hello.s"

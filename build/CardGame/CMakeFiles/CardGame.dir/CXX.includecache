@@ -21,6 +21,12 @@ list
 ../CardGame/include/Carte/Carte.hpp
 CardGame.hpp
 ../CardGame/include/Carte/CardGame.hpp
+Joueur.hpp
+../CardGame/include/Carte/Joueur.hpp
+
+../CardGame/include/Joueur/Joueur.hpp
+CardGame.hpp
+../CardGame/include/Joueur/CardGame.hpp
 
 ../CardGame/include/hello.hpp
 
@@ -29,10 +35,4 @@ Carte.hpp
 /workspaces/Test/CardGame/src/Carte/Carte.hpp
 hello.hpp
 /workspaces/Test/CardGame/src/Carte/hello.hpp
-
-/workspaces/Test/CardGame/src/hello.cpp
-hello.hpp
-/workspaces/Test/CardGame/src/hello.hpp
-iostream
--
 

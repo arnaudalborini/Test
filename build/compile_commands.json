@@ -1,22 +1,27 @@
 [
 {
   "directory": "/workspaces/Test/build/CardGame",
-  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte  -g   -o CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o -c /workspaces/Test/CardGame/src/Carte/Carte.cpp",
+  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o -c /workspaces/Test/CardGame/src/Carte/Carte.cpp",
   "file": "/workspaces/Test/CardGame/src/Carte/Carte.cpp"
 },
 {
   "directory": "/workspaces/Test/build/CardGame",
-  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte  -g   -o CMakeFiles/CardGame.dir/src/hello.cpp.o -c /workspaces/Test/CardGame/src/hello.cpp",
+  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o -c /workspaces/Test/CardGame/src/Joueur/Joueur.cpp",
+  "file": "/workspaces/Test/CardGame/src/Joueur/Joueur.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/CardGame",
+  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/hello.cpp.o -c /workspaces/Test/CardGame/src/hello.cpp",
   "file": "/workspaces/Test/CardGame/src/hello.cpp"
 },
 {
   "directory": "/workspaces/Test/build/Test",
-  "command": "/usr/bin/g++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte  -g   -o CMakeFiles/CardGamecli.dir/main.cpp.o -c /workspaces/Test/Test/main.cpp",
+  "command": "/usr/bin/g++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGamecli.dir/main.cpp.o -c /workspaces/Test/Test/main.cpp",
   "file": "/workspaces/Test/Test/main.cpp"
 },
 {
   "directory": "/workspaces/Test/build/Test",
-  "command": "/usr/bin/g++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte  -g   -o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o -c /workspaces/Test/Test/src/hello_test.cpp",
+  "command": "/usr/bin/g++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o -c /workspaces/Test/Test/src/hello_test.cpp",
   "file": "/workspaces/Test/Test/src/hello_test.cpp"
 }
 ]

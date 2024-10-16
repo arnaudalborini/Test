@@ -1,7 +1,9 @@
 #include "hello_test.hpp"
 #include "Carte.hpp"
+#include "Joueur.hpp"
 
 void sayHello(){
-    CardGame::Carte *crt = new CardGame::Carte();
+    CardGame::Joueur jj = CardGame::Joueur();
+    CardGame::Carte *crt = new CardGame::Carte(&jj);
     delete crt;
 }

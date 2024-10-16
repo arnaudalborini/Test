@@ -14,6 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Test/include"
   "../CardGame/include"
   "../CardGame/include/Carte"
+  "../CardGame/include/Joueur"
   )
 
 # Targets to which this target links.

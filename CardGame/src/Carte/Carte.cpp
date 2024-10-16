@@ -3,11 +3,17 @@
 
 using CardGame::Carte;
 
-Carte::Carte()
+CardGame::Carte::Carte():m_j(nullptr)
 {
-    CardGame::sayHello();
+    cout << "carte cree sans joueur" << endl;
+}
+
+Carte::Carte(Joueur *jj) : m_j(jj)
+{
+    cout << "carte cree avec joueur" << endl;
 }
 
 Carte::~Carte()
 {
+    cout << "destructeur carte" << endl;
 }

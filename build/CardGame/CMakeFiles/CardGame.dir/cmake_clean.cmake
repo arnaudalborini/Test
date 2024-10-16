@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o"
+  "CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o"
   "CMakeFiles/CardGame.dir/src/hello.cpp.o"
   "libCardGame.a"
   "libCardGame.pdb"

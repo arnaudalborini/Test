@@ -5,6 +5,7 @@ Test/CMakeFiles/CardGamecli.dir/main.cpp.o: ../Test/main.cpp
 
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/CardGame.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/Carte/Carte.hpp
+Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/Joueur/Joueur.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/hello.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../Test/include/hello_test.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../Test/src/hello_test.cpp

@@ -55,13 +55,18 @@
 				{
 					"backtrace" : 2,
 					"path" : "/workspaces/Test/CardGame/include/Carte"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/Test/CardGame/include/Joueur"
 				}
 			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -80,16 +85,18 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				2,
 				3,
-				4
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -99,6 +106,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "CardGame/src/Carte/Carte.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "CardGame/src/Joueur/Joueur.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -115,6 +128,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "CardGame/include/Carte/Carte.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CardGame/include/Joueur/Joueur.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

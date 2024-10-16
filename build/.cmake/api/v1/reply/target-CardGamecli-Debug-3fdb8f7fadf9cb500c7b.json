@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Test/CardGamecli"
+			"path" : "Test/bin/Debug/CardGamecli"
 		}
 	],
 	"backtrace" : 1,
@@ -65,6 +65,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/workspaces/Test/CardGame/include/Carte"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/Test/CardGame/include/Joueur"
 				}
 			],
 			"language" : "CXX",

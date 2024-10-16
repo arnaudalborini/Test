@@ -70,14 +70,14 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "CardGame::@7f8be7de9f6a3ddb4016",
-					"jsonFile" : "target-CardGame-Debug-07ed0f90b575e21b0a67.json",
+					"jsonFile" : "target-CardGame-Debug-bba11d8e6df0898b96f7.json",
 					"name" : "CardGame",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "CardGamecli::@c0a5cca43b8aa79eb50e",
-					"jsonFile" : "target-CardGamecli-Debug-bd12b2ced697aa558ff6.json",
+					"jsonFile" : "target-CardGamecli-Debug-3fdb8f7fadf9cb500c7b.json",
 					"name" : "CardGamecli",
 					"projectIndex" : 0
 				}

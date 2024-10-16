@@ -3,8 +3,13 @@
 
 CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o: ../CardGame/include/Carte/Carte.hpp
+CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o: ../CardGame/include/Joueur/Joueur.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o: ../CardGame/include/hello.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o: ../CardGame/src/Carte/Carte.cpp
+
+CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o: ../CardGame/include/CardGame.hpp
+CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o: ../CardGame/include/Joueur/Joueur.hpp
+CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o: ../CardGame/src/Joueur/Joueur.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o: ../CardGame/include/hello.hpp
 CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o: ../CardGame/src/hello.cpp

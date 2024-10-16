@@ -15,6 +15,7 @@ namespace CardGame{
     using std::map;
     using std::list;
     class Carte;
+    class Joueur;
 };
 
 #endif

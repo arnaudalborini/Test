@@ -18,3 +18,4 @@ add_executable(CardGamecli main.cpp
 target_include_directories(CardGamecli PUBLIC include)
 target_link_libraries(CardGamecli PRIVATE CardGame)
 
+set(EXECUTABLE_OUTPUT_PATH bin/${CMAKE_BUILD_TYPE})

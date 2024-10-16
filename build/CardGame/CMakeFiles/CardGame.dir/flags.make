@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte 
+CXX_INCLUDES = -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur 
 
