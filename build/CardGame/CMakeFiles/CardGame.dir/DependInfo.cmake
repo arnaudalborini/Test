@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/Test/CardGame/src/PaquetCarte.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.o"
   "/workspaces/Test/CardGame/src/Plateau.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o"
   "/workspaces/Test/CardGame/src/PlateauJoueur.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o"
-  "/workspaces/Test/CardGame/src/hello.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

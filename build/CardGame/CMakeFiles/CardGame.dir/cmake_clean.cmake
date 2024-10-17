@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.o"
   "CMakeFiles/CardGame.dir/src/Plateau.cpp.o"
   "CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o"
-  "CMakeFiles/CardGame.dir/src/hello.cpp.o"
   "libCardGame.a"
   "libCardGame.pdb"
 )

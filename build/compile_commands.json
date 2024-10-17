@@ -45,11 +45,6 @@
   "file": "/workspaces/Test/CardGame/src/PlateauJoueur.cpp"
 },
 {
-  "directory": "/workspaces/Test/build/CardGame",
-  "command": "/usr/bin/clang++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/hello.cpp.o -c /workspaces/Test/CardGame/src/hello.cpp",
-  "file": "/workspaces/Test/CardGame/src/hello.cpp"
-},
-{
   "directory": "/workspaces/Test/build/Test",
   "command": "/usr/bin/clang++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGamecli.dir/main.cpp.o -c /workspaces/Test/Test/main.cpp",
   "file": "/workspaces/Test/Test/main.cpp"

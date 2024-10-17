@@ -28,17 +28,13 @@ InfosJoueur.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/hello.hpp
-
 ../Test/include/hello_test.hpp
-hello.hpp
-../Test/include/hello.hpp
 
 /workspaces/Test/Test/src/hello_test.cpp
 hello_test.hpp
 /workspaces/Test/Test/src/hello_test.hpp
 Carte.hpp
 /workspaces/Test/Test/src/Carte.hpp
-Joueur.hpp
-/workspaces/Test/Test/src/Joueur.hpp
+InfosJoueur.hpp
+/workspaces/Test/Test/src/InfosJoueur.hpp
 

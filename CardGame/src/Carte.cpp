@@ -1,5 +1,4 @@
 #include "Carte.hpp"
-#include "hello.hpp"
 
 using CardGame::Carte;
 

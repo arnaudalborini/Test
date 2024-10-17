@@ -368,33 +368,6 @@ src/PlateauJoueur.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.s
 .PHONY : src/PlateauJoueur.cpp.s
 
-src/hello.o: src/hello.cpp.o
-
-.PHONY : src/hello.o
-
-# target to build an object file
-src/hello.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o
-.PHONY : src/hello.cpp.o
-
-src/hello.i: src/hello.cpp.i
-
-.PHONY : src/hello.i
-
-# target to preprocess a source file
-src/hello.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.i
-.PHONY : src/hello.cpp.i
-
-src/hello.s: src/hello.cpp.s
-
-.PHONY : src/hello.s
-
-# target to generate assembly for a file
-src/hello.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.s
-.PHONY : src/hello.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -431,9 +404,6 @@ help:
 	@echo "... src/PlateauJoueur.o"
 	@echo "... src/PlateauJoueur.i"
 	@echo "... src/PlateauJoueur.s"
-	@echo "... src/hello.o"
-	@echo "... src/hello.i"
-	@echo "... src/hello.s"
 .PHONY : help
 
 

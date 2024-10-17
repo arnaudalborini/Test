@@ -4,10 +4,10 @@
 CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o: ../CardGame/include/Carte.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o: ../CardGame/include/InfosJoueur.hpp
-CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o: ../CardGame/include/hello.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o: ../CardGame/src/Carte.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/CardGame.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameInterface.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMaster.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/src/GameMaster.cpp
 
@@ -38,7 +38,4 @@ CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o: ../CardGame/src/Plateau.cpp
 CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o: ../CardGame/include/PlateauJoueur.hpp
 CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o: ../CardGame/src/PlateauJoueur.cpp
-
-CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o: ../CardGame/include/hello.hpp
-CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o: ../CardGame/src/hello.cpp
 

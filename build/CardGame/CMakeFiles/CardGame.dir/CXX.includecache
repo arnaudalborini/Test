@@ -18,13 +18,17 @@ vector
 list
 -
 
-../CardGame/include/GameMaster.hpp
+../CardGame/include/Carte.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
-JoueurInterface.hpp
-../CardGame/include/JoueurInterface.hpp
+InfosJoueur.hpp
+../CardGame/include/InfosJoueur.hpp
 
-/workspaces/Test/CardGame/src/GameMaster.cpp
-GameMaster.hpp
-/workspaces/Test/CardGame/src/GameMaster.hpp
+../CardGame/include/InfosJoueur.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+/workspaces/Test/CardGame/src/Carte.cpp
+Carte.hpp
+/workspaces/Test/CardGame/src/Carte.hpp
 

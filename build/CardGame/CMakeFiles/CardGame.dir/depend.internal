@@ -5,10 +5,10 @@ CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/Carte.hpp
  ../CardGame/include/InfosJoueur.hpp
- ../CardGame/include/hello.hpp
  /workspaces/Test/CardGame/src/Carte.cpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o
  ../CardGame/include/CardGame.hpp
+ ../CardGame/include/GameInterface.hpp
  ../CardGame/include/GameMaster.hpp
  /workspaces/Test/CardGame/src/GameMaster.cpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o
@@ -39,6 +39,3 @@ CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/PlateauJoueur.hpp
  /workspaces/Test/CardGame/src/PlateauJoueur.cpp
-CardGame/CMakeFiles/CardGame.dir/src/hello.cpp.o
- ../CardGame/include/hello.hpp
- /workspaces/Test/CardGame/src/hello.cpp

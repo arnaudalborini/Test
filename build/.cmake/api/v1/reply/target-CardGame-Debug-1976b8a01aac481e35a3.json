@@ -72,8 +72,7 @@
 				5,
 				6,
 				7,
-				8,
-				9
+				8
 			]
 		}
 	],
@@ -99,14 +98,14 @@
 				5,
 				6,
 				7,
-				8,
-				9
+				8
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
+				9,
 				10,
 				11,
 				12,
@@ -117,9 +116,7 @@
 				17,
 				18,
 				19,
-				20,
-				21,
-				22
+				20
 			]
 		}
 	],
@@ -181,12 +178,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "CardGame/src/hello.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "CardGame/include/CardGame.hpp",
 			"sourceGroupIndex" : 1
 		},
@@ -243,11 +234,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "CardGame/include/Player.hpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "CardGame/include/hello.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],
