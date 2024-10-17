@@ -18,15 +18,15 @@ vector
 list
 -
 
-../CardGame/include/Carte/Carte.hpp
+../CardGame/include/Carte.hpp
 CardGame.hpp
-../CardGame/include/Carte/CardGame.hpp
-Joueur.hpp
-../CardGame/include/Carte/Joueur.hpp
+../CardGame/include/CardGame.hpp
+InfosJoueur.hpp
+../CardGame/include/InfosJoueur.hpp
 
-../CardGame/include/Joueur/Joueur.hpp
+../CardGame/include/InfosJoueur.hpp
 CardGame.hpp
-../CardGame/include/Joueur/CardGame.hpp
+../CardGame/include/CardGame.hpp
 
 ../CardGame/include/hello.hpp
 

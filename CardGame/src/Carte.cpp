@@ -8,7 +8,7 @@ CardGame::Carte::Carte():m_j(nullptr)
     cout << "carte cree sans joueur" << endl;
 }
 
-Carte::Carte(Joueur *jj) : m_j(jj)
+Carte::Carte(InfosJoueur *jj) : m_j(jj)
 {
     cout << "carte cree avec joueur" << endl;
 }

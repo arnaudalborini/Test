@@ -125,59 +125,248 @@ CardGame/fast:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/build
 .PHONY : CardGame/fast
 
-src/Carte/Carte.o: src/Carte/Carte.cpp.o
+src/Carte.o: src/Carte.cpp.o
 
-.PHONY : src/Carte/Carte.o
-
-# target to build an object file
-src/Carte/Carte.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.o
-.PHONY : src/Carte/Carte.cpp.o
-
-src/Carte/Carte.i: src/Carte/Carte.cpp.i
-
-.PHONY : src/Carte/Carte.i
-
-# target to preprocess a source file
-src/Carte/Carte.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.i
-.PHONY : src/Carte/Carte.cpp.i
-
-src/Carte/Carte.s: src/Carte/Carte.cpp.s
-
-.PHONY : src/Carte/Carte.s
-
-# target to generate assembly for a file
-src/Carte/Carte.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte/Carte.cpp.s
-.PHONY : src/Carte/Carte.cpp.s
-
-src/Joueur/Joueur.o: src/Joueur/Joueur.cpp.o
-
-.PHONY : src/Joueur/Joueur.o
+.PHONY : src/Carte.o
 
 # target to build an object file
-src/Joueur/Joueur.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.o
-.PHONY : src/Joueur/Joueur.cpp.o
+src/Carte.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o
+.PHONY : src/Carte.cpp.o
 
-src/Joueur/Joueur.i: src/Joueur/Joueur.cpp.i
+src/Carte.i: src/Carte.cpp.i
 
-.PHONY : src/Joueur/Joueur.i
+.PHONY : src/Carte.i
 
 # target to preprocess a source file
-src/Joueur/Joueur.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.i
-.PHONY : src/Joueur/Joueur.cpp.i
+src/Carte.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.i
+.PHONY : src/Carte.cpp.i
 
-src/Joueur/Joueur.s: src/Joueur/Joueur.cpp.s
+src/Carte.s: src/Carte.cpp.s
 
-.PHONY : src/Joueur/Joueur.s
+.PHONY : src/Carte.s
 
 # target to generate assembly for a file
-src/Joueur/Joueur.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Joueur/Joueur.cpp.s
-.PHONY : src/Joueur/Joueur.cpp.s
+src/Carte.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.s
+.PHONY : src/Carte.cpp.s
+
+src/GameMaster.o: src/GameMaster.cpp.o
+
+.PHONY : src/GameMaster.o
+
+# target to build an object file
+src/GameMaster.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o
+.PHONY : src/GameMaster.cpp.o
+
+src/GameMaster.i: src/GameMaster.cpp.i
+
+.PHONY : src/GameMaster.i
+
+# target to preprocess a source file
+src/GameMaster.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.i
+.PHONY : src/GameMaster.cpp.i
+
+src/GameMaster.s: src/GameMaster.cpp.s
+
+.PHONY : src/GameMaster.s
+
+# target to generate assembly for a file
+src/GameMaster.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.s
+.PHONY : src/GameMaster.cpp.s
+
+src/GameMechanics.o: src/GameMechanics.cpp.o
+
+.PHONY : src/GameMechanics.o
+
+# target to build an object file
+src/GameMechanics.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o
+.PHONY : src/GameMechanics.cpp.o
+
+src/GameMechanics.i: src/GameMechanics.cpp.i
+
+.PHONY : src/GameMechanics.i
+
+# target to preprocess a source file
+src/GameMechanics.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.i
+.PHONY : src/GameMechanics.cpp.i
+
+src/GameMechanics.s: src/GameMechanics.cpp.s
+
+.PHONY : src/GameMechanics.s
+
+# target to generate assembly for a file
+src/GameMechanics.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.s
+.PHONY : src/GameMechanics.cpp.s
+
+src/Hand.o: src/Hand.cpp.o
+
+.PHONY : src/Hand.o
+
+# target to build an object file
+src/Hand.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o
+.PHONY : src/Hand.cpp.o
+
+src/Hand.i: src/Hand.cpp.i
+
+.PHONY : src/Hand.i
+
+# target to preprocess a source file
+src/Hand.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.i
+.PHONY : src/Hand.cpp.i
+
+src/Hand.s: src/Hand.cpp.s
+
+.PHONY : src/Hand.s
+
+# target to generate assembly for a file
+src/Hand.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.s
+.PHONY : src/Hand.cpp.s
+
+src/InfosJoueur.o: src/InfosJoueur.cpp.o
+
+.PHONY : src/InfosJoueur.o
+
+# target to build an object file
+src/InfosJoueur.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o
+.PHONY : src/InfosJoueur.cpp.o
+
+src/InfosJoueur.i: src/InfosJoueur.cpp.i
+
+.PHONY : src/InfosJoueur.i
+
+# target to preprocess a source file
+src/InfosJoueur.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.i
+.PHONY : src/InfosJoueur.cpp.i
+
+src/InfosJoueur.s: src/InfosJoueur.cpp.s
+
+.PHONY : src/InfosJoueur.s
+
+# target to generate assembly for a file
+src/InfosJoueur.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.s
+.PHONY : src/InfosJoueur.cpp.s
+
+src/Monitor.o: src/Monitor.cpp.o
+
+.PHONY : src/Monitor.o
+
+# target to build an object file
+src/Monitor.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o
+.PHONY : src/Monitor.cpp.o
+
+src/Monitor.i: src/Monitor.cpp.i
+
+.PHONY : src/Monitor.i
+
+# target to preprocess a source file
+src/Monitor.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.i
+.PHONY : src/Monitor.cpp.i
+
+src/Monitor.s: src/Monitor.cpp.s
+
+.PHONY : src/Monitor.s
+
+# target to generate assembly for a file
+src/Monitor.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.s
+.PHONY : src/Monitor.cpp.s
+
+src/PaquetCarte.o: src/PaquetCarte.cpp.o
+
+.PHONY : src/PaquetCarte.o
+
+# target to build an object file
+src/PaquetCarte.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.o
+.PHONY : src/PaquetCarte.cpp.o
+
+src/PaquetCarte.i: src/PaquetCarte.cpp.i
+
+.PHONY : src/PaquetCarte.i
+
+# target to preprocess a source file
+src/PaquetCarte.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.i
+.PHONY : src/PaquetCarte.cpp.i
+
+src/PaquetCarte.s: src/PaquetCarte.cpp.s
+
+.PHONY : src/PaquetCarte.s
+
+# target to generate assembly for a file
+src/PaquetCarte.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.s
+.PHONY : src/PaquetCarte.cpp.s
+
+src/Plateau.o: src/Plateau.cpp.o
+
+.PHONY : src/Plateau.o
+
+# target to build an object file
+src/Plateau.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o
+.PHONY : src/Plateau.cpp.o
+
+src/Plateau.i: src/Plateau.cpp.i
+
+.PHONY : src/Plateau.i
+
+# target to preprocess a source file
+src/Plateau.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.i
+.PHONY : src/Plateau.cpp.i
+
+src/Plateau.s: src/Plateau.cpp.s
+
+.PHONY : src/Plateau.s
+
+# target to generate assembly for a file
+src/Plateau.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.s
+.PHONY : src/Plateau.cpp.s
+
+src/PlateauJoueur.o: src/PlateauJoueur.cpp.o
+
+.PHONY : src/PlateauJoueur.o
+
+# target to build an object file
+src/PlateauJoueur.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o
+.PHONY : src/PlateauJoueur.cpp.o
+
+src/PlateauJoueur.i: src/PlateauJoueur.cpp.i
+
+.PHONY : src/PlateauJoueur.i
+
+# target to preprocess a source file
+src/PlateauJoueur.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.i
+.PHONY : src/PlateauJoueur.cpp.i
+
+src/PlateauJoueur.s: src/PlateauJoueur.cpp.s
+
+.PHONY : src/PlateauJoueur.s
+
+# target to generate assembly for a file
+src/PlateauJoueur.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.s
+.PHONY : src/PlateauJoueur.cpp.s
 
 src/hello.o: src/hello.cpp.o
 
@@ -215,12 +404,33 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CardGame"
-	@echo "... src/Carte/Carte.o"
-	@echo "... src/Carte/Carte.i"
-	@echo "... src/Carte/Carte.s"
-	@echo "... src/Joueur/Joueur.o"
-	@echo "... src/Joueur/Joueur.i"
-	@echo "... src/Joueur/Joueur.s"
+	@echo "... src/Carte.o"
+	@echo "... src/Carte.i"
+	@echo "... src/Carte.s"
+	@echo "... src/GameMaster.o"
+	@echo "... src/GameMaster.i"
+	@echo "... src/GameMaster.s"
+	@echo "... src/GameMechanics.o"
+	@echo "... src/GameMechanics.i"
+	@echo "... src/GameMechanics.s"
+	@echo "... src/Hand.o"
+	@echo "... src/Hand.i"
+	@echo "... src/Hand.s"
+	@echo "... src/InfosJoueur.o"
+	@echo "... src/InfosJoueur.i"
+	@echo "... src/InfosJoueur.s"
+	@echo "... src/Monitor.o"
+	@echo "... src/Monitor.i"
+	@echo "... src/Monitor.s"
+	@echo "... src/PaquetCarte.o"
+	@echo "... src/PaquetCarte.i"
+	@echo "... src/PaquetCarte.s"
+	@echo "... src/Plateau.o"
+	@echo "... src/Plateau.i"
+	@echo "... src/Plateau.s"
+	@echo "... src/PlateauJoueur.o"
+	@echo "... src/PlateauJoueur.i"
+	@echo "... src/PlateauJoueur.s"
 	@echo "... src/hello.o"
 	@echo "... src/hello.i"
 	@echo "... src/hello.s"

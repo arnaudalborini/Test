@@ -15,7 +15,14 @@ namespace CardGame{
     using std::map;
     using std::list;
     class Carte;
-    class Joueur;
+    class InfosJoueur;
+    class Monitor;
+    class PaquetCarte;
+    class Plateau;
+    class PlateauJoueur;
+    class GameMechanics;
+    class Hand;
+    class Player;
 };
 
 #endif

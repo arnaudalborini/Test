@@ -1,1 +1,1 @@
-/usr/bin/g++  -g   CMakeFiles/CardGamecli.dir/main.cpp.o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o  -o bin/Debug/CardGamecli  ../CardGame/libCardGame.a 
+/usr/bin/clang++  -g   CMakeFiles/CardGamecli.dir/main.cpp.o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o  -o bin/Debug/CardGamecli  ../CardGame/libCardGame.a 
