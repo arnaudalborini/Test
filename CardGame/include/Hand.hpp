@@ -6,12 +6,12 @@
 namespace CardGame{
     class Hand{
         private:
-            vector<const Carte*> mCartes;
+            vector<IdCarte> mCartes;
         public:
             Hand();
             ~Hand();
-            void addCarte(const Carte* crt);
-            const Carte* getCarte(int ind);
+            void addCarte(IdCarte crt);
+            IdCarte getCarte(int ind);
             int getNbCarte()const;
             int getIdCarte(int ind)const;
     };

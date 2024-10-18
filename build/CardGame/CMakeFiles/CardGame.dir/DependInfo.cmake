@@ -4,15 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/Test/CardGame/src/Carte.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o"
+  "/workspaces/Test/CardGame/src/CarteGenerator.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o"
   "/workspaces/Test/CardGame/src/GameMaster.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o"
+  "/workspaces/Test/CardGame/src/GameMasterMonitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanics.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
+  "/workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o"
   "/workspaces/Test/CardGame/src/Hand.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o"
   "/workspaces/Test/CardGame/src/InfosJoueur.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o"
   "/workspaces/Test/CardGame/src/Monitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o"
   "/workspaces/Test/CardGame/src/PaquetCarte.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.o"
   "/workspaces/Test/CardGame/src/Plateau.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o"
-  "/workspaces/Test/CardGame/src/PlateauJoueur.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

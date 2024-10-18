@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/Test/Test/main.cpp" "/workspaces/Test/build/Test/CMakeFiles/CardGamecli.dir/main.cpp.o"
+  "/workspaces/Test/Test/src/Carte.cpp" "/workspaces/Test/build/Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o"
   "/workspaces/Test/Test/src/hello_test.cpp" "/workspaces/Test/build/Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

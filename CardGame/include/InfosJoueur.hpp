@@ -8,7 +8,7 @@ namespace CardGame
     class InfosJoueur{
         private:
             Hand* mHand;
-            PlateauJoueur* mPlateauJoueur;
+            Plateau* mPlateau;
         public:
             InfosJoueur();
             ~InfosJoueur();

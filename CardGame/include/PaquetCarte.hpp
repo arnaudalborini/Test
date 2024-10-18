@@ -5,8 +5,14 @@
 
 namespace CardGame{
     class PaquetCarte{
-        PaquetCarte();
-        ~PaquetCarte();
+        private:
+            vector<IdCarte> mCartes;
+        public:
+            PaquetCarte();
+            ~PaquetCarte();
+            void initializePaquet(const vector<IdCarte> &vecCartes);
+            IdCarte piocher();
+            int getIdLast()const;
     };
 };
 

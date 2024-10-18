@@ -5,15 +5,17 @@
 
 namespace CardGame{
     class Monitor{
-        private:
-            vector<InfosJoueur*> mJoueurs;
+        protected:
+            int mNbJoueur;
+            GameMechanics* mGameMechanics;
+            vector<InfosJoueur*> mInfosJoueurs;
+            vector<Player*> mPlayer;
             PaquetCarte* mPioche;
             PaquetCarte* mDefausse;
             Plateau* mPlateau;
-            GameMechanics* mGameMechanics;
         public:
             Monitor();
-            ~Monitor();
+            virtual ~Monitor();
     };
 }
 

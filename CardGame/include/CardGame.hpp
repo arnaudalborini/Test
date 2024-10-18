@@ -15,15 +15,18 @@ namespace CardGame{
     using std::map;
     using std::list;
     enum EmplacementPlateau:int;
-    class Carte;
+    enum EmplacementPlateauGeneral:int;
+    typedef int IdCarte;
     class InfosJoueur;
-    class Monitor;
+    class Hand;
     class PaquetCarte;
     class Plateau;
-    class PlateauJoueur;
     class GameMechanics;
-    class Hand;
     class Player;
+    class CarteGenerator;
+    class Monitor;
+    class GameMasterMonitor;
+    class GameMechanicsMonitor;
 };
 
 #endif

@@ -125,32 +125,32 @@ CardGame/fast:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/build
 .PHONY : CardGame/fast
 
-src/Carte.o: src/Carte.cpp.o
+src/CarteGenerator.o: src/CarteGenerator.cpp.o
 
-.PHONY : src/Carte.o
+.PHONY : src/CarteGenerator.o
 
 # target to build an object file
-src/Carte.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.o
-.PHONY : src/Carte.cpp.o
+src/CarteGenerator.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o
+.PHONY : src/CarteGenerator.cpp.o
 
-src/Carte.i: src/Carte.cpp.i
+src/CarteGenerator.i: src/CarteGenerator.cpp.i
 
-.PHONY : src/Carte.i
+.PHONY : src/CarteGenerator.i
 
 # target to preprocess a source file
-src/Carte.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.i
-.PHONY : src/Carte.cpp.i
+src/CarteGenerator.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.i
+.PHONY : src/CarteGenerator.cpp.i
 
-src/Carte.s: src/Carte.cpp.s
+src/CarteGenerator.s: src/CarteGenerator.cpp.s
 
-.PHONY : src/Carte.s
+.PHONY : src/CarteGenerator.s
 
 # target to generate assembly for a file
-src/Carte.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Carte.cpp.s
-.PHONY : src/Carte.cpp.s
+src/CarteGenerator.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.s
+.PHONY : src/CarteGenerator.cpp.s
 
 src/GameMaster.o: src/GameMaster.cpp.o
 
@@ -179,6 +179,33 @@ src/GameMaster.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.s
 .PHONY : src/GameMaster.cpp.s
 
+src/GameMasterMonitor.o: src/GameMasterMonitor.cpp.o
+
+.PHONY : src/GameMasterMonitor.o
+
+# target to build an object file
+src/GameMasterMonitor.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o
+.PHONY : src/GameMasterMonitor.cpp.o
+
+src/GameMasterMonitor.i: src/GameMasterMonitor.cpp.i
+
+.PHONY : src/GameMasterMonitor.i
+
+# target to preprocess a source file
+src/GameMasterMonitor.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.i
+.PHONY : src/GameMasterMonitor.cpp.i
+
+src/GameMasterMonitor.s: src/GameMasterMonitor.cpp.s
+
+.PHONY : src/GameMasterMonitor.s
+
+# target to generate assembly for a file
+src/GameMasterMonitor.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.s
+.PHONY : src/GameMasterMonitor.cpp.s
+
 src/GameMechanics.o: src/GameMechanics.cpp.o
 
 .PHONY : src/GameMechanics.o
@@ -205,6 +232,33 @@ src/GameMechanics.s: src/GameMechanics.cpp.s
 src/GameMechanics.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.s
 .PHONY : src/GameMechanics.cpp.s
+
+src/GameMechanicsMonitor.o: src/GameMechanicsMonitor.cpp.o
+
+.PHONY : src/GameMechanicsMonitor.o
+
+# target to build an object file
+src/GameMechanicsMonitor.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o
+.PHONY : src/GameMechanicsMonitor.cpp.o
+
+src/GameMechanicsMonitor.i: src/GameMechanicsMonitor.cpp.i
+
+.PHONY : src/GameMechanicsMonitor.i
+
+# target to preprocess a source file
+src/GameMechanicsMonitor.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.i
+.PHONY : src/GameMechanicsMonitor.cpp.i
+
+src/GameMechanicsMonitor.s: src/GameMechanicsMonitor.cpp.s
+
+.PHONY : src/GameMechanicsMonitor.s
+
+# target to generate assembly for a file
+src/GameMechanicsMonitor.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.s
+.PHONY : src/GameMechanicsMonitor.cpp.s
 
 src/Hand.o: src/Hand.cpp.o
 
@@ -341,33 +395,6 @@ src/Plateau.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.s
 .PHONY : src/Plateau.cpp.s
 
-src/PlateauJoueur.o: src/PlateauJoueur.cpp.o
-
-.PHONY : src/PlateauJoueur.o
-
-# target to build an object file
-src/PlateauJoueur.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.o
-.PHONY : src/PlateauJoueur.cpp.o
-
-src/PlateauJoueur.i: src/PlateauJoueur.cpp.i
-
-.PHONY : src/PlateauJoueur.i
-
-# target to preprocess a source file
-src/PlateauJoueur.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.i
-.PHONY : src/PlateauJoueur.cpp.i
-
-src/PlateauJoueur.s: src/PlateauJoueur.cpp.s
-
-.PHONY : src/PlateauJoueur.s
-
-# target to generate assembly for a file
-src/PlateauJoueur.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/PlateauJoueur.cpp.s
-.PHONY : src/PlateauJoueur.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -377,15 +404,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CardGame"
-	@echo "... src/Carte.o"
-	@echo "... src/Carte.i"
-	@echo "... src/Carte.s"
+	@echo "... src/CarteGenerator.o"
+	@echo "... src/CarteGenerator.i"
+	@echo "... src/CarteGenerator.s"
 	@echo "... src/GameMaster.o"
 	@echo "... src/GameMaster.i"
 	@echo "... src/GameMaster.s"
+	@echo "... src/GameMasterMonitor.o"
+	@echo "... src/GameMasterMonitor.i"
+	@echo "... src/GameMasterMonitor.s"
 	@echo "... src/GameMechanics.o"
 	@echo "... src/GameMechanics.i"
 	@echo "... src/GameMechanics.s"
+	@echo "... src/GameMechanicsMonitor.o"
+	@echo "... src/GameMechanicsMonitor.i"
+	@echo "... src/GameMechanicsMonitor.s"
 	@echo "... src/Hand.o"
 	@echo "... src/Hand.i"
 	@echo "... src/Hand.s"
@@ -401,9 +434,6 @@ help:
 	@echo "... src/Plateau.o"
 	@echo "... src/Plateau.i"
 	@echo "... src/Plateau.s"
-	@echo "... src/PlateauJoueur.o"
-	@echo "... src/PlateauJoueur.i"
-	@echo "... src/PlateauJoueur.s"
 .PHONY : help
 
 

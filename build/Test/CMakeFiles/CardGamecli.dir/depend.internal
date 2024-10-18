@@ -3,9 +3,14 @@
 
 Test/CMakeFiles/CardGamecli.dir/main.cpp.o
  /workspaces/Test/Test/main.cpp
+Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o
+ ../CardGame/include/CardGame.hpp
+ ../CardGame/include/InfosJoueur.hpp
+ ../Test/include/Carte.hpp
+ /workspaces/Test/Test/src/Carte.cpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o
  ../CardGame/include/CardGame.hpp
- ../CardGame/include/Carte.hpp
  ../CardGame/include/InfosJoueur.hpp
+ ../Test/include/Carte.hpp
  ../Test/include/hello_test.hpp
  /workspaces/Test/Test/src/hello_test.cpp

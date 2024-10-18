@@ -5,8 +5,18 @@
 
 namespace CardGame{
     class GameMechanics{
-        GameMechanics();
-        ~GameMechanics();
+        private:
+            vector<IdCarte> mCartes;
+            GameMechanicsMonitor* mMonitor;
+            CarteGenerator* cGen;
+        public:
+            GameMechanics();
+            ~GameMechanics();
+            void setMonitor(Monitor* mm);
+            void setCarteGenerator(CarteGenerator* cg);
+            virtual vector<IdCarte> genVecCartesPioche()const;
+            virtual vector<IdCarte> genVecCartesDefausse()const;
+            void initiatePlateau()const;
     };
 };
 

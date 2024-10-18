@@ -152,6 +152,33 @@ main.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Carte.o: src/Carte.cpp.o
+
+.PHONY : src/Carte.o
+
+# target to build an object file
+src/Carte.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o
+.PHONY : src/Carte.cpp.o
+
+src/Carte.i: src/Carte.cpp.i
+
+.PHONY : src/Carte.i
+
+# target to preprocess a source file
+src/Carte.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.i
+.PHONY : src/Carte.cpp.i
+
+src/Carte.s: src/Carte.cpp.s
+
+.PHONY : src/Carte.s
+
+# target to generate assembly for a file
+src/Carte.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.s
+.PHONY : src/Carte.cpp.s
+
 src/hello_test.o: src/hello_test.cpp.o
 
 .PHONY : src/hello_test.o
@@ -191,6 +218,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Carte.o"
+	@echo "... src/Carte.i"
+	@echo "... src/Carte.s"
 	@echo "... src/hello_test.o"
 	@echo "... src/hello_test.i"
 	@echo "... src/hello_test.s"

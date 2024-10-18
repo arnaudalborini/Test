@@ -18,27 +18,29 @@ vector
 list
 -
 
-../CardGame/include/Carte.hpp
+../CardGame/include/GameMasterMonitor.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
-InfosJoueur.hpp
-../CardGame/include/InfosJoueur.hpp
+Monitor.hpp
+../CardGame/include/Monitor.hpp
 
-../CardGame/include/InfosJoueur.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-
-../CardGame/include/PlateauJoueur.hpp
+../CardGame/include/GameMechanics.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-/workspaces/Test/CardGame/src/Carte.cpp
-Carte.hpp
-/workspaces/Test/CardGame/src/Carte.hpp
+../CardGame/include/Monitor.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
 
-/workspaces/Test/CardGame/src/PlateauJoueur.cpp
-PlateauJoueur.hpp
-/workspaces/Test/CardGame/src/PlateauJoueur.hpp
-Carte.hpp
-/workspaces/Test/CardGame/src/Carte.hpp
+../CardGame/include/PaquetCarte.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+/workspaces/Test/CardGame/src/GameMasterMonitor.cpp
+GameMasterMonitor.hpp
+/workspaces/Test/CardGame/src/GameMasterMonitor.hpp
+PaquetCarte.hpp
+/workspaces/Test/CardGame/src/PaquetCarte.hpp
+GameMechanics.hpp
+/workspaces/Test/CardGame/src/GameMechanics.hpp
 
