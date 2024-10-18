@@ -28,7 +28,17 @@ InfosJoueur.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
+../CardGame/include/PlateauJoueur.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
 /workspaces/Test/CardGame/src/Carte.cpp
+Carte.hpp
+/workspaces/Test/CardGame/src/Carte.hpp
+
+/workspaces/Test/CardGame/src/PlateauJoueur.cpp
+PlateauJoueur.hpp
+/workspaces/Test/CardGame/src/PlateauJoueur.hpp
 Carte.hpp
 /workspaces/Test/CardGame/src/Carte.hpp
 

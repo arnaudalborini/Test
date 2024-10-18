@@ -5,8 +5,9 @@
 
 namespace CardGame{
     class Plateau{
-        Plateau();
-        ~Plateau();
+        public:
+            Plateau();
+            ~Plateau();
     };
 };
 

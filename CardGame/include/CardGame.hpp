@@ -14,6 +14,7 @@ namespace CardGame{
     using std::vector;
     using std::map;
     using std::list;
+    enum EmplacementPlateau:int;
     class Carte;
     class InfosJoueur;
     class Monitor;

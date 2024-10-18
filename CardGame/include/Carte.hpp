@@ -7,11 +7,14 @@
 namespace CardGame{
     class Carte{
         private:
-            InfosJoueur* m_j;
+            int mId;
+            string mName;
         public:
             Carte();
-            Carte(InfosJoueur* jj);
+            Carte(int ii,string name);
             ~Carte();
+            int getId()const;
+            string getName()const;
     };
 };
 

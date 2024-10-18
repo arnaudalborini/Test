@@ -6,6 +6,9 @@
 namespace CardGame
 {
     class InfosJoueur{
+        private:
+            Hand* mHand;
+            PlateauJoueur* mPlateauJoueur;
         public:
             InfosJoueur();
             ~InfosJoueur();

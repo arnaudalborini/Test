@@ -3,7 +3,6 @@
 #include "InfosJoueur.hpp"
 
 void sayHello(){
-    CardGame::InfosJoueur jj = CardGame::InfosJoueur();
-    CardGame::Carte *crt = new CardGame::Carte(&jj);
+    CardGame::Carte *crt = new CardGame::Carte();
     delete crt;
 }

@@ -2,17 +2,10 @@
 
 using CardGame::Carte;
 
-CardGame::Carte::Carte():m_j(nullptr)
-{
-    cout << "carte cree sans joueur" << endl;
-}
+Carte::Carte():mId(0),mName(""){}
+Carte::Carte(int ii,string name):mId(ii),mName(name){}
+Carte::~Carte(){}
 
-Carte::Carte(InfosJoueur *jj) : m_j(jj)
-{
-    cout << "carte cree avec joueur" << endl;
-}
-
-Carte::~Carte()
-{
-    cout << "destructeur carte" << endl;
-}
+int Carte::getId()
+const{return mId;}
+std::string Carte::getName()const{return mName;}
