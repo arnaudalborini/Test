@@ -18,6 +18,20 @@ vector
 list
 -
 
+../CardGame/include/CarteGenerator.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/GameInterface.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/GameMaster.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+GameInterface.hpp
+../CardGame/include/GameInterface.hpp
+
 ../CardGame/include/GameMasterMonitor.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
@@ -25,6 +39,16 @@ Monitor.hpp
 ../CardGame/include/Monitor.hpp
 
 ../CardGame/include/GameMechanics.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/GameMechanicsMonitor.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+Monitor.hpp
+../CardGame/include/Monitor.hpp
+
+../CardGame/include/InfosJoueur.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
@@ -36,6 +60,16 @@ CardGame.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
+../CardGame/include/Plateau.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+/workspaces/Test/CardGame/src/GameMaster.cpp
+GameMaster.hpp
+/workspaces/Test/CardGame/src/GameMaster.hpp
+GameMasterMonitor.hpp
+/workspaces/Test/CardGame/src/GameMasterMonitor.hpp
+
 /workspaces/Test/CardGame/src/GameMasterMonitor.cpp
 GameMasterMonitor.hpp
 /workspaces/Test/CardGame/src/GameMasterMonitor.hpp
@@ -43,4 +77,30 @@ PaquetCarte.hpp
 /workspaces/Test/CardGame/src/PaquetCarte.hpp
 GameMechanics.hpp
 /workspaces/Test/CardGame/src/GameMechanics.hpp
+
+/workspaces/Test/CardGame/src/GameMechanics.cpp
+GameMechanics.hpp
+/workspaces/Test/CardGame/src/GameMechanics.hpp
+CarteGenerator.hpp
+/workspaces/Test/CardGame/src/CarteGenerator.hpp
+Monitor.hpp
+/workspaces/Test/CardGame/src/Monitor.hpp
+GameMechanicsMonitor.hpp
+/workspaces/Test/CardGame/src/GameMechanicsMonitor.hpp
+
+/workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp
+GameMechanicsMonitor.hpp
+/workspaces/Test/CardGame/src/GameMechanicsMonitor.hpp
+PaquetCarte.hpp
+/workspaces/Test/CardGame/src/PaquetCarte.hpp
+
+/workspaces/Test/CardGame/src/Monitor.cpp
+Monitor.hpp
+/workspaces/Test/CardGame/src/Monitor.hpp
+PaquetCarte.hpp
+/workspaces/Test/CardGame/src/PaquetCarte.hpp
+Plateau.hpp
+/workspaces/Test/CardGame/src/Plateau.hpp
+InfosJoueur.hpp
+/workspaces/Test/CardGame/src/InfosJoueur.hpp
 

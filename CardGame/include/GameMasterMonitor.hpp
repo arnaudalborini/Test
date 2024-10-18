@@ -9,14 +9,10 @@ namespace CardGame{
         public:
             GameMasterMonitor();
             ~GameMasterMonitor();
-            //////////////////GameMaster interface//////////////////////
-            //créer tous les sous-éléments
+            
             void initiateElements(int nbJoueurs,GameMechanics* gm);
-            //log a player in
-            void addPlayer(Player* pp, int index);
-            //start the game
+            void addPlayer(const Player* pp, int index);
             void startGame();
-            //enleve un joueur
             void removePlayer(int indice);
     };
 }

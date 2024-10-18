@@ -4,7 +4,6 @@
 using CardGame::GameMechanicsMonitor;
 
 GameMechanicsMonitor::GameMechanicsMonitor(){}
-
 GameMechanicsMonitor::~GameMechanicsMonitor(){}
 
 void GameMechanicsMonitor::initiatePioche(const vector<IdCarte> &mCartes){mPioche->initializePaquet(mCartes);}

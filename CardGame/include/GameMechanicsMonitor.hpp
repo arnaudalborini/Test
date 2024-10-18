@@ -6,9 +6,10 @@
 
 namespace CardGame{
     class GameMechanicsMonitor:public Monitor{
-        public:
+        private:
             GameMechanicsMonitor();
             ~GameMechanicsMonitor();
+        public:
             void initiatePioche(const vector<IdCarte> &mCartes);
             void initiateDefausse(const vector<IdCarte> &mCartes);
     };

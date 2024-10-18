@@ -8,6 +8,8 @@ CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o: ../CardGame/src/Carte
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameInterface.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMaster.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMasterMonitor.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/Monitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/src/GameMaster.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o: ../CardGame/include/CardGame.hpp
@@ -39,7 +41,6 @@ CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/Info
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/src/InfosJoueur.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/CardGame.hpp
-CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/GameMechanics.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/InfosJoueur.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/Monitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/PaquetCarte.hpp

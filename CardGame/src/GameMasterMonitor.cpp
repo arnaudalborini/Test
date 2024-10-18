@@ -12,19 +12,19 @@ void GameMasterMonitor::initiateElements(int nbJoueurs, GameMechanics *gm)
 {
     mNbJoueur = nbJoueurs;
     mGameMechanics = gm;
-    gm->setMonitor(this);
-    mInfosJoueurs = vector<InfosJoueur*>(nbJoueurs);
-    mPlayer = vector<Player*>(nbJoueurs);
+    gm->setMonitor( dynamic_cast<Monitor*>( this ));
 }
 
-void GameMasterMonitor::addPlayer(Player *pp, int index)
+void GameMasterMonitor::addPlayer(const Player *pp, int index)
 {
+    mPlayer[index] = pp;
 }
 
 void GameMasterMonitor::startGame()
 {
 }
 
-void GameMasterMonitor::removePlayer(int indice)
+void GameMasterMonitor::removePlayer(int index)
 {
+    mPlayer[index] = nullptr;
 }

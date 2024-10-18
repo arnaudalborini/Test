@@ -7,12 +7,12 @@ namespace CardGame{
     class Monitor{
         protected:
             int mNbJoueur;
-            GameMechanics* mGameMechanics;
-            vector<InfosJoueur*> mInfosJoueurs;
-            vector<Player*> mPlayer;
-            PaquetCarte* mPioche;
-            PaquetCarte* mDefausse;
-            Plateau* mPlateau;
+            GameMechanics*          mGameMechanics;
+            vector<InfosJoueur*>    mInfosJoueurs;
+            vector<const Player*>   mPlayer;
+            Plateau*                mPlateau;
+            PaquetCarte*            mPioche;
+            PaquetCarte*            mDefausse;
         public:
             Monitor();
             virtual ~Monitor();

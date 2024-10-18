@@ -1,12 +1,24 @@
 #include "Monitor.hpp"
-#include "GameMechanics.hpp"
 #include "PaquetCarte.hpp"
-#include "InfosJoueur.hpp"
 #include "Plateau.hpp"
+#include "InfosJoueur.hpp"
 
 using CardGame::Monitor;
 
-Monitor::Monitor(){}
+Monitor::Monitor(){
+    mPioche = new PaquetCarte();
+    mDefausse = new PaquetCarte();
+    mInfosJoueurs = vector<InfosJoueur*>();
+    mPlayer = vector<const Player*>();
+    mPlateau = new Plateau();
+}
 
-Monitor::~Monitor(){}
+Monitor::~Monitor(){
+    delete mPioche;
+    delete mDefausse;
+    delete mPlateau;
+    for(auto inf:mInfosJoueurs){
+        delete inf;
+    }
+}
 
