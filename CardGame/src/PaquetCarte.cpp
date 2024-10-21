@@ -18,4 +18,4 @@ IdCarte PaquetCarte::piocher()
     return idCrt;
 }
 
-int PaquetCarte::getIdLast()const{return mCartes.back();}
+int PaquetCarte::showIdLast()const{return mCartes.back();}

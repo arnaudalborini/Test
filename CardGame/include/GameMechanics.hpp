@@ -16,7 +16,8 @@ namespace CardGame{
             void setCarteGenerator(CarteGenerator* cg);
             virtual vector<IdCarte> genVecCartesPioche()const;
             virtual vector<IdCarte> genVecCartesDefausse()const;
-            void initiatePlateau()const;
+            virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const;
+            void initGame()const;
     };
 };
 

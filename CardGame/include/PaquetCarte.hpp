@@ -12,7 +12,7 @@ namespace CardGame{
             ~PaquetCarte();
             void initializePaquet(const vector<IdCarte> &vecCartes);
             IdCarte piocher();
-            int getIdLast()const;
+            int showIdLast()const;
     };
 };
 

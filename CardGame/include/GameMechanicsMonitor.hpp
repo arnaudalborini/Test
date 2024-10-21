@@ -12,6 +12,8 @@ namespace CardGame{
         public:
             void initiatePioche(const vector<IdCarte> &mCartes);
             void initiateDefausse(const vector<IdCarte> &mCartes);
+            
+            Plateau* getPlateau();
     };
 }
 

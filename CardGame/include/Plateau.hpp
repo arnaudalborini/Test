@@ -13,9 +13,9 @@ namespace CardGame{
             void addLast(int EP, IdCarte crt);
             int getNbCarte(int EP)const;
 
-            int getIdLast(int EP)const;
+            IdCarte showIdLast(int EP)const;
             IdCarte getLast(int EP);
-            int getIdN(int EP,int N)const;
+            IdCarte showIdN(int EP,int N)const;
             IdCarte getN(int EP,int N);
     };
 };

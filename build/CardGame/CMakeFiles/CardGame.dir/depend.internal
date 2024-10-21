@@ -25,12 +25,14 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o
  ../CardGame/include/GameMechanics.hpp
  ../CardGame/include/GameMechanicsMonitor.hpp
  ../CardGame/include/Monitor.hpp
+ ../CardGame/include/Plateau.hpp
  /workspaces/Test/CardGame/src/GameMechanics.cpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/GameMechanicsMonitor.hpp
  ../CardGame/include/Monitor.hpp
  ../CardGame/include/PaquetCarte.hpp
+ ../CardGame/include/Plateau.hpp
  /workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp
 CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o
  ../CardGame/include/CardGame.hpp
