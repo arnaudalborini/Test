@@ -23,8 +23,12 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/Ca
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/CarteGenerator.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/GameMechanics.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/Hand.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/InfosJoueur.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/Monitor.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/PaquetCarte.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/Plateau.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/Player.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/src/GameMechanics.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/include/CardGame.hpp
@@ -32,6 +36,7 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/inc
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/include/Monitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/include/PaquetCarte.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/include/Plateau.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/include/Player.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o: ../CardGame/src/GameMechanicsMonitor.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o: ../CardGame/include/CardGame.hpp

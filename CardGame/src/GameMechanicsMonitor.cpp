@@ -1,15 +1,18 @@
 #include "GameMechanicsMonitor.hpp"
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
+#include "Player.hpp"
 
 using CardGame::GameMechanicsMonitor;
 using CardGame::IdCarte;
-using CardGame::Plateau;
 
 GameMechanicsMonitor::GameMechanicsMonitor(){}
 GameMechanicsMonitor::~GameMechanicsMonitor(){}
 
-void GameMechanicsMonitor::initiatePioche(const vector<IdCarte> &mCartes){mPioche->initializePaquet(mCartes);}
-void GameMechanicsMonitor::initiateDefausse(const vector<IdCarte> &mCartes){mDefausse->initializePaquet(mCartes);}
+CardGame::Plateau*        GameMechanicsMonitor::getPlateau()                const{return mPlateau;}
+CardGame::PaquetCarte*    GameMechanicsMonitor::getPioche()                 const{return mPioche; }
+CardGame::PaquetCarte*    GameMechanicsMonitor::getDefausse()               const{return mDefausse;}
+CardGame::InfosJoueur*    GameMechanicsMonitor::getInfosJoueursP(int ind)   const{return mInfosJoueurs[ind];}
+const CardGame::Player*   GameMechanicsMonitor::getPlayerP(int ind)         const{return mPlayer[ind];}
 
-Plateau* GameMechanicsMonitor::getPlateau(){return mPlateau;}
+int GameMechanicsMonitor::getNbPlayer() const{return mNbJoueur;}

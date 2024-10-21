@@ -28,7 +28,17 @@ CardGame.hpp
 InfosJoueur.hpp
 ../Test/include/InfosJoueur.hpp
 
+../Test/include/hello_test.hpp
+
 /workspaces/Test/Test/src/Carte.cpp
 Carte.hpp
 /workspaces/Test/Test/src/Carte.hpp
+
+/workspaces/Test/Test/src/hello_test.cpp
+hello_test.hpp
+/workspaces/Test/Test/src/hello_test.hpp
+Carte.hpp
+/workspaces/Test/Test/src/Carte.hpp
+InfosJoueur.hpp
+/workspaces/Test/Test/src/InfosJoueur.hpp
 

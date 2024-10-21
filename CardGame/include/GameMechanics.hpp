@@ -9,6 +9,9 @@ namespace CardGame{
             vector<IdCarte> mCartes;
             GameMechanicsMonitor* mMonitor;
             CarteGenerator* cGen;
+
+            void joueurPioche(int indPlayer)const;
+            void remplirMain(int indPlayer)const;
         public:
             GameMechanics();
             ~GameMechanics();
@@ -18,6 +21,9 @@ namespace CardGame{
             virtual vector<IdCarte> genVecCartesDefausse()const;
             virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const;
             void initGame()const;
+            void startGame()const;
+            virtual void playTurn(const Player* pp)const;
+            virtual int getStandardHandNbCarte()const{return 1;}
     };
 };
 

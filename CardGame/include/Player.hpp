@@ -4,7 +4,8 @@
 namespace CardGame{
     class Player{
         public:
+            virtual string getName()const=0;
     };
 };
 
-#endif PLAYER_HPP
+#endif

@@ -19,3 +19,8 @@ IdCarte PaquetCarte::piocher()
 }
 
 int PaquetCarte::showIdLast()const{return mCartes.back();}
+
+int PaquetCarte::getNbCarte() const
+{
+    return mCartes.size();
+}

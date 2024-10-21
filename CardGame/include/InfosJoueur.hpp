@@ -12,6 +12,12 @@ namespace CardGame
         public:
             InfosJoueur();
             ~InfosJoueur();
+            Hand*           getHand(){return mHand;}
+            Plateau*        getPlateau(){return mPlateau;}
+            
+            const Hand*     getHand()const{return mHand;}
+            const Plateau*  getPlateau()const{return mPlateau;}
+
     };
 };
 

@@ -38,6 +38,10 @@ CardGame.hpp
 Monitor.hpp
 ../CardGame/include/Monitor.hpp
 
+../CardGame/include/Hand.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
 ../CardGame/include/InfosJoueur.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
@@ -53,6 +57,8 @@ CardGame.hpp
 ../CardGame/include/Plateau.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
+
+../CardGame/include/Player.hpp
 
 /workspaces/Test/CardGame/src/GameMasterMonitor.cpp
 GameMasterMonitor.hpp
@@ -73,6 +79,14 @@ GameMechanicsMonitor.hpp
 /workspaces/Test/CardGame/src/GameMechanicsMonitor.hpp
 Plateau.hpp
 /workspaces/Test/CardGame/src/Plateau.hpp
+PaquetCarte.hpp
+/workspaces/Test/CardGame/src/PaquetCarte.hpp
+Player.hpp
+/workspaces/Test/CardGame/src/Player.hpp
+InfosJoueur.hpp
+/workspaces/Test/CardGame/src/InfosJoueur.hpp
+Hand.hpp
+/workspaces/Test/CardGame/src/Hand.hpp
 
 /workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp
 GameMechanicsMonitor.hpp
@@ -81,6 +95,12 @@ PaquetCarte.hpp
 /workspaces/Test/CardGame/src/PaquetCarte.hpp
 Plateau.hpp
 /workspaces/Test/CardGame/src/Plateau.hpp
+Player.hpp
+/workspaces/Test/CardGame/src/Player.hpp
+
+/workspaces/Test/CardGame/src/InfosJoueur.cpp
+InfosJoueur.hpp
+/workspaces/Test/CardGame/src/InfosJoueur.hpp
 
 /workspaces/Test/CardGame/src/Monitor.cpp
 Monitor.hpp
@@ -97,8 +117,4 @@ PaquetCarte.hpp
 /workspaces/Test/CardGame/src/PaquetCarte.hpp
 algorithm
 -
-
-/workspaces/Test/CardGame/src/Plateau.cpp
-Plateau.hpp
-/workspaces/Test/CardGame/src/Plateau.hpp
 

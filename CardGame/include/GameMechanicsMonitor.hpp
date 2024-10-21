@@ -9,11 +9,13 @@ namespace CardGame{
         private:
             GameMechanicsMonitor();
             ~GameMechanicsMonitor();
-        public:
-            void initiatePioche(const vector<IdCarte> &mCartes);
-            void initiateDefausse(const vector<IdCarte> &mCartes);
-            
-            Plateau* getPlateau();
+        public:            
+            Plateau*        getPlateau()const;
+            PaquetCarte*    getPioche()const;
+            PaquetCarte*    getDefausse()const;
+            InfosJoueur*    getInfosJoueursP(int ind)const;
+            const Player*   getPlayerP(int ind)const;
+            int             getNbPlayer()const;
     };
 }
 
