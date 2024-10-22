@@ -10,7 +10,11 @@ using CardGame::IdCarte;
 using std::vector;
 using std::map;
 
-vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{return vector<IdCarte>();}
+vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{
+    vector<IdCarte> tmp = vector<IdCarte>(1);
+    tmp.push_back(1);
+    return tmp;
+}
 vector<IdCarte> GameMechanicsSpe::genVecCartesDefausse() const{return vector<IdCarte>();}
 map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanicsSpe::genMapCartePlateauInitial()const{return map<EmplacementPlateauGeneral,IdCarte>();}
 bool GameMechanicsSpe::endGameCondition()const{return getNbCartePioche()>0;}

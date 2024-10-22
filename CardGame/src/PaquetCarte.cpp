@@ -1,15 +1,25 @@
 #include "PaquetCarte.hpp"
 
 #include <algorithm>
+#include <iostream>
 
 using CardGame::PaquetCarte;
 using CardGame::IdCarte;
+using std::cout;
+using std::endl;
 
-PaquetCarte::PaquetCarte(){}
+PaquetCarte::PaquetCarte(){
+    mCartes.push_back(1);
+}
 
 PaquetCarte::~PaquetCarte(){}
 
-void PaquetCarte::initializePaquet(const vector<IdCarte> &vecCartes){std::copy(vecCartes.begin(),vecCartes.end(),mCartes.begin());}
+void PaquetCarte::initializePaquet( vector<IdCarte> vecCartes){
+    cout << "bonjour" << endl;
+    cout << vecCartes[0]<< endl;
+    mCartes = vector<IdCarte>(vecCartes.size());
+    std::copy(vecCartes.begin(),vecCartes.end(),mCartes.end());
+}
 
 void PaquetCarte::initializePaquet(const vector<IdCarte> &vecCartes, const vector<int> &playedBy)
 {

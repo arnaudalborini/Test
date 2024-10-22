@@ -12,6 +12,7 @@ void GameMasterMonitor::initiateElements(int nbJoueurs, GameMechanics *gm)
 {
     mNbJoueur = nbJoueurs;
     mGameMechanics = gm;
+    cout << "setmonitor" << endl;
     gm->setMonitor( dynamic_cast<Monitor*>( this ));
 }
 
