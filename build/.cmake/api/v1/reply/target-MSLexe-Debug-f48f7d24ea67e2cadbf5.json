@@ -77,7 +77,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -125,17 +126,19 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				4,
 				5,
 				6,
-				7
+				7,
+				8,
+				9
 			]
 		}
 	],
@@ -162,6 +165,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "MSL/src/MSLMechanics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "MSL/src/MySmileLifeTest.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -178,6 +187,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "MSL/include/CarteMSL.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "MSL/include/MSLMechanics.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

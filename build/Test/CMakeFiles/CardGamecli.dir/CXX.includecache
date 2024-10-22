@@ -41,10 +41,10 @@ Carte.hpp
 ../CardGame/include/Carte.hpp
 
 ../CardGame/include/GameMechanicsSpe.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
 GameMechanics.hpp
 ../CardGame/include/GameMechanics.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
 
 ../CardGame/include/PlayerInterface.hpp
 CardGame.hpp

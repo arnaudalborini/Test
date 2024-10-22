@@ -21,10 +21,10 @@ void GameMechanics::setMonitor(Monitor *mm){
     initGame();
 }
 
-void GameMechanics::setCarteGenerator(CarteGenerator *cg){ cGen=cg;}
-
 void GameMechanics::initGame()const{
+    cout << "GameMechanics::initGame" << endl;
     mMonitor->getPioche()->initializePaquet( genVecCartesPioche() );
+    cout << "pioche size: " << mMonitor->getPioche()->getNbCarte() << endl;
     mMonitor->getDefausse()->initializePaquet( genVecCartesDefausse() );
     map<EmplacementPlateauGeneral,IdCarte> mapCrt = genMapCartePlateauInitial();
     for(auto p:mapCrt){

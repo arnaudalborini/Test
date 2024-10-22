@@ -4,14 +4,23 @@
 #include "Player.hpp"
 #include "InfosJoueur.hpp"
 #include "Hand.hpp"
+#include "CarteGenerator.hpp"
 
 using CardGame::GameMechanicsSpe;
 using CardGame::IdCarte;
 using std::vector;
 using std::map;
 
-vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{return vector<IdCarte>();}
-vector<IdCarte> GameMechanicsSpe::genVecCartesDefausse() const{return vector<IdCarte>();}
+vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{
+    vector<IdCarte> vecCartes = vector<IdCarte>();
+    cGen->genCartesPioche(vecCartes);
+    return vecCartes;
+}
+vector<IdCarte> GameMechanicsSpe::genVecCartesDefausse() const{
+    vector<IdCarte> vecCartes = vector<IdCarte>();
+    cGen->genCartesDefausse(vecCartes);
+    return vecCartes;
+}
 map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanicsSpe::genMapCartePlateauInitial()const{return map<EmplacementPlateauGeneral,IdCarte>();}
 bool GameMechanicsSpe::endGameCondition()const{return getNbCartePioche()>0;}
 int GameMechanicsSpe::getWinnerPlayer() const{return 0;}

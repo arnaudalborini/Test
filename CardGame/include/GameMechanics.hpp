@@ -23,7 +23,6 @@ namespace CardGame{
             GameMechanics();
             ~GameMechanics();
             void setMonitor(Monitor* mm);
-            void setCarteGenerator(CarteGenerator* cg);
             void initGame()const;
             void startGame();
 

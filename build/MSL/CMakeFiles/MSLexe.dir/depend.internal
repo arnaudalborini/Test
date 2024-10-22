@@ -22,6 +22,16 @@ MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o
  ../MSL/include/BasicBot.hpp
  ../MSL/include/MySmileLife.hpp
  /workspaces/Test/MSL/src/CreationJoueur.cpp
+MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o
+ ../CardGame/include/CardGame.hpp
+ ../CardGame/include/Carte.hpp
+ ../CardGame/include/CarteGenerator.hpp
+ ../CardGame/include/GameMechanics.hpp
+ ../CardGame/include/GameMechanicsSpe.hpp
+ ../MSL/include/CarteGenerateurStandard.hpp
+ ../MSL/include/MSLMechanics.hpp
+ ../MSL/include/MySmileLife.hpp
+ /workspaces/Test/MSL/src/MSLMechanics.cpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/Carte.hpp
@@ -30,5 +40,6 @@ MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o
  ../CardGame/include/GameMechanics.hpp
  ../CardGame/include/GameMechanicsSpe.hpp
  ../CardGame/include/PlayerInterface.hpp
+ ../MSL/include/MSLMechanics.hpp
  ../MSL/include/MySmileLife.hpp
  /workspaces/Test/MSL/src/MySmileLifeTest.cpp

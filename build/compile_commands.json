@@ -81,6 +81,11 @@
 },
 {
   "directory": "/workspaces/Test/build/MSL",
+  "command": "/usr/bin/clang++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o -c /workspaces/Test/MSL/src/MSLMechanics.cpp",
+  "file": "/workspaces/Test/MSL/src/MSLMechanics.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/MSL",
   "command": "/usr/bin/clang++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o -c /workspaces/Test/MSL/src/MySmileLifeTest.cpp",
   "file": "/workspaces/Test/MSL/src/MySmileLifeTest.cpp"
 }

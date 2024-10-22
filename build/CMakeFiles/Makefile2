@@ -188,12 +188,12 @@ Test/CMakeFiles/CardGamecli.dir/clean:
 MSL/CMakeFiles/MSLexe.dir/all: CardGame/CMakeFiles/CardGame.dir/all
 	$(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/depend
 	$(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=16,17,18,19,20 "Built target MSLexe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=16,17,18,19,20,21 "Built target MSLexe"
 .PHONY : MSL/CMakeFiles/MSLexe.dir/all
 
 # Build rule for subdir invocation for target.
 MSL/CMakeFiles/MSLexe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 MSL/CMakeFiles/MSLexe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 0
 .PHONY : MSL/CMakeFiles/MSLexe.dir/rule

@@ -206,6 +206,33 @@ src/CreationJoueur.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.s
 .PHONY : src/CreationJoueur.cpp.s
 
+src/MSLMechanics.o: src/MSLMechanics.cpp.o
+
+.PHONY : src/MSLMechanics.o
+
+# target to build an object file
+src/MSLMechanics.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o
+.PHONY : src/MSLMechanics.cpp.o
+
+src/MSLMechanics.i: src/MSLMechanics.cpp.i
+
+.PHONY : src/MSLMechanics.i
+
+# target to preprocess a source file
+src/MSLMechanics.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.i
+.PHONY : src/MSLMechanics.cpp.i
+
+src/MSLMechanics.s: src/MSLMechanics.cpp.s
+
+.PHONY : src/MSLMechanics.s
+
+# target to generate assembly for a file
+src/MSLMechanics.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.s
+.PHONY : src/MSLMechanics.cpp.s
+
 src/MySmileLifeTest.o: src/MySmileLifeTest.cpp.o
 
 .PHONY : src/MySmileLifeTest.o
@@ -251,6 +278,9 @@ help:
 	@echo "... src/CreationJoueur.o"
 	@echo "... src/CreationJoueur.i"
 	@echo "... src/CreationJoueur.s"
+	@echo "... src/MSLMechanics.o"
+	@echo "... src/MSLMechanics.i"
+	@echo "... src/MSLMechanics.s"
 	@echo "... src/MySmileLifeTest.o"
 	@echo "... src/MySmileLifeTest.i"
 	@echo "... src/MySmileLifeTest.s"

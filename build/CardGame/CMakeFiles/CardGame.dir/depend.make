@@ -31,6 +31,7 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/src/GameMe
 
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o: ../CardGame/include/Carte.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o: ../CardGame/include/CarteGenerator.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o: ../CardGame/include/GameMechanics.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o: ../CardGame/include/GameMechanicsSpe.hpp

@@ -1,8 +1,8 @@
 #ifndef GAMEMECHANICSSPE_HPP
 #define GAMEMECHANICSSPE_HPP
 
-#include "CardGame.hpp"
 #include "GameMechanics.hpp"
+#include "CardGame.hpp"
 
 namespace CardGame{
     class GameMechanicsSpe:public GameMechanics{

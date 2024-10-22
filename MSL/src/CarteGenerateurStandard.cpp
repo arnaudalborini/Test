@@ -10,6 +10,7 @@ using CardGame::IdCarte;
 
 CarteGenerateurStandard::CarteGenerateurStandard():cptId(0)
 {   
+    cout << "CarteGenerateurStandard::CarteGenerateurStandard" << endl;
     addMetier();
     addEtude();
     addSalaire();
@@ -21,11 +22,11 @@ CarteGenerateurStandard::CarteGenerateurStandard():cptId(0)
     addAnimal();
     addVoyage();
     addMaison();
-    //myShuffle(vecCartes);
 }
 
-void MySmileLife::CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
+void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
 {
+    cout << "CarteGenerateurStandard::genCartesPioche" << endl;
     IdCarte id;
     map<CarteSousType,set<IdCarte>> mapCT = mapMSLCarte[carteMetier];
     for(auto sIC: mapCT){vecCartes.push_back(*sIC.second.begin());}
