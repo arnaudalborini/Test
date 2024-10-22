@@ -98,23 +98,3 @@ Plateau.hpp
 Player.hpp
 /workspaces/Test/CardGame/src/Player.hpp
 
-/workspaces/Test/CardGame/src/InfosJoueur.cpp
-InfosJoueur.hpp
-/workspaces/Test/CardGame/src/InfosJoueur.hpp
-
-/workspaces/Test/CardGame/src/Monitor.cpp
-Monitor.hpp
-/workspaces/Test/CardGame/src/Monitor.hpp
-PaquetCarte.hpp
-/workspaces/Test/CardGame/src/PaquetCarte.hpp
-Plateau.hpp
-/workspaces/Test/CardGame/src/Plateau.hpp
-InfosJoueur.hpp
-/workspaces/Test/CardGame/src/InfosJoueur.hpp
-
-/workspaces/Test/CardGame/src/PaquetCarte.cpp
-PaquetCarte.hpp
-/workspaces/Test/CardGame/src/PaquetCarte.hpp
-algorithm
--
-

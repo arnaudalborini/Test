@@ -6,9 +6,9 @@
 namespace CardGame{
     class GameMechanics{
         private:
-            vector<IdCarte> mCartes;
             GameMechanicsMonitor* mMonitor;
             CarteGenerator* cGen;
+            vector<int> mTourAPasser;
 
             void joueurPioche(int indPlayer)const;
             void remplirMain(int indPlayer)const;
@@ -17,13 +17,14 @@ namespace CardGame{
             ~GameMechanics();
             void setMonitor(Monitor* mm);
             void setCarteGenerator(CarteGenerator* cg);
+            void initGame()const;
+            void startGame();
             virtual vector<IdCarte> genVecCartesPioche()const;
             virtual vector<IdCarte> genVecCartesDefausse()const;
             virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const;
-            void initGame()const;
-            void startGame()const;
             virtual void playTurn(const Player* pp)const;
-            virtual int getStandardHandNbCarte()const{return 1;}
+            virtual int getStandardHandNbCarte()const;
+            virtual bool endGameCondition()const;
     };
 };
 

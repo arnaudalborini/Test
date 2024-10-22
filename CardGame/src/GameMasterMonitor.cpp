@@ -22,6 +22,7 @@ void GameMasterMonitor::addPlayer(const Player *pp, int index)
 
 void GameMasterMonitor::startGame()
 {
+    mGameMechanics->startGame();
 }
 
 void GameMasterMonitor::removePlayer(int index)

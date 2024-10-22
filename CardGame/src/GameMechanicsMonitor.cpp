@@ -12,7 +12,7 @@ GameMechanicsMonitor::~GameMechanicsMonitor(){}
 CardGame::Plateau*        GameMechanicsMonitor::getPlateau()                const{return mPlateau;}
 CardGame::PaquetCarte*    GameMechanicsMonitor::getPioche()                 const{return mPioche; }
 CardGame::PaquetCarte*    GameMechanicsMonitor::getDefausse()               const{return mDefausse;}
-CardGame::InfosJoueur*    GameMechanicsMonitor::getInfosJoueursP(int ind)   const{return mInfosJoueurs[ind];}
-const CardGame::Player*   GameMechanicsMonitor::getPlayerP(int ind)         const{return mPlayer[ind];}
+CardGame::InfosJoueur*    GameMechanicsMonitor::getInfosJoueurs(int ind)   const{return mInfosJoueurs[ind];}
+const CardGame::Player*   GameMechanicsMonitor::getPlayer(int ind)         const{return mPlayer[ind];}
 
 int GameMechanicsMonitor::getNbPlayer() const{return mNbJoueur;}

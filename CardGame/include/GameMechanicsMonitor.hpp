@@ -13,8 +13,8 @@ namespace CardGame{
             Plateau*        getPlateau()const;
             PaquetCarte*    getPioche()const;
             PaquetCarte*    getDefausse()const;
-            InfosJoueur*    getInfosJoueursP(int ind)const;
-            const Player*   getPlayerP(int ind)const;
+            InfosJoueur*    getInfosJoueurs(int ind)const;
+            const Player*   getPlayer(int ind)const;
             int             getNbPlayer()const;
     };
 }

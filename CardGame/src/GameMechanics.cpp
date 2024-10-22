@@ -10,8 +10,8 @@
 
 using CardGame::GameMechanics;
 using CardGame::IdCarte;
-
-
+using std::vector;
+using std::map;
 
 GameMechanics::GameMechanics() : cGen(nullptr) {}
 
@@ -33,32 +33,43 @@ void GameMechanics::initGame() const{
     }
 }
 
-void GameMechanics::startGame() const
+void GameMechanics::startGame()
 {
     for(auto indPlayer=0;indPlayer < mMonitor->getNbPlayer(); indPlayer++){
         cout << "Joueur indice: " << indPlayer << endl;
         remplirMain(indPlayer);
+        mTourAPasser.at(indPlayer) = 0;
     }
-    //playTurn(mMonitor->getPlayerP(indPlayer));
+    int indPlayer=0;
+    while( endGameCondition() ){
+        if(indPlayer >= mMonitor->getNbPlayer()){
+            indPlayer=0;
+        }
+        if( mTourAPasser.at(indPlayer) > 0 ){
+            mTourAPasser[indPlayer]--;
+        }else{
+            playTurn(mMonitor->getPlayer(indPlayer));
+        }
+        indPlayer++;
+    }
 }
+void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->getHand()->addCarte( mMonitor->getPioche()->piocher() );}
 
-
-
-void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueursP(indPlayer)->getHand()->addCarte( mMonitor->getPioche()->piocher() );}
-
-void CardGame::GameMechanics::remplirMain(int indPlayer) const
+void GameMechanics::remplirMain(int indPlayer) const
 {
-    while( ( mMonitor->getInfosJoueursP(indPlayer)->getHand()->getNbCarte() < getStandardHandNbCarte()) && (mMonitor->getPioche()->getNbCarte()) ){
+    while( ( mMonitor->getInfosJoueurs(indPlayer)->getHand()->getNbCarte() < getStandardHandNbCarte()) && (mMonitor->getPioche()->getNbCarte()) ){
         joueurPioche( indPlayer );
     }
 }
 
-void CardGame::GameMechanics::playTurn(const Player *pp) const{
+// à personnaliner en fonction du jeu
+vector<IdCarte> GameMechanics::genVecCartesPioche() const{return vector<IdCarte>();}
+vector<IdCarte> GameMechanics::genVecCartesDefausse() const{return vector<IdCarte>();}
+map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanics::genMapCartePlateauInitial()const{return map<EmplacementPlateauGeneral,IdCarte>();}
+bool GameMechanics::endGameCondition()const{return mMonitor->getPioche()->getNbCarte();}
+
+void GameMechanics::playTurn(const Player *pp) const{
     cout << "Joueur name: " << pp->getName() << endl;
 }
 
-// à personnaliner en fonction du jeu
-std::vector<CardGame::IdCarte> GameMechanics::genVecCartesPioche() const{return vector<IdCarte>();}
-std::vector<CardGame::IdCarte> GameMechanics::genVecCartesDefausse() const{return vector<IdCarte>();}
-std::map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanics::genMapCartePlateauInitial()const{return std::map<CardGame::EmplacementPlateauGeneral,IdCarte>();}
-
+int GameMechanics::getStandardHandNbCarte()const{return 1;}
