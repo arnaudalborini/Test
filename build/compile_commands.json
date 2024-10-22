@@ -26,6 +26,11 @@
 },
 {
   "directory": "/workspaces/Test/build/CardGame",
+  "command": "/usr/bin/clang++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o -c /workspaces/Test/CardGame/src/GameMechanicsSpe.cpp",
+  "file": "/workspaces/Test/CardGame/src/GameMechanicsSpe.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/CardGame",
   "command": "/usr/bin/clang++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/Hand.cpp.o -c /workspaces/Test/CardGame/src/Hand.cpp",
   "file": "/workspaces/Test/CardGame/src/Hand.cpp"
 },

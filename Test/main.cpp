@@ -1,8 +1,12 @@
 #include "hello_test.hpp"
 
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
 int main()
 {
-	sayHello();
-	
+	Test::sayHello();
 	return 0;
 }

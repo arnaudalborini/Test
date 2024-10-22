@@ -1,11 +1,11 @@
 
 file(
-    GLOB_RECURSE
+    GLOB
     source_files 
     src/*
 )
 file(
-    GLOB_RECURSE
+    GLOB
     header_files 
     include/*
 )

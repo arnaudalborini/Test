@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o"
   "CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
   "CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o"
+  "CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o"
   "CMakeFiles/CardGame.dir/src/Hand.cpp.o"
   "CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o"
   "CMakeFiles/CardGame.dir/src/Monitor.cpp.o"

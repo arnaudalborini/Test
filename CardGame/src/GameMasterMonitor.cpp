@@ -29,3 +29,5 @@ void GameMasterMonitor::removePlayer(int index)
 {
     mPlayer[index] = nullptr;
 }
+
+int CardGame::GameMasterMonitor::getWinner() const{return mGameMechanics->getWinnerPlayer();}

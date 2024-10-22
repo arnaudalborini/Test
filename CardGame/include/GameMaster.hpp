@@ -17,6 +17,7 @@ namespace CardGame{
             void initGame(int nj, GameMechanics* gm);
             virtual int login(const Player* pp);
             void startGame();
+            int getWinner()const;
     };
 };
 

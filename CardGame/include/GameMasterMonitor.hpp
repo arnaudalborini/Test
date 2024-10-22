@@ -14,6 +14,7 @@ namespace CardGame{
             void addPlayer(const Player* pp, int index);
             void startGame();
             void removePlayer(int indice);
+            int getWinner()const;
     };
 }
 

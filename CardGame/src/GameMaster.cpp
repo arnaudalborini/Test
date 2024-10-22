@@ -48,3 +48,5 @@ void GameMaster::startGame()
         mMonitor->startGame();
     }
 }
+
+int GameMaster::getWinner() const{return mMonitor->getWinner();}

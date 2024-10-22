@@ -7,13 +7,18 @@ namespace CardGame{
     class PaquetCarte{
         private:
             vector<IdCarte> mCartes;
+            vector<int> mPlayedBy;
         public:
             PaquetCarte();
             ~PaquetCarte();
             void initializePaquet(const vector<IdCarte> &vecCartes);
+            void initializePaquet(const vector<IdCarte> &vecCartes, const vector<int> &playedBy);
             IdCarte piocher();
-            int showIdLast()const;
+            IdCarte showIdLast()const;
             int getNbCarte()const;
+            void addCarte(IdCarte idC);
+            void addCarte(IdCarte idC,int playedBy);
+            int showLastPlayedBy()const;
     };
 };
 

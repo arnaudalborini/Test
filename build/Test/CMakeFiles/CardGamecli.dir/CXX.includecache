@@ -18,9 +18,37 @@ vector
 list
 -
 
+../CardGame/include/GameInterface.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/GameMaster.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+GameInterface.hpp
+../CardGame/include/GameInterface.hpp
+
+../CardGame/include/GameMechanics.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/GameMechanicsSpe.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+GameMechanics.hpp
+../CardGame/include/GameMechanics.hpp
+
 ../CardGame/include/InfosJoueur.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
+
+../CardGame/include/Player.hpp
+
+../Test/include/BasicBot.hpp
+Player.hpp
+../Test/include/Player.hpp
+string
+-
 
 ../Test/include/Carte.hpp
 CardGame.hpp
@@ -30,9 +58,11 @@ InfosJoueur.hpp
 
 ../Test/include/hello_test.hpp
 
-/workspaces/Test/Test/src/Carte.cpp
-Carte.hpp
-/workspaces/Test/Test/src/Carte.hpp
+/workspaces/Test/Test/main.cpp
+hello_test.hpp
+/workspaces/Test/Test/hello_test.hpp
+iostream
+-
 
 /workspaces/Test/Test/src/hello_test.cpp
 hello_test.hpp
@@ -41,4 +71,12 @@ Carte.hpp
 /workspaces/Test/Test/src/Carte.hpp
 InfosJoueur.hpp
 /workspaces/Test/Test/src/InfosJoueur.hpp
+GameMaster.hpp
+/workspaces/Test/Test/src/GameMaster.hpp
+GameMechanicsSpe.hpp
+/workspaces/Test/Test/src/GameMechanicsSpe.hpp
+BasicBot.hpp
+/workspaces/Test/Test/src/BasicBot.hpp
+iostream
+-
 

@@ -39,6 +39,17 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o
  ../CardGame/include/Plateau.hpp
  ../CardGame/include/Player.hpp
  /workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o
+ ../CardGame/include/CardGame.hpp
+ ../CardGame/include/GameMechanics.hpp
+ ../CardGame/include/GameMechanicsMonitor.hpp
+ ../CardGame/include/GameMechanicsSpe.hpp
+ ../CardGame/include/Hand.hpp
+ ../CardGame/include/InfosJoueur.hpp
+ ../CardGame/include/Monitor.hpp
+ ../CardGame/include/PaquetCarte.hpp
+ ../CardGame/include/Player.hpp
+ /workspaces/Test/CardGame/src/GameMechanicsSpe.cpp
 CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/Hand.hpp

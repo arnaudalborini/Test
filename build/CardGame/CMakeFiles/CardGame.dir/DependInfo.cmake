@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/Test/CardGame/src/GameMasterMonitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanics.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o"
+  "/workspaces/Test/CardGame/src/GameMechanicsSpe.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o"
   "/workspaces/Test/CardGame/src/Hand.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o"
   "/workspaces/Test/CardGame/src/InfosJoueur.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o"
   "/workspaces/Test/CardGame/src/Monitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o"

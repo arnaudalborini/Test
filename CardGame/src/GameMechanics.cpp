@@ -9,9 +9,8 @@
 #include "Hand.hpp"
 
 using CardGame::GameMechanics;
-using CardGame::IdCarte;
-using std::vector;
-using std::map;
+using CardGame::Player;
+using CardGame::Hand;
 
 GameMechanics::GameMechanics() : cGen(nullptr) {}
 
@@ -48,28 +47,27 @@ void GameMechanics::startGame()
         if( mTourAPasser.at(indPlayer) > 0 ){
             mTourAPasser[indPlayer]--;
         }else{
-            playTurn(mMonitor->getPlayer(indPlayer));
+            playTurn(indPlayer);
         }
         indPlayer++;
     }
 }
-void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->getHand()->addCarte( mMonitor->getPioche()->piocher() );}
 
+void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->getHand()->addCarte( mMonitor->getPioche()->piocher() );}
 void GameMechanics::remplirMain(int indPlayer) const
 {
     while( ( mMonitor->getInfosJoueurs(indPlayer)->getHand()->getNbCarte() < getStandardHandNbCarte()) && (mMonitor->getPioche()->getNbCarte()) ){
         joueurPioche( indPlayer );
     }
 }
+int GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbCarte();}
+int GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
+void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
+void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
 
-// à personnaliner en fonction du jeu
-vector<IdCarte> GameMechanics::genVecCartesPioche() const{return vector<IdCarte>();}
-vector<IdCarte> GameMechanics::genVecCartesDefausse() const{return vector<IdCarte>();}
-map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanics::genMapCartePlateauInitial()const{return map<EmplacementPlateauGeneral,IdCarte>();}
-bool GameMechanics::endGameCondition()const{return mMonitor->getPioche()->getNbCarte();}
+const Player *CardGame::GameMechanics::getPlayer(int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
 
-void GameMechanics::playTurn(const Player *pp) const{
-    cout << "Joueur name: " << pp->getName() << endl;
+Hand *GameMechanics::getJoueurHand(int indPlayer) const
+{
+    return mMonitor->getInfosJoueurs(indPlayer)->getHand();;
 }
-
-int GameMechanics::getStandardHandNbCarte()const{return 1;}
