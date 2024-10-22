@@ -3,38 +3,39 @@
 	{
 		"generator" : 
 		{
-			"name" : "Unix Makefiles"
+			"multiConfig" : false,
+			"name" : "MinGW Makefiles"
 		},
 		"paths" : 
 		{
-			"cmake" : "/usr/bin/cmake",
-			"cpack" : "/usr/bin/cpack",
-			"ctest" : "/usr/bin/ctest",
-			"root" : "/usr/share/cmake-3.16"
+			"cmake" : "C:/Program Files/CMake/bin/cmake.exe",
+			"cpack" : "C:/Program Files/CMake/bin/cpack.exe",
+			"ctest" : "C:/Program Files/CMake/bin/ctest.exe",
+			"root" : "C:/Program Files/CMake/share/cmake-3.31"
 		},
 		"version" : 
 		{
 			"isDirty" : false,
 			"major" : 3,
-			"minor" : 16,
-			"patch" : 3,
-			"string" : "3.16.3",
-			"suffix" : ""
+			"minor" : 31,
+			"patch" : 0,
+			"string" : "3.31.0-rc2",
+			"suffix" : "rc2"
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-1a1e8978e035ba2b2a2d.json",
+			"jsonFile" : "codemodel-v2-acd866d8d2ae370a53e5.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 0
+				"minor" : 7
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-2875f7c674efbfb1c34c.json",
+			"jsonFile" : "cache-v2-4baf2a4268c2ca61623d.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -43,8 +44,17 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-5e473b0aa2eaa72efccc.json",
+			"jsonFile" : "cmakeFiles-v1-77587791b1c03ee5500c.json",
 			"kind" : "cmakeFiles",
+			"version" : 
+			{
+				"major" : 1,
+				"minor" : 1
+			}
+		},
+		{
+			"jsonFile" : "toolchains-v1-82387daa300789db1e78.json",
+			"kind" : "toolchains",
 			"version" : 
 			{
 				"major" : 1,
@@ -80,7 +90,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-2875f7c674efbfb1c34c.json",
+						"jsonFile" : "cache-v2-4baf2a4268c2ca61623d.json",
 						"kind" : "cache",
 						"version" : 
 						{
@@ -89,24 +99,30 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-1a1e8978e035ba2b2a2d.json",
+						"jsonFile" : "codemodel-v2-acd866d8d2ae370a53e5.json",
 						"kind" : "codemodel",
 						"version" : 
 						{
 							"major" : 2,
-							"minor" : 0
+							"minor" : 7
 						}
 					},
 					{
-						"error" : "unknown request kind 'toolchains'"
-					},
-					{
-						"jsonFile" : "cmakeFiles-v1-5e473b0aa2eaa72efccc.json",
-						"kind" : "cmakeFiles",
+						"jsonFile" : "toolchains-v1-82387daa300789db1e78.json",
+						"kind" : "toolchains",
 						"version" : 
 						{
 							"major" : 1,
 							"minor" : 0
+						}
+					},
+					{
+						"jsonFile" : "cmakeFiles-v1-77587791b1c03ee5500c.json",
+						"kind" : "cmakeFiles",
+						"version" : 
+						{
+							"major" : 1,
+							"minor" : 1
 						}
 					}
 				]

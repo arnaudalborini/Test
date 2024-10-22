@@ -1,30 +1,30 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/Test/CardGame/src/CarteGenerator.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o"
-  "/workspaces/Test/CardGame/src/GameMaster.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o"
-  "/workspaces/Test/CardGame/src/GameMechanics.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
-  "/workspaces/Test/CardGame/src/GameMechanicsSpe.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o"
-  "/workspaces/Test/CardGame/src/Hand.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o"
-  "/workspaces/Test/CardGame/src/InfosJoueur.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o"
-  "/workspaces/Test/CardGame/src/Monitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o"
-  "/workspaces/Test/CardGame/src/PaquetCarte.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.o"
-  "/workspaces/Test/CardGame/src/Plateau.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "Clang")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../CardGame/include"
-  "../CardGame/include/Carte"
-  "../CardGame/include/Joueur"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/CarteGenerator.cpp" "CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/GameMaster.cpp" "CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/GameMechanics.cpp" "CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/GameMechanicsSpe.cpp" "CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/Hand.cpp" "CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/InfosJoueur.cpp" "CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/Monitor.cpp" "CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/PaquetCarte.cpp" "CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.obj.d"
+  "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/Plateau.cpp" "CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.obj" "gcc" "CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.obj.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.
