@@ -18,14 +18,21 @@ GameMechanics::~GameMechanics(){}
 
 void GameMechanics::setMonitor(Monitor *mm){
     mMonitor = dynamic_cast<GameMechanicsMonitor*>(mm);
+    cout << "GameMechanics::setMonitor::initGame" << endl;
     initGame();
 }
 
 void GameMechanics::setCarteGenerator(CarteGenerator *cg){ cGen=cg;}
 
 void GameMechanics::initGame() const{
-    mMonitor->getPioche()->initializePaquet( genVecCartesPioche() );
-    mMonitor->getDefausse()->initializePaquet( genVecCartesDefausse() );
+    cout << "GameMechanics::setMonitor::initGame init pioche" << endl;
+    vector<IdCarte> vecCartes = genVecCartesPioche();
+    cout << "ici" << endl;
+    mMonitor->getPioche()->initializePaquet( vecCartes );
+    cout << "GameMechanics::setMonitor::initGame init defausse" << endl;
+    vecCartes = genVecCartesDefausse();
+    mMonitor->getDefausse()->initializePaquet( vecCartes );
+    cout << "GameMechanics::setMonitor::initGame init plateau" << endl;
     map<EmplacementPlateauGeneral,IdCarte> mapCrt = genMapCartePlateauInitial();
     for(auto p:mapCrt){
         mMonitor->getPlateau()->addLast(p.first,p.second);

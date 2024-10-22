@@ -17,7 +17,9 @@ GameMaster::~GameMaster()
 }
 
 void GameMaster::initGame(int nj, GameMechanics *gm){
+    cout << "initiateElements" << endl;
     mMonitor->initiateElements(nj,gm);
+    cout << "push_back joueurpret" << endl;
     mNbJoueur = nj;
     for(int ind=0;ind<4;ind++){
         mJoueurPret.push_back(false);
