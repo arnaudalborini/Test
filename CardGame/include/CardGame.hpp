@@ -28,7 +28,7 @@ namespace CardGame{
     class InfosJoueur;
     class Monitor;
     class PaquetCarte;
-    class ParamCarte;
+    class Carte;
     class Plateau;
     class Player;
     class PlayerInterface;

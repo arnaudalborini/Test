@@ -4,8 +4,9 @@
 #include "CardGame.hpp"
 
 namespace CardGame{
-    class ParamCarte{
-        virtual ~ParamCarte(){};
+    class Carte{
+        public:
+            virtual ~Carte(){};
     };
 }
 

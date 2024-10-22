@@ -28,7 +28,7 @@ namespace CardGame{
             virtual const Plateau*      getPlateau()const;
             virtual const PaquetCarte*  getPioche()const;
             virtual const PaquetCarte*  getDefausse()const;
-            virtual const ParamCarte*   getDescriptionCarte(IdCarte idC)const;
+            virtual const Carte*   getCarte(IdCarte idC)const;
     };
 };
 

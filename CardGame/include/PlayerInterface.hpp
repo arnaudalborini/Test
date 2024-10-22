@@ -10,7 +10,7 @@ namespace CardGame{
             virtual const Plateau* getPlateau()const=0;
             virtual const PaquetCarte* getPioche()const=0;
             virtual const PaquetCarte* getDefausse()const=0;
-            virtual const ParamCarte* getDescriptionCarte(IdCarte idC)const=0;
+            virtual const Carte* getCarte(IdCarte idC)const=0;
     };
 }
 

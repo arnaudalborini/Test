@@ -58,4 +58,4 @@ const CardGame::InfosJoueur* GameMaster::getInfosJoueurs(int indPlayer)const{ret
 const CardGame::Plateau* GameMaster::getPlateau()const{return mMonitor->getPlateau();}
 const CardGame::PaquetCarte* GameMaster::getPioche()const{return mMonitor->getPioche();}
 const CardGame::PaquetCarte* GameMaster::getDefausse()const{return mMonitor->getDefausse();}
-const CardGame::ParamCarte* GameMaster::getDescriptionCarte(IdCarte idC)const{return nullptr;}
+const CardGame::Carte* GameMaster::getCarte(IdCarte idC)const{return nullptr;}

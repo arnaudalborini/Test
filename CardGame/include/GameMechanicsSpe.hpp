@@ -15,7 +15,7 @@ namespace CardGame{
             virtual int getStandardHandNbCarte()const;
             virtual bool endGameCondition()const;
             virtual int getWinnerPlayer()const;
-            virtual ParamCarte* getParamCarte(IdCarte idC)const;
+            virtual Carte* getParamCarte(IdCarte idC)const;
     };
 }
 #endif

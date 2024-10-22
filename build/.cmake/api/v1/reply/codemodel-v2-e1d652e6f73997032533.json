@@ -87,7 +87,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "CardGame::@7f8be7de9f6a3ddb4016",
-					"jsonFile" : "target-CardGame-Debug-157b9c366246170b9809.json",
+					"jsonFile" : "target-CardGame-Debug-d6cd3d756b44eaf55d7f.json",
 					"name" : "CardGame",
 					"projectIndex" : 0
 				},
@@ -101,7 +101,7 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "MSLexe::@5badca30e22484fc1b4c",
-					"jsonFile" : "target-MSLexe-Debug-92c29873cfc2793c0f26.json",
+					"jsonFile" : "target-MSLexe-Debug-2549532d99ec49f0a176.json",
 					"name" : "MSLexe",
 					"projectIndex" : 0
 				}

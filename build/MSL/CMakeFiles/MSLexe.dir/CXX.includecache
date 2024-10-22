@@ -18,19 +18,37 @@ vector
 list
 -
 
+../CardGame/include/Carte.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
 ../CardGame/include/GameInterface.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/Player.hpp
+../CardGame/include/GameMaster.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+GameInterface.hpp
+../CardGame/include/GameInterface.hpp
+PlayerInterface.hpp
+../CardGame/include/PlayerInterface.hpp
 
-../MSL/include/BasicBot.hpp
-Player.hpp
-../MSL/include/Player.hpp
-MySmileLife.hpp
-../MSL/include/MySmileLife.hpp
-string
--
+../CardGame/include/GameMechanics.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+Carte.hpp
+../CardGame/include/Carte.hpp
+
+../CardGame/include/GameMechanicsSpe.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+GameMechanics.hpp
+../CardGame/include/GameMechanics.hpp
+
+../CardGame/include/PlayerInterface.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
 
 ../MSL/include/MySmileLife.hpp
 CardGame.hpp
@@ -40,11 +58,11 @@ iostream
 string
 -
 
-/workspaces/Test/MSL/src/CreationJoueur.cpp
+/workspaces/Test/MSL/src/MySmileLifeTest.cpp
 MySmileLife.hpp
 /workspaces/Test/MSL/src/MySmileLife.hpp
-BasicBot.hpp
-/workspaces/Test/MSL/src/BasicBot.hpp
-GameInterface.hpp
-/workspaces/Test/MSL/src/GameInterface.hpp
+GameMaster.hpp
+/workspaces/Test/MSL/src/GameMaster.hpp
+GameMechanicsSpe.hpp
+/workspaces/Test/MSL/src/GameMechanicsSpe.hpp
 

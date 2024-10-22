@@ -18,11 +18,11 @@ Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o: ../Test/include/Test.h
 Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o: ../Test/src/CreationJoueur.cpp
 
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/CardGame.hpp
+Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/Carte.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/GameInterface.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/GameMaster.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/GameMechanics.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/GameMechanicsSpe.hpp
-Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/ParamCarte.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../CardGame/include/PlayerInterface.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../Test/include/Test.hpp
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../Test/src/hello_test.cpp

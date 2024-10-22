@@ -26,10 +26,8 @@ namespace MySmileLife{
         Animal
     };
 
-
-
     class BasicBot;
-    class Carte;
+    class CarteMSL;
     void CreationJoueur(CardGame::GameInterface* gI);
     void MySmileLifeTest();
 }

@@ -187,6 +187,11 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "CardGame/include/Carte.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"path" : "CardGame/include/CarteGenerator.hpp",
 			"sourceGroupIndex" : 1
 		},
@@ -238,11 +243,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "CardGame/include/PaquetCarte.hpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "CardGame/include/ParamCarte.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

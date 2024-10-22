@@ -13,11 +13,11 @@ MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o: ../MSL/include/MySmileLife.h
 MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o: ../MSL/src/CreationJoueur.cpp
 
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/CardGame.hpp
+MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/Carte.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/GameInterface.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/GameMaster.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/GameMechanics.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/GameMechanicsSpe.hpp
-MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/ParamCarte.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../CardGame/include/PlayerInterface.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../MSL/include/MySmileLife.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../MSL/src/MySmileLifeTest.cpp
