@@ -3,6 +3,7 @@
 
 CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o
  ../CardGame/include/CardGame.hpp
+ ../CardGame/include/Carte.hpp
  ../CardGame/include/CarteGenerator.hpp
  /workspaces/Test/CardGame/src/CarteGenerator.cpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o

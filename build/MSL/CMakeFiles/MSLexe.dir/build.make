@@ -70,9 +70,22 @@ MSL/CMakeFiles/MSLexe.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MSLexe.dir/main.cpp.s"
 	cd /workspaces/Test/build/MSL && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/MSL/main.cpp -o CMakeFiles/MSLexe.dir/main.cpp.s
 
+MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o: MSL/CMakeFiles/MSLexe.dir/flags.make
+MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o: ../MSL/src/CarteGenerateurStandard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o"
+	cd /workspaces/Test/build/MSL && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o -c /workspaces/Test/MSL/src/CarteGenerateurStandard.cpp
+
+MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.i"
+	cd /workspaces/Test/build/MSL && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/MSL/src/CarteGenerateurStandard.cpp > CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.i
+
+MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.s"
+	cd /workspaces/Test/build/MSL && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/MSL/src/CarteGenerateurStandard.cpp -o CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.s
+
 MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o: MSL/CMakeFiles/MSLexe.dir/flags.make
 MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o: ../MSL/src/CreationJoueur.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o"
 	cd /workspaces/Test/build/MSL && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o -c /workspaces/Test/MSL/src/CreationJoueur.cpp
 
 MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.i: cmake_force
@@ -85,7 +98,7 @@ MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.s: cmake_force
 
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: MSL/CMakeFiles/MSLexe.dir/flags.make
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o: ../MSL/src/MySmileLifeTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o"
 	cd /workspaces/Test/build/MSL && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o -c /workspaces/Test/MSL/src/MySmileLifeTest.cpp
 
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.i: cmake_force
@@ -99,6 +112,7 @@ MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.s: cmake_force
 # Object files for target MSLexe
 MSLexe_OBJECTS = \
 "CMakeFiles/MSLexe.dir/main.cpp.o" \
+"CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o" \
 "CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o" \
 "CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o"
 
@@ -106,12 +120,13 @@ MSLexe_OBJECTS = \
 MSLexe_EXTERNAL_OBJECTS =
 
 MSL/bin/Debug/MSLexe: MSL/CMakeFiles/MSLexe.dir/main.cpp.o
+MSL/bin/Debug/MSLexe: MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o
 MSL/bin/Debug/MSLexe: MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o
 MSL/bin/Debug/MSLexe: MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o
 MSL/bin/Debug/MSLexe: MSL/CMakeFiles/MSLexe.dir/build.make
 MSL/bin/Debug/MSLexe: CardGame/libCardGame.a
 MSL/bin/Debug/MSLexe: MSL/CMakeFiles/MSLexe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin/Debug/MSLexe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/Debug/MSLexe"
 	cd /workspaces/Test/build/MSL && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MSLexe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

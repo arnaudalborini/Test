@@ -71,6 +71,11 @@
 },
 {
   "directory": "/workspaces/Test/build/MSL",
+  "command": "/usr/bin/clang++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o -c /workspaces/Test/MSL/src/CarteGenerateurStandard.cpp",
+  "file": "/workspaces/Test/MSL/src/CarteGenerateurStandard.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/MSL",
   "command": "/usr/bin/clang++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o -c /workspaces/Test/MSL/src/CreationJoueur.cpp",
   "file": "/workspaces/Test/MSL/src/CreationJoueur.cpp"
 },

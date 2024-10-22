@@ -152,6 +152,33 @@ main.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/CarteGenerateurStandard.o: src/CarteGenerateurStandard.cpp.o
+
+.PHONY : src/CarteGenerateurStandard.o
+
+# target to build an object file
+src/CarteGenerateurStandard.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o
+.PHONY : src/CarteGenerateurStandard.cpp.o
+
+src/CarteGenerateurStandard.i: src/CarteGenerateurStandard.cpp.i
+
+.PHONY : src/CarteGenerateurStandard.i
+
+# target to preprocess a source file
+src/CarteGenerateurStandard.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.i
+.PHONY : src/CarteGenerateurStandard.cpp.i
+
+src/CarteGenerateurStandard.s: src/CarteGenerateurStandard.cpp.s
+
+.PHONY : src/CarteGenerateurStandard.s
+
+# target to generate assembly for a file
+src/CarteGenerateurStandard.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.s
+.PHONY : src/CarteGenerateurStandard.cpp.s
+
 src/CreationJoueur.o: src/CreationJoueur.cpp.o
 
 .PHONY : src/CreationJoueur.o
@@ -218,6 +245,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/CarteGenerateurStandard.o"
+	@echo "... src/CarteGenerateurStandard.i"
+	@echo "... src/CarteGenerateurStandard.s"
 	@echo "... src/CreationJoueur.o"
 	@echo "... src/CreationJoueur.i"
 	@echo "... src/CreationJoueur.s"

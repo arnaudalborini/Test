@@ -2,14 +2,22 @@
 #define CARTEGENERATOR_HPP
 
 #include "CardGame.hpp"
+#include "Carte.hpp"
 
 namespace CardGame{
     class CarteGenerator{
+        private:
+            map<IdCarte,const Carte*> mapCarte;
         public:
             CarteGenerator();
             ~CarteGenerator();
-            virtual void genCartesPioche(const vector<IdCarte> &vecCarte);
-            virtual void genCartesDefausse(const vector<IdCarte> &vecCarte);
+            const Carte* getCarteById(int id)const{return mapCarte.at(id);};
+            void addCarte(const Carte* crt){mapCarte[crt->getId()]=crt;}
+
+            virtual void genCartesPioche(vector<IdCarte> &vecCarte);
+            virtual void genCartesDefausse(vector<IdCarte> &vecCarte);
+
+
     };
 };
 

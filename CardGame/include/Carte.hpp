@@ -5,7 +5,11 @@
 
 namespace CardGame{
     class Carte{
+        private:
+            IdCarte mId;
         public:
+            Carte(int id):mId(id){}
+            IdCarte getId()const{return mId;}
             virtual ~Carte(){};
     };
 }

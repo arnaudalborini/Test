@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MSLexe.dir/main.cpp.o"
+  "CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o"
   "CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o"
   "CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o"
   "bin/Debug/MSLexe"
