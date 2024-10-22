@@ -9,9 +9,7 @@ namespace MySmileLife{
         private:
         public:
             MSLMechanics();       
-            virtual vector<CardGame::IdCarte> genVecCartesPioche()const;
             /*
-            virtual vector<CardGame::IdCarte> genVecCartesDefausse()const;
             virtual map<CardGame::EmplacementPlateauGeneral,CardGame::IdCarte> genMapCartePlateauInitial()const;
             virtual void playTurn(int indPlayer)const;
             virtual int getStandardHandNbCarte()const;

@@ -8,11 +8,3 @@ MSLMechanics::MSLMechanics()
 {
     cGen = new CarteGenerateurStandard();
 }
-
-std::vector<CardGame::IdCarte> MSLMechanics::genVecCartesPioche() const
-{
-    vector<CardGame::IdCarte> vecCartes;
-    cout << "MSLMechanics::genVecCartesPioche" << endl;
-    cGen->genCartesPioche(vecCartes);
-    return vecCartes;
-}

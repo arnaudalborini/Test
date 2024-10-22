@@ -23,9 +23,12 @@ void GameMechanics::setMonitor(Monitor *mm){
 
 void GameMechanics::initGame()const{
     cout << "GameMechanics::initGame" << endl;
-    mMonitor->getPioche()->initializePaquet( genVecCartesPioche() );
+    std::vector<int> vecC = genVecCartesPioche();
+    cout << "getPioche::initializePaquet" << endl;
+    mMonitor->getPioche()->initializePaquet( vecC );
     cout << "pioche size: " << mMonitor->getPioche()->getNbCarte() << endl;
-    mMonitor->getDefausse()->initializePaquet( genVecCartesDefausse() );
+    vecC = genVecCartesDefausse();
+    mMonitor->getDefausse()->initializePaquet( vecC );
     map<EmplacementPlateauGeneral,IdCarte> mapCrt = genMapCartePlateauInitial();
     for(auto p:mapCrt){
         mMonitor->getPlateau()->addLast(p.first,p.second);

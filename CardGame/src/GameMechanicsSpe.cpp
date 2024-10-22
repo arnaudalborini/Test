@@ -12,6 +12,7 @@ using std::vector;
 using std::map;
 
 vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{
+    cout << "GameMechanicsSpe::genVecCartesPioche" << endl;
     vector<IdCarte> vecCartes = vector<IdCarte>();
     cGen->genCartesPioche(vecCartes);
     return vecCartes;

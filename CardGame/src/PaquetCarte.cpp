@@ -14,7 +14,7 @@ PaquetCarte::PaquetCarte(){
 
 PaquetCarte::~PaquetCarte(){}
 
-void PaquetCarte::initializePaquet( vector<IdCarte> vecCartes){
+void PaquetCarte::initializePaquet( vector<IdCarte> &vecCartes){
     mCartes = vector<IdCarte>(vecCartes.size());
     std::copy(vecCartes.begin(),vecCartes.end(),mCartes.end());
 }
