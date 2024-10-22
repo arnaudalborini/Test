@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /workspaces/Test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/Test/build
+CMAKE_BINARY_DIR = /workspaces/Test
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles /workspaces/Test/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 0
+	cd /workspaces/Test && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/CMakeFiles /workspaces/Test/Test/CMakeFiles/progress.marks
+	cd /workspaces/Test && $(MAKE) -f CMakeFiles/Makefile2 Test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /workspaces/Test && $(MAKE) -f CMakeFiles/Makefile2 Test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,57 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/Test && $(MAKE) -f CMakeFiles/Makefile2 Test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/Test && $(MAKE) -f CMakeFiles/Makefile2 Test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/Test && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named CardGame
+# Convenience name for target.
+Test/CMakeFiles/CardGamecli.dir/rule:
+	cd /workspaces/Test && $(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/CardGamecli.dir/rule
+.PHONY : Test/CMakeFiles/CardGamecli.dir/rule
 
-# Build rule for target.
-CardGame: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CardGame
-.PHONY : CardGame
+# Convenience name for target.
+CardGamecli: Test/CMakeFiles/CardGamecli.dir/rule
 
-# fast build rule for target.
-CardGame/fast:
-	$(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/build
-.PHONY : CardGame/fast
-
-#=============================================================================
-# Target rules for targets named CardGamecli
-
-# Build rule for target.
-CardGamecli: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CardGamecli
 .PHONY : CardGamecli
 
 # fast build rule for target.
 CardGamecli/fast:
-	$(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/build
+	cd /workspaces/Test && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/build
 .PHONY : CardGamecli/fast
 
-#=============================================================================
-# Target rules for targets named MSLexe
+main.o: main.cpp.o
 
-# Build rule for target.
-MSLexe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MSLexe
-.PHONY : MSLexe
+.PHONY : main.o
 
-# fast build rule for target.
-MSLexe/fast:
-	$(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/build
-.PHONY : MSLexe/fast
+# target to build an object file
+main.cpp.o:
+	cd /workspaces/Test && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /workspaces/Test && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /workspaces/Test && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -157,9 +160,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... CardGame"
 	@echo "... CardGamecli"
-	@echo "... MSLexe"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -171,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/Test && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

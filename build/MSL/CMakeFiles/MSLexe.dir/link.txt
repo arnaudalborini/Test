@@ -1,0 +1,1 @@
+/usr/bin/clang++  -g   CMakeFiles/MSLexe.dir/main.cpp.o CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o  -o bin/Debug/MSLexe  ../CardGame/libCardGame.a 

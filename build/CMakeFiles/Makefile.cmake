@@ -31,6 +31,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake"
   "../CMakeLists.txt"
   "../CardGame/CMakeLists.txt"
+  "../MSL/CMakeLists.txt"
   "../Test/CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
@@ -48,10 +49,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "CardGame/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Test/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "MSL/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CardGame/CMakeFiles/CardGame.dir/DependInfo.cmake"
   "Test/CMakeFiles/CardGamecli.dir/DependInfo.cmake"
+  "MSL/CMakeFiles/MSLexe.dir/DependInfo.cmake"
   )

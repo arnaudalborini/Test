@@ -6,3 +6,4 @@ project(MySmileLife VERSION 0.1.0 LANGUAGES C CXX)
 
 add_subdirectory(CardGame)
 add_subdirectory(Test)
+add_subdirectory(MSL)

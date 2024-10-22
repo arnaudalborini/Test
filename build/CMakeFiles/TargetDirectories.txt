@@ -6,3 +6,6 @@
 /workspaces/Test/build/Test/CMakeFiles/rebuild_cache.dir
 /workspaces/Test/build/Test/CMakeFiles/edit_cache.dir
 /workspaces/Test/build/Test/CMakeFiles/CardGamecli.dir
+/workspaces/Test/build/MSL/CMakeFiles/edit_cache.dir
+/workspaces/Test/build/MSL/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/MSL/CMakeFiles/MSLexe.dir

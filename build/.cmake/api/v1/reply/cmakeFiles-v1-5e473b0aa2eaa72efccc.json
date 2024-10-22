@@ -156,6 +156,9 @@
 		},
 		{
 			"path" : "Test/CMakeLists.txt"
+		},
+		{
+			"path" : "MSL/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

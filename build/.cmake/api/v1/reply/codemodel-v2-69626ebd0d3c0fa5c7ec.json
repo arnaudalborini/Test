@@ -9,7 +9,8 @@
 					"childIndexes" : 
 					[
 						1,
-						2
+						2,
+						3
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -45,6 +46,20 @@
 					[
 						1
 					]
+				},
+				{
+					"build" : "MSL",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "MSL",
+					"targetIndexes" : 
+					[
+						2
+					]
 				}
 			],
 			"name" : "Debug",
@@ -55,13 +70,15 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					],
 					"name" : "MySmileLife",
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -79,6 +96,13 @@
 					"id" : "CardGamecli::@c0a5cca43b8aa79eb50e",
 					"jsonFile" : "target-CardGamecli-Debug-047e446d86cf81fa045e.json",
 					"name" : "CardGamecli",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "MSLexe::@5badca30e22484fc1b4c",
+					"jsonFile" : "target-MSLexe-Debug-92c29873cfc2793c0f26.json",
+					"name" : "MSLexe",
 					"projectIndex" : 0
 				}
 			]
