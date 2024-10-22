@@ -1,32 +1,28 @@
 #include "GameMaster.hpp"
 #include "GameMasterMonitor.hpp"
+#include "Monitor.hpp"
 
 using CardGame::GameMaster;
 
-GameMaster::GameMaster()
-{
-    mMonitor = new GameMasterMonitor();
+GameMaster::GameMaster(int nj, GameMechanics* gm){
+    mMonitor = new Monitor();
+    initGame(nj, gm);
 }
 
 GameMaster::~GameMaster()
 {
-    if(mMonitor!=nullptr){
-        delete mMonitor;
-        mMonitor=nullptr;
-    }
+    delete mMonitor;
 }
 
 void GameMaster::initGame(int nj, GameMechanics *gm){
-    cout << "initiateElements" << endl;
     mMonitor->initiateElements(nj,gm);
-    cout << "push_back joueurpret" << endl;
     mNbJoueur = nj;
     for(int ind=0;ind<4;ind++){
         mJoueurPret.push_back(false);
     }
 }
 
-int GameMaster::login(const Player *pp)
+ const CardGame::PlayerInterface* GameMaster::login(const Player *pp)
 {
     int ind = 0;
     while ( (mJoueurPret[ind]) && (ind< mNbJoueur) ){
@@ -35,9 +31,10 @@ int GameMaster::login(const Player *pp)
     if(ind < mNbJoueur){
         mJoueurPret[ind] = true;
         mMonitor->addPlayer(pp,ind);
-        return ind;
+        mapIdPlayer[pp] = ind;
+        return dynamic_cast<const PlayerInterface*>(this);
     }
-    return -1;
+    return nullptr;
 }
 
 void GameMaster::startGame()
@@ -47,8 +44,18 @@ void GameMaster::startGame()
         ind++;
     }
     if(ind == mNbJoueur){
+        cout << "----tout les joueurs sont prets: debut de la partie-----" << endl;
         mMonitor->startGame();
     }
 }
 
 int GameMaster::getWinner() const{return mMonitor->getWinner();}
+
+
+
+int   GameMaster::getIdPlayer(const Player* pp)const{return mapIdPlayer.at(pp);}
+const CardGame::InfosJoueur* GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
+const CardGame::Plateau* GameMaster::getPlateau()const{return mMonitor->getPlateau();}
+const CardGame::PaquetCarte* GameMaster::getPioche()const{return mMonitor->getPioche();}
+const CardGame::PaquetCarte* GameMaster::getDefausse()const{return mMonitor->getDefausse();}
+const CardGame::ParamCarte* GameMaster::getDescriptionCarte(IdCarte idC)const{return nullptr;}

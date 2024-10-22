@@ -2,20 +2,16 @@
 #define GAMEMECHANICSMONITOR_HPP
 
 #include "CardGame.hpp"
-#include "Monitor.hpp"
 
 namespace CardGame{
-    class GameMechanicsMonitor:public Monitor{
-        private:
-            GameMechanicsMonitor();
-            ~GameMechanicsMonitor();
-        public:            
-            Plateau*        getPlateau()const;
-            PaquetCarte*    getPioche()const;
-            PaquetCarte*    getDefausse()const;
-            InfosJoueur*    getInfosJoueurs(int ind)const;
-            const Player*   getPlayer(int ind)const;
-            int             getNbPlayer()const;
+    class GameMechanicsMonitor{
+        public:      
+            virtual Plateau*        getPlateau()const=0;
+            virtual PaquetCarte*    getPioche()const=0;
+            virtual PaquetCarte*    getDefausse()const=0;
+            virtual InfosJoueur*    getInfosJoueurs(int ind)const=0;
+            virtual const Player*   getPlayer(int ind)const=0;
+            virtual int             getNbPlayer()const=0;
     };
 }
 

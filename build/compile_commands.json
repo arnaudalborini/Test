@@ -11,18 +11,8 @@
 },
 {
   "directory": "/workspaces/Test/build/CardGame",
-  "command": "/usr/bin/clang++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o -c /workspaces/Test/CardGame/src/GameMasterMonitor.cpp",
-  "file": "/workspaces/Test/CardGame/src/GameMasterMonitor.cpp"
-},
-{
-  "directory": "/workspaces/Test/build/CardGame",
   "command": "/usr/bin/clang++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o -c /workspaces/Test/CardGame/src/GameMechanics.cpp",
   "file": "/workspaces/Test/CardGame/src/GameMechanics.cpp"
-},
-{
-  "directory": "/workspaces/Test/build/CardGame",
-  "command": "/usr/bin/clang++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o -c /workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp",
-  "file": "/workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp"
 },
 {
   "directory": "/workspaces/Test/build/CardGame",
@@ -63,6 +53,11 @@
   "directory": "/workspaces/Test/build/Test",
   "command": "/usr/bin/clang++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGamecli.dir/src/Carte.cpp.o -c /workspaces/Test/Test/src/Carte.cpp",
   "file": "/workspaces/Test/Test/src/Carte.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/Test",
+  "command": "/usr/bin/clang++   -I/workspaces/Test/Test/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o -c /workspaces/Test/Test/src/CreationJoueur.cpp",
+  "file": "/workspaces/Test/Test/src/CreationJoueur.cpp"
 },
 {
   "directory": "/workspaces/Test/build/Test",

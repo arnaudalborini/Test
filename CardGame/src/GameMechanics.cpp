@@ -18,21 +18,14 @@ GameMechanics::~GameMechanics(){}
 
 void GameMechanics::setMonitor(Monitor *mm){
     mMonitor = dynamic_cast<GameMechanicsMonitor*>(mm);
-    cout << "GameMechanics::setMonitor::initGame" << endl;
     initGame();
 }
 
 void GameMechanics::setCarteGenerator(CarteGenerator *cg){ cGen=cg;}
 
-void GameMechanics::initGame() const{
-    cout << "GameMechanics::setMonitor::initGame init pioche" << endl;
-    vector<IdCarte> vecCartes = genVecCartesPioche();
-    cout << "ici" << endl;
-    mMonitor->getPioche()->initializePaquet( vecCartes );
-    cout << "GameMechanics::setMonitor::initGame init defausse" << endl;
-    vecCartes = genVecCartesDefausse();
-    mMonitor->getDefausse()->initializePaquet( vecCartes );
-    cout << "GameMechanics::setMonitor::initGame init plateau" << endl;
+void GameMechanics::initGame()const{
+    mMonitor->getPioche()->initializePaquet( genVecCartesPioche() );
+    mMonitor->getDefausse()->initializePaquet( genVecCartesDefausse() );
     map<EmplacementPlateauGeneral,IdCarte> mapCrt = genMapCartePlateauInitial();
     for(auto p:mapCrt){
         mMonitor->getPlateau()->addLast(p.first,p.second);
@@ -41,9 +34,11 @@ void GameMechanics::initGame() const{
 
 void GameMechanics::startGame()
 {
+    mTourAPasser = vector<int>(mMonitor->getNbPlayer());
     for(auto indPlayer=0;indPlayer < mMonitor->getNbPlayer(); indPlayer++){
-        cout << "Joueur indice: " << indPlayer << endl;
+        cout << "Joueur indice: " << indPlayer << "  remplir main" << endl;;
         remplirMain(indPlayer);
+        cout << "init tours à poasser: " <<  endl;
         mTourAPasser.at(indPlayer) = 0;
     }
     int indPlayer=0;
@@ -71,10 +66,5 @@ int GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbC
 int GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
 void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
 void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
-
-const Player *CardGame::GameMechanics::getPlayer(int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
-
-Hand *GameMechanics::getJoueurHand(int indPlayer) const
-{
-    return mMonitor->getInfosJoueurs(indPlayer)->getHand();;
-}
+const Player *GameMechanics::getPlayer(int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
+Hand *GameMechanics::getJoueurHand(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}

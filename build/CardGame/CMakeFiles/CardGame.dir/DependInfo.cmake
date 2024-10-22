@@ -6,9 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/Test/CardGame/src/CarteGenerator.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o"
   "/workspaces/Test/CardGame/src/GameMaster.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o"
-  "/workspaces/Test/CardGame/src/GameMasterMonitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanics.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
-  "/workspaces/Test/CardGame/src/GameMechanicsMonitor.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanicsSpe.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o"
   "/workspaces/Test/CardGame/src/Hand.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o"
   "/workspaces/Test/CardGame/src/InfosJoueur.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o"

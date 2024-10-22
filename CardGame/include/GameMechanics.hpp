@@ -2,6 +2,7 @@
 #define GAMEMECHANICS_HPP
 
 #include "CardGame.hpp"
+#include "ParamCarte.hpp"
 
 namespace CardGame{
     class GameMechanics{
@@ -33,6 +34,7 @@ namespace CardGame{
             virtual int getStandardHandNbCarte()const=0;
             virtual bool endGameCondition()const=0;
             virtual int getWinnerPlayer()const=0;
+            virtual ParamCarte* getParamCarte(IdCarte idC)const=0;
     };
 };
 

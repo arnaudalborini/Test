@@ -179,6 +179,33 @@ src/Carte.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.s
 .PHONY : src/Carte.cpp.s
 
+src/CreationJoueur.o: src/CreationJoueur.cpp.o
+
+.PHONY : src/CreationJoueur.o
+
+# target to build an object file
+src/CreationJoueur.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o
+.PHONY : src/CreationJoueur.cpp.o
+
+src/CreationJoueur.i: src/CreationJoueur.cpp.i
+
+.PHONY : src/CreationJoueur.i
+
+# target to preprocess a source file
+src/CreationJoueur.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.i
+.PHONY : src/CreationJoueur.cpp.i
+
+src/CreationJoueur.s: src/CreationJoueur.cpp.s
+
+.PHONY : src/CreationJoueur.s
+
+# target to generate assembly for a file
+src/CreationJoueur.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.s
+.PHONY : src/CreationJoueur.cpp.s
+
 src/hello_test.o: src/hello_test.cpp.o
 
 .PHONY : src/hello_test.o
@@ -221,6 +248,9 @@ help:
 	@echo "... src/Carte.o"
 	@echo "... src/Carte.i"
 	@echo "... src/Carte.s"
+	@echo "... src/CreationJoueur.o"
+	@echo "... src/CreationJoueur.i"
+	@echo "... src/CreationJoueur.s"
 	@echo "... src/hello_test.o"
 	@echo "... src/hello_test.i"
 	@echo "... src/hello_test.s"

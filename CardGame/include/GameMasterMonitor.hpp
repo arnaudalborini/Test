@@ -2,20 +2,18 @@
 #define GAMEMASTERMONITOR_HPP
 
 #include "CardGame.hpp"
-#include "Monitor.hpp"
+#include "GameMechanicsMonitor.hpp"
 
 namespace CardGame{
-    class GameMasterMonitor:public Monitor{
+    class GameMasterMonitor: public GameMechanicsMonitor{
         public:
-            GameMasterMonitor();
-            ~GameMasterMonitor();
-            
-            void initiateElements(int nbJoueurs,GameMechanics* gm);
-            void addPlayer(const Player* pp, int index);
-            void startGame();
-            void removePlayer(int indice);
-            int getWinner()const;
+            virtual void initiateElements(int nbJoueurs,GameMechanics* gm)=0;
+            virtual void addPlayer(const Player* pp, int index)=0;
+            virtual void startGame()=0;
+            virtual void removePlayer(int indice)=0;
+            virtual int getWinner()const=0;
+            virtual ~GameMasterMonitor(){}
     };
 }
 
-#endif //MONITOR_HPP
+#endif //GAMEMASTERMONITOR_HPP

@@ -1,12 +1,11 @@
-#include "hello_test.hpp"
+#include "Test.hpp"
 
 #include <iostream>
 
-using std::cout;
-using std::endl;
+using namespace Test;
 
 int main()
 {
-	Test::sayHello();
+	sayHello();
 	return 0;
 }

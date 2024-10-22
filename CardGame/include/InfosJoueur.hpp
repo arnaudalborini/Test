@@ -7,15 +7,15 @@ namespace CardGame
 {
     class InfosJoueur{
         private:
-            Hand* mHand;
+            Hand*    mHand;
             Plateau* mPlateau;
         public:
             InfosJoueur();
             ~InfosJoueur();
-            Hand*           getHand(){return mHand;}
+            Hand*           getHand()   {return mHand;}
             Plateau*        getPlateau(){return mPlateau;}
             
-            const Hand*     getHand()const{return mHand;}
+            const Hand*     getHand()   const{return mHand;}
             const Plateau*  getPlateau()const{return mPlateau;}
 
     };

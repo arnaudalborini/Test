@@ -179,33 +179,6 @@ src/GameMaster.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.s
 .PHONY : src/GameMaster.cpp.s
 
-src/GameMasterMonitor.o: src/GameMasterMonitor.cpp.o
-
-.PHONY : src/GameMasterMonitor.o
-
-# target to build an object file
-src/GameMasterMonitor.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.o
-.PHONY : src/GameMasterMonitor.cpp.o
-
-src/GameMasterMonitor.i: src/GameMasterMonitor.cpp.i
-
-.PHONY : src/GameMasterMonitor.i
-
-# target to preprocess a source file
-src/GameMasterMonitor.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.i
-.PHONY : src/GameMasterMonitor.cpp.i
-
-src/GameMasterMonitor.s: src/GameMasterMonitor.cpp.s
-
-.PHONY : src/GameMasterMonitor.s
-
-# target to generate assembly for a file
-src/GameMasterMonitor.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMasterMonitor.cpp.s
-.PHONY : src/GameMasterMonitor.cpp.s
-
 src/GameMechanics.o: src/GameMechanics.cpp.o
 
 .PHONY : src/GameMechanics.o
@@ -232,33 +205,6 @@ src/GameMechanics.s: src/GameMechanics.cpp.s
 src/GameMechanics.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.s
 .PHONY : src/GameMechanics.cpp.s
-
-src/GameMechanicsMonitor.o: src/GameMechanicsMonitor.cpp.o
-
-.PHONY : src/GameMechanicsMonitor.o
-
-# target to build an object file
-src/GameMechanicsMonitor.cpp.o:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.o
-.PHONY : src/GameMechanicsMonitor.cpp.o
-
-src/GameMechanicsMonitor.i: src/GameMechanicsMonitor.cpp.i
-
-.PHONY : src/GameMechanicsMonitor.i
-
-# target to preprocess a source file
-src/GameMechanicsMonitor.cpp.i:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.i
-.PHONY : src/GameMechanicsMonitor.cpp.i
-
-src/GameMechanicsMonitor.s: src/GameMechanicsMonitor.cpp.s
-
-.PHONY : src/GameMechanicsMonitor.s
-
-# target to generate assembly for a file
-src/GameMechanicsMonitor.cpp.s:
-	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsMonitor.cpp.s
-.PHONY : src/GameMechanicsMonitor.cpp.s
 
 src/GameMechanicsSpe.o: src/GameMechanicsSpe.cpp.o
 
@@ -437,15 +383,9 @@ help:
 	@echo "... src/GameMaster.o"
 	@echo "... src/GameMaster.i"
 	@echo "... src/GameMaster.s"
-	@echo "... src/GameMasterMonitor.o"
-	@echo "... src/GameMasterMonitor.i"
-	@echo "... src/GameMasterMonitor.s"
 	@echo "... src/GameMechanics.o"
 	@echo "... src/GameMechanics.i"
 	@echo "... src/GameMechanics.s"
-	@echo "... src/GameMechanicsMonitor.o"
-	@echo "... src/GameMechanicsMonitor.i"
-	@echo "... src/GameMechanicsMonitor.s"
 	@echo "... src/GameMechanicsSpe.o"
 	@echo "... src/GameMechanicsSpe.i"
 	@echo "... src/GameMechanicsSpe.s"

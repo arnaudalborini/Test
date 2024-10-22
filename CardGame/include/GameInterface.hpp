@@ -6,7 +6,8 @@
 namespace CardGame{
     class GameInterface{
         public:
-            virtual int login(const Player* pp)=0;
+            virtual const PlayerInterface* login(const Player* pp)=0;
+            virtual int   getIdPlayer(const Player*)const=0;
     };
 };
 

@@ -17,16 +17,21 @@ namespace CardGame{
     enum EmplacementPlateau:int;
     enum EmplacementPlateauGeneral:int;
     typedef int IdCarte;
-    class InfosJoueur;
-    class Hand;
-    class PaquetCarte;
-    class Plateau;
-    class GameMechanics;
-    class Player;
     class CarteGenerator;
-    class Monitor;
+    class GameInterface;
+    class GameMaster;
     class GameMasterMonitor;
+    class GameMechanics;
     class GameMechanicsMonitor;
+    class GameMechanicsSpe;
+    class Hand;
+    class InfosJoueur;
+    class Monitor;
+    class PaquetCarte;
+    class ParamCarte;
+    class Plateau;
+    class Player;
+    class PlayerInterface;
 };
 
 #endif

@@ -3,21 +3,32 @@
 
 #include "CardGame.hpp"
 #include "GameInterface.hpp"
+#include "PlayerInterface.hpp"
 
 namespace CardGame{
-    class GameMaster: public GameInterface{
+    class GameMaster: public GameInterface, public PlayerInterface{
         private:
             GameMasterMonitor* mMonitor;
             int mNbJoueur;
             vector<bool> mJoueurPret;
             vector<Player*> mJoueurs;
-        public:
-            GameMaster();
-            ~GameMaster();
+            map<const Player*,int> mapIdPlayer;
             void initGame(int nj, GameMechanics* gm);
-            virtual int login(const Player* pp);
+        public:
+            GameMaster(int nj, GameMechanics* gm);
+            ~GameMaster();
             void startGame();
             int getWinner()const;
+        public:
+            //GameInterface
+            virtual const PlayerInterface* login(const Player* pp);
+            virtual int   getIdPlayer(const Player*)const;
+            //PlayerInterface
+            virtual const InfosJoueur*  getInfosJoueurs(int indPlayer)const;
+            virtual const Plateau*      getPlateau()const;
+            virtual const PaquetCarte*  getPioche()const;
+            virtual const PaquetCarte*  getDefausse()const;
+            virtual const ParamCarte*   getDescriptionCarte(IdCarte idC)const;
     };
 };
 
