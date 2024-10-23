@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MSL/bin/Debug/MSLexe.exe"
-		},
-		{
-			"path" : "MSL/bin/Debug/MSLexe.pdb"
+			"path" : "MSL/bin/MSLexe"
 		}
 	],
 	"backtrace" : 1,
@@ -52,26 +49,26 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : " "
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/MSL/include"
+					"path" : "/workspaces/Test/MSL/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/include"
+					"path" : "/workspaces/Test/CardGame/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/include/Carte"
+					"path" : "/workspaces/Test/CardGame/include/Carte"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/include/Joueur"
+					"path" : "/workspaces/Test/CardGame/include/Joueur"
 				}
 			],
 			"language" : "CXX",
@@ -98,27 +95,19 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
 				"fragment" : "",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "..\\CardGame\\libCardGame.a",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"fragment" : "../CardGame/libCardGame.a",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "MSLexe",
-	"nameOnDisk" : "MSLexe.exe",
+	"nameOnDisk" : "MSLexe",
 	"paths" : 
 	{
 		"build" : "MSL",

@@ -1,11 +1,11 @@
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CMakeFiles/edit_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CMakeFiles/rebuild_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CardGame/CMakeFiles/CardGame.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CardGame/CMakeFiles/edit_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CardGame/CMakeFiles/rebuild_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test/CMakeFiles/CardGamecli.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test/CMakeFiles/edit_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test/CMakeFiles/rebuild_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL/CMakeFiles/MSLexe.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL/CMakeFiles/edit_cache.dir
-D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/CMakeFiles/edit_cache.dir
+/workspaces/Test/build/CardGame/CMakeFiles/edit_cache.dir
+/workspaces/Test/build/CardGame/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir
+/workspaces/Test/build/Test/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/Test/CMakeFiles/edit_cache.dir
+/workspaces/Test/build/Test/CMakeFiles/CardGamecli.dir
+/workspaces/Test/build/MSL/CMakeFiles/edit_cache.dir
+/workspaces/Test/build/MSL/CMakeFiles/rebuild_cache.dir
+/workspaces/Test/build/MSL/CMakeFiles/MSLexe.dir

@@ -43,22 +43,22 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : " "
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/include"
+					"path" : "/workspaces/Test/CardGame/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/include/Carte"
+					"path" : "/workspaces/Test/CardGame/include/Carte"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/include/Joueur"
+					"path" : "/workspaces/Test/CardGame/include/Joueur"
 				}
 			],
 			"language" : "CXX",

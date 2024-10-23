@@ -26,10 +26,14 @@ CarteGenerateurStandard::CarteGenerateurStandard():cptId(0)
 
 void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
 {
-    cout << "CarteGenerateurStandard::genCartesPioche" << endl;
     IdCarte id;
     map<CarteSousType,set<IdCarte>> mapCT = mapMSLCarte[carteMetier];
-    for(auto sIC: mapCT){vecCartes.push_back(*sIC.second.begin());}
+    for(auto sIC: mapCT){
+        for(auto id : sIC.second){
+            cout << id << endl;
+            vecCartes.push_back(id);
+        }
+    }
     id = getFirstSetIdCarte(carteEtude,EtudeSimple);
     for(int i=0;i<22;i++){vecCartes.push_back( id );}
     id = getFirstSetIdCarte(carteEtude,EtudeDouble);
@@ -97,7 +101,6 @@ void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
     vecCartes.push_back( getFirstSetIdCarte(carteMaison,Maison10) );
 
     CardGame::myShuffle(vecCartes);
-    cout << "Fin CarteGenerateurStandard::genCartesPioche" << endl;
 }
 
 void CarteGenerateurStandard::addMetier(  ){
@@ -106,34 +109,36 @@ void CarteGenerateurStandard::addMetier(  ){
     addCarteMSL( new CarteMSL(++cptId,"Avocat",         2,carteMetier, Avocat) );
     addCarteMSL( new CarteMSL(++cptId,"Bandit",         2,carteMetier, Bandit) );
     addCarteMSL( new CarteMSL(++cptId,"Barman",         2,carteMetier, Barman) );
+
     addCarteMSL( new CarteMSL(++cptId,"ChefDesAchats",  2,carteMetier, ChefDesAchats) );
     addCarteMSL( new CarteMSL(++cptId,"ChefDesVentes",  2,carteMetier, ChefDesVentes) );
     addCarteMSL( new CarteMSL(++cptId,"Chercheur",      2,carteMetier, Chercheur) );
     addCarteMSL( new CarteMSL(++cptId,"Chirurgien",     2,carteMetier, Chirurgien) );
     addCarteMSL( new CarteMSL(++cptId,"Designer",       2,carteMetier, Designer) );
+
     addCarteMSL( new CarteMSL(++cptId,"Ecrivain",       2,carteMetier, Ecrivain) );
     addCarteMSL( new CarteMSL(++cptId,"Garagiste",      2,carteMetier, Garagiste) );
     addCarteMSL( new CarteMSL(++cptId,"GrandProf",      2,carteMetier, GrandProf) );
     addCarteMSL( new CarteMSL(++cptId,"Gourou",         2,carteMetier, Gourou) );
     addCarteMSL( new CarteMSL(++cptId,"Jardinier",      2,carteMetier, Jardinier) );
+
     addCarteMSL( new CarteMSL(++cptId,"Journaliste",    2,carteMetier, Journaliste) );
     addCarteMSL( new CarteMSL(++cptId,"Medecin",        2,carteMetier, Medecin) );
     addCarteMSL( new CarteMSL(++cptId,"Medium",         2,carteMetier, Medium) );
     addCarteMSL( new CarteMSL(++cptId,"Militaire",      2,carteMetier, Militaire) );
     addCarteMSL( new CarteMSL(++cptId,"Pharmacien",     2,carteMetier, Pharmacien) );
+
     addCarteMSL( new CarteMSL(++cptId,"PiloteDeLigne",  2,carteMetier, PiloteDeLigne) );
     addCarteMSL( new CarteMSL(++cptId,"Pizzaiolo",      2,carteMetier, Pizzaiolo) );
     addCarteMSL( new CarteMSL(++cptId,"Plombier",       2,carteMetier, Plombier) );
     addCarteMSL( new CarteMSL(++cptId,"Policier",       2,carteMetier, Policier) );
     addCarteMSL( new CarteMSL(++cptId,"ProfDeFrancais", 2,carteMetier, Prof) );
+
     addCarteMSL( new CarteMSL(++cptId,"ProfDeMaths",    2,carteMetier, Prof) );
     addCarteMSL( new CarteMSL(++cptId,"ProfDHistoire",  2,carteMetier, Prof) );
     addCarteMSL( new CarteMSL(++cptId,"ProfDAnglais",   2,carteMetier, Prof) );
     addCarteMSL( new CarteMSL(++cptId,"Serveur",        2,carteMetier, Serveur) );
     addCarteMSL( new CarteMSL(++cptId,"Stripteaser",    2,carteMetier, Stripteaser) );
-
-    //Metier à promotion
-    addCarteMSL( new CarteMSL(++cptId,"GrandProf",      2,carteMetier, GrandProf) );
 }
 void CarteGenerateurStandard::addEtude(   ){
     addCarteMSL( new CarteMSL(++cptId,"Etude Simple", 1,carteEtude, EtudeSimple) );

@@ -12,7 +12,6 @@
 						2,
 						3
 					],
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.14"
@@ -22,7 +21,6 @@
 				},
 				{
 					"build" : "CardGame",
-					"jsonFile" : "directory-CardGame-Debug-f4b83e8ab226c806e45c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.14"
@@ -37,7 +35,6 @@
 				},
 				{
 					"build" : "Test",
-					"jsonFile" : "directory-Test-Debug-7a05955d989e3f5ef10b.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.14"
@@ -52,7 +49,6 @@
 				},
 				{
 					"build" : "MSL",
-					"jsonFile" : "directory-MSL-Debug-5f21c149f0f84bb0ad3b.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.14"
@@ -66,7 +62,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "",
 			"projects" : 
 			[
 				{
@@ -91,21 +87,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "CardGame::@7f8be7de9f6a3ddb4016",
-					"jsonFile" : "target-CardGame-Debug-716f3eea3cb54c934f6b.json",
+					"jsonFile" : "target-CardGame-32715eb5219adbb07209.json",
 					"name" : "CardGame",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "CardGamecli::@c0a5cca43b8aa79eb50e",
-					"jsonFile" : "target-CardGamecli-Debug-987f2e5d790d72c29616.json",
+					"jsonFile" : "target-CardGamecli-8209d99dcac5fdec0272.json",
 					"name" : "CardGamecli",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "MSLexe::@5badca30e22484fc1b4c",
-					"jsonFile" : "target-MSLexe-Debug-eae735f078cfcb254004.json",
+					"jsonFile" : "target-MSLexe-d011bc59427d450d2174.json",
 					"name" : "MSLexe",
 					"projectIndex" : 0
 				}
@@ -115,12 +111,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Documents commun/OneDrive/Documents/VSCode/Test/build",
-		"source" : "D:/Documents commun/OneDrive/Documents/VSCode/Test"
+		"build" : "/workspaces/Test/build",
+		"source" : "/workspaces/Test"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 7
+		"minor" : 0
 	}
 }
