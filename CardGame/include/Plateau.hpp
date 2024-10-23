@@ -6,6 +6,7 @@
 namespace CardGame{
     class Plateau{
             map<int,vector<IdCarte>> mMapCarte;
+            StatutPlateau* mStatut;
         public:
             Plateau();
             ~Plateau();
@@ -17,7 +18,10 @@ namespace CardGame{
             IdCarte getLast(int EP);
             IdCarte showIdN(int EP,int N)const;
             IdCarte getN(int EP,int N);
-            const vector<IdCarte> showAllId()const;
+            vector<IdCarte> showAllId()const;
+
+            StatutPlateau* getStatut(){return mStatut;}
+            const StatutPlateau* getStatut()const{return mStatut;}            
     };
 };
 

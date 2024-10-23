@@ -11,6 +11,7 @@
 using CardGame::GameMechanics;
 using CardGame::Player;
 using CardGame::Hand;
+using CardGame::Plateau;
 
 GameMechanics::GameMechanics() : cGen(nullptr) {}
 
@@ -23,7 +24,7 @@ void GameMechanics::setMonitor(Monitor *mm){
 
 void GameMechanics::initGame()const{
     cout << "GameMechanics::initGame" << endl;
-    std::vector<int> vecC = genVecCartesPioche();
+    vector<int> vecC = genVecCartesPioche();
     mMonitor->getPioche()->initializePaquet( vecC );
     vecC = genVecCartesDefausse();
     mMonitor->getDefausse()->initializePaquet( vecC );
@@ -66,5 +67,7 @@ int GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbC
 int GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
 void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
 void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
-const Player *GameMechanics::getPlayer(int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
-Hand *GameMechanics::getJoueurHand(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
+const Player *GameMechanics::getPlayer(  int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
+Hand *   GameMechanics::getJoueurHand(   int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
+Plateau *GameMechanics::getJoueurPlateau(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getPlateau();}
+Plateau *GameMechanics::getMainPlateau() const{return mMonitor->getPlateau();}

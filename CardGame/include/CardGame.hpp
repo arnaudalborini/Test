@@ -32,6 +32,7 @@ namespace CardGame{
     class Plateau;
     class Player;
     class PlayerInterface;
+    class StatutPlateau;
 };
 
 #endif

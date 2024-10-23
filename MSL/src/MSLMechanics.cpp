@@ -4,6 +4,7 @@
 #include "Monitor.hpp"
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
+#include "StatutPlateau.hpp"
 #include "CarteMSL.hpp"
 #include "Hand.hpp"
 #include "Player.hpp"
@@ -13,6 +14,8 @@ using MySmileLife::CarteMSL;
 using CardGame::IdCarte;
 using CardGame::Player;
 using CardGame::Hand;
+using CardGame::Plateau;
+using CardGame::StatutPlateau;
 
 MSLMechanics::MSLMechanics()
 {
@@ -50,6 +53,9 @@ void MSLMechanics::playTurn(int indPlayer) const{
     cout << "playTurn::playTurn" << endl;
     const Player* pp = getPlayer(indPlayer);
     Hand* jHand = getJoueurHand(indPlayer);
+    Plateau* platJ = getJoueurPlateau(indPlayer);
+    Plateau* platGeneral = getMainPlateau();
+    StatutPlateau* st = platJ->getStatut();
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);

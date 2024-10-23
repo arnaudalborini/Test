@@ -18,6 +18,8 @@ namespace CardGame{
             void addCarteDefausse(IdCarte idC)const;
             const Player* getPlayer(int indPlayer)const;
             Hand* getJoueurHand(int indPlayer)const;
+            Plateau* getJoueurPlateau(int indPlayer)const;
+            Plateau* getMainPlateau()const;
         public:
             GameMechanics();
             ~GameMechanics();

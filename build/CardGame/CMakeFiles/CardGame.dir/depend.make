@@ -67,5 +67,6 @@ CardGame/CMakeFiles/CardGame.dir/src/PaquetCarte.cpp.o: ../CardGame/src/PaquetCa
 
 CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o: ../CardGame/include/Plateau.hpp
+CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o: ../CardGame/include/StatutPlateau.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.o: ../CardGame/src/Plateau.cpp
 

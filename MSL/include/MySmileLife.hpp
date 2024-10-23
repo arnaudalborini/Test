@@ -115,7 +115,7 @@ namespace MySmileLife{
         Licorne,
         AucunSousType = -1
     };
-     enum StatuGeneral:int{
+    enum StatuGeneral:int{
         antiBandit,
         antiGourou,
         antiAttentat,
