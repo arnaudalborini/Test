@@ -43,7 +43,6 @@ MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o
  /workspaces/Test/MSL/src/MSLMechanics.cpp
 MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o
  ../CardGame/include/CardGame.hpp
- ../CardGame/include/Carte.hpp
  ../CardGame/include/GameInterface.hpp
  ../CardGame/include/GameMaster.hpp
  ../CardGame/include/GameMechanics.hpp

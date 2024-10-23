@@ -18,10 +18,6 @@ vector
 list
 -
 
-../CardGame/include/Carte.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-
 ../CardGame/include/GameInterface.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
@@ -37,8 +33,6 @@ PlayerInterface.hpp
 ../CardGame/include/GameMechanics.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
-Carte.hpp
-../CardGame/include/Carte.hpp
 
 ../CardGame/include/GameMechanicsSpe.hpp
 GameMechanics.hpp

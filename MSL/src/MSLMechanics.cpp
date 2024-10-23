@@ -10,16 +10,19 @@
 
 using MySmileLife::MSLMechanics;
 using MySmileLife::CarteMSL;
+using CardGame::IdCarte;
+using CardGame::Player;
+using CardGame::Hand;
 
 MSLMechanics::MSLMechanics()
 {
     cGen = new CarteGenerateurStandard();
 }
 
-const CarteMSL* MSLMechanics::getCarteFromId(CardGame::IdCarte id)const{
+const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
     return dynamic_cast<const CarteMSL*>(cGen->getCarteById(id));
 }
-int MSLMechanics::getSmileFromId(CardGame::IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
+int MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
 int MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
@@ -45,16 +48,12 @@ int MSLMechanics::getWinnerPlayer()const{
 }
 void MSLMechanics::playTurn(int indPlayer) const{
     cout << "playTurn::playTurn" << endl;
-    const CardGame::Player* pp = getPlayer(indPlayer);
-    CardGame::Hand* jHand = getJoueurHand(indPlayer);
-    cout << "Joueur name: "<< pp->getName() << endl;
-    cout << mMonitor->getPioche()->showIdLast() << endl;
+    const Player* pp = getPlayer(indPlayer);
+    Hand* jHand = getJoueurHand(indPlayer);
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
-    cout << "nombre de cartes en main: " << nbCarte << endl;
-    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte-1) << endl;
-    CardGame::IdCarte idC = jHand->getCarte(0);
-    cout << "Id carte defaussee: " << idC << endl;
+    int id = jHand->getIdCarte(nbCarte-1);
+    IdCarte idC = jHand->getCarte(0);
     addCarteDefausse(idC,indPlayer);
     cout << "fin playTurn::playTurn" << endl;
 }

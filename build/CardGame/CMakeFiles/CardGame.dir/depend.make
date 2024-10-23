@@ -52,7 +52,6 @@ CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/Plat
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/src/InfosJoueur.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/CardGame.hpp
-CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/Carte.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/GameMasterMonitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/GameMechanics.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp

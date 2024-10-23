@@ -53,7 +53,6 @@ CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o
  /workspaces/Test/CardGame/src/InfosJoueur.cpp
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o
  ../CardGame/include/CardGame.hpp
- ../CardGame/include/Carte.hpp
  ../CardGame/include/GameMasterMonitor.hpp
  ../CardGame/include/GameMechanics.hpp
  ../CardGame/include/GameMechanicsMonitor.hpp

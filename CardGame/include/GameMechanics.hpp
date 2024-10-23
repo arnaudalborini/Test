@@ -2,7 +2,6 @@
 #define GAMEMECHANICS_HPP
 
 #include "CardGame.hpp"
-#include "Carte.hpp"
 
 namespace CardGame{
     class GameMechanics{

@@ -44,7 +44,6 @@ void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm)
     for(auto ind=0;ind<nbJoueurs;ind++){
         mInfosJoueurs[ind] = new InfosJoueur();
     }
-    cout << "setmonitor" << endl;
     gm->setMonitor( dynamic_cast<Monitor*>( this ));
 }
 
