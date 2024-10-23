@@ -10,7 +10,6 @@ using CardGame::IdCarte;
 
 CarteGenerateurStandard::CarteGenerateurStandard():cptId(0)
 {   
-    cout << "CarteGenerateurStandard::CarteGenerateurStandard" << endl;
     addMetier();
     addEtude();
     addSalaire();
@@ -30,7 +29,6 @@ void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
     map<CarteSousType,set<IdCarte>> mapCT = mapMSLCarte[carteMetier];
     for(auto sIC: mapCT){
         for(auto id : sIC.second){
-            cout << id << endl;
             vecCartes.push_back(id);
         }
     }
@@ -219,9 +217,9 @@ void CarteGenerateurStandard::addVoyage(  ){
     }
 }
 void CarteGenerateurStandard::addMaison(  ){
-    addCarteMSL( new CarteMSL(++cptId,"Maison 6", 1,carteMaison, Maison6) );
-    addCarteMSL( new CarteMSL(++cptId,"Maison 8", 2,carteMaison, Maison8) );
-    addCarteMSL( new CarteMSL(++cptId,"Maison 10", 3,carteMaison, Maison10) );
+    addCarteMSL( new CarteMSL(++cptId,"Maison 6",  1,carteMaison, Maison6  ) );
+    addCarteMSL( new CarteMSL(++cptId,"Maison 8",  2,carteMaison, Maison8  ) );
+    addCarteMSL( new CarteMSL(++cptId,"Maison 10", 3,carteMaison, Maison10 ) );
 }
 
 void MySmileLife::CarteGenerateurStandard::addCarteMSL(const CarteMSL *crt)

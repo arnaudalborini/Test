@@ -26,15 +26,19 @@ map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanicsSpe::genMapCartePl
 bool GameMechanicsSpe::endGameCondition()const{return getNbCartePioche()>0;}
 int GameMechanicsSpe::getWinnerPlayer() const{return 0;}
 void GameMechanicsSpe::playTurn(int indPlayer) const{
+    cout << "GameMechanicsSpe::playTurn" << endl;
     const Player* pp = getPlayer(indPlayer);
-    cout << "Joueur name: " << pp->getName() << endl;
-    joueurPioche(indPlayer);
     Hand* jHand = getJoueurHand(indPlayer);
+    cout << "Joueur name: "<< pp->getName() << endl;
+    cout << mMonitor->getPioche()->showIdLast() << endl;
+    joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
-    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte) << endl;
+    cout << "nombre de cartes en main: " << nbCarte << endl;
+    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte-1) << endl;
     IdCarte idC = jHand->getCarte(0);
-    cout << "Id carte defaussee: " << jHand->getIdCarte(nbCarte) << endl;
+    cout << "Id carte defaussee: " << idC << endl;
     addCarteDefausse(idC,indPlayer);
+    cout << "fin GameMechanicsSpe::playTurn" << endl;
 }
 
 int GameMechanicsSpe::getStandardHandNbCarte()const{return 1;}

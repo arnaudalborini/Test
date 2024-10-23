@@ -18,45 +18,19 @@ vector
 list
 -
 
-../CardGame/include/Carte.hpp
+../CardGame/include/GameInterface.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/CarteGenerator.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-Carte.hpp
-../CardGame/include/Carte.hpp
+../CardGame/include/Player.hpp
 
-../CardGame/include/InfosJoueur.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-
-../CardGame/include/MyShuffle.hpp
-algorithm
--
-ctime
--
-cstdlib
--
-random
--
-vector
--
-
-../MSL/include/CarteGenerateurStandard.hpp
+../MSL/include/BasicBot.hpp
+Player.hpp
+../MSL/include/Player.hpp
 MySmileLife.hpp
 ../MSL/include/MySmileLife.hpp
-CarteGenerator.hpp
-../MSL/include/CarteGenerator.hpp
-
-../MSL/include/CarteMSL.hpp
-MySmileLife.hpp
-../MSL/include/MySmileLife.hpp
-InfosJoueur.hpp
-../MSL/include/InfosJoueur.hpp
-Carte.hpp
-../MSL/include/Carte.hpp
+string
+-
 
 ../MSL/include/MySmileLife.hpp
 CardGame.hpp
@@ -74,15 +48,11 @@ list
 set
 -
 
-/workspaces/Test/MSL/src/CarteGenerateurStandard.cpp
+/workspaces/Test/MSL/src/CreationJoueur.cpp
 MySmileLife.hpp
 /workspaces/Test/MSL/src/MySmileLife.hpp
-CarteGenerateurStandard.hpp
-/workspaces/Test/MSL/src/CarteGenerateurStandard.hpp
-CarteMSL.hpp
-/workspaces/Test/MSL/src/CarteMSL.hpp
-Carte.hpp
-/workspaces/Test/MSL/src/Carte.hpp
-MyShuffle.hpp
-/workspaces/Test/MSL/src/MyShuffle.hpp
+BasicBot.hpp
+/workspaces/Test/MSL/src/BasicBot.hpp
+GameInterface.hpp
+/workspaces/Test/MSL/src/GameInterface.hpp
 

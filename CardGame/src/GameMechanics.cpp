@@ -39,9 +39,7 @@ void GameMechanics::startGame()
 {
     mTourAPasser = vector<int>(mMonitor->getNbPlayer());
     for(auto indPlayer=0;indPlayer < mMonitor->getNbPlayer(); indPlayer++){
-        cout << "Joueur indice: " << indPlayer << "  remplir main" << endl;;
         remplirMain(indPlayer);
-        cout << "init tours à poasser: " <<  endl;
         mTourAPasser.at(indPlayer) = 0;
     }
     int indPlayer=0;
@@ -52,6 +50,7 @@ void GameMechanics::startGame()
         if( mTourAPasser.at(indPlayer) > 0 ){
             mTourAPasser[indPlayer]--;
         }else{
+            cout << "playTurn: " << indPlayer <<  endl;
             playTurn(indPlayer);
         }
         indPlayer++;

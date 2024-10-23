@@ -8,19 +8,23 @@ using CardGame::IdCarte;
 using std::cout;
 using std::endl;
 
-PaquetCarte::PaquetCarte(){
-    mCartes.push_back(1);
-}
+PaquetCarte::PaquetCarte(){}
 
 PaquetCarte::~PaquetCarte(){}
 
 void PaquetCarte::initializePaquet( vector<IdCarte> &vecCartes){
     mCartes = vector<IdCarte>(vecCartes.size());
+    cout << "mCArtes size" << mCartes.size() << endl;
     std::copy(vecCartes.begin(),vecCartes.end(),mCartes.end());
+    for (auto crt:vecCartes){
+        cout << crt << endl;
+    }
 }
 
 void PaquetCarte::initializePaquet(const vector<IdCarte> &vecCartes, const vector<int> &playedBy)
 {
+    mCartes = vector<IdCarte>(vecCartes.size());
+    mPlayedBy = vector<int>(playedBy.size());
     std::copy(vecCartes.begin(),vecCartes.end(),mCartes.begin());
     std::copy(playedBy.begin(),playedBy.end(),mPlayedBy.begin());
 }
