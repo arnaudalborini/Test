@@ -5,7 +5,7 @@
 
 void MySmileLife::MySmileLifeTest(){
     cout << "creation game master" << endl;
-    CardGame::GameMechanicsSpe gMe  = MySmileLife::MSLMechanics();
+    MSLMechanics gMe = MSLMechanics();
     CardGame::GameMaster gm         = CardGame::GameMaster(2,&gMe);
 
     CardGame::GameInterface* gI = dynamic_cast<CardGame::GameInterface*>(&gm);

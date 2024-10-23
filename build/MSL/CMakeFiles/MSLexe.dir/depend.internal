@@ -30,10 +30,12 @@ MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o
  ../CardGame/include/GameMechanics.hpp
  ../CardGame/include/GameMechanicsMonitor.hpp
  ../CardGame/include/GameMechanicsSpe.hpp
+ ../CardGame/include/Hand.hpp
  ../CardGame/include/InfosJoueur.hpp
  ../CardGame/include/Monitor.hpp
  ../CardGame/include/PaquetCarte.hpp
  ../CardGame/include/Plateau.hpp
+ ../CardGame/include/Player.hpp
  ../MSL/include/CarteGenerateurStandard.hpp
  ../MSL/include/CarteMSL.hpp
  ../MSL/include/MSLMechanics.hpp

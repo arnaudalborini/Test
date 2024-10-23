@@ -12,21 +12,12 @@ PaquetCarte::PaquetCarte(){}
 
 PaquetCarte::~PaquetCarte(){}
 
-void PaquetCarte::initializePaquet( vector<IdCarte> &vecCartes){
-    mCartes = vector<IdCarte>(vecCartes.size());
-    cout << "mCArtes size" << mCartes.size() << endl;
-    std::copy(vecCartes.begin(),vecCartes.end(),mCartes.end());
-    for (auto crt:vecCartes){
-        cout << crt << endl;
-    }
-}
+void PaquetCarte::initializePaquet( vector<IdCarte> &vecCartes){mCartes.insert(mCartes.end(),vecCartes.begin(),vecCartes.end());}
 
 void PaquetCarte::initializePaquet(const vector<IdCarte> &vecCartes, const vector<int> &playedBy)
 {
-    mCartes = vector<IdCarte>(vecCartes.size());
-    mPlayedBy = vector<int>(playedBy.size());
-    std::copy(vecCartes.begin(),vecCartes.end(),mCartes.begin());
-    std::copy(playedBy.begin(),playedBy.end(),mPlayedBy.begin());
+    mCartes.insert(mCartes.end(),vecCartes.begin(),vecCartes.end());
+    mPlayedBy.insert(mPlayedBy.end(),playedBy.begin(),playedBy.end());
 }
 
 IdCarte PaquetCarte::piocher()

@@ -25,6 +25,7 @@ CarteGenerateurStandard::CarteGenerateurStandard():cptId(0)
 
 void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
 {
+    cout << "CarteGenerateurStandard::genCartesPioche" << endl;
     IdCarte id;
     map<CarteSousType,set<IdCarte>> mapCT = mapMSLCarte[carteMetier];
     for(auto sIC: mapCT){

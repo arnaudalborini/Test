@@ -29,10 +29,12 @@ MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMaster
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMechanics.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMechanicsSpe.hpp
+MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/Hand.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/InfosJoueur.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/Monitor.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/PaquetCarte.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/Plateau.hpp
+MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/Player.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/CarteGenerateurStandard.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/CarteMSL.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/MSLMechanics.hpp

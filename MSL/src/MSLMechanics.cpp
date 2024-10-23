@@ -5,6 +5,8 @@
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
 #include "CarteMSL.hpp"
+#include "Hand.hpp"
+#include "Player.hpp"
 
 using MySmileLife::MSLMechanics;
 using MySmileLife::CarteMSL;
@@ -29,7 +31,6 @@ int MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
 
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
 int MSLMechanics::getStandardHandNbCarte() const{return 5;}
-bool MSLMechanics::endGameCondition()const{return mMonitor->getPioche()->getNbCarte()==0;}
 int MSLMechanics::getWinnerPlayer()const{
     int baseSmile = countSmile( mMonitor->getInfosJoueurs( 0 )->getPlateau() );
     int indBest = 0;
@@ -41,4 +42,19 @@ int MSLMechanics::getWinnerPlayer()const{
         }
     }
     return indBest;
+}
+void MSLMechanics::playTurn(int indPlayer) const{
+    cout << "playTurn::playTurn" << endl;
+    const CardGame::Player* pp = getPlayer(indPlayer);
+    CardGame::Hand* jHand = getJoueurHand(indPlayer);
+    cout << "Joueur name: "<< pp->getName() << endl;
+    cout << mMonitor->getPioche()->showIdLast() << endl;
+    joueurPioche(indPlayer);
+    int nbCarte = jHand->getNbCarte();
+    cout << "nombre de cartes en main: " << nbCarte << endl;
+    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte-1) << endl;
+    CardGame::IdCarte idC = jHand->getCarte(0);
+    cout << "Id carte defaussee: " << idC << endl;
+    addCarteDefausse(idC,indPlayer);
+    cout << "fin playTurn::playTurn" << endl;
 }

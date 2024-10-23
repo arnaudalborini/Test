@@ -12,9 +12,9 @@ namespace MySmileLife{
             int countSmile(CardGame::Plateau* plateauJoueur)const;
         public:
             MSLMechanics();      
-            virtual int getStandardHandNbCarte()const; 
-            virtual bool endGameCondition()const;
-            virtual int getWinnerPlayer()const;
+            int getStandardHandNbCarte()const; 
+            int getWinnerPlayer()const;
+            void playTurn(int indPlayer) const;
             /*
             virtual map<CardGame::EmplacementPlateauGeneral,CardGame::IdCarte> genMapCartePlateauInitial()const;
             virtual void playTurn(int indPlayer)const;
