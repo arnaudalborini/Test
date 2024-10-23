@@ -26,9 +26,16 @@ MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/Carte.hpp
  ../CardGame/include/CarteGenerator.hpp
+ ../CardGame/include/GameMasterMonitor.hpp
  ../CardGame/include/GameMechanics.hpp
+ ../CardGame/include/GameMechanicsMonitor.hpp
  ../CardGame/include/GameMechanicsSpe.hpp
+ ../CardGame/include/InfosJoueur.hpp
+ ../CardGame/include/Monitor.hpp
+ ../CardGame/include/PaquetCarte.hpp
+ ../CardGame/include/Plateau.hpp
  ../MSL/include/CarteGenerateurStandard.hpp
+ ../MSL/include/CarteMSL.hpp
  ../MSL/include/MSLMechanics.hpp
  ../MSL/include/MySmileLife.hpp
  /workspaces/Test/MSL/src/MSLMechanics.cpp

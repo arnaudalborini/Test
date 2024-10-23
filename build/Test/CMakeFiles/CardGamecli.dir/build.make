@@ -60,54 +60,54 @@ include Test/CMakeFiles/CardGamecli.dir/flags.make
 Test/CMakeFiles/CardGamecli.dir/main.cpp.o: Test/CMakeFiles/CardGamecli.dir/flags.make
 Test/CMakeFiles/CardGamecli.dir/main.cpp.o: ../Test/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Test/CMakeFiles/CardGamecli.dir/main.cpp.o"
-	cd /workspaces/Test/build/Test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/main.cpp.o -c /workspaces/Test/Test/main.cpp
+	cd /workspaces/Test/build/Test && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/main.cpp.o -c /workspaces/Test/Test/main.cpp
 
 Test/CMakeFiles/CardGamecli.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CardGamecli.dir/main.cpp.i"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/main.cpp > CMakeFiles/CardGamecli.dir/main.cpp.i
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/main.cpp > CMakeFiles/CardGamecli.dir/main.cpp.i
 
 Test/CMakeFiles/CardGamecli.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CardGamecli.dir/main.cpp.s"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/main.cpp -o CMakeFiles/CardGamecli.dir/main.cpp.s
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/main.cpp -o CMakeFiles/CardGamecli.dir/main.cpp.s
 
 Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o: Test/CMakeFiles/CardGamecli.dir/flags.make
 Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o: ../Test/src/Carte.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o"
-	cd /workspaces/Test/build/Test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/src/Carte.cpp.o -c /workspaces/Test/Test/src/Carte.cpp
+	cd /workspaces/Test/build/Test && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/src/Carte.cpp.o -c /workspaces/Test/Test/src/Carte.cpp
 
 Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CardGamecli.dir/src/Carte.cpp.i"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/src/Carte.cpp > CMakeFiles/CardGamecli.dir/src/Carte.cpp.i
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/src/Carte.cpp > CMakeFiles/CardGamecli.dir/src/Carte.cpp.i
 
 Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CardGamecli.dir/src/Carte.cpp.s"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/src/Carte.cpp -o CMakeFiles/CardGamecli.dir/src/Carte.cpp.s
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/src/Carte.cpp -o CMakeFiles/CardGamecli.dir/src/Carte.cpp.s
 
 Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o: Test/CMakeFiles/CardGamecli.dir/flags.make
 Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o: ../Test/src/CreationJoueur.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o"
-	cd /workspaces/Test/build/Test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o -c /workspaces/Test/Test/src/CreationJoueur.cpp
+	cd /workspaces/Test/build/Test && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o -c /workspaces/Test/Test/src/CreationJoueur.cpp
 
 Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.i"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/src/CreationJoueur.cpp > CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.i
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/src/CreationJoueur.cpp > CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.i
 
 Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.s"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/src/CreationJoueur.cpp -o CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.s
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/src/CreationJoueur.cpp -o CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.s
 
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: Test/CMakeFiles/CardGamecli.dir/flags.make
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o: ../Test/src/hello_test.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o"
-	cd /workspaces/Test/build/Test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o -c /workspaces/Test/Test/src/hello_test.cpp
+	cd /workspaces/Test/build/Test && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o -c /workspaces/Test/Test/src/hello_test.cpp
 
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CardGamecli.dir/src/hello_test.cpp.i"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/src/hello_test.cpp > CMakeFiles/CardGamecli.dir/src/hello_test.cpp.i
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Test/Test/src/hello_test.cpp > CMakeFiles/CardGamecli.dir/src/hello_test.cpp.i
 
 Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CardGamecli.dir/src/hello_test.cpp.s"
-	cd /workspaces/Test/build/Test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/src/hello_test.cpp -o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.s
+	cd /workspaces/Test/build/Test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Test/Test/src/hello_test.cpp -o CMakeFiles/CardGamecli.dir/src/hello_test.cpp.s
 
 # Object files for target CardGamecli
 CardGamecli_OBJECTS = \
@@ -119,18 +119,18 @@ CardGamecli_OBJECTS = \
 # External object files for target CardGamecli
 CardGamecli_EXTERNAL_OBJECTS =
 
-Test/bin/CardGamecli: Test/CMakeFiles/CardGamecli.dir/main.cpp.o
-Test/bin/CardGamecli: Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o
-Test/bin/CardGamecli: Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o
-Test/bin/CardGamecli: Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o
-Test/bin/CardGamecli: Test/CMakeFiles/CardGamecli.dir/build.make
-Test/bin/CardGamecli: CardGame/libCardGame.a
-Test/bin/CardGamecli: Test/CMakeFiles/CardGamecli.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/CardGamecli"
+Test/bin/Debug/CardGamecli: Test/CMakeFiles/CardGamecli.dir/main.cpp.o
+Test/bin/Debug/CardGamecli: Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.o
+Test/bin/Debug/CardGamecli: Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.o
+Test/bin/Debug/CardGamecli: Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.o
+Test/bin/Debug/CardGamecli: Test/CMakeFiles/CardGamecli.dir/build.make
+Test/bin/Debug/CardGamecli: CardGame/libCardGame.a
+Test/bin/Debug/CardGamecli: Test/CMakeFiles/CardGamecli.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/Debug/CardGamecli"
 	cd /workspaces/Test/build/Test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CardGamecli.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-Test/CMakeFiles/CardGamecli.dir/build: Test/bin/CardGamecli
+Test/CMakeFiles/CardGamecli.dir/build: Test/bin/Debug/CardGamecli
 
 .PHONY : Test/CMakeFiles/CardGamecli.dir/build
 

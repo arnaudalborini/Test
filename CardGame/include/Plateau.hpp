@@ -17,6 +17,7 @@ namespace CardGame{
             IdCarte getLast(int EP);
             IdCarte showIdN(int EP,int N)const;
             IdCarte getN(int EP,int N);
+            const vector<IdCarte> showAllId()const;
     };
 };
 

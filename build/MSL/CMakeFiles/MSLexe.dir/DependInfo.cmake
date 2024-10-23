@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/Test/MSL/src/MSLMechanics.cpp" "/workspaces/Test/build/MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o"
   "/workspaces/Test/MSL/src/MySmileLifeTest.cpp" "/workspaces/Test/build/MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

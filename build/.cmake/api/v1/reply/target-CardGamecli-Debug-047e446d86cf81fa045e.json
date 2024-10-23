@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MSL/bin/MSLexe"
+			"path" : "Test/bin/Debug/CardGamecli"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +16,7 @@
 		],
 		"files" : 
 		[
-			"MSL/CMakeLists.txt"
+			"Test/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -49,14 +49,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " "
+					"fragment" : "-g  "
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/workspaces/Test/MSL/include"
+					"path" : "/workspaces/Test/Test/include"
 				},
 				{
 					"backtrace" : 2,
@@ -77,8 +77,7 @@
 				0,
 				1,
 				2,
-				3,
-				4
+				3
 			]
 		}
 	],
@@ -89,11 +88,15 @@
 			"id" : "CardGame::@7f8be7de9f6a3ddb4016"
 		}
 	],
-	"id" : "MSLexe::@5badca30e22484fc1b4c",
+	"id" : "CardGamecli::@c0a5cca43b8aa79eb50e",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -106,12 +109,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "MSLexe",
-	"nameOnDisk" : "MSLexe",
+	"name" : "CardGamecli",
+	"nameOnDisk" : "CardGamecli",
 	"paths" : 
 	{
-		"build" : "MSL",
-		"source" : "MSL"
+		"build" : "Test",
+		"source" : "Test"
 	},
 	"sourceGroups" : 
 	[
@@ -122,19 +125,16 @@
 				0,
 				1,
 				2,
-				3,
-				4
+				3
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
+				4,
 				5,
-				6,
-				7,
-				8,
-				9
+				6
 			]
 		}
 	],
@@ -143,56 +143,40 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "MSL/main.cpp",
+			"path" : "Test/main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "MSL/src/CarteGenerateurStandard.cpp",
+			"path" : "Test/src/Carte.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "MSL/src/CreationJoueur.cpp",
+			"path" : "Test/src/CreationJoueur.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "MSL/src/MSLMechanics.cpp",
+			"path" : "Test/src/hello_test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "MSL/src/MySmileLifeTest.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "MSL/include/BasicBot.hpp",
+			"path" : "Test/include/BasicBot.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "MSL/include/CarteGenerateurStandard.hpp",
+			"path" : "Test/include/Carte.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "MSL/include/CarteMSL.hpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "MSL/include/MSLMechanics.hpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "MSL/include/MySmileLife.hpp",
+			"path" : "Test/include/Test.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],

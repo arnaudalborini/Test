@@ -42,5 +42,3 @@ void GameMechanicsSpe::playTurn(int indPlayer) const{
 }
 
 int GameMechanicsSpe::getStandardHandNbCarte()const{return 1;}
-
-CardGame::Carte* GameMechanicsSpe::getParamCarte(IdCarte idC)const{return nullptr;}

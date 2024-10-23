@@ -33,7 +33,6 @@ namespace CardGame{
             virtual int getStandardHandNbCarte()const=0;
             virtual bool endGameCondition()const=0;
             virtual int getWinnerPlayer()const=0;
-            virtual Carte* getParamCarte(IdCarte idC)const=0;
     };
 };
 

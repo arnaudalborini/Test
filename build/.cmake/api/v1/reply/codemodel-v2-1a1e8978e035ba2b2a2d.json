@@ -62,7 +62,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -87,21 +87,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "CardGame::@7f8be7de9f6a3ddb4016",
-					"jsonFile" : "target-CardGame-32715eb5219adbb07209.json",
+					"jsonFile" : "target-CardGame-Debug-d430005cdc0482a6dff8.json",
 					"name" : "CardGame",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "CardGamecli::@c0a5cca43b8aa79eb50e",
-					"jsonFile" : "target-CardGamecli-8209d99dcac5fdec0272.json",
+					"jsonFile" : "target-CardGamecli-Debug-047e446d86cf81fa045e.json",
 					"name" : "CardGamecli",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "MSLexe::@5badca30e22484fc1b4c",
-					"jsonFile" : "target-MSLexe-d011bc59427d450d2174.json",
+					"jsonFile" : "target-MSLexe-Debug-f48f7d24ea67e2cadbf5.json",
 					"name" : "MSLexe",
 					"projectIndex" : 0
 				}
