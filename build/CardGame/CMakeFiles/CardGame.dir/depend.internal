@@ -6,6 +6,10 @@ CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o
  ../CardGame/include/Carte.hpp
  ../CardGame/include/CarteGenerator.hpp
  /workspaces/Test/CardGame/src/CarteGenerator.cpp
+CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o
+ ../CardGame/include/CardGame.hpp
+ ../CardGame/include/CartesAlgo.hpp
+ /workspaces/Test/CardGame/src/CartesAlgo.cpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o
  ../CardGame/include/CardGame.hpp
  ../CardGame/include/GameInterface.hpp

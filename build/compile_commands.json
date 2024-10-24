@@ -6,6 +6,11 @@
 },
 {
   "directory": "/workspaces/Test/build/CardGame",
+  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o -c /workspaces/Test/CardGame/src/CartesAlgo.cpp",
+  "file": "/workspaces/Test/CardGame/src/CartesAlgo.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/CardGame",
   "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/GameMaster.cpp.o -c /workspaces/Test/CardGame/src/GameMaster.cpp",
   "file": "/workspaces/Test/CardGame/src/GameMaster.cpp"
 },
@@ -73,6 +78,11 @@
   "directory": "/workspaces/Test/build/MSL",
   "command": "/usr/bin/g++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.o -c /workspaces/Test/MSL/src/CarteGenerateurStandard.cpp",
   "file": "/workspaces/Test/MSL/src/CarteGenerateurStandard.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/MSL",
+  "command": "/usr/bin/g++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o -c /workspaces/Test/MSL/src/CartesAlgoMSL.cpp",
+  "file": "/workspaces/Test/MSL/src/CartesAlgoMSL.cpp"
 },
 {
   "directory": "/workspaces/Test/build/MSL",

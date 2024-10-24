@@ -152,6 +152,33 @@ src/CarteGenerator.cpp.s:
 	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.s
 .PHONY : src/CarteGenerator.cpp.s
 
+src/CartesAlgo.o: src/CartesAlgo.cpp.o
+
+.PHONY : src/CartesAlgo.o
+
+# target to build an object file
+src/CartesAlgo.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o
+.PHONY : src/CartesAlgo.cpp.o
+
+src/CartesAlgo.i: src/CartesAlgo.cpp.i
+
+.PHONY : src/CartesAlgo.i
+
+# target to preprocess a source file
+src/CartesAlgo.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.i
+.PHONY : src/CartesAlgo.cpp.i
+
+src/CartesAlgo.s: src/CartesAlgo.cpp.s
+
+.PHONY : src/CartesAlgo.s
+
+# target to generate assembly for a file
+src/CartesAlgo.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.s
+.PHONY : src/CartesAlgo.cpp.s
+
 src/GameMaster.o: src/GameMaster.cpp.o
 
 .PHONY : src/GameMaster.o
@@ -380,6 +407,9 @@ help:
 	@echo "... src/CarteGenerator.o"
 	@echo "... src/CarteGenerator.i"
 	@echo "... src/CarteGenerator.s"
+	@echo "... src/CartesAlgo.o"
+	@echo "... src/CartesAlgo.i"
+	@echo "... src/CartesAlgo.s"
 	@echo "... src/GameMaster.o"
 	@echo "... src/GameMaster.i"
 	@echo "... src/GameMaster.s"

@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/Test/CardGame/src/CarteGenerator.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o"
+  "/workspaces/Test/CardGame/src/CartesAlgo.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o"
   "/workspaces/Test/CardGame/src/GameMaster.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanics.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
   "/workspaces/Test/CardGame/src/GameMechanicsSpe.cpp" "/workspaces/Test/build/CardGame/CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o"
