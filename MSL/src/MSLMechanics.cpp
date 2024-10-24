@@ -27,6 +27,8 @@ const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
 }
 int  MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
 int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
+int  MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
+int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
         s+=getSmileFromId(elt);
@@ -34,14 +36,9 @@ int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
     return s;
 }
 
-int  MSLMechanics::getStatutPlayer(int indPlayer, DetailPlateau dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
-void MSLMechanics::setStatutPlayer(int indPlayer, DetailPlateau dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
-void MSLMechanics::incStatutPlayer(int indPlayer, DetailPlateau dp, int inc) {setStatutPlayer( indPlayer, dp, getStatutPlayer( indPlayer, dp ) + inc );}
-void MSLMechanics::decStatutPlayer(int indPlayer, DetailPlateau dp, int inc) {incStatutPlayer(indPlayer,dp,-inc);}
-
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
-int MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
-int MSLMechanics::getWinnerPlayer()const{
+int  MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
+int  MSLMechanics::getWinnerPlayer()const{
     int baseSmile = countSmile( mMonitor->getInfosJoueurs( 0 )->getPlateau() );
     int indBest = 0;
     for(int indPlayer=0;indPlayer<mMonitor->getNbPlayer();indPlayer++){

@@ -33,6 +33,10 @@ void GameMechanics::initGame()const{
         mMonitor->getPlateau()->addLast(p.first,p.second);
     }
 }
+int  GameMechanics::getStatutPlayer(int indPlayer, int dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
+void GameMechanics::setStatutPlayer(int indPlayer, int dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
+void GameMechanics::incStatutPlayer(int indPlayer, int dp, int inc) {setStatutPlayer( indPlayer, dp, getStatutPlayer( indPlayer, dp ) + inc );}
+void GameMechanics::decStatutPlayer(int indPlayer, int dp, int inc) {incStatutPlayer(indPlayer,dp,-inc);}
 
 void GameMechanics::startGame()
 {
@@ -63,8 +67,8 @@ void GameMechanics::remplirMain(int indPlayer) const
         joueurPioche( indPlayer );
     }
 }
-int GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbCarte();}
-int GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
+int  GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbCarte();}
+int  GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
 void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
 void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
 const Player *GameMechanics::getPlayer(  int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
