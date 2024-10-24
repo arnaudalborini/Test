@@ -14,6 +14,7 @@ namespace CardGame{
             Plateau*                mPlateau;
             PaquetCarte*            mPioche;
             PaquetCarte*            mDefausse;
+            map<const Player*,int>  mapIdPlayer;
         public:
             Monitor();
             virtual ~Monitor();
@@ -23,6 +24,7 @@ namespace CardGame{
             virtual PaquetCarte*    getDefausse()const;
             virtual InfosJoueur*    getInfosJoueurs(int ind)const;
             virtual const Player*   getPlayer(int ind)const;
+            virtual int             getIndPlayer(const Player* pp)const;
             virtual int             getNbPlayer()const;
             // GameMasterMonitor
             virtual void initiateElements(int nbJoueurs,GameMechanics* gm);

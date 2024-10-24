@@ -6,11 +6,6 @@
 },
 {
   "directory": "/workspaces/Test/build/CardGame",
-  "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o -c /workspaces/Test/CardGame/src/CartesAlgo.cpp",
-  "file": "/workspaces/Test/CardGame/src/CartesAlgo.cpp"
-},
-{
-  "directory": "/workspaces/Test/build/CardGame",
   "command": "/usr/bin/g++   -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/CardGame.dir/src/GameMaster.cpp.o -c /workspaces/Test/CardGame/src/GameMaster.cpp",
   "file": "/workspaces/Test/CardGame/src/GameMaster.cpp"
 },

@@ -20,7 +20,10 @@ MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o
  ../CardGame/include/Carte.hpp
  ../CardGame/include/CarteGenerator.hpp
  ../CardGame/include/CartesAlgo.hpp
+ ../CardGame/include/GameMechanicsMonitor.hpp
+ ../CardGame/include/Hand.hpp
  ../CardGame/include/InfosJoueur.hpp
+ ../CardGame/include/Plateau.hpp
  ../MSL/include/CarteMSL.hpp
  ../MSL/include/CartesAlgoMSL.hpp
  ../MSL/include/MySmileLife.hpp

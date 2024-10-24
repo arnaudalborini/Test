@@ -25,6 +25,9 @@ namespace CardGame{
             void setStatutPlayer(int indPlayer, int dp, int value);
             void incStatutPlayer(int indPlayer, int dp, int inc=1);
             void decStatutPlayer(int indPlayer, int dp, int inc=1);
+
+            bool peutEtreJouee(const Player* pp, IdCarte id)const;
+            bool jouerCarte(const Player* pp, IdCarte id)const;
         
         public:
             GameMechanics();

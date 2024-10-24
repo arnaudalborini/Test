@@ -32,18 +32,6 @@ Carte.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/GameInterface.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-
-../CardGame/include/GameMaster.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-GameInterface.hpp
-../CardGame/include/GameInterface.hpp
-PlayerInterface.hpp
-../CardGame/include/PlayerInterface.hpp
-
 ../CardGame/include/GameMasterMonitor.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
@@ -87,10 +75,6 @@ CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
 ../CardGame/include/Player.hpp
-
-../CardGame/include/PlayerInterface.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
 
 ../CardGame/include/StatutPlateau.hpp
 CardGame.hpp
@@ -167,14 +151,4 @@ MSLPlayer.hpp
 /workspaces/Test/MSL/src/MSLPlayer.hpp
 CartesAlgoMSL.hpp
 /workspaces/Test/MSL/src/CartesAlgoMSL.hpp
-
-/workspaces/Test/MSL/src/MySmileLifeTest.cpp
-MySmileLife.hpp
-/workspaces/Test/MSL/src/MySmileLife.hpp
-GameMaster.hpp
-/workspaces/Test/MSL/src/GameMaster.hpp
-GameMechanicsSpe.hpp
-/workspaces/Test/MSL/src/GameMechanicsSpe.hpp
-MSLMechanics.hpp
-/workspaces/Test/MSL/src/MSLMechanics.hpp
 

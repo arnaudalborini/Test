@@ -12,7 +12,6 @@ namespace CardGame{
             int mNbJoueur;
             vector<bool> mJoueurPret;
             vector<Player*> mJoueurs;
-            map<const Player*,int> mapIdPlayer;
             void initGame(int nj, GameMechanics* gm);
         public:
             GameMaster(int nj, GameMechanics* gm);

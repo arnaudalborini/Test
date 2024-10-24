@@ -6,10 +6,6 @@ CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o: ../CardGame/include/C
 CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o: ../CardGame/include/CarteGenerator.hpp
 CardGame/CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o: ../CardGame/src/CarteGenerator.cpp
 
-CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o: ../CardGame/include/CardGame.hpp
-CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o: ../CardGame/include/CartesAlgo.hpp
-CardGame/CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o: ../CardGame/src/CartesAlgo.cpp
-
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameInterface.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMaster.hpp
@@ -24,6 +20,7 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/src/GameMaste
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/CardGame.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/Carte.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/CarteGenerator.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/CartesAlgo.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/GameMasterMonitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/GameMechanics.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp

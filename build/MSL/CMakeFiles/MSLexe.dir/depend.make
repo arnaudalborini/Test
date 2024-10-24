@@ -19,7 +19,10 @@ MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/CardGame.
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/Carte.hpp
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/CarteGenerator.hpp
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/CartesAlgo.hpp
+MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp
+MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/Hand.hpp
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/InfosJoueur.hpp
+MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../CardGame/include/Plateau.hpp
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../MSL/include/CarteMSL.hpp
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../MSL/include/CartesAlgoMSL.hpp
 MSL/CMakeFiles/MSLexe.dir/src/CartesAlgoMSL.cpp.o: ../MSL/include/MySmileLife.hpp

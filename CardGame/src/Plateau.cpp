@@ -17,7 +17,11 @@ IdCarte Plateau::getN(int EP,int N)
     mMapCarte.at(EP).erase(mMapCarte.at(EP).begin()+N);
     return crt;
 }
-void Plateau::addLast( int EP, IdCarte crt){mMapCarte.at(EP).push_back(crt);}
+void Plateau::addLast( int EP, IdCarte crt){
+    cout << "Plateau::addLast ---- "<<endl;
+    mMapCarte.at(EP).push_back(crt);
+    cout << "OK"<<endl;
+    }
 int Plateau::getNbCarte(int EP) const{return static_cast<int>(mMapCarte.at(EP).size());}
 
 std::vector<IdCarte> Plateau::showAllId()const{

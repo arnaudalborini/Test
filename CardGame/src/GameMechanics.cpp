@@ -7,6 +7,7 @@
 #include "Player.hpp"
 #include "InfosJoueur.hpp"
 #include "Hand.hpp"
+#include "CartesAlgo.hpp"
 
 using CardGame::GameMechanics;
 using CardGame::Player;
@@ -37,6 +38,8 @@ int  GameMechanics::getStatutPlayer(int indPlayer, int dp)const{return getJoueur
 void GameMechanics::setStatutPlayer(int indPlayer, int dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
 void GameMechanics::incStatutPlayer(int indPlayer, int dp, int inc) {setStatutPlayer( indPlayer, dp, getStatutPlayer( indPlayer, dp ) + inc );}
 void GameMechanics::decStatutPlayer(int indPlayer, int dp, int inc) {incStatutPlayer(indPlayer,dp,-inc);}
+bool GameMechanics::peutEtreJouee(const Player *pp, IdCarte id) const{return cAlgo->peutEtreJouee(pp,id);}
+bool GameMechanics::jouerCarte(const Player *pp, IdCarte id) const{return cAlgo->jouerCarte(pp,id);}
 
 void GameMechanics::startGame()
 {
@@ -53,7 +56,6 @@ void GameMechanics::startGame()
         if( mTourAPasser.at(indPlayer) > 0 ){
             mTourAPasser[indPlayer]--;
         }else{
-            cout << "playTurn: " << indPlayer <<  endl;
             playTurn(indPlayer);
         }
         indPlayer++;

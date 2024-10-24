@@ -25,9 +25,9 @@ MSLMechanics::MSLMechanics()
 }
 
 MySmileLife::MSLMechanics::~MSLMechanics()
-{
+{/*
     if(cGen!=nullptr){delete cGen;cGen=nullptr;}
-    if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}
+    if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}*/
 }
 
 const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
@@ -40,11 +40,6 @@ int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
         s+=getSmileFromId(elt);
     }
     return s;
-}
-
-bool MSLMechanics::peutEtreJouee(const CarteMSL *mslCrt) const
-{
-    return false;
 }
 
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
@@ -62,7 +57,6 @@ int  MSLMechanics::getWinnerPlayer()const{
     return indBest;
 }
 void MSLMechanics::playTurn(int indPlayer) const{
-    cout << "playTurn::playTurn" << endl;
     const MSLPlayer* pp = dynamic_cast<const MSLPlayer*>( getPlayer(indPlayer) );
     Hand* jHand = getJoueurHand(indPlayer);
     Plateau* platJ = getJoueurPlateau(indPlayer);
@@ -72,8 +66,12 @@ void MSLMechanics::playTurn(int indPlayer) const{
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);
     IdCarte idC = jHand->getCarte(0);
-    addCarteDefausse(idC,indPlayer);
-    cout << "fin playTurn::playTurn" << endl;
+    if((peutEtreJouee(pp,idC)) && (jouerCarte(pp,idC)) ){
+        cout << "jouerCarte: " << getCarteFromId(idC)->getName() << endl;
+    }
+    else{
+        addCarteDefausse(idC,indPlayer);
+    }
 }
 std::vector<int> MSLMechanics::getJoueurInitialStatuts() const
 {

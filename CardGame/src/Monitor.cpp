@@ -18,13 +18,13 @@ Monitor::Monitor(){
     mPlateau = new Plateau();
 }
 
-Monitor::~Monitor(){
+Monitor::~Monitor(){/*
     delete mPioche;
     delete mDefausse;
     delete mPlateau;
     for(auto inf:mInfosJoueurs){
         delete inf;
-    }
+    }*/
 }
 
 Plateau*        Monitor::getPlateau()                const{return mPlateau;}
@@ -32,6 +32,14 @@ PaquetCarte*    Monitor::getPioche()                 const{return mPioche; }
 PaquetCarte*    Monitor::getDefausse()               const{return mDefausse;}
 InfosJoueur*    Monitor::getInfosJoueurs(int ind)    const{return mInfosJoueurs[ind];}
 const Player*   Monitor::getPlayer(int ind)          const{return mPlayer[ind];}
+int             Monitor::getIndPlayer(const Player *pp) const{
+    cout << "ici" << endl;
+    cout << "mapsize: " << mapIdPlayer.size() << endl;
+    for(auto elt:mapIdPlayer){
+        cout << elt.first << endl;
+    }
+    return mapIdPlayer.at(pp);
+}
 
 int Monitor::getNbPlayer() const{return mNbJoueur;}
 
@@ -47,7 +55,11 @@ void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm)
     mGameMechanics->setMonitor( dynamic_cast<Monitor*>( this ));
 }
 
-void Monitor::addPlayer(const Player *pp, int index){mPlayer[index] = pp;}
+void Monitor::addPlayer(const Player *pp, int index){
+    cout << "jouer: " << pp << " " << index << endl;
+    mPlayer[index] = pp;
+    mapIdPlayer[pp] = index;
+}
 void Monitor::removePlayer(int index){mPlayer[index] = nullptr;}
 void Monitor::startGame(){mGameMechanics->startGame();}
 int Monitor::getWinner()const{return mGameMechanics->getWinnerPlayer();}

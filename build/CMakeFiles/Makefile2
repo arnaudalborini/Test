@@ -134,12 +134,12 @@ Test/clean: Test/CMakeFiles/CardGamecli.dir/clean
 CardGame/CMakeFiles/CardGame.dir/all:
 	$(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/depend
 	$(MAKE) -f CardGame/CMakeFiles/CardGame.dir/build.make CardGame/CMakeFiles/CardGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target CardGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target CardGame"
 .PHONY : CardGame/CMakeFiles/CardGame.dir/all
 
 # Build rule for subdir invocation for target.
 CardGame/CMakeFiles/CardGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CardGame/CMakeFiles/CardGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 0
 .PHONY : CardGame/CMakeFiles/CardGame.dir/rule
@@ -161,12 +161,12 @@ CardGame/CMakeFiles/CardGame.dir/clean:
 Test/CMakeFiles/CardGamecli.dir/all: CardGame/CMakeFiles/CardGame.dir/all
 	$(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/depend
 	$(MAKE) -f Test/CMakeFiles/CardGamecli.dir/build.make Test/CMakeFiles/CardGamecli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=12,13,14,15,16 "Built target CardGamecli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=11,12,13,14,15 "Built target CardGamecli"
 .PHONY : Test/CMakeFiles/CardGamecli.dir/all
 
 # Build rule for subdir invocation for target.
 Test/CMakeFiles/CardGamecli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/CardGamecli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 0
 .PHONY : Test/CMakeFiles/CardGamecli.dir/rule
@@ -188,12 +188,12 @@ Test/CMakeFiles/CardGamecli.dir/clean:
 MSL/CMakeFiles/MSLexe.dir/all: CardGame/CMakeFiles/CardGame.dir/all
 	$(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/depend
 	$(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=17,18,19,20,21,22,23 "Built target MSLexe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/Test/build/CMakeFiles --progress-num=16,17,18,19,20,21,22 "Built target MSLexe"
 .PHONY : MSL/CMakeFiles/MSLexe.dir/all
 
 # Build rule for subdir invocation for target.
 MSL/CMakeFiles/MSLexe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 17
 	$(MAKE) -f CMakeFiles/Makefile2 MSL/CMakeFiles/MSLexe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Test/build/CMakeFiles 0
 .PHONY : MSL/CMakeFiles/MSLexe.dir/rule

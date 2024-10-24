@@ -11,7 +11,6 @@ namespace MySmileLife{
             const CarteMSL* getCarteFromId(CardGame::IdCarte id)const;
             int  getSmileFromId(CardGame::IdCarte id)const;
             int  countSmile(CardGame::Plateau* plateauJoueur)const;
-            bool peutEtreJouee(const CarteMSL* mslCrt)const;
         public:
             MSLMechanics();   
             ~MSLMechanics();   

@@ -12,6 +12,7 @@ namespace CardGame{
             virtual InfosJoueur*    getInfosJoueurs(int ind)const=0;
             virtual const Player*   getPlayer(int ind)const=0;
             virtual int             getNbPlayer()const=0;
+            virtual int             getIndPlayer(const Player* pp)const=0;
     };
 }
 

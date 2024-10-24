@@ -33,7 +33,7 @@ namespace MySmileLife{
             bool jouerCarteSpecial(const CardGame::Player *pp, const CarteMSL* crt)const;
             bool jouerCarteVoyage(const CardGame::Player *pp, const CarteMSL* crt)const;
         public:
-            CartesAlgoMSL(const CardGame::CarteGenerator* cc,const CardGame::GameMechanicsMonitor* mm):CardGame::CartesAlgo(cc,mm){}
+            CartesAlgoMSL(CardGame::CarteGenerator* cc,CardGame::GameMechanicsMonitor* mm):CartesAlgo(cc,mm){}
             ~CartesAlgoMSL(){}
             virtual bool peutEtreJouee(const CardGame::Player *pp, CardGame::IdCarte id)const;
             virtual bool jouerCarte(const CardGame::Player* pp, CardGame::IdCarte id)const;

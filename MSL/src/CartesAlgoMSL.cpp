@@ -1,11 +1,18 @@
 #include "CartesAlgoMSL.hpp"
 #include "CarteMSL.hpp"
 #include "CarteGenerator.hpp"
+#include "GameMechanicsMonitor.hpp"
+#include "Plateau.hpp"
+#include "Hand.hpp"
+#include "InfosJoueur.hpp"
 
 using MySmileLife::CartesAlgoMSL;
 using MySmileLife::CarteMSL;
 using CardGame::Player;
 using CardGame::IdCarte;
+using CardGame::Plateau;
+using CardGame::Hand;
+using CardGame::InfosJoueur;
 
 const CarteMSL *CartesAlgoMSL::getCarteMSL(IdCarte id) const{return dynamic_cast<const CarteMSL*>( cGen->getCarteById(id) );;}
 
@@ -63,7 +70,21 @@ bool CartesAlgoMSL::peutEtreJoueeVoyage(const Player *pp, const CarteMSL *crt) c
 
 bool CartesAlgoMSL::jouerCarteAnimal(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    cout << "jouerCarteAnimal ---- "<<endl;
+    cout << "getIndPlayer : "<< pp << "    " << mMonitor << endl;
+    cout << mMonitor->getNbPlayer() << endl;
+    /*cout << mMonitor->getInfosJoueurs(0) << endl;
+    cout << mMonitor->getPlayer(0) << endl;
+    cout << mMonitor->getPlayer(1) << endl;
+    int indPlayer = mMonitor->getIndPlayer(pp);
+    cout << "getInfosJoueurs  "<<endl;
+    InfosJoueur * infP = mMonitor->getInfosJoueurs(indPlayer);
+    cout << "getPlateau  "<<endl;
+    Plateau* plat = infP->getPlateau();
+    cout << "addLast  "<<endl;
+    plat->addLast(EmplacementsPlateau::EDivers, crt->getId());
+    cout << "addlast<<endl";*/
+    return true;
 }
 
 bool CartesAlgoMSL::jouerCarteEnfant(const Player *pp, const CarteMSL *crt) const

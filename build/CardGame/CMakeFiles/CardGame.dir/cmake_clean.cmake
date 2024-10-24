@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CardGame.dir/src/CarteGenerator.cpp.o"
-  "CMakeFiles/CardGame.dir/src/CartesAlgo.cpp.o"
   "CMakeFiles/CardGame.dir/src/GameMaster.cpp.o"
   "CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o"
   "CMakeFiles/CardGame.dir/src/GameMechanicsSpe.cpp.o"

@@ -13,7 +13,7 @@ GameMaster::GameMaster(int nj, GameMechanics* gm){
 
 GameMaster::~GameMaster()
 {
-    delete mMonitor;
+    //delete mMonitor;
 }
 
 void GameMaster::initGame(int nj, GameMechanics *gm){
@@ -33,7 +33,6 @@ void GameMaster::initGame(int nj, GameMechanics *gm){
     if(ind < mNbJoueur){
         mJoueurPret[ind] = true;
         mMonitor->addPlayer(pp,ind);
-        mapIdPlayer[pp] = ind;
         return dynamic_cast<const PlayerInterface*>(this);
     }
     return nullptr;
@@ -55,7 +54,7 @@ int GameMaster::getWinner() const{return mMonitor->getWinner();}
 
 
 
-int   GameMaster::getIdPlayer(const Player* pp)const{return mapIdPlayer.at(pp);}
+int   GameMaster::getIdPlayer(const Player* pp)const{return mMonitor->getIndPlayer(pp);}
 const CardGame::InfosJoueur* GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
 const CardGame::Plateau* GameMaster::getPlateau()const{return mMonitor->getPlateau();}
 const CardGame::PaquetCarte* GameMaster::getPioche()const{return mMonitor->getPioche();}
