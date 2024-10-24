@@ -42,9 +42,9 @@ void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm)
     mPlayer       = vector<const Player *>(nbJoueurs);
     mInfosJoueurs = vector<InfosJoueur *>(nbJoueurs);
     for(auto ind=0;ind<nbJoueurs;ind++){
-        mInfosJoueurs[ind] = new InfosJoueur(gm);
+        mInfosJoueurs[ind] = new InfosJoueur(mGameMechanics);
     }
-    gm->setMonitor( dynamic_cast<Monitor*>( this ));
+    mGameMechanics->setMonitor( dynamic_cast<Monitor*>( this ));
 }
 
 void Monitor::addPlayer(const Player *pp, int index){mPlayer[index] = pp;}

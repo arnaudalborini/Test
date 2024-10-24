@@ -8,6 +8,7 @@
 #include "CarteMSL.hpp"
 #include "Hand.hpp"
 #include "MSLPlayer.hpp"
+#include "CartesAlgoMSL.hpp"
 
 using MySmileLife::MSLMechanics;
 using MySmileLife::CarteMSL;
@@ -20,6 +21,13 @@ using CardGame::StatutPlateau;
 MSLMechanics::MSLMechanics()
 {
     cGen = new CarteGenerateurStandard();
+    cAlgo = new CartesAlgoMSL(cGen,mMonitor);
+}
+
+MySmileLife::MSLMechanics::~MSLMechanics()
+{
+    if(cGen!=nullptr){delete cGen;cGen=nullptr;}
+    if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}
 }
 
 const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
@@ -37,10 +45,6 @@ int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
 bool MSLMechanics::peutEtreJouee(const CarteMSL *mslCrt) const
 {
     return false;
-}
-
-void MSLMechanics::jouerCarte(const CarteMSL *mslCrt)
-{
 }
 
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////

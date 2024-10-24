@@ -13,7 +13,7 @@ using CardGame::Player;
 using CardGame::Hand;
 using CardGame::Plateau;
 
-GameMechanics::GameMechanics() : cGen(nullptr) {}
+GameMechanics::GameMechanics() : cGen(nullptr), cAlgo(nullptr) {}
 
 GameMechanics::~GameMechanics(){}
 

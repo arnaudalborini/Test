@@ -5,15 +5,29 @@
 #include "InfosJoueur.hpp"
 #include "Hand.hpp"
 #include "CarteGenerator.hpp"
+#include "CartesAlgo.hpp"
 
 using CardGame::GameMechanicsSpe;
 using CardGame::IdCarte;
 using std::vector;
 using std::map;
 
-vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{
+GameMechanicsSpe::GameMechanicsSpe()
+{
+    cGen = new CarteGenerator();
+    cAlgo = new CartesAlgo(cGen,mMonitor);
+}
+
+GameMechanicsSpe::~GameMechanicsSpe()
+{
+    if(cGen!=nullptr){delete cGen;cGen=nullptr;}
+    if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}
+}
+
+vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const
+{
     cout << "GameMechanicsSpe::genVecCartesPioche" << endl;
-    vector<IdCarte> vecCartes = vector<IdCarte>();
+    vector<IdCarte> vecCartes = vector<IdCarte>(); 
     cGen->genCartesPioche(vecCartes);
     return vecCartes;
 }

@@ -177,6 +177,7 @@ namespace MySmileLife{
     enum EmplacementsPlateauPartages:int{
         ECasinoSalaire
     };
+    class CartesAlgoMSL;
     class BasicBot;
     class CarteMSL;
     void CreationJoueur(CardGame::GameInterface* gI);

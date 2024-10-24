@@ -6,8 +6,9 @@
 
 namespace CardGame{
     class GameMechanicsSpe:public GameMechanics{
-        private:
-        public:            
+        public:
+            GameMechanicsSpe(); 
+            virtual ~GameMechanicsSpe();  
             virtual vector<IdCarte> genVecCartesPioche()const;
             virtual vector<IdCarte> genVecCartesDefausse()const;
             virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const;

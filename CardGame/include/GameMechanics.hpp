@@ -8,6 +8,7 @@ namespace CardGame{
         protected:
             GameMechanicsMonitor* mMonitor;
             CarteGenerator* cGen;
+            CartesAlgo* cAlgo;
             vector<int> mTourAPasser;
 
             void joueurPioche(int indPlayer)const;

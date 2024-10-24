@@ -36,6 +36,7 @@ MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.o: ../MSL/src/CreationJoueur.cp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/CardGame.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/Carte.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/CarteGenerator.hpp
+MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/CartesAlgo.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMasterMonitor.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMechanics.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp
@@ -49,6 +50,7 @@ MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/Player.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../CardGame/include/StatutPlateau.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/CarteGenerateurStandard.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/CarteMSL.hpp
+MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/CartesAlgoMSL.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/MSLMechanics.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/MSLPlayer.hpp
 MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o: ../MSL/include/MySmileLife.hpp
