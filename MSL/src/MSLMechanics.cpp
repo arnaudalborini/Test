@@ -34,6 +34,15 @@ int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
     return s;
 }
 
+bool MSLMechanics::peutEtreJouee(const CarteMSL *mslCrt) const
+{
+    return false;
+}
+
+void MSLMechanics::jouerCarte(const CarteMSL *mslCrt)
+{
+}
+
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
 int  MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
 int  MSLMechanics::getWinnerPlayer()const{
