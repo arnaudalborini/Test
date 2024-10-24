@@ -21,8 +21,10 @@ namespace CardGame{
             IdCarte getN(int EP,int N);
             vector<IdCarte> showAllId()const;
 
-            StatutPlateau* getStatut(){return mStatut;}
-            const StatutPlateau* getStatut()const{return mStatut;}            
+            int getStatut(int statutKey)const;
+            void setStatut(int statutKey, int value);
+            const StatutPlateau* getStatutPlateau()const{return mStatut;} 
+            StatutPlateau* getStatutPlateau(){return mStatut;}            
     };
 };
 

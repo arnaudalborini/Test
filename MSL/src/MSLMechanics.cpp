@@ -34,6 +34,7 @@ int MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
     return s;
 }
 
+int MSLMechanics::getStatutPlayer(int indPlayer, DetailPlateau dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
 
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
 int MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
@@ -55,8 +56,8 @@ void MSLMechanics::playTurn(int indPlayer) const{
     Hand* jHand = getJoueurHand(indPlayer);
     Plateau* platJ = getJoueurPlateau(indPlayer);
     Plateau* platGeneral = getMainPlateau();
-    StatutPlateau* st = platJ->getStatut();
-    cout << st->getStatut(StatuPlateau::aUnTravail) << endl;
+    StatutPlateau* st = platJ->getStatutPlateau();
+    cout << st->getStatut(DetailPlateau::aUnTravail) << endl;
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);

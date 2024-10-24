@@ -27,3 +27,7 @@ std::vector<IdCarte> Plateau::showAllId()const{
     }
     return vecId;
 }
+
+int Plateau::getStatut(int statutKey) const{return mStatut->getStatut(statutKey);}
+
+void Plateau::setStatut(int statutKey, int value){mStatut->setStatut(statutKey,value);}

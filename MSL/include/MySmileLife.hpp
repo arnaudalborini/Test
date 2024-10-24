@@ -121,7 +121,7 @@ namespace MySmileLife{
         antiAttentat,
         casinoOuvert
     };
-    enum StatuPlateau:int{
+    enum DetailPlateau:int{
         //BonusSpeciaux
         EtudesContinues         = 0,
         FlirtIllimites          = 1,
@@ -159,7 +159,7 @@ namespace MySmileLife{
         TourAPasser             = 30,
         SalaireMax              = 31
     };
-    const int MAXSTATUTPLATEAU = StatuPlateau::SalaireMax;
+    const int MAXSTATUTPLATEAU = DetailPlateau::SalaireMax;
     const int DEFAULTMAXHANDSIZE = 5;
     enum EmplacementsPlateau:int{
         EFlirt,
