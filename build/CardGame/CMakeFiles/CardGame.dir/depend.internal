@@ -12,7 +12,9 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o
  ../CardGame/include/GameMaster.hpp
  ../CardGame/include/GameMasterMonitor.hpp
  ../CardGame/include/GameMechanicsMonitor.hpp
+ ../CardGame/include/InfosJoueur.hpp
  ../CardGame/include/Monitor.hpp
+ ../CardGame/include/Plateau.hpp
  ../CardGame/include/PlayerInterface.hpp
  /workspaces/Test/CardGame/src/GameMaster.cpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMechanics.cpp.o

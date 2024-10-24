@@ -112,6 +112,12 @@ MySmileLife.hpp
 GameMechanicsSpe.hpp
 ../MSL/include/GameMechanicsSpe.hpp
 
+../MSL/include/MSLPlayer.hpp
+Player.hpp
+../MSL/include/Player.hpp
+MySmileLife.hpp
+../MSL/include/MySmileLife.hpp
+
 ../MSL/include/MySmileLife.hpp
 CardGame.hpp
 ../MSL/include/CardGame.hpp
@@ -147,8 +153,8 @@ CarteMSL.hpp
 /workspaces/Test/MSL/src/CarteMSL.hpp
 Hand.hpp
 /workspaces/Test/MSL/src/Hand.hpp
-Player.hpp
-/workspaces/Test/MSL/src/Player.hpp
+MSLPlayer.hpp
+/workspaces/Test/MSL/src/MSLPlayer.hpp
 
 /workspaces/Test/MSL/src/MySmileLifeTest.cpp
 MySmileLife.hpp

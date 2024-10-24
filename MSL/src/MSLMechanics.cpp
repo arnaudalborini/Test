@@ -7,7 +7,7 @@
 #include "StatutPlateau.hpp"
 #include "CarteMSL.hpp"
 #include "Hand.hpp"
-#include "Player.hpp"
+#include "MSLPlayer.hpp"
 
 using MySmileLife::MSLMechanics;
 using MySmileLife::CarteMSL;
@@ -25,8 +25,6 @@ MSLMechanics::MSLMechanics()
 const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
     return dynamic_cast<const CarteMSL*>(cGen->getCarteById(id));
 }
-int  MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
-int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
 int  MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
 int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
     int s=0;
@@ -52,12 +50,11 @@ int  MSLMechanics::getWinnerPlayer()const{
 }
 void MSLMechanics::playTurn(int indPlayer) const{
     cout << "playTurn::playTurn" << endl;
-    const Player* pp = getPlayer(indPlayer);
+    const MSLPlayer* pp = dynamic_cast<const MSLPlayer*>( getPlayer(indPlayer) );
     Hand* jHand = getJoueurHand(indPlayer);
     Plateau* platJ = getJoueurPlateau(indPlayer);
     Plateau* platGeneral = getMainPlateau();
     StatutPlateau* st = platJ->getStatutPlateau();
-    cout << st->getStatut(DetailPlateau::aUnTravail) << endl;
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);

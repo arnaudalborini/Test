@@ -1,12 +1,12 @@
 #ifndef BASICBOT_HPP
 #define BASICBOT_HPP
 
-#include "Player.hpp"
+#include "MSLPlayer.hpp"
 #include "MySmileLife.hpp"
 #include <string>
 
 namespace MySmileLife{
-    class BasicBot:public CardGame::Player{
+    class BasicBot:public MSLPlayer{
         public:
             virtual string getName()const{return "basicbot";}
     };

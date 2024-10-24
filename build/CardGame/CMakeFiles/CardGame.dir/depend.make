@@ -11,7 +11,9 @@ CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameI
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMaster.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMasterMonitor.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/GameMechanicsMonitor.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/InfosJoueur.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/Monitor.hpp
+CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/Plateau.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/include/PlayerInterface.hpp
 CardGame/CMakeFiles/CardGame.dir/src/GameMaster.cpp.o: ../CardGame/src/GameMaster.cpp
 

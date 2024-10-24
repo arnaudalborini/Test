@@ -1,6 +1,8 @@
 #include "GameMaster.hpp"
 #include "GameMasterMonitor.hpp"
 #include "Monitor.hpp"
+#include "InfosJoueur.hpp"
+#include "Plateau.hpp"
 
 using CardGame::GameMaster;
 
@@ -59,3 +61,5 @@ const CardGame::Plateau* GameMaster::getPlateau()const{return mMonitor->getPlate
 const CardGame::PaquetCarte* GameMaster::getPioche()const{return mMonitor->getPioche();}
 const CardGame::PaquetCarte* GameMaster::getDefausse()const{return mMonitor->getDefausse();}
 const CardGame::Carte* GameMaster::getCarte(IdCarte idC)const{return nullptr;}
+
+int GameMaster::getStatutPlayer(int indPlayer, int dp) const{return getInfosJoueurs(indPlayer)->getPlateau()->getStatut(dp);}
