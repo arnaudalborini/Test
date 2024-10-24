@@ -9,6 +9,7 @@ namespace CardGame{
             StatutPlateau* mStatut;
         public:
             Plateau();
+            Plateau(vector<int> mapStatut);
             ~Plateau();
 
             void addLast(int EP, IdCarte crt);

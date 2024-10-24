@@ -30,6 +30,7 @@ namespace CardGame{
             virtual vector<IdCarte> genVecCartesPioche()const=0;
             virtual vector<IdCarte> genVecCartesDefausse()const=0;
             virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const=0;
+            virtual vector<int> getJoueurInitialStatuts()const=0;
             virtual void playTurn(int indPlayer)const=0;
             virtual int getStandardHandNbCarte()const=0;
             virtual bool endGameCondition()const=0;

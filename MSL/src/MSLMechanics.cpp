@@ -36,7 +36,7 @@ int MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
 
 
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
-int MSLMechanics::getStandardHandNbCarte() const{return 5;}
+int MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
 int MSLMechanics::getWinnerPlayer()const{
     int baseSmile = countSmile( mMonitor->getInfosJoueurs( 0 )->getPlateau() );
     int indBest = 0;
@@ -56,10 +56,18 @@ void MSLMechanics::playTurn(int indPlayer) const{
     Plateau* platJ = getJoueurPlateau(indPlayer);
     Plateau* platGeneral = getMainPlateau();
     StatutPlateau* st = platJ->getStatut();
+    cout << st->getStatut(StatuPlateau::aUnTravail) << endl;
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);
     IdCarte idC = jHand->getCarte(0);
     addCarteDefausse(idC,indPlayer);
     cout << "fin playTurn::playTurn" << endl;
+}
+std::vector<int> MSLMechanics::getJoueurInitialStatuts() const
+{
+    vector<int> initVec = vector<int>(MySmileLife::MAXSTATUTPLATEAU+1);
+    //BonusSpeciaux
+    for(int indSt=0;indSt<=MySmileLife::MAXSTATUTPLATEAU;indSt++){initVec[indSt] = 0;}
+    return initVec;
 }

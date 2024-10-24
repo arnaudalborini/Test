@@ -15,6 +15,7 @@ namespace MySmileLife{
             int getStandardHandNbCarte()const; 
             int getWinnerPlayer()const;
             void playTurn(int indPlayer) const;
+            vector<int> getJoueurInitialStatuts() const;
             /*
             virtual map<CardGame::EmplacementPlateauGeneral,CardGame::IdCarte> genMapCartePlateauInitial()const;
             virtual void playTurn(int indPlayer)const;

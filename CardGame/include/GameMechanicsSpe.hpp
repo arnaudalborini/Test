@@ -11,6 +11,7 @@ namespace CardGame{
             virtual vector<IdCarte> genVecCartesPioche()const;
             virtual vector<IdCarte> genVecCartesDefausse()const;
             virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const;
+            virtual vector<int> getJoueurInitialStatuts()const;
             virtual void playTurn(int indPlayer)const;
             virtual int getStandardHandNbCarte()const;
             virtual bool endGameCondition()const;

@@ -123,43 +123,44 @@ namespace MySmileLife{
     };
     enum StatuPlateau:int{
         //BonusSpeciaux
-        EtudesContinues,
-        FlirtIllimites,
-        Interimaire,
-        Fonctionnaire,
-        ResistantMaladie,
-        ResistantLicenciement,
-        ResistantImpots,
-        ResistantAccident,
-        ResistantDivorce,
-        RisquePrison,
-        VoyagesGratuit,
-        MaisonOfferte,
-        TrocProtege,
-        LimiteCarte6,
-        PistonActif,
-        HeritageDisponible,
+        EtudesContinues         = 0,
+        FlirtIllimites          = 1,
+        Interimaire             = 2,
+        Fonctionnaire           = 3,
+        ResistantMaladie        = 4,
+        ResistantLicenciement   = 5,
+        ResistantImpots         = 6,
+        ResistantAccident       = 7,
+        ResistantDivorce        = 8,
+        RisquePrison            = 9,
+        VoyagesGratuit          = 10,
+        MaisonOfferte           = 11,
+        TrocProtege             = 12,
+        LimiteCarte6            = 13,
+        PistonActif             = 14,
+        HeritageDisponible      = 15,
         //Standard
-        estMarie,
-        estAdultere,
-        aUnTravail,
+        estMarie                = 16,
+        estAdultereb            = 17,
+        aUnTravail              = 18,
         //Autre
-        EtoileFilanteJouee,
-        ArcEnCielJoue
+        EtoileFilanteJouee      = 19,
+        ArcEnCielJoue           = 20,
+        //non booleen
+        NbAnneeEtude            = 21,
+        NbFlirt                 = 22,
+        NbEnfant                = 23,
+        TypeMetier              = 24,
+        LieuDernierFlirt        = 25,
+        SalairesDisponibles     = 26,
+        DernierSalaireDisponible      = 27,
+        DerniereEtudeRedoublable      = 28,
+        NombreBebePossibleHorsMariage = 29,
+        TourAPasser             = 30,
+        SalaireMax              = 31
     };
-    enum DetailPlateau:int{
-        NbAnneeEtude,
-        NbFlirt,
-        NbEnfant,
-        TypeMetier,
-        LieuDernierFlirt,
-        SalairesDisponibles,
-        DernierSalaireDisponible,
-        DerniereEtudeRedoublable,
-        NombreBebePossibleHorsMariage,
-        TourAPasser,
-        SalaireMax
-    };
+    const int MAXSTATUTPLATEAU = StatuPlateau::SalaireMax;
+    const int DEFAULTMAXHANDSIZE = 5;
     enum EmplacementsPlateau:int{
         EFlirt,
         EFlirtAdultere,

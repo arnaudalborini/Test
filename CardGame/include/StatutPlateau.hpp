@@ -6,13 +6,14 @@
 namespace CardGame{
     class StatutPlateau{
         private:
-            map<int,int> mMapStatut;
+            vector<int> mVecStatut;
         protected:
         public:
-            StatutPlateau(){mMapStatut=map<int,int>();}
+            StatutPlateau(){mVecStatut=vector<int>();}
+            StatutPlateau(vector<int> vecStatut):mVecStatut(vecStatut){}
             virtual ~StatutPlateau(){};
-            int getStatut(int statutKey)const{return mMapStatut.at(statutKey);}
-            void setStatut(int statutKey, int value){mMapStatut[statutKey]=value;}
+            int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
+            void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}
     };
 }
 

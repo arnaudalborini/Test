@@ -36,6 +36,7 @@ MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.o
  ../CardGame/include/PaquetCarte.hpp
  ../CardGame/include/Plateau.hpp
  ../CardGame/include/Player.hpp
+ ../CardGame/include/StatutPlateau.hpp
  ../MSL/include/CarteGenerateurStandard.hpp
  ../MSL/include/CarteMSL.hpp
  ../MSL/include/MSLMechanics.hpp

@@ -5,6 +5,7 @@ using CardGame::Plateau;
 using CardGame::IdCarte;
 
 Plateau::Plateau():mStatut(new CardGame::StatutPlateau()){}
+Plateau::Plateau(vector<int> vecStatut):mStatut(new StatutPlateau(vecStatut)){}
 Plateau::~Plateau(){delete mStatut;}
 
 IdCarte Plateau::showIdN(int EP, int N)const{return mMapCarte.at(EP)[N];}

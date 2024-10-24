@@ -46,9 +46,11 @@ CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o: ../CardGame/include/Hand.hpp
 CardGame/CMakeFiles/CardGame.dir/src/Hand.cpp.o: ../CardGame/src/Hand.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/CardGame.hpp
+CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/GameMechanics.hpp
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/Hand.hpp
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/InfosJoueur.hpp
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/Plateau.hpp
+CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/include/StatutPlateau.hpp
 CardGame/CMakeFiles/CardGame.dir/src/InfosJoueur.cpp.o: ../CardGame/src/InfosJoueur.cpp
 
 CardGame/CMakeFiles/CardGame.dir/src/Monitor.cpp.o: ../CardGame/include/CardGame.hpp

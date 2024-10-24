@@ -28,6 +28,18 @@ CardGame.hpp
 Carte.hpp
 ../CardGame/include/Carte.hpp
 
+../CardGame/include/GameInterface.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/GameMaster.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+GameInterface.hpp
+../CardGame/include/GameInterface.hpp
+PlayerInterface.hpp
+../CardGame/include/PlayerInterface.hpp
+
 ../CardGame/include/GameMasterMonitor.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
@@ -62,6 +74,18 @@ CardGame.hpp
 GameMasterMonitor.hpp
 ../CardGame/include/GameMasterMonitor.hpp
 
+../CardGame/include/MyShuffle.hpp
+algorithm
+-
+ctime
+-
+cstdlib
+-
+random
+-
+vector
+-
+
 ../CardGame/include/PaquetCarte.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
@@ -71,6 +95,22 @@ CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
 ../CardGame/include/Player.hpp
+
+../CardGame/include/PlayerInterface.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../CardGame/include/StatutPlateau.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
+
+../MSL/include/BasicBot.hpp
+Player.hpp
+../MSL/include/Player.hpp
+MySmileLife.hpp
+../MSL/include/MySmileLife.hpp
+string
+-
 
 ../MSL/include/CarteGenerateurStandard.hpp
 MySmileLife.hpp
@@ -108,6 +148,32 @@ list
 set
 -
 
+/workspaces/Test/MSL/main.cpp
+MySmileLife.hpp
+/workspaces/Test/MSL/MySmileLife.hpp
+iostream
+-
+
+/workspaces/Test/MSL/src/CarteGenerateurStandard.cpp
+MySmileLife.hpp
+/workspaces/Test/MSL/src/MySmileLife.hpp
+CarteGenerateurStandard.hpp
+/workspaces/Test/MSL/src/CarteGenerateurStandard.hpp
+CarteMSL.hpp
+/workspaces/Test/MSL/src/CarteMSL.hpp
+Carte.hpp
+/workspaces/Test/MSL/src/Carte.hpp
+MyShuffle.hpp
+/workspaces/Test/MSL/src/MyShuffle.hpp
+
+/workspaces/Test/MSL/src/CreationJoueur.cpp
+MySmileLife.hpp
+/workspaces/Test/MSL/src/MySmileLife.hpp
+BasicBot.hpp
+/workspaces/Test/MSL/src/BasicBot.hpp
+GameInterface.hpp
+/workspaces/Test/MSL/src/GameInterface.hpp
+
 /workspaces/Test/MSL/src/MSLMechanics.cpp
 MSLMechanics.hpp
 /workspaces/Test/MSL/src/MSLMechanics.hpp
@@ -121,10 +187,22 @@ PaquetCarte.hpp
 /workspaces/Test/MSL/src/PaquetCarte.hpp
 Plateau.hpp
 /workspaces/Test/MSL/src/Plateau.hpp
+StatutPlateau.hpp
+/workspaces/Test/MSL/src/StatutPlateau.hpp
 CarteMSL.hpp
 /workspaces/Test/MSL/src/CarteMSL.hpp
 Hand.hpp
 /workspaces/Test/MSL/src/Hand.hpp
 Player.hpp
 /workspaces/Test/MSL/src/Player.hpp
+
+/workspaces/Test/MSL/src/MySmileLifeTest.cpp
+MySmileLife.hpp
+/workspaces/Test/MSL/src/MySmileLife.hpp
+GameMaster.hpp
+/workspaces/Test/MSL/src/GameMaster.hpp
+GameMechanicsSpe.hpp
+/workspaces/Test/MSL/src/GameMechanicsSpe.hpp
+MSLMechanics.hpp
+/workspaces/Test/MSL/src/MSLMechanics.hpp
 
