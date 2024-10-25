@@ -56,7 +56,6 @@ void MSLMechanics::playTurn(int indPlayer) const{
     Hand* jHand = getJoueurHand(indPlayer);
     Plateau* platJ = getJoueurPlateau(indPlayer);
     Plateau* platGeneral = getMainPlateau();
-    StatutPlateau* st = platJ->getStatutPlateau();
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);

@@ -93,5 +93,10 @@
   "directory": "/workspaces/Test/build/MSL",
   "command": "/usr/bin/g++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.o -c /workspaces/Test/MSL/src/MySmileLifeTest.cpp",
   "file": "/workspaces/Test/MSL/src/MySmileLifeTest.cpp"
+},
+{
+  "directory": "/workspaces/Test/build/MSL",
+  "command": "/usr/bin/g++   -I/workspaces/Test/MSL/include -I/workspaces/Test/CardGame/include -I/workspaces/Test/CardGame/include/Carte -I/workspaces/Test/CardGame/include/Joueur  -g   -o CMakeFiles/MSLexe.dir/include/CarteMSL.cpp.o -c /workspaces/Test/MSL/include/CarteMSL.cpp",
+  "file": "/workspaces/Test/MSL/include/CarteMSL.cpp"
 }
 ]

@@ -142,7 +142,7 @@ namespace MySmileLife{
         HeritageDisponible      = 15,
         //Standard
         estMarie                = 16,
-        estAdultereb            = 17,
+        estAdultere            = 17,
         aUnTravail              = 18,
         //Autre
         EtoileFilanteJouee      = 19,
@@ -167,6 +167,7 @@ namespace MySmileLife{
     };
     const int MAXSTATUTPLATEAU = DetailPlateau::casinoOuvert;
     const int DEFAULTMAXHANDSIZE = 5;
+    const int PRIXVOYAGE = 3;
     enum EmplacementsPlateau:int{
         EFlirt,
         EFlirtAdultere,

@@ -18,6 +18,10 @@ namespace MySmileLife{
             int getNbSmile()const{return mNbSmile;}
             CarteType getType()const{return mCType;}
             CarteSousType getSType()const{return mCsType;}
+            
+            int getNbEtude()const;
+            int getPrixMaison()const;
+            int getPrixVoyage()const;
     };
 };
 

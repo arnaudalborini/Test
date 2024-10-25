@@ -125,6 +125,33 @@ MSLexe/fast:
 	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/build
 .PHONY : MSLexe/fast
 
+include/CarteMSL.o: include/CarteMSL.cpp.o
+
+.PHONY : include/CarteMSL.o
+
+# target to build an object file
+include/CarteMSL.cpp.o:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/include/CarteMSL.cpp.o
+.PHONY : include/CarteMSL.cpp.o
+
+include/CarteMSL.i: include/CarteMSL.cpp.i
+
+.PHONY : include/CarteMSL.i
+
+# target to preprocess a source file
+include/CarteMSL.cpp.i:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/include/CarteMSL.cpp.i
+.PHONY : include/CarteMSL.cpp.i
+
+include/CarteMSL.s: include/CarteMSL.cpp.s
+
+.PHONY : include/CarteMSL.s
+
+# target to generate assembly for a file
+include/CarteMSL.cpp.s:
+	cd /workspaces/Test/build && $(MAKE) -f MSL/CMakeFiles/MSLexe.dir/build.make MSL/CMakeFiles/MSLexe.dir/include/CarteMSL.cpp.s
+.PHONY : include/CarteMSL.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -296,6 +323,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MSLexe"
+	@echo "... include/CarteMSL.o"
+	@echo "... include/CarteMSL.i"
+	@echo "... include/CarteMSL.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

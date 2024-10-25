@@ -6,7 +6,7 @@
 namespace CardGame{
     class Plateau{
             map<int,vector<IdCarte>> mMapCarte;
-            StatutPlateau* mStatut;
+            vector<int> mVecStatut;
         public:
             Plateau();
             Plateau(vector<int> mapStatut);
@@ -20,11 +20,11 @@ namespace CardGame{
             IdCarte showIdN(int EP,int N)const;
             IdCarte getN(int EP,int N);
             vector<IdCarte> showAllId()const;
+            
+            int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
+            void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}  
 
-            int getStatut(int statutKey)const;
-            void setStatut(int statutKey, int value);
-            const StatutPlateau* getStatutPlateau()const{return mStatut;} 
-            StatutPlateau* getStatutPlateau(){return mStatut;}            
+            void incStatut(int statutKey, int inc=1){mVecStatut[statutKey]+=inc;}     
     };
 };
 

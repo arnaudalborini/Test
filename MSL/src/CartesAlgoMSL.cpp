@@ -5,6 +5,7 @@
 #include "Plateau.hpp"
 #include "Hand.hpp"
 #include "InfosJoueur.hpp"
+#include "StatutPlateau.hpp"
 
 using MySmileLife::CartesAlgoMSL;
 using MySmileLife::CarteMSL;
@@ -16,26 +17,66 @@ using CardGame::InfosJoueur;
 
 const CarteMSL *CartesAlgoMSL::getCarteMSL(IdCarte id) const{return dynamic_cast<const CarteMSL*>( cGen->getCarteById(id) );;}
 
+Plateau *MySmileLife::CartesAlgoMSL::getPlateuPlayer(const Player *pp) const
+{
+    return mMonitor->getInfosJoueurs(mMonitor->getIndPlayer(pp))->getPlateau();
+}
+
 bool CartesAlgoMSL::peutEtreJoueeAnimal(const Player *pp, const CarteMSL *crt) const{return true;}
 
 bool CartesAlgoMSL::peutEtreJoueeEnfant(const Player *pp, const CarteMSL *crt) const
 {
+    Plateau* plat = getPlateuPlayer(pp);
+    if(plat->getStatut(estMarie)){
+        return true;
+    }
+    if(plat->getStatut(NombreBebePossibleHorsMariage)>0){
+        plat->incStatut(NombreBebePossibleHorsMariage,-1);
+        return true;
+    }
     return false;
 }
 
 bool CartesAlgoMSL::peutEtreJoueeEtude(const Player *pp, const CarteMSL *crt) const
 {
+    Plateau* plat = getPlateuPlayer(pp);
+    if(plat->getStatut(aUnTravail)==false){
+        if(plat->getStatut(NbAnneeEtude) + crt->getNbEtude()<=6){
+            return true;
+        }
+    }
+    if(plat->getStatut(EtudesContinues)){
+        return true;
+    }
     return false;
 }
 
 bool CartesAlgoMSL::peutEtreJoueeFlirt(const Player *pp, const CarteMSL *crt) const
 {
+    Plateau* plat = getPlateuPlayer(pp);
+    if( plat->getStatut(estMarie) ){
+        if(plat->getStatut(estAdultere)){
+            return true;
+        }
+    }else{
+        if(plat->getStatut(DetailPlateau::TypeMetier)==csBarman){
+            return true;
+        }else{
+            if(plat->getStatut(DetailPlateau::NbFlirt)<5){
+                return true;
+            }
+        }
+    }
     return false;
 }
 
 bool CartesAlgoMSL::peutEtreJoueeMaison(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = getPlateuPlayer(pp);
+    int prixBase = crt->getPrixMaison();
+    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible?3:0));
+    int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
+    return (tresorerie>prix);
 }
 
 bool CartesAlgoMSL::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
@@ -65,7 +106,9 @@ bool CartesAlgoMSL::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) 
 
 bool CartesAlgoMSL::peutEtreJoueeVoyage(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = getPlateuPlayer(pp);
+    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible?3:0));
+    return ( tresorerie > crt->getPrixVoyage() );
 }
 
 bool CartesAlgoMSL::jouerCarteAnimal(const Player *pp, const CarteMSL *crt) const
@@ -169,6 +212,9 @@ bool CartesAlgoMSL::peutEtreJouee(const Player *pp, IdCarte id) const
 
 bool CartesAlgoMSL::jouerCarte(const Player *pp, IdCarte id) const
 {
+    if(peutEtreJouee(pp,id)==false){
+        return false;
+    }
     const CarteMSL* crt = getCarteMSL( id );
     switch( crt->getType() ){
         case CarteType::carteAnimal:

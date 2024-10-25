@@ -4,9 +4,9 @@
 using CardGame::Plateau;
 using CardGame::IdCarte;
 
-Plateau::Plateau():mStatut(new CardGame::StatutPlateau()){}
-Plateau::Plateau(vector<int> vecStatut):mStatut(new StatutPlateau(vecStatut)){}
-Plateau::~Plateau(){delete mStatut;}
+Plateau::Plateau(){}
+Plateau::Plateau(vector<int> vecStatut):mVecStatut(vecStatut){}
+Plateau::~Plateau(){}
 
 IdCarte Plateau::showIdN(int EP, int N)const{return mMapCarte.at(EP)[N];}
 IdCarte Plateau::showIdLast(int EP)const { return mMapCarte.at(EP).back(); }
@@ -31,7 +31,3 @@ std::vector<IdCarte> Plateau::showAllId()const{
     }
     return vecId;
 }
-
-int Plateau::getStatut(int statutKey) const{return mStatut->getStatut(statutKey);}
-
-void Plateau::setStatut(int statutKey, int value){mStatut->setStatut(statutKey,value);}
