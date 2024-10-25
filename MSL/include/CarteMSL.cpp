@@ -29,3 +29,19 @@ int CarteMSL::getPrixMaison() const
 }
 
 int CarteMSL::getPrixVoyage() const{return PRIXVOYAGE;}
+
+int MySmileLife::CarteMSL::getSalaire() const
+{
+    switch( mCsType ){
+        case csSalaire1:
+            return 1;
+        case csSalaire2:
+            return 2;
+        case csSalaire3:
+            return 3;
+        case csSalaire4:
+            return 4;
+        default:
+            return 0;
+    }
+}

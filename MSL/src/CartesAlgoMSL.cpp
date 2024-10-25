@@ -86,7 +86,8 @@ bool CartesAlgoMSL::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) co
 
 bool CartesAlgoMSL::peutEtreJoueeMariage(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = getPlateuPlayer(pp);
+    return (plat->getStatut(estMarie)==false) && (plat->getStatut(NbFlirt)>0);
 }
 
 bool CartesAlgoMSL::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) const
@@ -96,7 +97,8 @@ bool CartesAlgoMSL::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) c
 
 bool CartesAlgoMSL::peutEtreJoueeSalaire(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = getPlateuPlayer(pp);
+    return (plat->getStatut(aUnTravail)>0) && (plat->getStatut(SalaireMax)>=crt->getSalaire());
 }
 
 bool CartesAlgoMSL::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) const

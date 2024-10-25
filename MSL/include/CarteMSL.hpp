@@ -22,6 +22,7 @@ namespace MySmileLife{
             int getNbEtude()const;
             int getPrixMaison()const;
             int getPrixVoyage()const;
+            int getSalaire()const;
     };
 };
 
