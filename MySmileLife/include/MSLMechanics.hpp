@@ -5,17 +5,19 @@
 #include "GameMechanicsSpe.hpp"
 
 namespace MySmileLife{
-    class MSLMechanics:public CardGame::GameMechanicsSpe{
+    class MSLMechanics final:public CardGame::GameMechanicsSpe{
         private:
+            const CarteMSL* getCarteFromId(IdCarte id)const;
+            int  getSmileFromId(IdCarte id)const;
+            int  countSmile(Plateau* plateauJoueur)const;
         public:
-            MSLMechanics();       
-            /*
-            virtual map<CardGame::EmplacementPlateauGeneral,CardGame::IdCarte> genMapCartePlateauInitial()const;
-            virtual void playTurn(int indPlayer)const;
-            virtual int getStandardHandNbCarte()const;
-            virtual bool endGameCondition()const;
-            virtual int getWinnerPlayer()const;
-            virtual CardGame::Carte* getParamCarte(CardGame::IdCarte idC)const;*/
+            MSLMechanics();   
+            ~MSLMechanics();   
+            //methodes reimplementees  
+            int  getStandardHandNbCarte()const override; 
+            int  getWinnerPlayer()const override;
+            void playTurn(int indPlayer) const override;
+            vector<int> getJoueurInitialStatuts() const override;
     };
 }
 #endif

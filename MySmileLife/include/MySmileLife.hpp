@@ -19,6 +19,13 @@ namespace MySmileLife{
     using std::map;
     using std::list;
     using std::set;
+    using CardGame::IdCarte;
+    using CardGame::Player;
+    using CardGame::Plateau;
+    using CardGame::InfosJoueur;
+    using CardGame::Hand;
+    using CardGame::StatutPlateau;
+    using CardGame::Carte;
     enum CarteType:int{
         carteEtude,
         carteMetier,
@@ -34,132 +41,133 @@ namespace MySmileLife{
     };
     enum CarteSousType:int{
         //Malus
-        Accidents,
-        Attentat,
-        BurnOut,
-        Divorce,
-        ImpotsRevenus,
-        Licenciement,
-        Maladie,
-        Prison,
-        Redoublement,
+        csAccidents,
+        csAttentat,
+        csBurnOut,
+        csDivorce,
+        csImpotsRevenus,
+        csLicenciement,
+        csMaladie,
+        csPrison,
+        csRedoublement,
         //Special
-        Adultere,
-        Troc,
-        cCasino,
-        Chance,
-        Piston,
-        Anniversaire,
-        ArcEnCiel,
-        EtoileFilante,
-        Heritage,
-        Tsunami,
-        Vengeance,
-        LegionHonneur,
-        GrandPrixExcellence,
+        csAdultere,
+        csTroc,
+        csCasino,
+        csChance,
+        csPiston,
+        csAnniversaire,
+        csArcEnCiel,
+        csEtoileFilante,
+        csHeritage,
+        csTsunami,
+        csVengeance,
+        csLegionHonneur,
+        csGrandPrixExcellence,
         //Metier
-        Architecte,
-        Astronaute, 
-        Avocat, 
-        Bandit, 
-        Barman, 
-        ChefDesAchats, 
-        ChefDesVentes,
-        Chercheur, 
-        Chirurgien, 
-        Designer,
-        Ecrivain, 
-        Garagiste, 
-        Gourou, 
-        GrandProf, 
-        Jardinier, 
-        Journaliste, 
-        Medecin, 
-        Medium, 
-        Militaire, 
-        Pharmacien, 
-        PiloteDeLigne,
-        Pizzaiolo,
-        Plombier,
-        Policier,
-        Prof,
-        Serveur, 
-        Stripteaser,
+        csArchitecte,
+        csAstronaute, 
+        csAvocat, 
+        csBandit, 
+        csBarman, 
+        csChefDesAchats, 
+        csChefDesVentes,
+        csChercheur, 
+        csChirurgien, 
+        csDesigner,
+        csEcrivain, 
+        csGaragiste, 
+        csGourou, 
+        csGrandProf, 
+        csJardinier, 
+        csJournaliste, 
+        csMedecin, 
+        csMedium, 
+        csMilitaire, 
+        csPharmacien, 
+        csPiloteDeLigne,
+        csPizzaiolo,
+        csPlombier,
+        csPolicier,
+        csProf,
+        csServeur, 
+        csStripteaser,
         //TypeMaison
-        Maison6,
-        Maison8,
-        Maison10,
+        csMaison6,
+        csMaison8,
+        csMaison10,
         //TypeEnfant
-        Garcon,
-        Fille,
+        csGarcon,
+        csFille,
         //LieuFlirt
-        AuParc,
-        AuBar,
-        AuTheatre,
-        AuCinema,
-        EnBoiteDeNuit,
-        AuRestaurant,
-        AuZoo,
-        SurInternet,
-        AuCamping,
-        ALHotel,
+        csAuParc,
+        csAuBar,
+        csAuTheatre,
+        csAuCinema,
+        csEnBoiteDeNuit,
+        csAuRestaurant,
+        csAuZoo,
+        csSurInternet,
+        csAuCamping,
+        csALHotel,
         //Salaire
-        Salaire1,
-        Salaire2,
-        Salaire3,
-        Salaire4,
+        csSalaire1,
+        csSalaire2,
+        csSalaire3,
+        csSalaire4,
         //Etude
-        EtudeSimple,
-        EtudeDouble,
+        csEtudeSimple,
+        csEtudeDouble,
         //Animal Particulier
-        Licorne,
-        AucunSousType = -1
-    };
-     enum StatuGeneral:int{
-        antiBandit,
-        antiGourou,
-        antiAttentat,
-        casinoOuvert
-    };
-    enum StatuPlateau:int{
-        //BonusSpeciaux
-        EtudesContinues,
-        FlirtIllimites,
-        Interimaire,
-        Fonctionnaire,
-        ResistantMaladie,
-        ResistantLicenciement,
-        ResistantImpots,
-        ResistantAccident,
-        ResistantDivorce,
-        RisquePrison,
-        VoyagesGratuit,
-        MaisonOfferte,
-        TrocProtege,
-        LimiteCarte6,
-        PistonActif,
-        HeritageDisponible,
-        //Standard
-        estMarie,
-        estAdultere,
-        aUnTravail,
-        //Autre
-        EtoileFilanteJouee,
-        ArcEnCielJoue
+        csLicorne,
+        csAucun = -1
     };
     enum DetailPlateau:int{
-        NbAnneeEtude,
-        NbFlirt,
-        NbEnfant,
-        TypeMetier,
-        LieuDernierFlirt,
-        SalairesDisponibles,
-        DernierSalaireDisponible,
-        DerniereEtudeRedoublable,
-        NombreBebePossibleHorsMariage,
-        TourAPasser,
-        SalaireMax
+        //BonusSpeciaux
+        EtudesContinues         = 0,
+        FlirtIllimites          = 1,
+        Interimaire             = 2,
+        Fonctionnaire           = 3,
+        ResistantMaladie        = 4,
+        ResistantLicenciement   = 5,
+        ResistantImpots         = 6,
+        ResistantAccident       = 7,
+        ResistantDivorce        = 8,
+        RisquePrison            = 9,
+        VoyagesGratuit          = 10,
+        MaisonOfferte           = 11,
+        TrocProtege             = 12,
+        LimiteCarte6            = 13,
+        PistonActif             = 14,
+        HeritageDisponible      = 15,
+        //Standard
+        estMarie                = 16,
+        estAdultere            = 17,
+        aUnTravail              = 18,
+        //Autre
+        EtoileFilanteJouee      = 19,
+        ArcEnCielJoue           = 20,
+        //non booleen
+        NbAnneeEtude            = 21,
+        NbFlirt                 = 22,
+        NbEnfant                = 23,
+        TypeMetier              = 24,
+        LieuDernierFlirt        = 25,
+        SalairesDisponibles     = 26,
+        DernierSalaireDisponible      = 27,
+        DerniereEtudeRedoublable      = 28,
+        NombreBebePossibleHorsMariage = 29,
+        TourAPasser             = 30,
+        SalaireMax              = 31,
+        //Status generaux
+        antiBandit              = 32,
+        antiGourou              = 33,
+        antiAttentat            = 34,
+        casinoOuvert            = 35
     };
+    const int MAXSTATUTPLATEAU = DetailPlateau::casinoOuvert;
+    const int DEFAULTMAXHANDSIZE = 5;
+    const int PRIXVOYAGE = 3;
     enum EmplacementsPlateau:int{
         EFlirt,
         EFlirtAdultere,
@@ -171,11 +179,10 @@ namespace MySmileLife{
         EEnfant,
         EEtudes,
         EEtudesContinues,
-        EDivers
-    };
-    enum EmplacementsPlateauPartages:int{
+        EDivers,
         ECasinoSalaire
     };
+    class CartesAlgoMSL;
     class BasicBot;
     class CarteMSL;
     void CreationJoueur(CardGame::GameInterface* gI);

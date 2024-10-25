@@ -12,7 +12,7 @@ namespace CardGame{
             virtual void startGame()=0;
             virtual void removePlayer(int indice)=0;
             virtual int getWinner()const=0;
-            virtual ~GameMasterMonitor(){}
+            virtual int getIndPlayer(const Player* pp)const=0;
     };
 }
 

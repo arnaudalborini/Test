@@ -11,6 +11,7 @@ namespace CardGame
             Plateau* mPlateau;
         public:
             InfosJoueur();
+            InfosJoueur(const CardGame::GameMechanics* gm);
             ~InfosJoueur();
             Hand*           getHand()   {return mHand;}
             Plateau*        getPlateau(){return mPlateau;}

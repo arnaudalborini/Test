@@ -6,16 +6,17 @@
 
 namespace CardGame{
     class GameMechanicsSpe:public GameMechanics{
-        private:
-        public:            
-            virtual vector<IdCarte> genVecCartesPioche()const;
-            virtual vector<IdCarte> genVecCartesDefausse()const;
-            virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const;
-            virtual void playTurn(int indPlayer)const;
-            virtual int getStandardHandNbCarte()const;
-            virtual bool endGameCondition()const;
-            virtual int getWinnerPlayer()const;
-            virtual Carte* getParamCarte(IdCarte idC)const;
+        public:
+            GameMechanicsSpe(); 
+            virtual ~GameMechanicsSpe();  
+            virtual vector<IdCarte> genVecCartesPioche()const override;
+            virtual vector<IdCarte> genVecCartesDefausse()const override;
+            virtual map<EmplacementPlateau,IdCarte> genMapCartePlateauInitial()const override;
+            virtual vector<int>     getJoueurInitialStatuts()const override;
+            virtual void playTurn(int indPlayer)const override;
+            virtual int  getStandardHandNbCarte()const override;
+            virtual bool endGameCondition()const override;
+            virtual int  getWinnerPlayer()const override;
     };
 }
 #endif

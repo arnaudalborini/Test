@@ -7,12 +7,14 @@
 #include "Player.hpp"
 #include "InfosJoueur.hpp"
 #include "Hand.hpp"
+#include "CartesAlgo.hpp"
 
 using CardGame::GameMechanics;
 using CardGame::Player;
 using CardGame::Hand;
+using CardGame::Plateau;
 
-GameMechanics::GameMechanics() : cGen(nullptr) {}
+GameMechanics::GameMechanics() : cGen(nullptr), cAlgo(nullptr) {}
 
 GameMechanics::~GameMechanics(){}
 
@@ -23,25 +25,27 @@ void GameMechanics::setMonitor(Monitor *mm){
 
 void GameMechanics::initGame()const{
     cout << "GameMechanics::initGame" << endl;
-    std::vector<int> vecC = genVecCartesPioche();
-    cout << "getPioche::initializePaquet" << endl;
+    vector<int> vecC = genVecCartesPioche();
     mMonitor->getPioche()->initializePaquet( vecC );
-    cout << "pioche size: " << mMonitor->getPioche()->getNbCarte() << endl;
     vecC = genVecCartesDefausse();
     mMonitor->getDefausse()->initializePaquet( vecC );
-    map<EmplacementPlateauGeneral,IdCarte> mapCrt = genMapCartePlateauInitial();
+    map<EmplacementPlateau,IdCarte> mapCrt = genMapCartePlateauInitial();
     for(auto p:mapCrt){
         mMonitor->getPlateau()->addLast(p.first,p.second);
     }
 }
+int  GameMechanics::getStatutPlayer(int indPlayer, int dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
+void GameMechanics::setStatutPlayer(int indPlayer, int dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
+void GameMechanics::incStatutPlayer(int indPlayer, int dp, int inc) {setStatutPlayer( indPlayer, dp, getStatutPlayer( indPlayer, dp ) + inc );}
+void GameMechanics::decStatutPlayer(int indPlayer, int dp, int inc) {incStatutPlayer(indPlayer,dp,-inc);}
+bool GameMechanics::peutEtreJouee(const Player *pp, IdCarte id) const{return cAlgo->peutEtreJouee(pp,id);}
+bool GameMechanics::jouerCarte(const Player *pp, IdCarte id) const{return cAlgo->jouerCarte(pp,id);}
 
 void GameMechanics::startGame()
 {
     mTourAPasser = vector<int>(mMonitor->getNbPlayer());
     for(auto indPlayer=0;indPlayer < mMonitor->getNbPlayer(); indPlayer++){
-        cout << "Joueur indice: " << indPlayer << "  remplir main" << endl;;
         remplirMain(indPlayer);
-        cout << "init tours à poasser: " <<  endl;
         mTourAPasser.at(indPlayer) = 0;
     }
     int indPlayer=0;
@@ -65,9 +69,11 @@ void GameMechanics::remplirMain(int indPlayer) const
         joueurPioche( indPlayer );
     }
 }
-int GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbCarte();}
-int GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
+int  GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbCarte();}
+int  GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
 void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
 void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
-const Player *GameMechanics::getPlayer(int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
-Hand *GameMechanics::getJoueurHand(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
+const Player *GameMechanics::getPlayer(  int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
+Hand *   GameMechanics::getJoueurHand(   int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
+Plateau *GameMechanics::getJoueurPlateau(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getPlateau();}
+Plateau *GameMechanics::getMainPlateau() const{return mMonitor->getPlateau();}

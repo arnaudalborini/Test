@@ -5,15 +5,29 @@
 #include "InfosJoueur.hpp"
 #include "Hand.hpp"
 #include "CarteGenerator.hpp"
+#include "CartesAlgo.hpp"
 
 using CardGame::GameMechanicsSpe;
 using CardGame::IdCarte;
 using std::vector;
 using std::map;
 
-vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const{
+GameMechanicsSpe::GameMechanicsSpe()
+{
+    cGen = new CarteGenerator();
+    cAlgo = new CartesAlgo(cGen,mMonitor);
+}
+
+GameMechanicsSpe::~GameMechanicsSpe()
+{
+    if(cGen!=nullptr){delete cGen;cGen=nullptr;}
+    if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}
+}
+
+vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const
+{
     cout << "GameMechanicsSpe::genVecCartesPioche" << endl;
-    vector<IdCarte> vecCartes = vector<IdCarte>();
+    vector<IdCarte> vecCartes = vector<IdCarte>(); 
     cGen->genCartesPioche(vecCartes);
     return vecCartes;
 }
@@ -22,21 +36,24 @@ vector<IdCarte> GameMechanicsSpe::genVecCartesDefausse() const{
     cGen->genCartesDefausse(vecCartes);
     return vecCartes;
 }
-map<CardGame::EmplacementPlateauGeneral,IdCarte> GameMechanicsSpe::genMapCartePlateauInitial()const{return map<EmplacementPlateauGeneral,IdCarte>();}
-bool GameMechanicsSpe::endGameCondition()const{return getNbCartePioche()>0;}
+map<CardGame::EmplacementPlateau,IdCarte> GameMechanicsSpe::genMapCartePlateauInitial()const{return map<EmplacementPlateau,IdCarte>();}
+vector<int> GameMechanicsSpe::getJoueurInitialStatuts() const{return vector<int>();}
+bool GameMechanicsSpe::endGameCondition() const { return getNbCartePioche() > 0; }
 int GameMechanicsSpe::getWinnerPlayer() const{return 0;}
 void GameMechanicsSpe::playTurn(int indPlayer) const{
+    cout << "GameMechanicsSpe::playTurn" << endl;
     const Player* pp = getPlayer(indPlayer);
-    cout << "Joueur name: " << pp->getName() << endl;
-    joueurPioche(indPlayer);
     Hand* jHand = getJoueurHand(indPlayer);
+    cout << "Joueur name: "<< pp->getName() << endl;
+    cout << mMonitor->getPioche()->showIdLast() << endl;
+    joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
-    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte) << endl;
+    cout << "nombre de cartes en main: " << nbCarte << endl;
+    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte-1) << endl;
     IdCarte idC = jHand->getCarte(0);
-    cout << "Id carte defaussee: " << jHand->getIdCarte(nbCarte) << endl;
+    cout << "Id carte defaussee: " << idC << endl;
     addCarteDefausse(idC,indPlayer);
+    cout << "fin GameMechanicsSpe::playTurn" << endl;
 }
 
 int GameMechanicsSpe::getStandardHandNbCarte()const{return 1;}
-
-CardGame::Carte* GameMechanicsSpe::getParamCarte(IdCarte idC)const{return nullptr;}

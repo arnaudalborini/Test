@@ -12,7 +12,6 @@ namespace CardGame{
             int mNbJoueur;
             vector<bool> mJoueurPret;
             vector<Player*> mJoueurs;
-            map<const Player*,int> mapIdPlayer;
             void initGame(int nj, GameMechanics* gm);
         public:
             GameMaster(int nj, GameMechanics* gm);
@@ -28,7 +27,8 @@ namespace CardGame{
             virtual const Plateau*      getPlateau()const;
             virtual const PaquetCarte*  getPioche()const;
             virtual const PaquetCarte*  getDefausse()const;
-            virtual const Carte*   getCarte(IdCarte idC)const;
+            virtual const Carte*        getCarte(IdCarte idC)const;
+            virtual int                 getStatutPlayer(int indPlayer, int dp)const;
     };
 };
 

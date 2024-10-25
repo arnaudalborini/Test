@@ -1,2 +1,0 @@
-C:\msys64\ucrt64\bin\ar.exe qc libMySmileLife.a CMakeFiles/MySmileLife.dir/src/CarteGenerateurStandard.cpp.obj CMakeFiles/MySmileLife.dir/src/MSLMechanics.cpp.obj
-C:\msys64\ucrt64\bin\ranlib.exe libMySmileLife.a
