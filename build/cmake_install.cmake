@@ -38,18 +38,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
+  # Include the install script for each subdirectory.
   include("D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CardGame/cmake_install.cmake")
-endif()
+  include("D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MySmileLife/cmake_install.cmake")
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

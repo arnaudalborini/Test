@@ -1,5 +1,29 @@
 [
 {
+  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MySmileLifeProject.dir/includes_CXX.rsp -g -o CMakeFiles\\MySmileLifeProject.dir\\main.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\main.cpp\"",
+  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/main.cpp",
+  "output": "CMakeFiles/MySmileLifeProject.dir/main.cpp.obj"
+},
+{
+  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MySmileLifeTests.dir/includes_CXX.rsp -g -o CMakeFiles\\MySmileLifeTests.dir\\MySmileLife\\tests\\CreationJoueur.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MySmileLife\\tests\\CreationJoueur.cpp\"",
+  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MySmileLife/tests/CreationJoueur.cpp",
+  "output": "CMakeFiles/MySmileLifeTests.dir/MySmileLife/tests/CreationJoueur.cpp.obj"
+},
+{
+  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MySmileLifeTests.dir/includes_CXX.rsp -g -o CMakeFiles\\MySmileLifeTests.dir\\MySmileLife\\tests\\MySmileLifeTest.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MySmileLife\\tests\\MySmileLifeTest.cpp\"",
+  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MySmileLife/tests/MySmileLifeTest.cpp",
+  "output": "CMakeFiles/MySmileLifeTests.dir/MySmileLife/tests/MySmileLifeTest.cpp.obj"
+},
+{
+  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MySmileLifeTests.dir/includes_CXX.rsp -g -o CMakeFiles\\MySmileLifeTests.dir\\MySmileLife\\tests\\mainTests.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MySmileLife\\tests\\mainTests.cpp\"",
+  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MySmileLife/tests/mainTests.cpp",
+  "output": "CMakeFiles/MySmileLifeTests.dir/MySmileLife/tests/mainTests.cpp.obj"
+},
+{
   "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/CardGame",
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/CardGame.dir/includes_CXX.rsp -g -o CMakeFiles\\CardGame.dir\\src\\CarteGenerator.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\CardGame\\src\\CarteGenerator.cpp\"",
   "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/CardGame/src/CarteGenerator.cpp",
@@ -54,57 +78,15 @@
   "output": "CardGame/CMakeFiles/CardGame.dir/src/Plateau.cpp.obj"
 },
 {
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/CardGamecli.dir/includes_CXX.rsp -g -o CMakeFiles\\CardGamecli.dir\\main.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\Test\\main.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/Test/main.cpp",
-  "output": "Test/CMakeFiles/CardGamecli.dir/main.cpp.obj"
+  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MySmileLife",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MySmileLife.dir/includes_CXX.rsp -g -o CMakeFiles\\MySmileLife.dir\\src\\CarteGenerateurStandard.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MySmileLife\\src\\CarteGenerateurStandard.cpp\"",
+  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MySmileLife/src/CarteGenerateurStandard.cpp",
+  "output": "MySmileLife/CMakeFiles/MySmileLife.dir/src/CarteGenerateurStandard.cpp.obj"
 },
 {
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/CardGamecli.dir/includes_CXX.rsp -g -o CMakeFiles\\CardGamecli.dir\\src\\Carte.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\Test\\src\\Carte.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/Test/src/Carte.cpp",
-  "output": "Test/CMakeFiles/CardGamecli.dir/src/Carte.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/CardGamecli.dir/includes_CXX.rsp -g -o CMakeFiles\\CardGamecli.dir\\src\\CreationJoueur.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\Test\\src\\CreationJoueur.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/Test/src/CreationJoueur.cpp",
-  "output": "Test/CMakeFiles/CardGamecli.dir/src/CreationJoueur.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/Test",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/CardGamecli.dir/includes_CXX.rsp -g -o CMakeFiles\\CardGamecli.dir\\src\\hello_test.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\Test\\src\\hello_test.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/Test/src/hello_test.cpp",
-  "output": "Test/CMakeFiles/CardGamecli.dir/src/hello_test.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MSLexe.dir/includes_CXX.rsp -g -o CMakeFiles\\MSLexe.dir\\main.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MSL\\main.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MSL/main.cpp",
-  "output": "MSL/CMakeFiles/MSLexe.dir/main.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MSLexe.dir/includes_CXX.rsp -g -o CMakeFiles\\MSLexe.dir\\src\\CarteGenerateurStandard.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MSL\\src\\CarteGenerateurStandard.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MSL/src/CarteGenerateurStandard.cpp",
-  "output": "MSL/CMakeFiles/MSLexe.dir/src/CarteGenerateurStandard.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MSLexe.dir/includes_CXX.rsp -g -o CMakeFiles\\MSLexe.dir\\src\\CreationJoueur.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MSL\\src\\CreationJoueur.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MSL/src/CreationJoueur.cpp",
-  "output": "MSL/CMakeFiles/MSLexe.dir/src/CreationJoueur.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MSLexe.dir/includes_CXX.rsp -g -o CMakeFiles\\MSLexe.dir\\src\\MSLMechanics.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MSL\\src\\MSLMechanics.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MSL/src/MSLMechanics.cpp",
-  "output": "MSL/CMakeFiles/MSLexe.dir/src/MSLMechanics.cpp.obj"
-},
-{
-  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MSL",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MSLexe.dir/includes_CXX.rsp -g -o CMakeFiles\\MSLexe.dir\\src\\MySmileLifeTest.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MSL\\src\\MySmileLifeTest.cpp\"",
-  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MSL/src/MySmileLifeTest.cpp",
-  "output": "MSL/CMakeFiles/MSLexe.dir/src/MySmileLifeTest.cpp.obj"
+  "directory": "D:/Documents commun/OneDrive/Documents/VSCode/Test/build/MySmileLife",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MySmileLife.dir/includes_CXX.rsp -g -o CMakeFiles\\MySmileLife.dir\\src\\MSLMechanics.cpp.obj -c \"D:\\Documents commun\\OneDrive\\Documents\\VSCode\\Test\\MySmileLife\\src\\MSLMechanics.cpp\"",
+  "file": "D:/Documents commun/OneDrive/Documents/VSCode/Test/MySmileLife/src/MSLMechanics.cpp",
+  "output": "MySmileLife/CMakeFiles/MySmileLife.dir/src/MSLMechanics.cpp.obj"
 }
 ]
