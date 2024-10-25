@@ -5,7 +5,7 @@
 #include "MySmileLife.hpp"
 
 namespace MySmileLife{
-    class MSLPlayer:public CardGame::Player{
+    class MSLPlayer:public Player{
         public:
             virtual string getName()const=0;
     };

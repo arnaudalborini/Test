@@ -18,23 +18,19 @@ vector
 list
 -
 
-../CardGame/include/GameInterface.hpp
+../CardGame/include/Carte.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/GameMaster.hpp
+../CardGame/include/CarteGenerator.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
-GameInterface.hpp
-../CardGame/include/GameInterface.hpp
-PlayerInterface.hpp
-../CardGame/include/PlayerInterface.hpp
+Carte.hpp
+../CardGame/include/Carte.hpp
 
-../CardGame/include/GameMasterMonitor.hpp
+../CardGame/include/CartesAlgo.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
-GameMechanicsMonitor.hpp
-../CardGame/include/GameMechanicsMonitor.hpp
 
 ../CardGame/include/GameMechanics.hpp
 CardGame.hpp
@@ -44,49 +40,41 @@ CardGame.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/InfosJoueur.hpp
+../CardGame/include/GameMechanicsSpe.hpp
+GameMechanics.hpp
+../CardGame/include/GameMechanics.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/Monitor.hpp
+../CardGame/include/Hand.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
-GameMasterMonitor.hpp
-../CardGame/include/GameMasterMonitor.hpp
+
+../CardGame/include/InfosJoueur.hpp
+CardGame.hpp
+../CardGame/include/CardGame.hpp
 
 ../CardGame/include/PaquetCarte.hpp
 CardGame.hpp
 ../CardGame/include/CardGame.hpp
 
-../CardGame/include/Plateau.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
+../CardGame/include/Player.hpp
 
-../CardGame/include/PlayerInterface.hpp
-CardGame.hpp
-../CardGame/include/CardGame.hpp
-
-/workspaces/Test/CardGame/src/GameMaster.cpp
-GameMaster.hpp
-/workspaces/Test/CardGame/src/GameMaster.hpp
-GameMasterMonitor.hpp
-/workspaces/Test/CardGame/src/GameMasterMonitor.hpp
-Monitor.hpp
-/workspaces/Test/CardGame/src/Monitor.hpp
-InfosJoueur.hpp
-/workspaces/Test/CardGame/src/InfosJoueur.hpp
-Plateau.hpp
-/workspaces/Test/CardGame/src/Plateau.hpp
-
-/workspaces/Test/CardGame/src/Monitor.cpp
-Monitor.hpp
-/workspaces/Test/CardGame/src/Monitor.hpp
+/workspaces/Test/CardGame/src/GameMechanicsSpe.cpp
+GameMechanicsSpe.hpp
+/workspaces/Test/CardGame/src/GameMechanicsSpe.hpp
+GameMechanicsMonitor.hpp
+/workspaces/Test/CardGame/src/GameMechanicsMonitor.hpp
 PaquetCarte.hpp
 /workspaces/Test/CardGame/src/PaquetCarte.hpp
-Plateau.hpp
-/workspaces/Test/CardGame/src/Plateau.hpp
+Player.hpp
+/workspaces/Test/CardGame/src/Player.hpp
 InfosJoueur.hpp
 /workspaces/Test/CardGame/src/InfosJoueur.hpp
-GameMechanics.hpp
-/workspaces/Test/CardGame/src/GameMechanics.hpp
+Hand.hpp
+/workspaces/Test/CardGame/src/Hand.hpp
+CarteGenerator.hpp
+/workspaces/Test/CardGame/src/CarteGenerator.hpp
+CartesAlgo.hpp
+/workspaces/Test/CardGame/src/CartesAlgo.hpp
 

@@ -6,7 +6,6 @@
 #include "MyShuffle.hpp"
 
 using namespace MySmileLife;
-using CardGame::IdCarte;
 
 CarteGenerateurStandard::CarteGenerateurStandard():cptId(0)
 {   
@@ -27,7 +26,7 @@ void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
 {
     cout << "CarteGenerateurStandard::genCartesPioche" << endl;
     IdCarte id;
-    map<CarteSousType,set<IdCarte>> mapCT = mapMSLCarte[carteMetier];
+    map<int,set<IdCarte>> mapCT = multiMapMSLCarte.getMapByKey1(carteMetier);
     for(auto sIC: mapCT){
         for(auto id : sIC.second){
             vecCartes.push_back(id);
@@ -60,13 +59,13 @@ void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
     vecCartes.push_back( getFirstSetIdCarte(carteSpecial,LegionHonneur) );
     id = getFirstSetIdCarte(carteSpecial,GrandPrixExcellence);
     for(int i=0;i<2;i++){vecCartes.push_back( id );}
-    mapCT = mapMSLCarte[carteEnfant];
+    mapCT = multiMapMSLCarte.getMapByKey1(carteEnfant);
     for(auto mapS: mapCT){
         for(IdCarte idC: mapS.second){
             vecCartes.push_back(idC);
         }
     }
-    mapCT = mapMSLCarte[carteFlirt];
+    mapCT = multiMapMSLCarte.getMapByKey1(carteFlirt);
     for(auto mapS: mapCT){
         for(IdCarte idC: mapS.second){
             for(int i=0;i<2;i++){vecCartes.push_back( idC );}
@@ -90,9 +89,9 @@ void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
     for(int i=0;i<5;i++){vecCartes.push_back( id );}
     vecCartes.push_back( getFirstSetIdCarte(carteMalus,Prison) );
     vecCartes.push_back( getFirstSetIdCarte(carteMalus,Attentat) );
-    for(auto id: mapMSLCarte[carteAnimal][AucunSousType]){vecCartes.push_back(id);}
+    for(auto id: multiMapMSLCarte[{carteAnimal,AucunSousType}]){vecCartes.push_back(id);}
     vecCartes.push_back( getFirstSetIdCarte(carteAnimal,Licorne) );
-    for(auto id: mapMSLCarte[carteVoyage][AucunSousType]){vecCartes.push_back(id);}
+    for(auto id: multiMapMSLCarte[{carteVoyage,AucunSousType}]){vecCartes.push_back(id);}
     id = getFirstSetIdCarte(carteMaison,Maison6);
     for(int i=0;i<2;i++){vecCartes.push_back( id );}
     id = getFirstSetIdCarte(carteMaison,Maison8);
@@ -228,6 +227,6 @@ void MySmileLife::CarteGenerateurStandard::addCarteMSL(const CarteMSL *crt)
     IdCarte id = crt->getId();
     CarteType ct = crt->getType();
     CarteSousType cst = crt->getSType();
-    mapMSLCarte[ct][cst].insert(id);
-    addCarte(dynamic_cast<const CardGame::Carte*>(crt));
+    multiMapMSLCarte[{ct,cst}].insert(id);
+    addCarte(dynamic_cast<const Carte*>(crt));
 }

@@ -2,11 +2,10 @@
 #define CARTE_H
 
 #include "MySmileLife.hpp"
-#include "InfosJoueur.hpp"
 #include "Carte.hpp"
 
 namespace MySmileLife{
-    class CarteMSL:public CardGame::Carte{
+    class CarteMSL final:public Carte{
         private:
             string mName;
             int mNbSmile;

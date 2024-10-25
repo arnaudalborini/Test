@@ -9,14 +9,10 @@
 #include "Hand.hpp"
 #include "MSLPlayer.hpp"
 #include "CartesAlgoMSL.hpp"
+#include "InfosJoueur.hpp"
 
 using MySmileLife::MSLMechanics;
 using MySmileLife::CarteMSL;
-using CardGame::IdCarte;
-using CardGame::Player;
-using CardGame::Hand;
-using CardGame::Plateau;
-using CardGame::StatutPlateau;
 
 MSLMechanics::MSLMechanics()
 {
@@ -34,7 +30,7 @@ const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
     return dynamic_cast<const CarteMSL*>(cGen->getCarteById(id));
 }
 int  MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
-int  MSLMechanics::countSmile(CardGame::Plateau* plateauJoueur)const{
+int  MSLMechanics::countSmile(Plateau* plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
         s+=getSmileFromId(elt);

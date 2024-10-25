@@ -19,6 +19,13 @@ namespace MySmileLife{
     using std::map;
     using std::list;
     using std::set;
+    using CardGame::IdCarte;
+    using CardGame::Player;
+    using CardGame::Plateau;
+    using CardGame::InfosJoueur;
+    using CardGame::Hand;
+    using CardGame::StatutPlateau;
+    using CardGame::Carte;
     enum CarteType:int{
         carteEtude,
         carteMetier,
