@@ -21,14 +21,14 @@ namespace MySmileLife{
             void addVoyage(  );
             void addMaison(  );
             void addCarteMSL(const CarteMSL* crt);
-            MyMultiMap<set<IdCarte>> multiMapMSLCarte;
-            set<IdCarte> getSetIdCarte(CarteType ct, CarteSousType cst)const{return multiMapMSLCarte[{ct,cst}];}
-            map<int,set<IdCarte>> getMapCstSetIdCarte(CarteType ct)const{return multiMapMSLCarte.getMapByKey1(ct);}
-            IdCarte getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{return *(multiMapMSLCarte[{ct,cst}].begin());}
+            MyMultiMap<set<IdCarte>> mmapMSLCarte;
+            set<IdCarte> getSetIdCarte(CarteType ct, CarteSousType cst)const{return mmapMSLCarte[{ct,cst}];}
+            map<int,set<IdCarte>> getMapCstSetIdCarte(CarteType ct)const{return mmapMSLCarte.getMapByKey1(ct);}
+            IdCarte getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{return *(mmapMSLCarte[{ct,cst}].begin());}
 
         public:
             CarteGenerateurStandard();
-            virtual void genCartesPioche(vector<IdCarte> &vecCarte);
+            void genCartesPioche(vector<IdCarte> &vecCarte) override;
     };
 };
 

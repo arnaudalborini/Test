@@ -196,3 +196,14 @@ bool CartesAlgoMSL::jouerCarte(const Player *pp, IdCarte id) const
     }
     return false;
 }
+
+int CartesAlgoMSL::getNbSmile(const Plateau *pp, IdCarte id) const
+{
+    const CarteMSL* crt = getCarteMSL( id );
+    if( (crt->getType()==carteAnimal) && ( crt->getSType() == Licorne) ){
+        if((pp->getStatut(DetailPlateau::ArcEnCielJoue))&&(pp->getStatut(DetailPlateau::EtoileFilanteJouee))){
+            return crt->getNbSmile() * 2;
+        }
+    }
+    return crt->getNbSmile();
+}

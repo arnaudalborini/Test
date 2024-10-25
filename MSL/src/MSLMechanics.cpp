@@ -29,11 +29,10 @@ MySmileLife::MSLMechanics::~MSLMechanics()
 const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
     return dynamic_cast<const CarteMSL*>(cGen->getCarteById(id));
 }
-int  MSLMechanics::getSmileFromId(IdCarte id)const{return getCarteFromId(id)->getNbSmile();}
 int  MSLMechanics::countSmile(Plateau* plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
-        s+=getSmileFromId(elt);
+        s += dynamic_cast<CartesAlgoMSL*>(cAlgo)->getNbSmile(plateauJoueur,elt);
     }
     return s;
 }

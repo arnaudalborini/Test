@@ -37,6 +37,8 @@ namespace MySmileLife{
             ~CartesAlgoMSL(){}
             bool peutEtreJouee(const Player *pp, IdCarte id)const override;
             bool jouerCarte(const Player* pp, IdCarte id)const override;
+
+            int getNbSmile(const Plateau *pp, IdCarte id)const;
     };
 }
 
