@@ -200,7 +200,7 @@ bool CartesAlgoMSL::jouerCarte(const Player *pp, IdCarte id) const
 int CartesAlgoMSL::getNbSmile(const Plateau *pp, IdCarte id) const
 {
     const CarteMSL* crt = getCarteMSL( id );
-    if( (crt->getType()==carteAnimal) && ( crt->getSType() == Licorne) ){
+    if( (crt->getType()==carteAnimal) && ( crt->getSType() == csLicorne) ){
         if((pp->getStatut(DetailPlateau::ArcEnCielJoue))&&(pp->getStatut(DetailPlateau::EtoileFilanteJouee))){
             return crt->getNbSmile() * 2;
         }

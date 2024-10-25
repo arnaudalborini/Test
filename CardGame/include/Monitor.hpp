@@ -17,21 +17,21 @@ namespace CardGame{
             map<const Player*,int>  mapIdPlayer;
         public:
             Monitor();
-            virtual ~Monitor();
+            ~Monitor();
             // GameMechanicsMonitor
-            virtual Plateau*        getPlateau()const;
-            virtual PaquetCarte*    getPioche()const;
-            virtual PaquetCarte*    getDefausse()const;
-            virtual InfosJoueur*    getInfosJoueurs(int ind)const;
-            virtual const Player*   getPlayer(int ind)const;
-            virtual int             getIndPlayer(const Player* pp)const;
-            virtual int             getNbPlayer()const;
+            Plateau*        getPlateau()const override;
+            PaquetCarte*    getPioche()const override;
+            PaquetCarte*    getDefausse()const override;
+            InfosJoueur*    getInfosJoueurs(int ind)const override;
+            const Player*   getPlayer(int ind)const override;
+            int             getIndPlayer(const Player* pp)const override;
+            int             getNbPlayer()const override;
             // GameMasterMonitor
-            virtual void initiateElements(int nbJoueurs,GameMechanics* gm);
-            virtual void addPlayer(const Player* pp, int index);
-            virtual void startGame();
-            virtual void removePlayer(int indice);
-            virtual int  getWinner()const;
+            void initiateElements(int nbJoueurs,GameMechanics* gm) override;
+            void addPlayer(const Player* pp, int index) override;
+            void startGame() override;
+            void removePlayer(int indice) override;
+            int  getWinner()const override;
     };
 }
 

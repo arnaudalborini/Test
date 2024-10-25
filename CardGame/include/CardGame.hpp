@@ -15,7 +15,6 @@ namespace CardGame{
     using std::map;
     using std::list;
     enum EmplacementPlateau:int;
-    enum EmplacementPlateauGeneral:int;
     typedef int IdCarte;
     class CartesAlgo;
     class CarteGenerator;

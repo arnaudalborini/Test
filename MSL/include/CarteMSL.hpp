@@ -12,7 +12,7 @@ namespace MySmileLife{
             CarteType mCType;
             CarteSousType mCsType;
         public:
-            CarteMSL(int id, string nn, int ss, CarteType cT, CarteSousType cST=CarteSousType::AucunSousType):Carte(id),mName(nn),mNbSmile(ss),mCType(cT),mCsType(cST){};
+            CarteMSL(int id, string nn, int ss, CarteType cT, CarteSousType cST=CarteSousType::csAucun):Carte(id),mName(nn),mNbSmile(ss),mCType(cT),mCsType(cST){};
             ~CarteMSL(){}
             string getName()const{return mName;}
             int getNbSmile()const{return mNbSmile;}

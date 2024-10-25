@@ -29,7 +29,7 @@ void GameMechanics::initGame()const{
     mMonitor->getPioche()->initializePaquet( vecC );
     vecC = genVecCartesDefausse();
     mMonitor->getDefausse()->initializePaquet( vecC );
-    map<EmplacementPlateauGeneral,IdCarte> mapCrt = genMapCartePlateauInitial();
+    map<EmplacementPlateau,IdCarte> mapCrt = genMapCartePlateauInitial();
     for(auto p:mapCrt){
         mMonitor->getPlateau()->addLast(p.first,p.second);
     }

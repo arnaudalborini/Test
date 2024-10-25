@@ -11,7 +11,7 @@ namespace CardGame{
             virtual ~GameMechanicsSpe();  
             virtual vector<IdCarte> genVecCartesPioche()const override;
             virtual vector<IdCarte> genVecCartesDefausse()const override;
-            virtual map<EmplacementPlateauGeneral,IdCarte> genMapCartePlateauInitial()const override;
+            virtual map<EmplacementPlateau,IdCarte> genMapCartePlateauInitial()const override;
             virtual vector<int>     getJoueurInitialStatuts()const override;
             virtual void playTurn(int indPlayer)const override;
             virtual int  getStandardHandNbCarte()const override;

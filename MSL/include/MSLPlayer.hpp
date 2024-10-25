@@ -7,7 +7,7 @@
 namespace MySmileLife{
     class MSLPlayer:public Player{
         public:
-            virtual string getName()const=0;
+            virtual ~MSLPlayer(){}
     };
 }
 
