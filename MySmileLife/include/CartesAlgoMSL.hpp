@@ -9,7 +9,7 @@ namespace MySmileLife{
         private:
             const CarteMSL* getCarteMSL(IdCarte id)const;
 
-            Plateau * getPlateuPlayer(const Player* pp)const;
+            Plateau * getPlateauPlayer(const Player* pp)const;
 
             bool peutEtreJoueeAnimal(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeEnfant(const Player *pp, const CarteMSL* crt)const;

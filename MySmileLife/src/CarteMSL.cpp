@@ -1,6 +1,24 @@
 #include "CarteMSL.hpp"
+#include "jouerMetier.hpp"
+#include <limits>
 
 using MySmileLife::CarteMSL;
+
+int CarteMSL::getMetierNbAnnee() const
+{
+    if(mCType == carteMetier)
+        return Metier::mapMetier.at(mCsType).nbAnneeEtudeRequises;
+    else
+        return std::numeric_limits<int>::max();
+}
+
+int CarteMSL::getMetierSalaireMax() const
+{
+    if(mCType == carteMetier)
+        return Metier::mapMetier.at(mCsType).nbAnneeEtudeRequises;
+    else
+        return 0;
+}
 
 int CarteMSL::getNbEtude() const
 {

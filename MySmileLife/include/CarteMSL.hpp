@@ -19,6 +19,8 @@ namespace MySmileLife{
             CarteType getType()const{return mCType;}
             CarteSousType getSType()const{return mCsType;}
             
+            int getMetierNbAnnee()const;
+            int getMetierSalaireMax()const;
             int getNbEtude()const;
             int getPrixMaison()const;
             int getPrixVoyage()const;
