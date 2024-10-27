@@ -156,7 +156,7 @@ namespace MySmileLife{
         NbAnneeEtude            = 21,
         NbFlirt                 = 22,
         NbEnfant                = 23,
-        TypeMetier              = 24,
+        Profession              = 24,
         LieuDernierFlirt        = 25,
         SalairesDisponibles     = 26,
         DernierSalaireDisponible      = 27,

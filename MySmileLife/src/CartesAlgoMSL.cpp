@@ -15,6 +15,13 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
+/*
+Pour plus de clareté et limiter la taille de ce fichier, les fonctions liées aux cartes Metier, Special et Malus ont été déplacées dans des fichiers dédiés:
+- JouerMetier.cpp
+- JouerSpecial.cpp
+- JouerMalus.cpp
+*/
+
 const CarteMSL *CartesAlgoMSL::getCarteMSL(IdCarte id) const{return dynamic_cast<const CarteMSL*>( cGen->getCarteById(id) );;}
 
 Plateau *MySmileLife::CartesAlgoMSL::getPlateauPlayer(const Player *pp) const
@@ -59,7 +66,7 @@ bool CartesAlgoMSL::peutEtreJoueeFlirt(const Player *pp, const CarteMSL *crt) co
             return true;
         }
     }else{
-        if(plat->getStatut(DetailPlateau::TypeMetier)==csBarman){
+        if(plat->getStatut(DetailPlateau::Profession)==csBarman){
             return true;
         }else{
             if(plat->getStatut(DetailPlateau::NbFlirt)<5){
@@ -79,11 +86,6 @@ bool CartesAlgoMSL::peutEtreJoueeMaison(const Player *pp, const CarteMSL *crt) c
     return (tresorerie>prix);
 }
 
-bool CartesAlgoMSL::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
-{
-    return false;
-}
-
 bool CartesAlgoMSL::peutEtreJoueeMariage(const Player *pp, const CarteMSL *crt) const
 {
     Plateau* plat = getPlateauPlayer(pp);
@@ -94,11 +96,6 @@ bool CartesAlgoMSL::peutEtreJoueeSalaire(const Player *pp, const CarteMSL *crt) 
 {
     Plateau* plat = getPlateauPlayer(pp);
     return (plat->getStatut(aUnTravail)>0) && (plat->getStatut(SalaireMax)>=crt->getSalaire());
-}
-
-bool CartesAlgoMSL::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) const
-{
-    return false;
 }
 
 bool CartesAlgoMSL::peutEtreJoueeVoyage(const Player *pp, const CarteMSL *crt) const
@@ -147,27 +144,12 @@ bool CartesAlgoMSL::jouerCarteMaison(const Player *pp, const CarteMSL *crt) cons
     return false;
 }
 
-bool CartesAlgoMSL::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
-{
-    return false;
-}
-
 bool CartesAlgoMSL::jouerCarteMariage(const Player *pp, const CarteMSL *crt) const
 {
     return false;
 }
 
-bool CartesAlgoMSL::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
-{
-    return false;
-}
-
 bool CartesAlgoMSL::jouerCarteSalaire(const Player *pp, const CarteMSL *crt) const
-{
-    return false;
-}
-
-bool CartesAlgoMSL::jouerCarteSpecial(const Player *pp, const CarteMSL *crt) const
 {
     return false;
 }
