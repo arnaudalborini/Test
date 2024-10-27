@@ -16,13 +16,15 @@ namespace MySmileLife{
             bool peutEtreJoueeEtude(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeFlirt(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeMaison(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeMalus(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeMariage(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeMetier(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeSalaire(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeSpecial(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeVoyage(const Player *pp, const CarteMSL* crt)const;
             
+            bool peutEtreJoueeMalus(const Player *pp, const CarteMSL* crt)const;
+            bool peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt, const Player* Cible) const;
+
             bool jouerCarteAnimal(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteEnfant(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteEtude(const Player *pp, const CarteMSL* crt)const;
