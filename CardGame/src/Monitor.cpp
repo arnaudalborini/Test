@@ -28,10 +28,13 @@ Monitor::~Monitor(){/*
 }
 
 Plateau*        Monitor::getPlateau()                const{return mPlateau;}
-PaquetCarte*    Monitor::getPioche()                 const{return mPioche; }
+Plateau *       Monitor::getPlateauPlayer(int indPlayer) const{return getInfosJoueurs(indPlayer)->getPlateau();}
+Plateau *       Monitor::getPlateauPlayer(const Player *pp) const{return getInfosJoueurs(pp)->getPlateau();}
+PaquetCarte *   Monitor::getPioche() const { return mPioche; }
 PaquetCarte*    Monitor::getDefausse()               const{return mDefausse;}
 InfosJoueur*    Monitor::getInfosJoueurs(int ind)    const{return mInfosJoueurs[ind];}
-const Player*   Monitor::getPlayer(int ind)          const{return mPlayer[ind];}
+InfosJoueur *   Monitor::getInfosJoueurs(const Player *pp) const{return getInfosJoueurs(getIndPlayer(pp));}
+const Player *  Monitor::getPlayer(int ind) const { return mPlayer[ind]; }
 int             Monitor::getIndPlayer(const Player *pp) const{
     cout << "ici" << endl;
     cout << "mapsize: " << mapIdPlayer.size() << endl;
@@ -42,6 +45,30 @@ int             Monitor::getIndPlayer(const Player *pp) const{
 }
 
 int Monitor::getNbPlayer() const{return mNbJoueur;}
+
+void Monitor::defausser(IdCarte id, int indPlayer) const
+{
+    mDefausse->addCarte(id,indPlayer);
+}
+
+void Monitor::defausserDernier( int indPlayer, int EP) const
+{
+    defausser(getInfosJoueurs(indPlayer)->getPlateau()->getLast(EP),indPlayer);
+}
+
+void Monitor::defausserTout( int indPlayer, int EP) const
+{
+    Plateau * p = getInfosJoueurs(indPlayer)->getPlateau();
+    int NbCrt = p->getNbCarte(EP);
+    for(int ind=0;ind<NbCrt;ind++){
+        defausser(p->getLast(EP),indPlayer);
+    }
+}
+
+void Monitor::incStatut(int indPlayer, int statut, int inc) const
+{
+    getInfosJoueurs(indPlayer)->getPlateau()->incStatut(statut, inc);
+}
 
 void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm)
 {

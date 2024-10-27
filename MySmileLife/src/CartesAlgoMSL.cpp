@@ -24,16 +24,11 @@ Pour plus de clareté et limiter la taille de ce fichier, les fonctions liées a
 
 const CarteMSL *CartesAlgoMSL::getCarteMSL(IdCarte id) const{return dynamic_cast<const CarteMSL*>( cGen->getCarteById(id) );;}
 
-Plateau *MySmileLife::CartesAlgoMSL::getPlateauPlayer(const Player *pp) const
-{
-    return mMonitor->getInfosJoueurs(mMonitor->getIndPlayer(pp))->getPlateau();
-}
-
 bool CartesAlgoMSL::peutEtreJoueeAnimal(const Player *pp, const CarteMSL *crt) const{return true;}
 
 bool CartesAlgoMSL::peutEtreJoueeEnfant(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     if(plat->getStatut(estMarie)){
         return true;
     }
@@ -46,7 +41,7 @@ bool CartesAlgoMSL::peutEtreJoueeEnfant(const Player *pp, const CarteMSL *crt) c
 
 bool CartesAlgoMSL::peutEtreJoueeEtude(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     if(plat->getStatut(aUnTravail)==false){
         if(plat->getStatut(NbAnneeEtude) + crt->getNbEtude()<=6){
             return true;
@@ -60,7 +55,7 @@ bool CartesAlgoMSL::peutEtreJoueeEtude(const Player *pp, const CarteMSL *crt) co
 
 bool CartesAlgoMSL::peutEtreJoueeFlirt(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     if( plat->getStatut(estMarie) ){
         if(plat->getStatut(estAdultere)){
             return true;
@@ -79,7 +74,7 @@ bool CartesAlgoMSL::peutEtreJoueeFlirt(const Player *pp, const CarteMSL *crt) co
 
 bool CartesAlgoMSL::peutEtreJoueeMaison(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     int prixBase = crt->getPrixMaison();
     int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible?3:0));
     int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
@@ -88,19 +83,19 @@ bool CartesAlgoMSL::peutEtreJoueeMaison(const Player *pp, const CarteMSL *crt) c
 
 bool CartesAlgoMSL::peutEtreJoueeMariage(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     return (plat->getStatut(estMarie)==false) && (plat->getStatut(NbFlirt)>0);
 }
 
 bool CartesAlgoMSL::peutEtreJoueeSalaire(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     return (plat->getStatut(aUnTravail)>0) && (plat->getStatut(SalaireMax)>=crt->getSalaire());
 }
 
 bool CartesAlgoMSL::peutEtreJoueeVoyage(const Player *pp, const CarteMSL *crt) const
 {
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible?3:0));
     return ( tresorerie > crt->getPrixVoyage() );
 }
@@ -174,7 +169,7 @@ bool CartesAlgoMSL::peutEtreJouee(const Player *pp, IdCarte id) const
         case CarteType::carteMaison:
             return peutEtreJoueeMaison(pp,crt);
         case CarteType::carteMalus:
-            return peutEtreJoueeMalus(pp,crt);
+            return jMalus->peutEtreJoueeMalus(pp,crt);
         case CarteType::carteMariage:
             return peutEtreJoueeMariage(pp,crt);
         case CarteType::carteMetier:
@@ -207,7 +202,7 @@ bool CartesAlgoMSL::jouerCarte(const Player *pp, IdCarte id) const
         case CarteType::carteMaison:
             return jouerCarteMaison(pp,crt);
         case CarteType::carteMalus:
-            return jouerCarteMalus(pp,crt);
+            return jMalus->jouerCarteMalus(pp,crt);
         case CarteType::carteMariage:
             return jouerCarteMariage(pp,crt);
         case CarteType::carteMetier:

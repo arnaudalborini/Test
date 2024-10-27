@@ -70,7 +70,7 @@ bool CartesAlgoMSL::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) 
     if(crt->getType()!=carteSpecial){
         return false;
     }
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     switch(crt->getSType()){
         case csAdultere:
             return isMarriedButNotAdulterous(plat);

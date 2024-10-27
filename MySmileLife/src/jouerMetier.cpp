@@ -21,7 +21,7 @@ bool CartesAlgoMSL::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) c
     if(crt->getType()!=carteMetier){
         return false;
     }
-    Plateau* plat = getPlateauPlayer(pp);
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
     int nbAnneeEtudeRequise = crt->getMetierNbAnnee();
     int sMax = crt->getMetierSalaireMax();
     if( (plat->getStatut(aUnTravail)==false) || (plat->getStatut(Interimaire)) ){
