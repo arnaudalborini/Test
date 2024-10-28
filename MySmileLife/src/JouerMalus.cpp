@@ -26,13 +26,13 @@ bool JouerMalus::peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Pl
     if(cible==nullptr){
         return false;
     }
-    Plateau* plat       = mMonitor->getPlateauPlayer(pp);
-    Plateau* platCible  = mMonitor->getPlateauPlayer(cible);
+    Plateau* plat       = getMonitor()->getPlateauPlayer(pp);
+    Plateau* platCible  = getMonitor()->getPlateauPlayer(cible);
     switch(st){
         case csAccidents:
             return (platCible->getStatut(ResistantAccident) == 0);
         case csAttentat:
-            return ( mMonitor->getPlateau()->getStatut(antiAttentat) == 0 );
+            return ( getMonitor()->getPlateau()->getStatut(antiAttentat) == 0 );
         case csBurnOut:
             return (platCible->getStatut(aUnTravail));
         case csDivorce:
@@ -56,12 +56,12 @@ bool JouerMalus::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
     if(crt->getType()!=carteMalus){
         return false;
     }
-    int indJoueur = mMonitor->getIndPlayer(pp);
-    for(int indice=0;indice<mMonitor->getNbPlayer();indice++){
+    int indJoueur = getMonitor()->getIndPlayer(pp);
+    for(int indice=0;indice<getMonitor()->getNbPlayer();indice++){
         if(indice==indJoueur){
             continue;
         }
-        const Player* Cible = mMonitor->getPlayer(indice);
+        const Player* Cible = getMonitor()->getPlayer(indice);
         if(peutEtreJoueeMalus(pp,crt->getSType(),Cible)){
             return true;
         }
@@ -70,39 +70,39 @@ bool JouerMalus::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
 }
 
 void JouerMalus::jouerAccident(const Player *cible)const{
-    mMonitor->incStatut(mMonitor->getIndPlayer(cible),TourAPasser,1);
+    getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerAttentat()const{
-    for(int indPlayer=0;indPlayer<mMonitor->getNbPlayer();indPlayer++){
-        mMonitor->defausserTout( indPlayer, EEnfant );
+    for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
+        getMonitor()->defausserTout( indPlayer, EEnfant );
     }
 }
 void JouerMalus::jouerBurnout(const Player *cible)const{
-    mMonitor->incStatut(mMonitor->getIndPlayer(cible),TourAPasser,1);
+    getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerDivorce(const Player *cible)const{
-    mMonitor->defausserTout( mMonitor->getIndPlayer(cible), EMariage );
+    getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMariage );
 }
 void JouerMalus::jouerImpots(const Player *cible)const{
-    mMonitor->defausserDernier( mMonitor->getIndPlayer(cible), ESalairesD );
+    getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), ESalairesD );
 }
 void JouerMalus::jouerLicenciement(const Player *cible)const{
-    mMonitor->defausserTout( mMonitor->getIndPlayer(cible), EMetier );
+    getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMetier );
 }
 void JouerMalus::jouerMaladie(const Player *cible)const{
-    mMonitor->incStatut(mMonitor->getIndPlayer(cible),TourAPasser,1);
+    getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerPrison()const{
-    for(int indPlayer=0;indPlayer<mMonitor->getNbPlayer();indPlayer++){
-        Plateau * p = mMonitor->getInfosJoueurs(indPlayer)->getPlateau();
+    for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
+        Plateau * p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
         if(p->getStatut(RisquePrison)){
-            mMonitor->defausserTout( indPlayer, EMetier );
-            mMonitor->incStatut(indPlayer,TourAPasser,3);
+            getMonitor()->defausserTout( indPlayer, EMetier );
+            getMonitor()->incStatut(indPlayer,TourAPasser,3);
         }
     }
 }
 void JouerMalus::jouerRedoublement(const Player *cible)const{
-    mMonitor->defausserDernier( mMonitor->getIndPlayer(cible), EEtudes );
+    getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), EEtudes );
 }
 
 bool JouerMalus::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
@@ -113,7 +113,7 @@ bool JouerMalus::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
     switch(crt->getSType()){
         case csAttentat:
             jouerAttentat();
-            mMonitor->getPlateauPlayer( pp )->addLast(EMalus, crt->getId());
+            getMonitor()->getPlateauPlayer( pp )->addLast(EMalus, crt->getId());
             break;
         case csPrison:
             jouerPrison();

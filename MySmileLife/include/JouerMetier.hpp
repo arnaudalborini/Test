@@ -6,12 +6,12 @@
 
 namespace MySmileLife{
     class JouerMetier{
-            CardGame::CarteGenerator* cGen;
-            const CardGame::GameMechanicsMonitor* mMonitor;
-        public:
-            JouerMetier(CardGame::CarteGenerator* cg, CardGame::GameMechanicsMonitor* mm):cGen(cg),mMonitor(mm){}
+        protected:
             bool peutEtreJoueeMetier(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteMetier(const Player *pp, const CarteMSL* crt)const;
+        public:            
+            virtual const CarteGenerateurStandard*          getCGen()const=0;
+            virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
     };
     namespace Metier{
         struct ProprietesMetier{

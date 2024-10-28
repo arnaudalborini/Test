@@ -8,8 +8,9 @@
 namespace MySmileLife{
     class BasicBot:public MSLPlayer{
         public:
-            virtual string getName()const{return "basicbot";}
-            virtual int choisirUneCarteAJouer(CardGame::PaquetCarte* paq)const{return 0;}
+            string getName()const override{return "basicbot";}
+            int choisirUneCarteAJouer(CardGame::PaquetCarte* paq)const override{return 0;}
+            void showNCartesPioche(const vector<IdCarte>& vecIdPioche)const override;
     };
 }
 

@@ -8,6 +8,7 @@
 #include "StatutPlateau.hpp"
 
 #include "JouerSpecial.hpp"
+#include "JouerCarteMSL.hpp"
 
 using MySmileLife::JouerSpecial;
 using MySmileLife::JouerMalus;
@@ -54,12 +55,11 @@ bool hasEligibleProfession( const Plateau* plat )
         return false;
     }
 }
-bool canPlayMalusCard( const Plateau* plat, const Player* pp, const JouerMalus* jMalus ){
+bool canPlayMalusCard( const Plateau* plat, const Player* pp, const MySmileLife::JouerCarteMSL* jCarte ){
     int nbMalus = plat->getNbCarte(EmplacementsPlateau::EMalus);
     for(auto indice=0; indice<nbMalus;indice++){
         int IdMalus = plat->showIdN(EmplacementsPlateau::EMalus,indice);
-        const CarteMSL* crt = dynamic_cast<const CarteMSL*>(jMalus->getGen()->getCarteById(IdMalus));
-        if( jMalus->peutEtreJoueeMalus(pp,crt)){
+        if( jCarte->peutEtreJouee(pp,IdMalus)){
             return true;
         }
     }
@@ -72,14 +72,14 @@ bool JouerSpecial::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) c
     if(crt->getType()!=carteSpecial){
         return false;
     }
-    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    Plateau* plat = getMonitor()->getPlateauPlayer(pp);
     switch(crt->getSType()){
         case csAdultere:
             return isMarriedButNotAdulterous(plat);
         case csGrandPrixExcellence:
             return hasEligibleProfession(plat);
         case csVengeance:
-            return canPlayMalusCard(plat,pp,jMalus);
+            return canPlayMalusCard(plat,pp,dynamic_cast<const JouerCarteMSL*>(this));
         default:
             return true;
     }

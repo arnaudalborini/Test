@@ -23,7 +23,8 @@ bool JouerMetier::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) con
     if(crt->getType()!=carteMetier){
         return false;
     }
-    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    
+    Plateau* plat = getMonitor()->getPlateauPlayer(pp);
     int nbAnneeEtudeRequise = crt->getMetierNbAnnee();
     int sMax = crt->getMetierSalaireMax();
     if( (plat->getStatut(aUnTravail)==false) || (plat->getStatut(Interimaire)) ){
@@ -37,20 +38,33 @@ bool JouerMetier::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) con
     return false;
 }
 
-void voirNProchainesCartesPioche(int N){}
+void voirNProchainesCartesPioche(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor, int N){
+    CardGame::PaquetCarte* pioche = mMonitor->getPioche();
+    int nbcarte = pioche->getNbCarte();
+    int indDebut = (nbcarte>=N)?nbcarte-1-N:0;
+    std::vector<IdCarte> vecId;
+    for(int indice = indDebut;indice<nbcarte;indice++){
+        vecId.push_back(pioche->showNeme(indice));
+    }
+
+}
 void choisirEtJouerUneCarteDefausse(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
 {
     int indiceCarte = pp->choisirUneCarteAJouer(mMonitor->getDefausse());
     IdCarte id = mMonitor->getDefausse()->piocherNeme( indiceCarte );
     
 }
-void voirMainAutresJoueur(){}
+void voirMainAutresJoueur(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
+{
+
+}
 
 bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
 {
     if(peutEtreJoueeMetier(pp,crt)==false){
         return false;
     }
+    const CardGame::GameMechanicsMonitor * mMonitor = getMonitor();
     Plateau* plat = mMonitor->getPlateauPlayer(pp);
     if(plat->getStatut(aUnTravail)>0){
         mMonitor->defausserTout(mMonitor->getIndPlayer(pp),EMetier);
@@ -64,7 +78,7 @@ bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
             plat->setStatut(MaisonOfferte,1);
             break;
         case csAstronaute:
-            choisirEtJouerUneCarteDefausse();
+            choisirEtJouerUneCarteDefausse(pp,mMonitor);
             break;
         case csAvocat:
             plat->setStatut(ResistantDivorce,1);
@@ -89,10 +103,10 @@ bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
             plat->setStatut(ResistantAccident,1);
             break;
         case csJournaliste:
-            voirMainAutresJoueur();
+            voirMainAutresJoueur(pp,mMonitor);
             break;
         case csMedium:
-            voirNProchainesCartesPioche(13);
+            voirNProchainesCartesPioche(pp,mMonitor,13);
             break;
         case csMedecin:
         case csChirurgien:

@@ -187,6 +187,7 @@ namespace MySmileLife{
         EDivers,
         ECasinoSalaire
     };
+    class JouerCarteMSL;
     class CartesAlgoMSL;
     class BasicBot;
     class CarteMSL;

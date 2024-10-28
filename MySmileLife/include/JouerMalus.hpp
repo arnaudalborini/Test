@@ -6,10 +6,14 @@
 
 namespace MySmileLife{
     class JouerMalus{
+        protected:
+            bool peutEtreJoueeMalus(const Player *pp, const CarteMSL* crt)const;
+            bool jouerCarteMalus(const Player *pp, const CarteMSL* crt)const;
+        public:            
+            virtual const CarteGenerateurStandard*          getCGen()const=0;
+            virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
+
         private:
-            CardGame::CarteGenerator* cGen;
-            const CardGame::GameMechanicsMonitor* mMonitor;
-            
             bool peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Player* Cible) const;
             const Player* getCibleMalus(const Player* pp, CarteSousType typeMalus)const;
 
@@ -23,11 +27,6 @@ namespace MySmileLife{
             void jouerPrison()const;
             void jouerRedoublement(const Player *pp)const;
 
-        public:
-            JouerMalus(CardGame::CarteGenerator* cg, CardGame::GameMechanicsMonitor* mm):cGen(cg),mMonitor(mm){}
-            bool peutEtreJoueeMalus(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteMalus(const Player *pp, const CarteMSL* crt)const;
-            const CardGame::CarteGenerator* getGen()const{return cGen;}
     };
 }
 #endif
