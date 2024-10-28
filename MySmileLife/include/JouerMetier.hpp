@@ -13,6 +13,8 @@ namespace MySmileLife{
         public:            
             virtual const CarteGenerateurStandard*          getCGen()const=0;
             virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
+            virtual bool peutEtreJouee(const Player *pp, IdCarte id)const=0;
+            virtual bool jouerCarte(const Player* pp, IdCarte id)const=0;
     };
     namespace Metier{
         struct ProprietesMetier{

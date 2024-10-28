@@ -12,7 +12,8 @@ namespace MySmileLife{
             int choisirUneCarteAJouer(CardGame::PaquetCarte* paq)const override{return 0;}
             void showNCartesPioche(const vector<IdCarte>& vecIdPioche)const override;
             void showHandAutreJoueur(const Hand* h, int indAutrePlayer)const override;
-            virtual int choisirSalairePourPayer(const vector<IdCarte>& vecIdSalairesDisponibles)const;
+            int choisirSalairePourPayer(const vector<IdCarte>& vecIdSalairesDisponibles)const override;
+            int choisirIndiceCarteAJouerMain(const Hand* h)const override{return 0;};
     };
 }
 

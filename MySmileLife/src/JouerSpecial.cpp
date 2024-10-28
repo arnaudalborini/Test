@@ -6,6 +6,7 @@
 #include "Hand.hpp"
 #include "InfosJoueur.hpp"
 #include "StatutPlateau.hpp"
+#include "Player.hpp"
 
 #include "JouerSpecial.hpp"
 #include "JouerCarteMSL.hpp"
@@ -170,7 +171,15 @@ void JouerSpecial::jouerAnniversaire(const Player *pp) const
 
 void JouerSpecial::jouerArcEnCiel(const Player *pp) const
 {
-    //TODO: jouer 3 cartes et repriochez
+    const Hand* h = getMonitor()->getInfosJoueurs(pp)->getHand();
+    for(auto indice=0;indice<3;indice++){
+        int n = pp->choisirIndiceCarteAJouerMain(h);
+        IdCarte id = h->getIdCarte(n);
+        if(peutEtreJouee(pp,id)){
+            getMonitor()->getInfosJoueurs(pp)->getHand()->getCarte(n);
+            jouerCarte(pp,id);
+        }
+    }
     getMonitor()->getPlateauPlayer(pp)->setStatut(ArcEnCielJoue,1);
 }
 
