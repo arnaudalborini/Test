@@ -173,11 +173,11 @@ bool CartesAlgoMSL::peutEtreJouee(const Player *pp, IdCarte id) const
         case CarteType::carteMariage:
             return peutEtreJoueeMariage(pp,crt);
         case CarteType::carteMetier:
-            return peutEtreJoueeMetier(pp,crt);
+            return jMetier->peutEtreJoueeMetier(pp,crt);
         case CarteType::carteSalaire:
             return peutEtreJoueeSalaire(pp,crt);
         case CarteType::carteSpecial:
-            return peutEtreJoueeSpecial(pp,crt);
+            return jSpecial->peutEtreJoueeSpecial(pp,crt);
         case CarteType::carteVoyage:
             return peutEtreJoueeVoyage(pp,crt);
     }
@@ -206,11 +206,11 @@ bool CartesAlgoMSL::jouerCarte(const Player *pp, IdCarte id) const
         case CarteType::carteMariage:
             return jouerCarteMariage(pp,crt);
         case CarteType::carteMetier:
-            return jouerCarteMetier(pp,crt);
+            return jMetier->jouerCarteMetier(pp,crt);
         case CarteType::carteSalaire:
             return jouerCarteSalaire(pp,crt);
         case CarteType::carteSpecial:
-            return jouerCarteSpecial(pp,crt);
+            return jSpecial->jouerCarteSpecial(pp,crt);
         case CarteType::carteVoyage:
             return jouerCarteVoyage(pp,crt);
     }

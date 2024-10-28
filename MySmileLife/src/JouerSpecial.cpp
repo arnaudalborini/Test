@@ -1,4 +1,4 @@
-#include "CartesAlgoMSL.hpp"
+#include "JouerSpecial.hpp"
 #include "CarteMSL.hpp"
 #include "CarteGenerator.hpp"
 #include "GameMechanicsMonitor.hpp"
@@ -9,7 +9,8 @@
 
 #include "JouerSpecial.hpp"
 
-using MySmileLife::CartesAlgoMSL;
+using MySmileLife::JouerSpecial;
+using MySmileLife::JouerMalus;
 using MySmileLife::CarteMSL;
 using CardGame::Player;
 using CardGame::IdCarte;
@@ -53,11 +54,12 @@ bool hasEligibleProfession( const Plateau* plat )
         return false;
     }
 }
-bool canPlayMalusCard( const Plateau* plat, const Player* pp, const CartesAlgoMSL* crtAlgo ){
+bool canPlayMalusCard( const Plateau* plat, const Player* pp, const JouerMalus* jMalus ){
     int nbMalus = plat->getNbCarte(EmplacementsPlateau::EMalus);
     for(auto indice=0; indice<nbMalus;indice++){
         int IdMalus = plat->showIdN(EmplacementsPlateau::EMalus,indice);
-        if( crtAlgo->peutEtreJouee(pp,IdMalus)){
+        const CarteMSL* crt = dynamic_cast<const CarteMSL*>(jMalus->getGen()->getCarteById(IdMalus));
+        if( jMalus->peutEtreJoueeMalus(pp,crt)){
             return true;
         }
     }
@@ -65,7 +67,7 @@ bool canPlayMalusCard( const Plateau* plat, const Player* pp, const CartesAlgoMS
 }
 
 
-bool CartesAlgoMSL::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) const
+bool JouerSpecial::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) const
 {
     if(crt->getType()!=carteSpecial){
         return false;
@@ -77,13 +79,13 @@ bool CartesAlgoMSL::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) 
         case csGrandPrixExcellence:
             return hasEligibleProfession(plat);
         case csVengeance:
-            return canPlayMalusCard(plat,pp,this);
+            return canPlayMalusCard(plat,pp,jMalus);
         default:
             return true;
     }
 }
 
-bool CartesAlgoMSL::jouerCarteSpecial(const Player *pp, const CarteMSL *crt) const
+bool JouerSpecial::jouerCarteSpecial(const Player *pp, const CarteMSL *crt) const
 {
     return false;
 }

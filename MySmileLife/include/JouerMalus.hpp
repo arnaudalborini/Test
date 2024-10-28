@@ -27,6 +27,7 @@ namespace MySmileLife{
             JouerMalus(CardGame::CarteGenerator* cg, CardGame::GameMechanicsMonitor* mm):cGen(cg),mMonitor(mm){}
             bool peutEtreJoueeMalus(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteMalus(const Player *pp, const CarteMSL* crt)const;
+            const CardGame::CarteGenerator* getGen()const{return cGen;}
     };
 }
 #endif

@@ -5,6 +5,14 @@
 #include <limits>
 
 namespace MySmileLife{
+    class JouerMetier{
+            CardGame::CarteGenerator* cGen;
+            const CardGame::GameMechanicsMonitor* mMonitor;
+        public:
+            JouerMetier(CardGame::CarteGenerator* cg, CardGame::GameMechanicsMonitor* mm):cGen(cg),mMonitor(mm){}
+            bool peutEtreJoueeMetier(const Player *pp, const CarteMSL* crt)const;
+            bool jouerCarteMetier(const Player *pp, const CarteMSL* crt)const;
+    };
     namespace Metier{
         struct ProprietesMetier{
                 int salaireMax;
