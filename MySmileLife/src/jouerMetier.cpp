@@ -1,6 +1,6 @@
 #include "CartesAlgoMSL.hpp"
 #include "CarteMSL.hpp"
-#include "CarteGenerator.hpp"
+#include "CarteGenerateurStandard.hpp"
 #include "GameMechanicsMonitor.hpp"
 #include "Plateau.hpp"
 #include "Hand.hpp"
@@ -48,15 +48,21 @@ void voirNProchainesCartesPioche(const Player* pp, const CardGame::GameMechanics
     }
 
 }
-void choisirEtJouerUneCarteDefausse(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
+IdCarte choisirEtJouerUneCarteDefausse(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
 {
     int indiceCarte = pp->choisirUneCarteAJouer(mMonitor->getDefausse());
-    IdCarte id = mMonitor->getDefausse()->piocherNeme( indiceCarte );
-    
+    return mMonitor->getDefausse()->piocherNeme( indiceCarte );
 }
 void voirMainAutresJoueur(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
 {
-
+    int indPlayer = mMonitor->getIndPlayer(pp);
+    for(int indice=0;indice<mMonitor->getNbPlayer();indice++){
+        if(indice==indPlayer){
+            continue;
+        }
+        const Hand* jH = mMonitor->getInfosJoueurs(indice)->getHand();
+        pp->showHandAutreJoueur(jH,indice);
+    }
 }
 
 bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
@@ -73,13 +79,15 @@ bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
     plat->setStatut(aUnTravail,1);
     plat->setStatut(Profession,crt->getSType());
     plat->setStatut(SalaireMax,crt->getMetierSalaireMax());
+
+    IdCarte id;
     switch(crt->getSType()){
         case csArchitecte:
             plat->setStatut(MaisonOfferte,1);
             break;
         case csAstronaute:
-            choisirEtJouerUneCarteDefausse(pp,mMonitor);
-            break;
+            id = choisirEtJouerUneCarteDefausse(pp,mMonitor);
+            return dynamic_cast<const JouerCarteMSL*>(this)->jouerCarte(pp,id);
         case csAvocat:
             plat->setStatut(ResistantDivorce,1);
             break;

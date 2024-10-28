@@ -66,7 +66,6 @@ bool canPlayMalusCard( const Plateau* plat, const Player* pp, const MySmileLife:
     return false;
 }
 
-
 bool JouerSpecial::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) const
 {
     if(crt->getType()!=carteSpecial){
