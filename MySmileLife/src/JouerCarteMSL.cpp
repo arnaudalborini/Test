@@ -4,6 +4,7 @@
 #include "GameMechanicsMonitor.hpp"
 #include "Plateau.hpp"
 #include "Player.hpp"
+#include "PaquetCarte.hpp"
 
 using MySmileLife::JouerCarteMSL;
 using MySmileLife::CarteMSL;
@@ -243,4 +244,13 @@ bool JouerCarteMSL::jouerCarteVoyage(const Player *pp, const CarteMSL *crt) cons
     payer(pp,plat,crt->getPrixVoyage());
     plat->addLast(EDivers,crt->getId());
     return true;
+}
+
+void JouerCarteMSL::choisirEtJouerUneCarteDefausse(const Player *pp) const
+{
+    int indiceCarte = pp->choisirUneCarteAJouer(mMonitor->getDefausse());
+    IdCarte id = mMonitor->getDefausse()->piocherNeme( indiceCarte );
+    if(peutEtreJouee(pp,id)){
+        jouerCarte(pp,id);
+    }
 }

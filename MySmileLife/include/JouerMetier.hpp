@@ -9,6 +9,7 @@ namespace MySmileLife{
         protected:
             bool peutEtreJoueeMetier(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteMetier(const Player *pp, const CarteMSL* crt)const;
+            virtual void choisirEtJouerUneCarteDefausse(const Player* pp)const=0;
         public:            
             virtual const CarteGenerateurStandard*          getCGen()const=0;
             virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;

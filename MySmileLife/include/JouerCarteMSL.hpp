@@ -32,6 +32,7 @@ namespace MySmileLife{
             bool jouerCarteMariage(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteSalaire(const Player *pp, const CarteMSL* crt)const;
             bool jouerCarteVoyage(const Player *pp, const CarteMSL* crt)const;
+            void choisirEtJouerUneCarteDefausse(const Player* pp)const override;
         public:
             JouerCarteMSL(const CardGame::CarteGenerator* cc, const CardGame::GameMechanicsMonitor* mm):cGen(cc),mMonitor(mm){}            
             bool peutEtreJouee(const Player *pp, IdCarte id)const;

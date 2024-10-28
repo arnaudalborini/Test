@@ -48,11 +48,7 @@ void voirNProchainesCartesPioche(const Player* pp, const CardGame::GameMechanics
     }
     pp->showNCartesPioche(vecId);
 }
-IdCarte choisirEtJouerUneCarteDefausse(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
-{
-    int indiceCarte = pp->choisirUneCarteAJouer(mMonitor->getDefausse());
-    return mMonitor->getDefausse()->piocherNeme( indiceCarte );
-}
+
 void voirMainAutresJoueur(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
 {
     int indPlayer = mMonitor->getIndPlayer(pp);
@@ -87,8 +83,8 @@ bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
             plat->setStatut(MaisonOfferte,1);
             break;
         case csAstronaute:
-            id = choisirEtJouerUneCarteDefausse(pp,mMonitor);
-            return dynamic_cast<const JouerCarteMSL*>(this)->jouerCarte(pp,id);
+            choisirEtJouerUneCarteDefausse(pp);
+            break;
         case csAvocat:
             plat->setStatut(ResistantDivorce,1);
             break;
