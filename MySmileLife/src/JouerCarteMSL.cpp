@@ -3,6 +3,7 @@
 #include "CarteMSL.hpp"
 #include "GameMechanicsMonitor.hpp"
 #include "Plateau.hpp"
+#include "Player.hpp"
 
 using MySmileLife::JouerCarteMSL;
 using MySmileLife::CarteMSL;
@@ -72,15 +73,8 @@ bool JouerCarteMSL::jouerCarte(const Player *pp, IdCarte id) const
     return false;
 }
 
-const MySmileLife::CarteGenerateurStandard *MySmileLife::JouerCarteMSL::getCGen() const
-{
-    return dynamic_cast<const MySmileLife::CarteGenerateurStandard *>(cGen);
-}
-
-const CardGame::GameMechanicsMonitor *MySmileLife::JouerCarteMSL::getMonitor() const
-{
-    return mMonitor;
-}
+const MySmileLife::CarteGenerateurStandard *MySmileLife::JouerCarteMSL::getCGen() const{return dynamic_cast<const MySmileLife::CarteGenerateurStandard *>(cGen);}
+const CardGame::GameMechanicsMonitor *MySmileLife::JouerCarteMSL::getMonitor() const{return mMonitor;}
 
 bool JouerCarteMSL::peutEtreJoueeAnimal(const Player *pp, const CarteMSL *crt) const{return true;}
 
@@ -119,10 +113,10 @@ bool JouerCarteMSL::peutEtreJoueeFlirt(const Player *pp, const CarteMSL *crt) co
             return true;
         }
     }else{
-        if(plat->getStatut(DetailPlateau::Profession)==csBarman){
+        if(plat->getStatut(Profession)==csBarman){
             return true;
         }else{
-            if(plat->getStatut(DetailPlateau::NbFlirt)<5){
+            if(plat->getStatut(NombreFlirt)<5){
                 return true;
             }
         }
@@ -142,7 +136,7 @@ bool JouerCarteMSL::peutEtreJoueeMaison(const Player *pp, const CarteMSL *crt) c
 bool JouerCarteMSL::peutEtreJoueeMariage(const Player *pp, const CarteMSL *crt) const
 {
     Plateau* plat = mMonitor->getPlateauPlayer(pp);
-    return (plat->getStatut(estMarie)==false) && (plat->getStatut(NbFlirt)>0);
+    return (plat->getStatut(estMarie)==false) && (plat->getStatut(NombreFlirt)>0);
 }
 
 bool JouerCarteMSL::peutEtreJoueeSalaire(const Player *pp, const CarteMSL *crt) const
@@ -160,54 +154,93 @@ bool JouerCarteMSL::peutEtreJoueeVoyage(const Player *pp, const CarteMSL *crt) c
 
 bool JouerCarteMSL::jouerCarteAnimal(const Player *pp, const CarteMSL *crt) const
 {
-    cout << "jouerCarteAnimal ---- "<<endl;
-    cout << "getIndPlayer : "<< pp << "    " << mMonitor << endl;
-    cout << mMonitor->getNbPlayer() << endl;
-    /*cout << mMonitor->getInfosJoueurs(0) << endl;
-    cout << mMonitor->getPlayer(0) << endl;
-    cout << mMonitor->getPlayer(1) << endl;
-    int indPlayer = mMonitor->getIndPlayer(pp);
-    cout << "getInfosJoueurs  "<<endl;
-    InfosJoueur * infP = mMonitor->getInfosJoueurs(indPlayer);
-    cout << "getPlateau  "<<endl;
-    Plateau* plat = infP->getPlateau();
-    cout << "addLast  "<<endl;
-    plat->addLast(EmplacementsPlateau::EDivers, crt->getId());
-    cout << "addlast<<endl";*/
+    mMonitor->getPlateauPlayer(pp)->addLast(EDivers,crt->getId());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteEnfant(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    mMonitor->getPlateauPlayer(pp)->addLast(EEnfant,crt->getId());
+    return true;
 }
 
 bool JouerCarteMSL::jouerCarteEtude(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    if(plat->getStatut(aUnTravail)==false){
+        if(plat->getStatut(NbAnneeEtude) + crt->getNbEtude()<=6){
+            mMonitor->getPlateauPlayer(pp)->addLast(EEtudes,crt->getId());
+            mMonitor->getPlateauPlayer(pp)->setStatut(DerniereEtudeRedoublable,crt->getNbEtude());
+        }
+    }
+    if(plat->getStatut(EtudesContinues)){
+        mMonitor->getPlateauPlayer(pp)->addLast(EEtudesContinues,crt->getId());
+    }
+    mMonitor->getPlateauPlayer(pp)->incStatut(NbAnneeEtude,crt->getNbEtude());
+    return true;
 }
 
 bool JouerCarteMSL::jouerCarteFlirt(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    if( plat->getStatut(estMarie) ){
+        if(plat->getStatut(estAdultere)){
+            mMonitor->getPlateauPlayer(pp)->addLast(EFlirtAdultere,crt->getId());
+        }
+    }else{
+        if( (plat->getStatut(Profession)==csBarman) || (plat->getStatut(NombreFlirt)<5) ){
+            mMonitor->getPlateauPlayer(pp)->addLast(EFlirt,crt->getId());
+        }
+    }
+    return true;
+}
+
+void JouerCarteMSL::payer(const Player* pp, Plateau* plat, int prix)const{
+    if(plat->getStatut(HeritageDisponible?3:0)){
+        plat->setStatut(HeritageDisponible,0);
+        prix-=3;
+    }
+    while(prix>0){
+        const vector<IdCarte> vecId = plat->showAllIdByEP(ESalairesD);
+        int indice = pp->choisirSalairePourPayer(vecId);
+        indice = (indice<0)?0:indice;
+        indice = (indice>vecId.size())?vecId.size()-1:indice;
+        IdCarte id = plat->getN(ESalairesD,indice);
+        int salCrt = getCarteMSL(id)->getSalaire();
+        plat->addLast(EDivers,id);
+        plat->incStatut(SalairesDisponibles,-salCrt);
+        prix -= salCrt;
+    }
 }
 
 bool JouerCarteMSL::jouerCarteMaison(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    int prixBase = crt->getPrixMaison();
+    int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
+    payer(pp,plat,prix);
+    plat->addLast(EDivers,crt->getId());
+    return true;
 }
 
 bool JouerCarteMSL::jouerCarteMariage(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    mMonitor->getPlateauPlayer(pp)->addLast(EMariage,crt->getId());
+    mMonitor->getPlateauPlayer(pp)->setStatut(estMarie,true);
+    return true;
 }
 
 bool JouerCarteMSL::jouerCarteSalaire(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    mMonitor->getPlateauPlayer(pp)->addLast(ESalairesD,crt->getId());
+    mMonitor->getPlateauPlayer(pp)->incStatut(SalairesDisponibles,crt->getSalaire());
+    return true;
 }
 
 bool JouerCarteMSL::jouerCarteVoyage(const Player *pp, const CarteMSL *crt) const
-{
-    return false;
+{    
+    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    payer(pp,plat,crt->getPrixVoyage());
+    plat->addLast(EDivers,crt->getId());
+    return true;
 }

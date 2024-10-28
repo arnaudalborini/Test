@@ -86,5 +86,9 @@ bool JouerSpecial::peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) c
 
 bool JouerSpecial::jouerCarteSpecial(const Player *pp, const CarteMSL *crt) const
 {
-    return false;
+    if(peutEtreJoueeSpecial(pp,crt)==false){
+        return false;
+    }
+    
+    return true;
 }

@@ -20,6 +20,7 @@ namespace CardGame{
             IdCarte showIdN(int EP,int N)const;
             IdCarte getN(int EP,int N);
             vector<IdCarte> showAllId()const;
+            const vector<IdCarte> showAllIdByEP(int ET)const;
             
             int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
             void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}  

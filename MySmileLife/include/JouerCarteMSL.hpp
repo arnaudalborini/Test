@@ -13,6 +13,7 @@ namespace MySmileLife{
             const CardGame::GameMechanicsMonitor* mMonitor;
             
             const CarteMSL* getCarteMSL(IdCarte id)const;
+            void payer(const Player* pp, Plateau* plat, int prix)const;
 
             bool peutEtreJoueeAnimal(const Player *pp, const CarteMSL* crt)const;
             bool peutEtreJoueeEnfant(const Player *pp, const CarteMSL* crt)const;

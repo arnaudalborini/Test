@@ -154,7 +154,7 @@ namespace MySmileLife{
         ArcEnCielJoue           = 20,
         //non booleen
         NbAnneeEtude            = 21,
-        NbFlirt                 = 22,
+        NombreFlirt                 = 22,
         NbEnfant                = 23,
         Profession              = 24,
         LieuDernierFlirt        = 25,

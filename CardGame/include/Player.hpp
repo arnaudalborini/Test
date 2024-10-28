@@ -10,6 +10,7 @@ namespace CardGame{
             virtual int choisirUneCarteAJouer(PaquetCarte* paq)const=0;
             virtual void showNCartesPioche(const vector<IdCarte>& vecIdPioche)const=0;
             virtual void showHandAutreJoueur(const Hand* h, int indAutrePlayer)const=0;
+            virtual int choisirSalairePourPayer(const vector<IdCarte>& vecIdSalairesDisponibles)const=0;
     };
 };
 

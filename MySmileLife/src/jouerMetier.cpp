@@ -79,8 +79,9 @@ bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
     plat->setStatut(aUnTravail,1);
     plat->setStatut(Profession,crt->getSType());
     plat->setStatut(SalaireMax,crt->getMetierSalaireMax());
-
+    plat->addLast(EMetier,crt->getId());
     IdCarte id;
+
     switch(crt->getSType()){
         case csArchitecte:
             plat->setStatut(MaisonOfferte,1);

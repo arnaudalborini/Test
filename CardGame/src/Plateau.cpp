@@ -31,3 +31,5 @@ std::vector<IdCarte> Plateau::showAllId()const{
     }
     return vecId;
 }
+
+const std::vector<IdCarte> Plateau::showAllIdByEP(int ET) const{return mMapCarte.at(ET);}

@@ -18,3 +18,8 @@ void BasicBot::showHandAutreJoueur(const Hand *h, int indAutrePlayer) const
         cout << h->getIdCarte(indice) << endl;
     }
 }
+
+int BasicBot::choisirSalairePourPayer(const vector<IdCarte> &vecIdSalairesDisponibles) const
+{
+    return 0;
+}

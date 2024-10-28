@@ -119,10 +119,12 @@ bool JouerMalus::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
             jouerPrison();
             break;
     }
+    getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
     const Player* cible = getCibleMalus(pp,crt->getSType());
     if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
         return false;
     }
+    getMonitor()->getPlateauPlayer(cible)->addLast(EMalus,crt->getId());
     switch(crt->getSType()){
         case csAccidents:
             jouerAccident(cible);
