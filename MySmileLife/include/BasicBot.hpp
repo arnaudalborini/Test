@@ -14,6 +14,7 @@ namespace MySmileLife{
             void showHandAutreJoueur(const Hand* h, int indAutrePlayer)const override;
             int choisirSalairePourPayer(const vector<IdCarte>& vecIdSalairesDisponibles)const override;
             int choisirIndiceCarteAJouerMain(const Hand* h)const override{return 0;};
+            virtual int choisirCible(IdCarte id)const{return 0;}
     };
 }
 

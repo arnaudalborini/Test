@@ -43,12 +43,14 @@ bool GameMechanics::jouerCarte(const Player *pp, IdCarte id) const{return cAlgo-
 
 void GameMechanics::startGame()
 {
+    cout << "GameMechanics::startGame" << endl;
     mTourAPasser = vector<int>(mMonitor->getNbPlayer());
     for(auto indPlayer=0;indPlayer < mMonitor->getNbPlayer(); indPlayer++){
         remplirMain(indPlayer);
         mTourAPasser.at(indPlayer) = 0;
     }
     int indPlayer=0;
+    cout << endGameCondition() << endl;
     while( endGameCondition() ){
         if(indPlayer >= mMonitor->getNbPlayer()){
             indPlayer=0;
@@ -56,10 +58,13 @@ void GameMechanics::startGame()
         if( mTourAPasser.at(indPlayer) > 0 ){
             mTourAPasser[indPlayer]--;
         }else{
+            cout << "startGame->playturn" << endl;
             playTurn(indPlayer);
         }
         indPlayer++;
     }
+    
+    cout << "GameMechanics::startGame fin" << endl;
 }
 
 void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->getHand()->addCarte( mMonitor->getPioche()->piocher() );}

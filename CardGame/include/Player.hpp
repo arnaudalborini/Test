@@ -12,6 +12,7 @@ namespace CardGame{
             virtual void showHandAutreJoueur(const Hand* h, int indAutrePlayer)const=0;
             virtual int choisirSalairePourPayer(const vector<IdCarte>& vecIdSalairesDisponibles)const=0;
             virtual int choisirIndiceCarteAJouerMain(const Hand* h)const=0;
+            virtual int choisirCible(IdCarte id)const=0;
     };
 };
 

@@ -52,18 +52,28 @@ int  MSLMechanics::getWinnerPlayer()const{
     return indBest;
 }
 void MSLMechanics::playTurn(int indPlayer) const{
+    cout << "MSLMechanics::playTurn: " << indPlayer << endl;
     const MSLPlayer* pp = dynamic_cast<const MSLPlayer*>( getPlayer(indPlayer) );
     Hand* jHand = getJoueurHand(indPlayer);
     Plateau* platJ = getJoueurPlateau(indPlayer);
     Plateau* platGeneral = getMainPlateau();
+    cout << "MSLMechanics::playTurn:joueurPioche" << endl;
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);
     IdCarte idC = jHand->getCarte(0);
+    cout << "getCarteById: " << idC << endl;
+    const CarteMSL* crt = dynamic_cast<const CarteMSL*>(cGen->getCarteById(idC));
+    cout << "MSLMechanics::playTurn:peutEtreJouee: " << crt->getName() << endl;
+    cout << peutEtreJouee(pp,idC) << endl;
+    cout << "ici" << endl;
+    cout << jouerCarte(pp,idC) << endl;
     if((peutEtreJouee(pp,idC)) && (jouerCarte(pp,idC)) ){
-        cout << "jouerCarte: " << getCarteFromId(idC)->getName() << endl;
+        cout << "jouerCarte: " << endl;
+        cout << getCarteFromId(idC)->getName() << endl;
     }
     else{
+        cout << "MSLMechanics::playTurn:addCarteDefausse" << endl;
         addCarteDefausse(idC,indPlayer);
     }
 }

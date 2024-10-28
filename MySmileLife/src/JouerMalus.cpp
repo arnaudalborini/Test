@@ -17,10 +17,6 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
-const Player* JouerMalus::getCibleMalus(const Player* pp, CarteSousType typeMalus)const{
-    return nullptr;
-}
-
 bool JouerMalus::peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Player* cible) const
 {
     if(cible==nullptr){
@@ -120,7 +116,7 @@ bool JouerMalus::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
             break;
     }
     getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
-    const Player* cible = getCibleMalus(pp,crt->getSType());
+    const Player* cible = getCible(pp,crt->getSType());
     if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
         return false;
     }

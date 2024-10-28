@@ -14,10 +14,10 @@ namespace MySmileLife{
             virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
             virtual bool peutEtreJouee(const Player *pp, IdCarte id)const=0;
             virtual bool jouerCarte(const Player* pp, IdCarte id)const=0;
+            virtual const Player* getCible(const Player* pp, IdCarte id)const=0;
 
         private:
             bool peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Player* Cible) const;
-            const Player* getCibleMalus(const Player* pp, CarteSousType typeMalus)const;
 
             void jouerAccident(const Player *pp)const;
             void jouerAttentat()const;

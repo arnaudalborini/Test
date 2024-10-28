@@ -14,28 +14,40 @@ const CarteMSL *JouerCarteMSL::getCarteMSL(IdCarte id) const{return dynamic_cast
 bool JouerCarteMSL::peutEtreJouee(const Player *pp, IdCarte id) const
 {
     const CarteMSL* crt = getCarteMSL( id );
+    cout << "JouerCarteMSL::peutEtreJouee: "<< id << " - " << crt->getName() << endl;
     switch( crt->getType() ){
         case CarteType::carteAnimal:
+            cout << "carteAnimal" << endl;
             return peutEtreJoueeAnimal(pp,crt);
         case CarteType::carteEnfant:
+            cout << "carteEnfant" << endl;
             return peutEtreJoueeEnfant(pp,crt);
         case CarteType::carteEtude:
+            cout << "carteEtude" << endl;
             return peutEtreJoueeEtude(pp,crt);
         case CarteType::carteFlirt:
+            cout << "carteFlirt" << endl;
             return peutEtreJoueeFlirt(pp,crt);
         case CarteType::carteMaison:
+            cout << "carteMaison" << endl;
             return peutEtreJoueeMaison(pp,crt);
         case CarteType::carteMalus:
+            cout << "carteMalus" << endl;
             return peutEtreJoueeMalus(pp,crt);
         case CarteType::carteMariage:
+            cout << "carteMariage" << endl;
             return peutEtreJoueeMariage(pp,crt);
         case CarteType::carteMetier:
+            cout << "carteMetier" << endl;
             return peutEtreJoueeMetier(pp,crt);
         case CarteType::carteSalaire:
+            cout << "carteSalaire" << endl;
             return peutEtreJoueeSalaire(pp,crt);
         case CarteType::carteSpecial:
+            cout << "carteSpecial" << endl;
             return peutEtreJoueeSpecial(pp,crt);
         case CarteType::carteVoyage:
+            cout << "carteVoyage" << endl;
             return peutEtreJoueeVoyage(pp,crt);
     }
     return false;
@@ -253,4 +265,10 @@ void JouerCarteMSL::choisirEtJouerUneCarteDefausse(const Player *pp) const
     if(peutEtreJouee(pp,id)){
         jouerCarte(pp,id);
     }
+}
+
+const CardGame::Player *JouerCarteMSL::getCible(const Player *pp, IdCarte id) const
+{
+    int indCible = pp->choisirCible(id);
+    return mMonitor->getPlayer(indCible);
 }
