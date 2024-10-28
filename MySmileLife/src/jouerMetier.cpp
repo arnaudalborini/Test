@@ -46,7 +46,7 @@ void voirNProchainesCartesPioche(const Player* pp, const CardGame::GameMechanics
     for(int indice = indDebut;indice<nbcarte;indice++){
         vecId.push_back(pioche->showNeme(indice));
     }
-
+    pp->showNCartesPioche(vecId);
 }
 IdCarte choisirEtJouerUneCarteDefausse(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
 {
