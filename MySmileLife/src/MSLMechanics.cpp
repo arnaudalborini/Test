@@ -63,8 +63,7 @@ void MSLMechanics::playTurn(int indPlayer) const{
     cout << "MSLMechanics::playTurn:peutEtreJouee: " << crt->getName() << endl;
 
     if((peutEtreJouee(pp,idC)) && (jouerCarte(pp,idC)) ){
-        cout << "jouerCarte: " << endl;
-        cout << getCarteFromId(idC)->getName() << endl;
+        cout << "Carte Jouee: "<< getCarteFromId(idC)->getName() << endl;
     }
     else{
         cout << "MSLMechanics::playTurn:addCarteDefausse" << endl;
