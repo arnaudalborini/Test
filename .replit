@@ -1,0 +1,8 @@
+modules = ["cpp-clang14"]
+run = "./build/MySmileLifeTests"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "./build/MySmileLifeTests"]
