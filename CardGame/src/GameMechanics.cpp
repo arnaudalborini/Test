@@ -23,16 +23,16 @@ void GameMechanics::setMonitor(Monitor *mm){
     initGame();
 }
 
-void GameMechanics::initGame()const{
-    cout << "GameMechanics::initGame" << endl;
+void GameMechanics::initGame(){
     vector<int> vecC = genVecCartesPioche();
     mMonitor->getPioche()->initializePaquet( vecC );
     vecC = genVecCartesDefausse();
     mMonitor->getDefausse()->initializePaquet( vecC );
-    map<EmplacementPlateau,IdCarte> mapCrt = genMapCartePlateauInitial();
-    for(auto p:mapCrt){
-        mMonitor->getPlateau()->addLast(p.first,p.second);
-    }
+    map<int,vector<IdCarte>> mapCrt = genMapCartePlateauInitial();
+    mMonitor->getPlateau()->initMap(mapCrt);
+    vector<int> vecSt = getInitialStatuts();
+    mMonitor->getPlateau()->initStatut(vecSt);
+    initSpeficiGame();
 }
 int  GameMechanics::getStatutPlayer(int indPlayer, int dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
 void GameMechanics::setStatutPlayer(int indPlayer, int dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
@@ -58,7 +58,6 @@ void GameMechanics::startGame()
         if( mTourAPasser.at(indPlayer) > 0 ){
             mTourAPasser[indPlayer]--;
         }else{
-            cout << "startGame->playturn" << endl;
             playTurn(indPlayer);
         }
         indPlayer++;

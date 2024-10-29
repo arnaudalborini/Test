@@ -35,7 +35,7 @@ namespace MySmileLife{
             void choisirEtJouerUneCarteDefausse(const Player* pp)const override;
             const Player* getCible(const Player* pp, IdCarte id)const override;
         public:
-            JouerCarteMSL(const CardGame::CarteGenerator* cc, const CardGame::GameMechanicsMonitor* mm):cGen(cc),mMonitor(mm){}            
+            JouerCarteMSL(const CardGame::CarteGenerator* cc, const CardGame::GameMechanicsMonitor* mm):cGen(cc),mMonitor(mm){cout << "JouerCarteMSL:JouerCarteMSL: "<< cc << " " << mm << endl;}            
             bool peutEtreJouee(const Player *pp, IdCarte id)const;
             bool jouerCarte(const Player* pp, IdCarte id)const;
             const CarteGenerateurStandard* getCGen()const override;

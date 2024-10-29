@@ -17,7 +17,6 @@ using MySmileLife::CarteMSL;
 MSLMechanics::MSLMechanics()
 {
     cGen = new CarteGenerateurStandard();
-    cAlgo = new CartesAlgoMSL(cGen,mMonitor);
 }
 
 MySmileLife::MSLMechanics::~MSLMechanics()
@@ -26,9 +25,7 @@ MySmileLife::MSLMechanics::~MSLMechanics()
     if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}*/
 }
 
-const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{
-    return dynamic_cast<const CarteMSL*>(cGen->getCarteById(id));
-}
+const CarteMSL* MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_cast<const CarteMSL*>(cGen->getCarteById(id));}
 int  MSLMechanics::countSmile(Plateau* plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
@@ -38,6 +35,7 @@ int  MSLMechanics::countSmile(Plateau* plateauJoueur)const{
 }
 
 ///////////////////////   Methodes virtuelles à réimplémenter si non standard ///////////
+void MSLMechanics::initSpeficiGame(){cAlgo = new CartesAlgoMSL(cGen,mMonitor);}
 int  MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
 int  MSLMechanics::getWinnerPlayer()const{
     int baseSmile = countSmile( mMonitor->getInfosJoueurs( 0 )->getPlateau() );
@@ -57,17 +55,13 @@ void MSLMechanics::playTurn(int indPlayer) const{
     Hand* jHand = getJoueurHand(indPlayer);
     Plateau* platJ = getJoueurPlateau(indPlayer);
     Plateau* platGeneral = getMainPlateau();
-    cout << "MSLMechanics::playTurn:joueurPioche" << endl;
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);
     IdCarte idC = jHand->getCarte(0);
-    cout << "getCarteById: " << idC << endl;
     const CarteMSL* crt = dynamic_cast<const CarteMSL*>(cGen->getCarteById(idC));
     cout << "MSLMechanics::playTurn:peutEtreJouee: " << crt->getName() << endl;
-    cout << peutEtreJouee(pp,idC) << endl;
-    cout << "ici" << endl;
-    cout << jouerCarte(pp,idC) << endl;
+
     if((peutEtreJouee(pp,idC)) && (jouerCarte(pp,idC)) ){
         cout << "jouerCarte: " << endl;
         cout << getCarteFromId(idC)->getName() << endl;
@@ -83,4 +77,17 @@ std::vector<int> MSLMechanics::getJoueurInitialStatuts() const
     //BonusSpeciaux
     for(int indSt=0;indSt<=MySmileLife::MAXSTATUTPLATEAU;indSt++){initVec[indSt] = 0;}
     return initVec;
+}
+
+std::vector<int> MSLMechanics::getInitialStatuts() const
+{
+    vector<int> initVec = vector<int>(MySmileLife::MAXSTATUTPLATEAU+1);
+    //BonusSpeciaux
+    for(int indSt=0;indSt<=MySmileLife::MAXSTATUTPLATEAU;indSt++){initVec[indSt] = 0;}
+    return initVec;
+}
+
+std::map<int,std::vector<CardGame::IdCarte>> MSLMechanics::genMapCartePlateauInitial() const
+{
+return map<int,vector<IdCarte>>();
 }

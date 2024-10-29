@@ -33,12 +33,14 @@ namespace CardGame{
             GameMechanics();
             ~GameMechanics();
             void setMonitor(Monitor* mm);
-            void initGame()const;
+            void initGame();
             void startGame();
 
+            virtual void initSpeficiGame(){};
             virtual vector<IdCarte> genVecCartesPioche()const=0;
             virtual vector<IdCarte> genVecCartesDefausse()const=0;
-            virtual map<EmplacementPlateau,IdCarte> genMapCartePlateauInitial()const=0;
+            virtual map<int,vector<IdCarte>> genMapCartePlateauInitial()const=0;
+            virtual vector<int> getInitialStatuts()const=0;
             virtual vector<int> getJoueurInitialStatuts()const=0;
             virtual void playTurn(int indPlayer)const=0;
             virtual int  getStandardHandNbCarte()const=0;

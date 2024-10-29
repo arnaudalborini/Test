@@ -23,6 +23,8 @@ namespace CardGame{
             const vector<IdCarte> showAllIdByEP(int ET)const;
             
             int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
+            void initStatut(const vector<int> &vecSt){mVecStatut=vecSt;}
+            void initMap(const map<int,vector<IdCarte>> &initMap){mMapCarte=initMap;}
             void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}  
 
             void incStatut(int statutKey, int inc=1){mVecStatut[statutKey]+=inc;}     

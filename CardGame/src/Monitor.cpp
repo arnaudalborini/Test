@@ -34,27 +34,14 @@ PaquetCarte *   Monitor::getPioche() const { return mPioche; }
 PaquetCarte*    Monitor::getDefausse()               const{return mDefausse;}
 InfosJoueur*    Monitor::getInfosJoueurs(int ind)    const{return mInfosJoueurs[ind];}
 InfosJoueur *   Monitor::getInfosJoueurs(const Player *pp) const{return getInfosJoueurs(getIndPlayer(pp));}
-const Player *  Monitor::getPlayer(int ind) const { return mPlayer[ind]; }
-int             Monitor::getIndPlayer(const Player *pp) const{
-    cout << "ici" << endl;
-    cout << "mapsize: " << mapIdPlayer.size() << endl;
-    for(auto elt:mapIdPlayer){
-        cout << elt.first << endl;
-    }
-    return mapIdPlayer.at(pp);
-}
+const Player *  Monitor::getPlayer(int ind) const {return mPlayer[ind]; }
+int             Monitor::getIndPlayer(const Player *pp) const{return mapIdPlayer.at(pp);}
 
 int Monitor::getNbPlayer() const{return mNbJoueur;}
 
-void Monitor::defausser(IdCarte id, int indPlayer) const
-{
-    mDefausse->addCarte(id,indPlayer);
-}
+void Monitor::defausser(IdCarte id, int indPlayer) const{mDefausse->addCarte(id,indPlayer);}
 
-void Monitor::defausserDernier( int indPlayer, int EP) const
-{
-    defausser(getInfosJoueurs(indPlayer)->getPlateau()->getLast(EP),indPlayer);
-}
+void Monitor::defausserDernier( int indPlayer, int EP) const{defausser(getInfosJoueurs(indPlayer)->getPlateau()->getLast(EP),indPlayer);}
 
 void Monitor::defausserTout( int indPlayer, int EP) const
 {
@@ -65,10 +52,7 @@ void Monitor::defausserTout( int indPlayer, int EP) const
     }
 }
 
-void Monitor::incStatut(int indPlayer, int statut, int inc) const
-{
-    getInfosJoueurs(indPlayer)->getPlateau()->incStatut(statut, inc);
-}
+void Monitor::incStatut(int indPlayer, int statut, int inc) const{getInfosJoueurs(indPlayer)->getPlateau()->incStatut(statut, inc);}
 
 void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm)
 {
@@ -83,7 +67,7 @@ void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm)
 }
 
 void Monitor::addPlayer(const Player *pp, int index){
-    cout << "jouer: " << pp << " " << index << endl;
+    cout << "Monitor::addPlayer: " << pp << " " << index << endl;
     mPlayer[index] = pp;
     mapIdPlayer[pp] = index;
 }

@@ -98,7 +98,7 @@ void CarteGenerateurStandard::genCartesPioche( vector<IdCarte> &vecCartes)
     for(int i=0;i<2;i++){vecCartes.push_back( id );}
     vecCartes.push_back( getFirstSetIdCarte(carteMaison,csMaison10) );
 
-    CardGame::myShuffle(vecCartes);
+    //CardGame::myShuffle(vecCartes);
 }
 
 void CarteGenerateurStandard::addMetier(  ){

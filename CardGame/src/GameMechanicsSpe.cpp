@@ -36,8 +36,9 @@ vector<IdCarte> GameMechanicsSpe::genVecCartesDefausse() const{
     cGen->genCartesDefausse(vecCartes);
     return vecCartes;
 }
-map<CardGame::EmplacementPlateau,IdCarte> GameMechanicsSpe::genMapCartePlateauInitial()const{return map<EmplacementPlateau,IdCarte>();}
+map<int,vector<IdCarte>> GameMechanicsSpe::genMapCartePlateauInitial()const{return map<int,vector<IdCarte>>();}
 vector<int> GameMechanicsSpe::getJoueurInitialStatuts() const{return vector<int>();}
+vector<int> CardGame::GameMechanicsSpe::getInitialStatuts() const{return vector<int>();}
 bool GameMechanicsSpe::endGameCondition() const { return getNbCartePioche() > 0; }
 int GameMechanicsSpe::getWinnerPlayer() const{return 0;}
 void GameMechanicsSpe::playTurn(int indPlayer) const{
