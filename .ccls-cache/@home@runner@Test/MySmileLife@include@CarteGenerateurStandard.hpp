@@ -21,10 +21,10 @@ namespace MySmileLife{
             void addVoyage(  );
             void addMaison(  );
             void addCarteMSL(const CarteMSL* crt);
-            MyMultiMap<set<IdCarte>> mmapMSLCarte;
-            set<IdCarte> getSetIdCarte(CarteType ct, CarteSousType cst)const{return mmapMSLCarte[{ct,cst}];}
-            map<int,set<IdCarte>> getMapCstSetIdCarte(CarteType ct)const{return mmapMSLCarte.getMapByKey1(ct);}
-            IdCarte getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{return *(mmapMSLCarte[{ct,cst}].begin());}
+            MyMultiMap<set<IdCarte>> mMapMSLCarte;
+            set<IdCarte> getSetIdCarte(CarteType ct, CarteSousType cst)const{return mMapMSLCarte[{ct,cst}];}
+            map<int,set<IdCarte>> getMapCstSetIdCarte(CarteType ct)const{return mMapMSLCarte.getMapByKey1(ct);}
+            IdCarte getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{return *(mMapMSLCarte[{ct,cst}].begin());}
 
         public:
             CarteGenerateurStandard();

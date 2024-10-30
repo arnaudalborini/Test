@@ -19,7 +19,7 @@ MSLMechanics::MSLMechanics()
     cGen = new CarteGenerateurStandard();
 }
 
-MySmileLife::MSLMechanics::~MSLMechanics()
+MSLMechanics::~MSLMechanics()
 {/*
     if(cGen!=nullptr){delete cGen;cGen=nullptr;}
     if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}*/

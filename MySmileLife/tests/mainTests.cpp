@@ -1,9 +1,9 @@
-#include "../include/MySmileLife.hpp"
+#include "MSLTests.hpp"
 #include <cassert>
 
-using namespace MySmileLife;
+using namespace MySmileLife::Tests;
 
 int main() {
-	MySmileLifeTest();
+	MSLTests::MySmileLifeTest();
     return 0;
 }

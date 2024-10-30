@@ -1,9 +1,12 @@
-#include "MySmileLife.hpp"
+#include "MSLTests.hpp"
 #include "GameMaster.hpp"
 #include "GameMechanicsSpe.hpp"
 #include "MSLMechanics.hpp"
+using MySmileLife::Tests::MSLTests;
 
-void MySmileLife::MySmileLifeTest(){
+void MSLTests::MySmileLifeTest(){
+    TestCarteUnitaire();
+    /*
     cout << "creation game master" << endl;
     MSLMechanics gMe = MSLMechanics();
     CardGame::GameMaster gm         = CardGame::GameMaster(2,&gMe);
@@ -19,5 +22,5 @@ void MySmileLife::MySmileLifeTest(){
     int vainqueur = gm.getWinner();
 
     cout << "et le vainqueur est: "<< vainqueur << endl;
-
+    */
 }

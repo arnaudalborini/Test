@@ -261,7 +261,7 @@ void JouerSpecial::jouerTsunami() const {
       vecCrt.push_back(vecH[ind]->getCarte(0));
     }
   }
-  CardGame::myShuffle(vecCrt);
+  //CardGame::myShuffle(vecCrt);
   for (auto ind = 0; ind < getMonitor()->getNbPlayer(); ind++) {
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
       IdCarte id = vecCrt.back();

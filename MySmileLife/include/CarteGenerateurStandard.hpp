@@ -8,23 +8,10 @@
 namespace MySmileLife{
     class CarteGenerateurStandard: public CardGame::CarteGenerator{
         private:
-            int cptId;
-            void addMetier(  );
-            void addEtude(   );
-            void addSalaire( );
-            void addSpecial( );
-            void addEnfant(  );
-            void addFlirt(   );
-            void addMarriage();
-            void addMalus(   );
-            void addAnimal(  );
-            void addVoyage(  );
-            void addMaison(  );
-            void addCarteMSL(const CarteMSL* crt);
-            MyMultiMap<set<IdCarte>> mmapMSLCarte;
-            set<IdCarte> getSetIdCarte(CarteType ct, CarteSousType cst)const{return mmapMSLCarte[{ct,cst}];}
-            map<int,set<IdCarte>> getMapCstSetIdCarte(CarteType ct)const{return mmapMSLCarte.getMapByKey1(ct);}
-            IdCarte getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{return *(mmapMSLCarte[{ct,cst}].begin());}
+            MyMultiMap<set<IdCarte>> mMapMSLCarte;
+            set<IdCarte> getSetIdCarte(CarteType ct, CarteSousType cst)const{return mMapMSLCarte[{ct,cst}];}
+            map<int,set<IdCarte>> getMapCstSetIdCarte(CarteType ct)const{return mMapMSLCarte.getMapByKey1(ct);}
+            IdCarte getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{return *(mMapMSLCarte[{ct,cst}].begin());}
 
         public:
             CarteGenerateurStandard();
@@ -32,6 +19,7 @@ namespace MySmileLife{
             IdCarte getCarteByType(CarteType ct, CarteSousType cst, string nom)const;
             IdCarte getCarteByType(CarteType ct, CarteSousType cst)const;
     };
+
 };
 
 #endif

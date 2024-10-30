@@ -25,7 +25,7 @@ CarteGenerateurStandard::CarteGenerateurStandard() : cptId(-1) {
 void CarteGenerateurStandard::genCartesPioche(vector<IdCarte> &vecCartes) {
   cout << "CarteGenerateurStandard::genCartesPioche" << endl;
   IdCarte id;
-  map<int, set<IdCarte>> mapCT = mmapMSLCarte.getMapByKey1(carteMetier);
+  map<int, set<IdCarte>> mapCT = mMapMSLCarte.getMapByKey1(carteMetier);
   for (auto sIC : mapCT) {
     for (auto id : sIC.second) {
       vecCartes.push_back(id);
@@ -74,13 +74,13 @@ void CarteGenerateurStandard::genCartesPioche(vector<IdCarte> &vecCartes) {
   for (int i = 0; i < 2; i++) {
     vecCartes.push_back(id);
   }
-  mapCT = mmapMSLCarte.getMapByKey1(carteEnfant);
+  mapCT = mMapMSLCarte.getMapByKey1(carteEnfant);
   for (auto mapS : mapCT) {
     for (IdCarte idC : mapS.second) {
       vecCartes.push_back(idC);
     }
   }
-  mapCT = mmapMSLCarte.getMapByKey1(carteFlirt);
+  mapCT = mMapMSLCarte.getMapByKey1(carteFlirt);
   for (auto mapS : mapCT) {
     for (IdCarte idC : mapS.second) {
       for (int i = 0; i < 2; i++) {
@@ -122,11 +122,11 @@ void CarteGenerateurStandard::genCartesPioche(vector<IdCarte> &vecCartes) {
   }
   vecCartes.push_back(getFirstSetIdCarte(carteMalus, csPrison));
   vecCartes.push_back(getFirstSetIdCarte(carteMalus, csAttentat));
-  for (auto id : mmapMSLCarte[{carteAnimal, csAucun}]) {
+  for (auto id : mMapMSLCarte[{carteAnimal, csAucun}]) {
     vecCartes.push_back(id);
   }
   vecCartes.push_back(getFirstSetIdCarte(carteAnimal, csLicorne));
-  for (auto id : mmapMSLCarte[{carteVoyage, csAucun}]) {
+  for (auto id : mMapMSLCarte[{carteVoyage, csAucun}]) {
     vecCartes.push_back(id);
   }
   id = getFirstSetIdCarte(carteMaison, csMaison6);
@@ -287,7 +287,7 @@ void CarteGenerateurStandard::addCarteMSL(const CarteMSL *crt) {
   IdCarte id = crt->getId();
   CarteType ct = crt->getType();
   CarteSousType cst = crt->getSType();
-  mmapMSLCarte[{ct, cst}].insert(id);
+  mMapMSLCarte[{ct, cst}].insert(id);
   addCarte(dynamic_cast<const Carte *>(crt));
 }
 

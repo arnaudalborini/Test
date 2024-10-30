@@ -193,8 +193,6 @@ namespace MySmileLife{
     class CarteMSL;
     class CarteGenerateurStandard;
     class JouerMalus;
-    void CreationJoueur(CardGame::GameInterface* gI);
-    void MySmileLifeTest();
 }
 
 #endif
