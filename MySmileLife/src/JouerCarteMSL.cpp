@@ -46,6 +46,7 @@ bool JouerCarteMSL::jouerCarte(const Player *pp, IdCarte id) const
     if(peutEtreJouee(pp,id)==false){
         return false;
     }
+    cout << "JouerCarteMSL::jouerCarte: la" << endl;
     const CarteMSL* crt = getCarteMSL( id );
     switch( crt->getType() ){
         case CarteType::carteAnimal:
@@ -59,6 +60,7 @@ bool JouerCarteMSL::jouerCarte(const Player *pp, IdCarte id) const
         case CarteType::carteMaison:
             return jouerCarteMaison(pp,crt);
         case CarteType::carteMalus:
+            cout << "JouerCarteMSL::jouerCarte: carteMalus" << crt->getName() << endl;
             return jouerCarteMalus(pp,crt);
         case CarteType::carteMariage:
             return jouerCarteMariage(pp,crt);
@@ -249,7 +251,7 @@ bool JouerCarteMSL::jouerCarteVoyage(const Player *pp, const CarteMSL *crt) cons
 
 void JouerCarteMSL::choisirEtJouerUneCarteDefausse(const Player *pp) const
 {
-    int indiceCarte = pp->choisirUneCarteAJouer(mMonitor->getDefausse());
+    int indiceCarte = pp->choisirUneCarte(mMonitor->getDefausse());
     IdCarte id = mMonitor->getDefausse()->piocherNeme( indiceCarte );
     if(peutEtreJouee(pp,id)){
         jouerCarte(pp,id);

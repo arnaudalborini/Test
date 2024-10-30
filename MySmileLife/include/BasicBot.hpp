@@ -17,7 +17,10 @@ public:
   virtual ~BasicBot(){};
 
   string getName() const override { return "basicbot"; }
-  int choisirUneCarteAJouer(CardGame::PaquetCarte *paq) const override {
+  int choisirUneCarte(CardGame::PaquetCarte *paq) const override {
+    return 0;
+  }
+  int choisirUneCarte(const vector<IdCarte> &vecId) const {
     return 0;
   }
   void showNCartesPioche(const vector<IdCarte> &vecIdPioche) const override;
@@ -25,8 +28,8 @@ public:
   int choisirSalairePourPayer(
       const vector<IdCarte> &vecIdSalairesDisponibles) const override;
   int choisirIndiceCarteAJouerMain(const Hand *h) const override { return 0; };
-  virtual int choisirCible(IdCarte id) const { return 0; }
-  virtual int choisirIndiceHazard(int indiceMin, int indiceMax) const {
+  int choisirCible(IdCarte id) const override{ return 0; }
+  int choisirIndiceHazard(int indiceMin, int indiceMax) const override{
     return 0;
   }
 };
