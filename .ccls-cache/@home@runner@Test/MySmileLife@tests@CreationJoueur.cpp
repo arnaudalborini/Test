@@ -4,8 +4,8 @@
 #include "GameInterface.hpp"
 
 void MySmileLife::CreationJoueur(CardGame::GameInterface * gI){
-    BasicBot* bb1 = new BasicBot(gI);
-    BasicBot* bb2 = new BasicBot(gI);
-    bb1->login();
-    bb2->login();
+    BasicBot* bb1 = new BasicBot();
+    BasicBot* bb2 = new BasicBot();
+    bb1->login(gI);
+    bb2->login(gI);
 }

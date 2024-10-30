@@ -29,6 +29,8 @@ namespace MySmileLife{
         public:
             CarteGenerateurStandard();
             void genCartesPioche(vector<IdCarte> &vecCarte) override;
+            IdCarte getCarteByType(CarteType ct, CarteSousType cst, string nom)const;
+            IdCarte getCarteByType(CarteType ct, CarteSousType cst)const;
     };
 };
 

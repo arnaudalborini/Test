@@ -7,25 +7,26 @@
 namespace CardGame{
     class Player{
         private:
-            GameInterface* gI;
-        protected:
             const PlayerInterface* pI;
+        protected:
+            const PlayerInterface* getPlayerInterface()const{return pI;}
         public:
-            Player(GameInterface* gI):gI(gI),pI(nullptr){}
+            Player():pI(nullptr){}
 
-            void login(){ 
+            void login(GameInterface* gI){ 
                 if(pI==nullptr){
                     pI=gI->login(this);
                 }
             }
+            bool isLoggedIn()const{return pI!=nullptr;}
     
             virtual string getName()const=0;
             virtual int choisirUneCarteAJouer(PaquetCarte* paq)const=0;
             virtual void showNCartesPioche(const vector<IdCarte>& vecIdPioche)const=0;
             virtual void showHandAutreJoueur(const Hand* h, int indAutrePlayer)const=0;
-            virtual int choisirSalairePourPayer(const vector<IdCarte>& vecIdSalairesDisponibles)const=0;
             virtual int choisirIndiceCarteAJouerMain(const Hand* h)const=0;
             virtual int choisirCible(IdCarte id)const=0;
+            virtual int choisirIndiceHazard(int indiceMin,int indiceMax)const=0;
     };
 };
 

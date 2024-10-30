@@ -16,6 +16,7 @@ namespace MySmileLife{
             virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
             virtual bool peutEtreJouee(const Player *pp, IdCarte id)const=0;
             virtual bool jouerCarte(const Player* pp, IdCarte id)const=0;
+            virtual const Player* getCible(const Player* pp, IdCarte id)const=0;
         private:
             void jouerAdultere(const Player* pp)const;
             void jouerTroc(const Player* pp)const;

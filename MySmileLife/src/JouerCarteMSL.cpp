@@ -3,7 +3,7 @@
 #include "CarteMSL.hpp"
 #include "GameMechanicsMonitor.hpp"
 #include "Plateau.hpp"
-#include "Player.hpp"
+#include "MSLPlayer.hpp"
 #include "PaquetCarte.hpp"
 
 using MySmileLife::JouerCarteMSL;
@@ -201,9 +201,10 @@ void JouerCarteMSL::payer(const Player* pp, Plateau* plat, int prix)const{
         plat->setStatut(HeritageDisponible,0);
         prix-=3;
     }
+    const MSLPlayer * mslPP = dynamic_cast<const MSLPlayer *>(pp);   
     while(prix>0){
         const vector<IdCarte> vecId = plat->showAllIdByEP(ESalairesD);
-        int indice = pp->choisirSalairePourPayer(vecId);
+        int indice = mslPP->choisirSalairePourPayer(vecId);
         indice = (indice<0)?0:indice;
         indice = (indice>vecId.size())?vecId.size()-1:indice;
         IdCarte id = plat->getN(ESalairesD,indice);
