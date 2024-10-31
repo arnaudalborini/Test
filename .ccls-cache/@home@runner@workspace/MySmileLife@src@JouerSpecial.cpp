@@ -134,6 +134,7 @@ bool JouerSpecial::jouerCarteSpecial(const Player *pp,
     jouerTsunami();
     break;
   case csVengeance:
+    cout << "la "<< endl;
     jouerVengeance(pp);
     break;
   case csLegionHonneur:
@@ -255,8 +256,9 @@ void JouerSpecial::jouerTsunami() const {
   vector<int> vecNbCarte;
   vector<IdCarte> vecCrt;
   for (auto ind = 0; ind < getMonitor()->getNbPlayer(); ind++) {
-    vecH[ind] = getMonitor()->getInfosJoueurs(ind)->getHand();
-    vecNbCarte[ind] = vecH[ind]->getNbCarte();
+    InfosJoueur *ij = getMonitor()->getInfosJoueurs(ind);
+    vecH.push_back( ij->getHand());
+    vecNbCarte.push_back( vecH[ind]->getNbCarte() );
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
       vecCrt.push_back(vecH[ind]->getCarte(0));
     }

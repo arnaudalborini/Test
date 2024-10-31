@@ -33,6 +33,13 @@ namespace CardGame{
     class Player;
     class PlayerInterface;
     class StatutPlateau;
+
+    template <typename Key, typename T> T myMapGet(const std::map<Key,T>& mMap, Key k){
+        if(mMap.find(k) != mMap.end()){
+            return mMap.at(k);
+        }
+        return T();
+    }
 };
 
 #endif

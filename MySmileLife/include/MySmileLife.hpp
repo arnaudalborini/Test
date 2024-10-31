@@ -174,19 +174,20 @@ namespace MySmileLife{
     const int DEFAULTMAXHANDSIZE = 5;
     const int PRIXVOYAGE = 3;
     enum EmplacementsPlateau:int{
-        EFlirt,
-        EFlirtAdultere,
-        EMariage,
-        EMetier,
-        ESpecial,
-        ESalairesD,
-        EMalus,
-        EEnfant,
-        EEtudes,
-        EEtudesContinues,
-        EDivers,
-        ECasinoSalaire
+        EFlirt = 0,
+        EFlirtAdultere = 1,
+        EMariage = 2,
+        EMetier = 3,
+        ESpecial = 4,
+        ESalairesD = 5,
+        EMalus = 6,
+        EEnfant = 7,
+        EEtudes = 8,
+        EEtudesContinues = 9,
+        EDivers = 10,
+        ECasinoSalaire = 11
     };
+    const int MAXEMPLACEMENTPLATEAU = EmplacementsPlateau::ECasinoSalaire;
     class JouerCarteMSL;
     class CartesAlgoMSL;
     class BasicBot;

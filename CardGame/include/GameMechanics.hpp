@@ -9,7 +9,6 @@ protected:
   GameMechanicsMonitor *mMonitor;
   CarteGenerator *cGen;
   CartesAlgo *cAlgo;
-  vector<int> mTourAPasser;
 
   void joueurPioche(int indPlayer) const;
   void remplirMain(int indPlayer) const;
@@ -40,7 +39,7 @@ public:
   virtual void initSpeficiGame(){};
   virtual vector<IdCarte> genVecCartesPioche() const = 0;
   virtual vector<IdCarte> genVecCartesDefausse() const = 0;
-  virtual map<int, vector<IdCarte>> genMapCartePlateauInitial() const = 0;
+  virtual vector<vector<IdCarte>> genMapCartePlateauInitial() const = 0;
   virtual vector<int> getInitialStatuts() const = 0;
   virtual vector<int> getJoueurInitialStatuts() const = 0;
   virtual void playTurn(int indPlayer) const = 0;

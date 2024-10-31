@@ -5,8 +5,8 @@
 #include "GameMechanicsSpe.hpp"
 
 namespace MySmileLife{
-    class MSLMechanics final:public CardGame::GameMechanicsSpe{
-        private:
+    class MSLMechanics :public CardGame::GameMechanicsSpe{
+        protected:
             const CarteMSL* getCarteFromId(IdCarte id)const;
             int  countSmile(Plateau* plateauJoueur)const;
         public:
@@ -19,7 +19,7 @@ namespace MySmileLife{
             void playTurn(int indPlayer) const override;
             vector<int> getJoueurInitialStatuts() const override;
             vector<int> getInitialStatuts()const override;
-            map<int,vector<IdCarte>> genMapCartePlateauInitial()const override;
+            vector<vector<IdCarte>> genMapCartePlateauInitial()const override;
     };
 }
 #endif

@@ -8,11 +8,11 @@ namespace CardGame{
     class Plateau{
             PlateauMonitor* mMonitor;
             const int playerId;
-            map<int,vector<IdCarte>> mMapCarte;
+            vector<vector<IdCarte>> mVecCarte;
             vector<int> mVecStatut;
         public:
             Plateau(PlateauMonitor* mm,int playerInd=-1);
-            Plateau(PlateauMonitor* mm,vector<int> mapStatut,int playerInd=-1);
+            Plateau(PlateauMonitor* mm,vector<int> vecStatut,int playerInd=-1);
             ~Plateau();
 
             void addLast(int EP, IdCarte crt);
@@ -27,10 +27,11 @@ namespace CardGame{
 
             int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
             void initStatut(const vector<int> &vecSt){mVecStatut=vecSt;}
-            void initMap(const map<int,vector<IdCarte>> &initMap){mMapCarte=initMap;}
+            void initMap(const vector<vector<IdCarte>> &initMap){mVecCarte=initMap;}
             void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}  
 
-            void incStatut(int statutKey, int inc=1){mVecStatut[statutKey]+=inc;}     
+            void incStatut(int statutKey, int inc=1){mVecStatut[statutKey]+=inc;}
+            int getStatutMax()const{return mVecStatut.size();}
     };
 };
 

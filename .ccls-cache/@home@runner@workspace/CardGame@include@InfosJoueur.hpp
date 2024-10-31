@@ -17,7 +17,7 @@ public:
   InfosJoueur(InfosJoueurMonitor *mm, const CardGame::GameMechanics *gm,
               const int PlayerId=-1);
   ~InfosJoueur();
-  Hand *getHand() { return mHand; }
+  Hand *getHand() {return mHand; }
   Plateau *getPlateau() { return mPlateau; }
 
   const Hand *getHand() const { return mHand; }
