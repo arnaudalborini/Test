@@ -19,6 +19,10 @@ public:
         data[Key{k1, k2}] = value;
     }
 
+    bool has(const Key& key)const{
+        return (data.find(key)!=data.end());
+    }
+
     T& at(int k1, int k2) {
         return data.at(Key{k1, k2});
     }

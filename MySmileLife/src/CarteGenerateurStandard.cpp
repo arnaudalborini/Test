@@ -27,7 +27,6 @@ void CarteGenerateurStandard::genCartesPioche(vector<IdCarte> &vecCartes) {
 IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst, string nom)const {
   set<IdCarte> sId = getSetIdCarte(ct, cst);
   for (auto elt : sId) {
-      
     if (dynamic_cast<const CarteMSL*>( getCarteById(elt) )->getName() == nom) {
       return elt;
     }
@@ -37,4 +36,8 @@ IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst,
 
 IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst)const {
   return getFirstSetIdCarte(ct, cst);
+}
+IdCarte CarteGenerateurStandard::getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{
+
+  return (mMapMSLCarte.has({ct,cst}))?*(mMapMSLCarte[{ct,cst}].begin()):-1;
 }
