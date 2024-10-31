@@ -26,12 +26,13 @@ namespace CardGame{
             const vector<IdCarte> showAllIdByEP(int ET)const;
 
             int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
-            void initStatut(const vector<int> &vecSt){mVecStatut=vecSt;}
-            void initMap(const vector<vector<IdCarte>> &initMap){mVecCarte=initMap;}
+            void initStatut(const vector<int> &vecSt){mVecStatut=vector<int>(vecSt.begin(),vecSt.end());}
+            void initMap(const vector<vector<IdCarte>> &initMap){mVecCarte=vector<vector<IdCarte>>(initMap.begin(),initMap.end());}
             void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}  
 
             void incStatut(int statutKey, int inc=1){mVecStatut[statutKey]+=inc;}
-            int getStatutMax()const{return mVecStatut.size();}
+    int getStatutMax()const{return mVecStatut.size();}
+    int getEPMax()const{return mVecCarte.size();}
     };
 };
 

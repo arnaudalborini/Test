@@ -4,17 +4,16 @@
 #include "../include/MSLMechanics.hpp"
 #include "GameMechanicsSpe.hpp"
 #include "MySmileLife.hpp"
+#include "TestScenario.hpp"
 
-namespace MySmileLife {
+namespace MySmileLife::Tests {
+using namespace MySmileLife;
 class MSLMechanicsTest : public MSLMechanics {
 private:
-  vector<int> vecInitHand;
-  vector<int> vecInitStatuts;
-  vector<vector<CardGame::IdCarte>> vecInitPlateau;
+  TestScenario test;
 
 public:
-  MSLMechanicsTest(const vector<int> &vH, const vector<int> &vS,
-                   const vector<vector<CardGame::IdCarte>> &mP);
+  MSLMechanicsTest(const TestScenario &test);
   ~MSLMechanicsTest();
   // methodes reimplementees
   void playTurn(int indPlayer) const override;
@@ -23,5 +22,5 @@ public:
   vector<vector<IdCarte>> genMapCartePlateauInitial() const override;
   void initSpeficiGame() override;
 };
-} // namespace MySmileLife
+} // namespace MySmileLife::Tests
 #endif
