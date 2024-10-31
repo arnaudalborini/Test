@@ -194,6 +194,8 @@ namespace MySmileLife{
     class CarteMSL;
     class CarteGenerateurStandard;
     class JouerMalus;
+
+
 }
 
 #endif

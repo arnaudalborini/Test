@@ -4,6 +4,10 @@
 #include "../include/MySmileLife.hpp"
 
 namespace MySmileLife{
+    string toStringDP(DetailPlateau dp);
+    string toStringEP(EmplacementsPlateau ep);
+    string toStringCST(CarteSousType cst);
+    string toStringCT(CarteType ct);
     namespace Tests{
         class MSLTests{
             public:
@@ -12,6 +16,7 @@ namespace MySmileLife{
                 static void MySmileLifeTest();
                 class MSLMechanicsTest;
         };
+        
     }
 }
 

@@ -10,7 +10,9 @@
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
 #include "StatutPlateau.hpp"
+#include "MSLTests.hpp"
 
+using namespace MySmileLife;
 using namespace MySmileLife::Tests;
 
 MSLMechanicsTest::MSLMechanicsTest(const TestScenario &testP) { test = testP; }
@@ -24,13 +26,9 @@ void MSLMechanicsTest::playTurn(int indPlayer) const {
   Plateau *platJ = getJoueurPlateau(indPlayer);
   Plateau *platGeneral = getMainPlateau();
   cout << "Plateau: " << platJ->getEPMax() << endl;
-  for (auto ind = 0; ind < platJ->getEPMax(); ind++) {
-    cout << "EP " << ind << " : " << endl;
-    for (auto ind2 = 0; ind2 < platJ->getNbCarte(ind); ind2++) {
-      cout << "    ind2: " << ind2 << " : " << platJ->showIdN(ind, ind2)
-           << endl;
-    }
-  }
+  printHand(jHand);
+  printStatut(platJ);
+  printPlateau(platJ);
   /*
   joueurPioche(indPlayer);
   int nbCarte = jHand->getNbCarte();
@@ -75,4 +73,35 @@ void MSLMechanicsTest::initSpeficiGame() {
   Plateau *platJ = getJoueurPlateau(indPlayer);
   platJ->initStatut(test.getInitStatuts());
   platJ->initMap(test.getInitPlateau());
+}
+
+void MSLMechanicsTest::printHand(const Hand *h) const
+{
+  cout << "Hand: ";
+  for(auto ind=0;ind<h->getNbCarte();ind++){
+    cout << getCarteFromId(h->getIdCarte(ind))->getName() << ",";
+  }
+  cout << endl;
+}
+
+void MSLMechanicsTest::printStatut(const Plateau *platJ) const
+{
+  cout << "Statuts: " << endl;
+  for(auto ind=0;ind< platJ->getStatutMax();ind++){
+    if(platJ->getStatut(ind)>0){
+      cout << MySmileLife::toStringDP(DetailPlateau(ind)) << " " << platJ->getStatut(ind) << endl;
+    }
+  }
+}
+
+void MSLMechanicsTest::printPlateau(const Plateau *platJ) const
+{  
+  for (auto ind = 0; ind < platJ->getEPMax(); ind++) {
+    if( platJ->getNbCarte(ind)>0 ){
+      cout << MySmileLife::toStringEP(EmplacementsPlateau(ind)) << " : " << endl;
+      for (auto ind2 = 0; ind2 < platJ->getNbCarte(ind); ind2++) {
+        cout << "    " << ind2 << " : " << getCarteFromId(platJ->showIdN(ind, ind2))->getName() << endl;
+      }
+    }
+  }
 }
