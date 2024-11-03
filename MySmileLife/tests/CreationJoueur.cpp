@@ -5,9 +5,9 @@
 
 using MySmileLife::Tests::MSLTests;
 
-void MSLTests::CreationJoueur(CardGame::GameInterface * gI){
-    BasicBot* bb1 = new BasicBot();
-    BasicBot* bb2 = new BasicBot();
+void MSLTests::CreationJoueur(CardGame::PGameInterface * gI){
+    PBasicBot bb1 = std::make_shared<BasicBot>();
+    PBasicBot bb2 = std::make_shared<BasicBot>();
     bb1->login(gI);
     bb2->login(gI);
 }

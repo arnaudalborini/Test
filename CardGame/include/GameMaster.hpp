@@ -8,26 +8,26 @@
 namespace CardGame{
     class GameMaster: public GameInterface, public PlayerInterface{
         private:
-            GameMasterMonitor* mMonitor;
+            PGameMasterMonitor mMonitor;
             int mNbJoueur;
             vector<bool> mJoueurPret;
-            vector<Player*> mJoueurs;
-            void initGame(int nj, GameMechanics* gm);
+            vector<PPlayer> mJoueurs;
+            void initGame(int nj, PGameMechanics gm);
         public:
-            GameMaster(int nj, GameMechanics* gm);
+            GameMaster(int nj, PGameMechanics gm);
             ~GameMaster();
             void startGame();
             int getWinner()const;
         public:
             //GameInterface
-            virtual const PlayerInterface* login(const Player* pp);
-            virtual int   getIdPlayer(const Player*)const;
+            virtual PCPlayerInterface login(PCPlayer pp);
+            virtual int   getIdPlayer(PCPlayer)const;
             //PlayerInterface
-            virtual const InfosJoueur*  getInfosJoueurs(int indPlayer)const;
-            virtual const Plateau*      getPlateau()const;
-            virtual const PaquetCarte*  getPioche()const;
-            virtual const PaquetCarte*  getDefausse()const;
-            virtual const Carte*        getCarte(IdCarte idC)const;
+            virtual PCInfosJoueur   getInfosJoueurs(int indPlayer)const;
+            virtual PCPlateau      getPlateau()const;
+            virtual PCPaquetCarte  getPioche()const;
+            virtual PCPaquetCarte  getDefausse()const;
+            virtual PCCarte        getCarte(IdCarte idC)const;
             virtual int                 getStatutPlayer(int indPlayer, int dp)const;
     };
 };

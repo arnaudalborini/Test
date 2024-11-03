@@ -4,8 +4,8 @@
 using CardGame::Plateau;
 using CardGame::IdCarte;
 
-Plateau::Plateau(PlateauMonitor* mm,int playerInd):mMonitor(mm),playerId(playerInd){}
-Plateau::Plateau(PlateauMonitor* mm,vector<int> vecStatut,int playerInd):mMonitor(mm),mVecStatut(vecStatut),playerId(playerInd){}
+Plateau::Plateau(PPlateauMonitor mm,int playerInd):mMonitor(mm),playerId(playerInd){}
+Plateau::Plateau(PPlateauMonitor mm,vector<int> vecStatut,int playerInd):mMonitor(mm),mVecStatut(vecStatut),playerId(playerInd){}
 Plateau::~Plateau(){}
 
 IdCarte Plateau::showIdN(int EP, int N)const

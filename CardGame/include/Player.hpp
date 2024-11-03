@@ -7,15 +7,15 @@
 namespace CardGame{
     class Player{
         private:
-            const PlayerInterface* pI;
+            PCPlayerInterface pI;
         protected:
-            const PlayerInterface* getPlayerInterface()const{return pI;}
+            PCPlayerInterface getPlayerInterface()const{return pI;}
         public:
             Player():pI(nullptr){}
 
-            void login(GameInterface* gI){ 
+            void login(PGameInterface gI){ 
                 if(pI==nullptr){
-                    pI=gI->login(this);
+                    pI=gI->login( std::make_shared<Player>(this));
                 }
             }
             bool isLoggedIn()const{return pI!=nullptr;}
@@ -24,8 +24,8 @@ namespace CardGame{
             virtual int choisirUneCarte(PaquetCarte* paq)const=0;
             virtual int choisirUneCarte(const vector<IdCarte>& vecId)const=0;
             virtual void showNCartesPioche(const vector<IdCarte>& vecIdPioche)const=0;
-            virtual void showHandAutreJoueur(const Hand* h, int indAutrePlayer)const=0;
-            virtual int choisirIndiceCarteAJouerMain(const Hand* h)const=0;
+            virtual void showHandAutreJoueur(PCHand h, int indAutrePlayer)const=0;
+            virtual int choisirIndiceCarteAJouerMain(PCHand h)const=0;
             virtual int choisirCible(IdCarte id)const=0;
             virtual int choisirIndiceHazard(int indiceMin,int indiceMax)const=0;
     };

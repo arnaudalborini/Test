@@ -17,10 +17,16 @@ file(GLOB_RECURSE
      ${PROJECT_INCLUDE_DIR}/*.hpp
 )
 
-add_library(CardGame STATIC
+add_library(CardGame SHARED
     ${source_files}
     ${header_files} 
 )
+
+find_package(boost 1.74 COMPONENTS ALL )
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR})
+
+target_link_libraries(CardGame ${Boost_LIBRARIES})
+
 target_include_directories(CardGame PRIVATE ${PROJECT_INCLUDE_DIR})
 
 #add_executable(CardGameTests tests/CardGameTests.cpp)

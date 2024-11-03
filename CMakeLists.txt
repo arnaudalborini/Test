@@ -5,10 +5,16 @@ project(MySmileLifeProject)
 add_subdirectory(CardGame)
 add_subdirectory(MySmileLife)
 
+find_package(boost 1.74 COMPONENTS ALL )
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR})
+target_link_libraries(MySmileLifeProject ${Boost_LIBRARIES})
+
 # Création de l'exécutable principal
 add_executable(MySmileLifeProject main.cpp)
 target_link_libraries(MySmileLifeProject CardGame MySmileLife)
+target_link_libraries(MySmileLifeProject ${Boost_LIBRARIES})
 target_include_directories(MySmileLifeProject PRIVATE MySmileLife/include CardGame/include)
+
 
 # Itérer sur les bibliothèques et leurs dossiers de tests
 foreach(LIB MySmileLife)

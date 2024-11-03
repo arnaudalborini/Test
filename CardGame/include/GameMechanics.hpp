@@ -6,9 +6,9 @@
 namespace CardGame {
 class GameMechanics {
 protected:
-  GameMechanicsMonitor *mMonitor;
-  CarteGenerator *cGen;
-  CartesAlgo *cAlgo;
+  PGameMechanicsMonitor mMonitor;
+  PCarteGenerator cGen;
+  PCartesAlgo cAlgo;
 
   void joueurPioche(int indPlayer) const;
   void remplirMain(int indPlayer) const;
@@ -16,25 +16,25 @@ protected:
   int getNbCarteDefausse() const;
   void addCarteDefausse(IdCarte idC, int IdPlayer) const;
   void addCarteDefausse(IdCarte idC) const;
-  const Player *getPlayer(int indPlayer) const;
-  Hand *getJoueurHand(int indPlayer) const;
-  Plateau *getJoueurPlateau(int indPlayer) const;
-  Plateau *getMainPlateau() const;
+  PCPlayer getPlayer(int indPlayer) const;
+  PHand getJoueurHand(int indPlayer) const;
+  PPlateau getJoueurPlateau(int indPlayer) const;
+  PPlateau getMainPlateau() const;
   int getStatutPlayer(int indPlayer, int dp) const;
   void setStatutPlayer(int indPlayer, int dp, int value);
   void incStatutPlayer(int indPlayer, int dp, int inc = 1);
   void decStatutPlayer(int indPlayer, int dp, int inc = 1);
 
-  bool peutEtreJouee(const Player *pp, IdCarte id) const;
-  bool jouerCarte(const Player *pp, IdCarte id) const;
+  bool peutEtreJouee(PCPlayer pp, IdCarte id) const;
+  bool jouerCarte(PCPlayer pp, IdCarte id) const;
 
 public:
   GameMechanics();
   ~GameMechanics();
-  void setMonitor(Monitor *mm);
+  void setMonitor(PMonitor mm);
   void initGame();
   void startGame();
-  const Carte *getCarte(IdCarte idC) const;
+  PCCarte getCarte(IdCarte idC) const;
 
   virtual void initSpeficiGame(){};
   virtual vector<IdCarte> genVecCartesPioche() const = 0;

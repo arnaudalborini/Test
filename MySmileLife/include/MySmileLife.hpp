@@ -19,13 +19,7 @@ namespace MySmileLife{
     using std::map;
     using std::list;
     using std::set;
-    using CardGame::IdCarte;
-    using CardGame::Player;
-    using CardGame::Plateau;
-    using CardGame::InfosJoueur;
-    using CardGame::Hand;
-    using CardGame::StatutPlateau;
-    using CardGame::Carte;
+    using namespace CardGame;
     enum CarteType:int{
         carteEtude,
         carteMetier,
@@ -188,13 +182,46 @@ namespace MySmileLife{
         ECasinoSalaire = 11
     };
     const int MAXEMPLACEMENTPLATEAU = EmplacementsPlateau::ECasinoSalaire;
-    class JouerCarteMSL;
-    class CartesAlgoMSL;
-    class BasicBot;
-    class CarteMSL;
-    class CarteGenerateurStandard;
-    class JouerMalus;
 
+    class CartesAlgoMSL;
+    typedef shared_ptr<const CartesAlgoMSL> PCCartesAlgoMSL;
+    typedef shared_ptr<CartesAlgoMSL> PCartesAlgoMSL;
+
+    class BasicBot;
+    typedef shared_ptr<const BasicBot> PCBasicBot;
+    typedef shared_ptr<BasicBot> PBasicBot;
+
+    class CarteMSL;
+    typedef shared_ptr<const CarteMSL> PCCarteMSL;
+    typedef shared_ptr<CarteMSL> PCarteMSL;
+
+    class CarteGenerateurStandard;
+    typedef shared_ptr<const CarteGenerateurStandard> PCCarteGenerateurStandard;
+    typedef shared_ptr<CarteGenerateurStandard> PCarteGenerateurStandard;
+
+    class JouerCarteMSL;
+    typedef shared_ptr<const JouerCarteMSL> PJouerCarteMSL;
+    typedef shared_ptr<JouerCarteMSL> PJouerCarteMSL;
+
+    class JouerMalus;
+    typedef shared_ptr<const JouerMalus> PCJouerMalus;
+    typedef shared_ptr<JouerMalus> PJouerMalus;
+
+    class JouerMetier;
+    typedef shared_ptr<const JouerMetier> PCJouerMetier;
+    typedef shared_ptr<JouerMetier> PJouerMetier;
+
+    class JouerSpecial;
+    typedef shared_ptr<const JouerSpecial> PCJouerSpecial;
+    typedef shared_ptr<JouerSpecial> PJouerSpecial;
+
+    class MSLMechanics;
+    typedef shared_ptr<const MSLMechanics> PCMSLMechanics;
+    typedef shared_ptr<MSLMechanics> PMSLMechanics;
+
+    class MSLPlayer;
+    typedef shared_ptr<const MSLPlayer> PCMSLPlayer;
+    typedef shared_ptr<MSLPlayer> PMSLPlayer;
 
 }
 

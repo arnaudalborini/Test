@@ -14,14 +14,12 @@ using std::map;
 
 GameMechanicsSpe::GameMechanicsSpe()
 {
-    cGen = new CarteGenerator();
-    cAlgo = new CartesAlgo(cGen,mMonitor);
+    cGen = make_shared<CarteGenerator>();
+    cAlgo = make_shared<CartesAlgo>(cGen,mMonitor);
 }
 
 GameMechanicsSpe::~GameMechanicsSpe()
 {
-    if(cGen!=nullptr){delete cGen;cGen=nullptr;}
-    if(cAlgo!=nullptr){delete cAlgo;cAlgo=nullptr;}
 }
 
 vector<IdCarte> GameMechanicsSpe::genVecCartesPioche() const
@@ -43,8 +41,8 @@ bool GameMechanicsSpe::endGameCondition() const { return getNbCartePioche() > 0;
 int GameMechanicsSpe::getWinnerPlayer() const{return 0;}
 void GameMechanicsSpe::playTurn(int indPlayer) const{
     cout << "GameMechanicsSpe::playTurn" << endl;
-    const Player* pp = getPlayer(indPlayer);
-    Hand* jHand = getJoueurHand(indPlayer);
+    PCPlayer pp = getPlayer(indPlayer);
+    PHand jHand = getJoueurHand(indPlayer);
     cout << "Joueur name: "<< pp->getName() << endl;
     cout << mMonitor->getPioche()->showIdLast() << endl;
     joueurPioche(indPlayer);

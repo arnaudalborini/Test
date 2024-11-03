@@ -17,11 +17,16 @@ file(GLOB_RECURSE
      ${PROJECT_INCLUDE_DIR}/*.hpp
 )
 
-add_library(MySmileLife STATIC
+add_library(MySmileLife SHARED
     ${source_files}
     ${header_files} 
 )
-target_link_libraries(MySmileLife CardGame)
+
+
+find_package(boost 1.74 COMPONENTS ALL )
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR})
+
+target_link_libraries(MySmileLife CardGame ${Boost_LIBRARIES})
 target_include_directories(MySmileLife PRIVATE ${PROJECT_INCLUDE_DIR} ../CardGame/include)
 
 #add_executable(MySmileLifeTests tests/MySmileLifeTest.cpp tests/CreationJoueur.cpp)

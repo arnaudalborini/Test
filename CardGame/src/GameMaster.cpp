@@ -6,17 +6,16 @@
 
 using CardGame::GameMaster;
 
-GameMaster::GameMaster(int nj, GameMechanics* gm){
-    mMonitor = new Monitor();
+GameMaster::GameMaster(int nj, PGameMechanics gm){
+    mMonitor = make_shared<Monitor>();
     initGame(nj, gm);
 }
 
 GameMaster::~GameMaster()
 {
-    //delete mMonitor;
 }
 
-void GameMaster::initGame(int nj, GameMechanics *gm){
+void GameMaster::initGame(int nj, PGameMechanics gm){
     mMonitor->initiateElements(nj,gm);
     mNbJoueur = nj;
     for(int ind=0;ind<4;ind++){
@@ -24,7 +23,7 @@ void GameMaster::initGame(int nj, GameMechanics *gm){
     }
 }
 
- const CardGame::PlayerInterface* GameMaster::login(const Player *pp)
+ CardGame::PCPlayerInterface GameMaster::login(PCPlayer pp)
 {
     int ind = 0;
     while ( (mJoueurPret[ind]) && (ind< mNbJoueur) ){
@@ -33,7 +32,7 @@ void GameMaster::initGame(int nj, GameMechanics *gm){
     if(ind < mNbJoueur){
         mJoueurPret[ind] = true;
         mMonitor->addPlayer(pp,ind);
-        return dynamic_cast<const PlayerInterface*>(this);
+        return make_shared<const PlayerInterface>(this);
     }
     return nullptr;
 }
@@ -54,11 +53,11 @@ int GameMaster::getWinner() const{return mMonitor->getWinner();}
 
 
 
-int   GameMaster::getIdPlayer(const Player* pp)const{return mMonitor->getIndPlayer(pp);}
-const CardGame::InfosJoueur* GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
-const CardGame::Plateau* GameMaster::getPlateau()const{return mMonitor->getPlateau();}
-const CardGame::PaquetCarte* GameMaster::getPioche()const{return mMonitor->getPioche();}
-const CardGame::PaquetCarte* GameMaster::getDefausse()const{return mMonitor->getDefausse();}
-const CardGame::Carte* GameMaster::getCarte(IdCarte idC)const{return mMonitor->getCarte(idC);}
+int   GameMaster::getIdPlayer(PCPlayer pp)const{return mMonitor->getIndPlayer(pp);}
+CardGame::PCInfosJoueur GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
+CardGame::PCPlateau GameMaster::getPlateau()const{return mMonitor->getPlateau();}
+CardGame::PCPaquetCarte GameMaster::getPioche()const{return mMonitor->getPioche();}
+CardGame::PCPaquetCarte GameMaster::getDefausse()const{return mMonitor->getDefausse();}
+CardGame::PCCarte GameMaster::getCarte(IdCarte idC)const{return mMonitor->getCarte(idC);}
 
 int GameMaster::getStatutPlayer(int indPlayer, int dp) const{return getInfosJoueurs(indPlayer)->getPlateau()->getStatut(dp);}

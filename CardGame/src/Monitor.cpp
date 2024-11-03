@@ -5,46 +5,41 @@
 #include "Plateau.hpp"
 #include "InfosJoueurMonitor.hpp"
 
-using CardGame::InfosJoueur;
+using CardGame::PInfosJoueur;
+using CardGame::PMonitor;
 using CardGame::Monitor;
-using CardGame::PaquetCarte;
-using CardGame::Plateau;
-using CardGame::Player;
+using CardGame::PPaquetCarte;
+using CardGame::PPlateau;
+using CardGame::PCPlayer;
+using CardGame::PCCarte;
 
 Monitor::Monitor() {
-  mPioche = new PaquetCarte();
-  mDefausse = new PaquetCarte();
-  mInfosJoueurs = vector<InfosJoueur *>();
-  mPlayer = vector<const Player *>();
-  mPlateau = new Plateau(this,-1);
+  mPioche = make_shared<PaquetCarte>();
+  mDefausse = make_shared<PaquetCarte>();
+  mInfosJoueurs = vector<PInfosJoueur>();
+  mPlayer = vector<PCPlayer>();
+  mPlateau = make_shared<Plateau>(this,-1);
 }
 
-Monitor::~Monitor() { /*
-      delete mPioche;
-      delete mDefausse;
-      delete mPlateau;
-      for(auto inf:mInfosJoueurs){
-          delete inf;
-      }*/
-}
+Monitor::~Monitor() {}
 
-Plateau *Monitor::getPlateau() const { return mPlateau; }
-Plateau *Monitor::getPlateauPlayer(int indPlayer) const {
+PPlateau Monitor::getPlateau() const { return mPlateau; }
+PPlateau Monitor::getPlateauPlayer(int indPlayer) const {
   return getInfosJoueurs(indPlayer)->getPlateau();
 }
-Plateau *Monitor::getPlateauPlayer(const Player *pp) const {
+PPlateau Monitor::getPlateauPlayer(PCPlayer pp) const {
   return getInfosJoueurs(pp)->getPlateau();
 }
-PaquetCarte *Monitor::getPioche() const { return mPioche; }
-PaquetCarte *Monitor::getDefausse() const { return mDefausse; }
-InfosJoueur *Monitor::getInfosJoueurs(int ind) const {
+PPaquetCarte Monitor::getPioche() const { return mPioche; }
+PPaquetCarte Monitor::getDefausse() const { return mDefausse; }
+PInfosJoueur Monitor::getInfosJoueurs(int ind) const {
   return mInfosJoueurs[ind];
 }
-InfosJoueur *Monitor::getInfosJoueurs(const Player *pp) const {
+PInfosJoueur Monitor::getInfosJoueurs(PCPlayer pp) const {
   return getInfosJoueurs(getIndPlayer(pp));
 }
-const Player *Monitor::getPlayer(int ind) const { return mPlayer[ind]; }
-int Monitor::getIndPlayer(const Player *pp) const { return mapIdPlayer.at(pp); }
+PCPlayer Monitor::getPlayer(int ind) const { return mPlayer[ind]; }
+int Monitor::getIndPlayer(PCPlayer pp) const { return mapIdPlayer.at(pp); }
 
 int Monitor::getNbPlayer() const { return mNbJoueur; }
 
@@ -57,7 +52,7 @@ void Monitor::defausserDernier(int indPlayer, int EP) const {
 }
 
 void Monitor::defausserTout(int indPlayer, int EP) const {
-  Plateau *p = getInfosJoueurs(indPlayer)->getPlateau();
+  PPlateau p = getInfosJoueurs(indPlayer)->getPlateau();
   int NbCrt = p->getNbCarte(EP);
   for (int ind = 0; ind < NbCrt; ind++) {
     defausser(p->getLast(EP), indPlayer);
@@ -68,18 +63,18 @@ void Monitor::incStatut(int indPlayer, int statut, int inc) const {
   getInfosJoueurs(indPlayer)->getPlateau()->incStatut(statut, inc);
 }
 
-void Monitor::initiateElements(int nbJoueurs, GameMechanics *gm) {
+void Monitor::initiateElements(int nbJoueurs, PGameMechanics gm) {
   mNbJoueur = nbJoueurs;
   mGameMechanics = gm;
-  mPlayer = vector<const Player *>(nbJoueurs);
-  mInfosJoueurs = vector<InfosJoueur *>(nbJoueurs);
+  mPlayer = vector<PCPlayer>(nbJoueurs);
+  mInfosJoueurs = vector<PInfosJoueur>(nbJoueurs);
   for (auto ind = 0; ind < nbJoueurs; ind++) {
-    mInfosJoueurs[ind] = new InfosJoueur(this,mGameMechanics, ind);
+    mInfosJoueurs[ind] = make_shared<InfosJoueur>(this,mGameMechanics, ind);
   }
-  mGameMechanics->setMonitor(dynamic_cast<Monitor *>(this));
+  mGameMechanics->setMonitor(make_shared<Monitor>(this));
 }
 
-void Monitor::addPlayer(const Player *pp, int index) {
+void Monitor::addPlayer(PCPlayer pp, int index) {
   cout << "Monitor::addPlayer: " << pp << " " << index << endl;
   mPlayer[index] = pp;
   mapIdPlayer[pp] = index;
@@ -88,7 +83,7 @@ void Monitor::removePlayer(int index) { mPlayer[index] = nullptr; }
 void Monitor::startGame() { mGameMechanics->startGame(); }
 int Monitor::getWinner() const { return mGameMechanics->getWinnerPlayer(); }
 
-const CardGame::Carte *Monitor::getCarte(IdCarte idC) const {
+PCCarte Monitor::getCarte(IdCarte idC) const {
   return mGameMechanics->getCarte(idC);
 }
 
