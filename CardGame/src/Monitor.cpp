@@ -2,7 +2,6 @@
 #include "GameMechanics.hpp"
 #include "InfosJoueur.hpp"
 #include "PaquetCarte.hpp"
-#include "Plateau.hpp"
 
 using CardGame::Monitor;
 
@@ -11,7 +10,7 @@ Monitor::Monitor() {
   mDefausse = make_shared<PaquetCarte>();
   mInfosJoueurs = vector<_p_InfosJoueur>();
   mPlayer = vector<_pc_Player>();
-  mPlateau = make_shared<Plateau>(shared_from_this(),-1);
+  mPlateau = make_shared<Plateau>(shared_from_this());
 }
 
 Monitor::~Monitor() {}
@@ -62,7 +61,7 @@ void Monitor::initiateElements(int nbJoueurs, _p_GameMechanics gm) {
   mPlayer = vector<_pc_Player>(nbJoueurs);
   mInfosJoueurs = vector<_p_InfosJoueur>(nbJoueurs);
   for (auto ind = 0; ind < nbJoueurs; ind++) {
-    mInfosJoueurs[ind] = make_shared<InfosJoueur>(shared_from_this(),mGameMechanics, ind);
+    mInfosJoueurs[ind] = make_shared<InfosJoueur>(shared_from_this(),mGameMechanics->getJoueurInitialStatuts(), ind);
   }
   mGameMechanics->setMonitor(shared_from_this());
 }

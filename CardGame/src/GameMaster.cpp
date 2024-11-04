@@ -1,7 +1,6 @@
 #include "GameMaster.hpp"
 #include "Monitor.hpp"
 #include "InfosJoueur.hpp"
-#include "Plateau.hpp"
 
 using CardGame::GameMaster;
 

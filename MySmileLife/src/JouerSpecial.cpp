@@ -2,11 +2,9 @@
 #include "CarteGenerateurStandard.hpp"
 #include "CarteMSL.hpp"
 #include "GameMechanicsMonitor.hpp"
-#include "Hand.hpp"
 #include "InfosJoueur.hpp"
 #include "MyShuffle.hpp"
 #include "PaquetCarte.hpp"
-#include "Plateau.hpp"
 #include "Player.hpp"
 #include "JouerCarteMSL.hpp"
 
@@ -137,31 +135,31 @@ void JouerSpecial::jouerTroc(CardGame::_pc_Player pp) const {
   CardGame::_p_Hand jh = getMonitor()->getInfosJoueurs(pp)->getHand();
   CardGame::_p_Hand ch = getMonitor()->getInfosJoueurs(cc)->getHand();
 
-  int nbCjh = jh->getNbCarte();
-  int nbCch = ch->getNbCarte();
+  int nbCjh = jh->getNbCarteHand();
+  int nbCch = ch->getNbCarteHand();
 
   bool ppProtege = getMonitor()->getInfosJoueurs(pp)->getPlateau()->getStatut(TrocProtege);
   bool ccProtege = getMonitor()->getInfosJoueurs(cc)->getPlateau()->getStatut(TrocProtege);
   IdCarte idPPProtege, idCCProtege;
   if (ppProtege) {
-    idPPProtege = jh->getCarte(pp->choisirIndiceHazard(0, nbCjh - 1));
-    nbCjh = jh->getNbCarte();
+    idPPProtege = jh->getCarteHand(pp->choisirIndiceHazard(0, nbCjh - 1));
+    nbCjh = jh->getNbCarteHand();
   }
   if (ccProtege) {
-    idCCProtege = jh->getCarte(pp->choisirIndiceHazard(0, nbCch - 1));
-    nbCch = ch->getNbCarte();
+    idCCProtege = jh->getCarteHand(pp->choisirIndiceHazard(0, nbCch - 1));
+    nbCch = ch->getNbCarteHand();
   }
   int choixPP = pp->choisirIndiceHazard(0, nbCch - 1);
   int choixCC = cc->choisirIndiceHazard(0, nbCjh - 1);
-  IdCarte idPP = jh->getCarte(choixCC);
-  IdCarte idCC = ch->getCarte(choixPP);
-  jh->addCarte(idCC);
-  ch->addCarte(idPP);
+  IdCarte idPP = jh->getCarteHand(choixCC);
+  IdCarte idCC = ch->getCarteHand(choixPP);
+  jh->addCarteHand(idCC);
+  ch->addCarteHand(idPP);
   if (ppProtege) {
-    jh->addCarte(idPPProtege);
+    jh->addCarteHand(idPPProtege);
   }
   if (ccProtege) {
-    ch->addCarte(idCCProtege);
+    ch->addCarteHand(idCCProtege);
   }
 }
 
@@ -210,9 +208,9 @@ void JouerSpecial::jouerArcEnCiel(CardGame::_pc_Player pp) const {
   CardGame::_pc_Hand h = getMonitor()->getInfosJoueurs(pp)->getHand();
   for (auto indice = 0; indice < 3; indice++) {
     int n = pp->choisirIndiceCarteAJouerMain(h);
-    IdCarte id = h->getIdCarte(n);
+    IdCarte id = h->getIdCarteHand(n);
     if (peutEtreJouee(pp, id)) {
-      getMonitor()->getInfosJoueurs(pp)->getHand()->getCarte(n);
+      getMonitor()->getInfosJoueurs(pp)->getCarteHand(n);
       jouerCarte(pp, id);
     }
   }
@@ -234,9 +232,9 @@ void JouerSpecial::jouerTsunami() const {
   for (auto ind = 0; ind < getMonitor()->getNbPlayer(); ind++) {
     CardGame::_p_InfosJoueur ij = getMonitor()->getInfosJoueurs(ind);
     vecH.push_back( ij->getHand());
-    vecNbCarte.push_back( vecH[ind]->getNbCarte() );
+    vecNbCarte.push_back( vecH[ind]->getNbCarteHand() );
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
-      vecCrt.push_back(vecH[ind]->getCarte(0));
+      vecCrt.push_back(vecH[ind]->getCarteHand(0));
     }
   }
   //CardGame::myShuffle(vecCrt);
@@ -244,7 +242,7 @@ void JouerSpecial::jouerTsunami() const {
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
       IdCarte id = vecCrt.back();
       vecCrt.pop_back();
-      vecH[ind]->addCarte(id);
+      vecH[ind]->addCarteHand(id);
     }
   }
 }

@@ -6,13 +6,14 @@
 
 namespace CardGame{
     class Plateau{
-            _p_PlateauMonitor mMonitor;
-            const int playerId;
             vector<vector<IdCarte>> mVecCarte;
             vector<int> mVecStatut;
+            _p_PlateauMonitor mMonitor;
+        protected:
+            virtual int getIdPlayer()const;
         public:
-            Plateau(_p_PlateauMonitor mm,int playerInd=-1);
-            Plateau(_p_PlateauMonitor mm,vector<int> vecStatut,int playerInd=-1);
+            Plateau(_p_PlateauMonitor mm);
+            Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut);
             ~Plateau();
 
             void addLast(int EP, IdCarte crt);

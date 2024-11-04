@@ -3,25 +3,28 @@
 
 #include "CardGame.hpp"
 #include "InfosJoueurMonitor.hpp"
+#include "Plateau.hpp"
+#include "Hand.hpp"
 
 namespace CardGame {
-class InfosJoueur {
+class InfosJoueur:public Plateau, public Hand, private std::enable_shared_from_this<InfosJoueur> {
 private:
-  _p_Hand mHand;
-  _p_Plateau mPlateau;
   const int mPlayerId;
   _p_InfosJoueurMonitor mMonitor;
 
+protected:
+  virtual _p_HandMonitor getHandMonitor()const;
+  virtual int getIdPlayer()const;
+
 public:
   InfosJoueur(_p_InfosJoueurMonitor mm, const int PlayerId=-1);
-  InfosJoueur(_p_InfosJoueurMonitor mm, const CardGame::_p_GameMechanics gm,
-              const int PlayerId=-1);
+  InfosJoueur(_p_InfosJoueurMonitor mm, const vector<IdCarte> &vec, const int PlayerId=-1);
   ~InfosJoueur();
-  _p_Hand getHand() {return mHand; }
-  _p_Plateau getPlateau() { return mPlateau; }
+  _p_Hand getHand();
+  _p_Plateau getPlateau();
 
-  _pc_Hand getHand() const { return mHand; }
-  _pc_Plateau getPlateau() const { return mPlateau; }
+  _pc_Hand getHand() const;
+  _pc_Plateau getPlateau() const;
 };
 }; // namespace CardGame
 

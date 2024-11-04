@@ -3,8 +3,10 @@
 using CardGame::Plateau;
 using CardGame::IdCarte;
 
-Plateau::Plateau(_p_PlateauMonitor mm,int playerInd):mMonitor(mm),playerId(playerInd){}
-Plateau::Plateau(_p_PlateauMonitor mm,vector<int> vecStatut,int playerInd):mMonitor(mm),mVecStatut(vecStatut),playerId(playerInd){}
+int Plateau::getIdPlayer() const{return -1;}
+
+Plateau::Plateau(_p_PlateauMonitor mm):mMonitor(mm){}
+Plateau::Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut) : mMonitor(mm),mVecStatut(vecStatut) {}
 Plateau::~Plateau(){}
 
 IdCarte Plateau::showIdN(int EP, int N)const
@@ -28,7 +30,7 @@ IdCarte Plateau::getN(int EP,int N)
     if(getNbCarte(EP) >= N+1){
         IdCarte id = mVecCarte.at(EP)[N];
         mVecCarte.at(EP).erase(mVecCarte.at(EP).begin()+N);
-        mMonitor->effetQuitterPlateau(playerId,id);
+        mMonitor->effetQuitterPlateau(getIdPlayer(),id);
         return id;
     }else{
         return IdCarte(-1);

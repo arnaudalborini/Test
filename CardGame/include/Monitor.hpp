@@ -3,7 +3,6 @@
 
 #include "CardGame.hpp"
 #include "GameMasterMonitor.hpp"
-
 #include "InfosJoueurMonitor.hpp"
 
 namespace CardGame {

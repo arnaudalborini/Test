@@ -8,15 +8,16 @@ namespace CardGame{
     class Hand{
         private:
             vector<IdCarte> mCartes;
-            _p_HandMonitor mMonitor;
-            const int idPlayer;
+        protected:
+            virtual _p_HandMonitor getHandMonitor()const=0;
+            virtual int getIdPlayer()const=0;
         public:
-            Hand(_p_HandMonitor mm,const int idP);
+            Hand();
             ~Hand();
-            void addCarte(IdCarte crt);
-            IdCarte getCarte(int ind);
-            int getNbCarte()const;
-            int getIdCarte(int ind)const;
+            void addCarteHand(IdCarte crt);
+            IdCarte getCarteHand(int ind);
+            int getNbCarteHand()const;
+            int getIdCarteHand(int ind)const;
     };
 };
 

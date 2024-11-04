@@ -1,10 +1,8 @@
 #include "GameMechanics.hpp"
 #include "CarteGenerator.hpp"
 #include "Monitor.hpp"
-#include "Plateau.hpp"
 #include "PaquetCarte.hpp"
 #include "InfosJoueur.hpp"
-#include "Hand.hpp"
 #include "CartesAlgo.hpp"
 
 using CardGame::GameMechanics;
@@ -57,10 +55,10 @@ void GameMechanics::startGame()
     cout << "GameMechanics::startGame fin" << endl;
 }
 
-void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->getHand()->addCarte( mMonitor->getPioche()->piocher() );}
+void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->addCarteHand( mMonitor->getPioche()->piocher() );}
 void GameMechanics::remplirMain(int indPlayer) const
 {
-    while( ( mMonitor->getInfosJoueurs(indPlayer)->getHand()->getNbCarte() < getStandardHandNbCarte()) && (mMonitor->getPioche()->getNbCarte()) ){
+    while( ( mMonitor->getInfosJoueurs(indPlayer)->getNbCarteHand() < getStandardHandNbCarte()) && (mMonitor->getPioche()->getNbCarte()) ){
         joueurPioche( indPlayer );
     }
 }

@@ -3,12 +3,10 @@
 #include "CarteGenerateurStandard.hpp"
 #include "CarteMSL.hpp"
 #include "CartesAlgoMSL.hpp"
-#include "Hand.hpp"
 #include "InfosJoueur.hpp"
 #include "MSLPlayer.hpp"
 #include "Monitor.hpp"
 #include "PaquetCarte.hpp"
-#include "Plateau.hpp"
 #include "MSLTests.hpp"
 
 using namespace MySmileLife;
@@ -67,7 +65,7 @@ void MSLMechanicsTest::initSpeficiGame() {
   int indPlayer = 0;
   CardGame::_p_Hand jHand = getJoueurHand(indPlayer);
   for (auto elt : test.getInitHand()) {
-    jHand->addCarte(elt);
+    jHand->addCarteHand(elt);
   }
   CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
   platJ->initStatut(test.getInitStatuts());
@@ -77,8 +75,8 @@ void MSLMechanicsTest::initSpeficiGame() {
 void MSLMechanicsTest::printHand(CardGame::_pc_Hand h) const
 {
   cout << "Hand: ";
-  for(auto ind=0;ind<h->getNbCarte();ind++){
-    cout << getCarteFromId(h->getIdCarte(ind))->getName() << ",";
+  for(auto ind=0;ind<h->getNbCarteHand();ind++){
+    cout << getCarteFromId(h->getIdCarteHand(ind))->getName() << ",";
   }
   cout << endl;
 }

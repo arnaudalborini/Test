@@ -2,9 +2,9 @@
 #include "GameMechanicsMonitor.hpp"
 #include "PaquetCarte.hpp"
 #include "Player.hpp"
-#include "Hand.hpp"
 #include "CarteGenerator.hpp"
 #include "CartesAlgo.hpp"
+#include "Hand.hpp"
 
 using CardGame::GameMechanicsSpe;
 using CardGame::IdCarte;
@@ -44,10 +44,10 @@ void GameMechanicsSpe::playTurn(int indPlayer) const{
     cout << "Joueur name: "<< pp->getName() << endl;
     cout << mMonitor->getPioche()->showIdLast() << endl;
     joueurPioche(indPlayer);
-    int nbCarte = jHand->getNbCarte();
+    int nbCarte = jHand->getNbCarteHand();
     cout << "nombre de cartes en main: " << nbCarte << endl;
-    cout << "Id carte piochee: " << jHand->getIdCarte(nbCarte-1) << endl;
-    IdCarte idC = jHand->getCarte(0);
+    cout << "Id carte piochee: " << jHand->getIdCarteHand(nbCarte-1) << endl;
+    IdCarte idC = jHand->getCarteHand(0);
     cout << "Id carte defaussee: " << idC << endl;
     addCarteDefausse(idC,indPlayer);
     cout << "fin GameMechanicsSpe::playTurn" << endl;

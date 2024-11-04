@@ -1,7 +1,6 @@
 #include "JouerMalus.hpp"
 #include "CarteMSL.hpp"
 #include "GameMechanicsMonitor.hpp"
-#include "Plateau.hpp"
 #include "InfosJoueur.hpp"
 
 

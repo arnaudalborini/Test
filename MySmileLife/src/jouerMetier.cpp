@@ -1,7 +1,6 @@
 #include "JouerMetier.hpp"
 #include "CarteMSL.hpp"
 #include "GameMechanicsMonitor.hpp"
-#include "Plateau.hpp"
 #include "InfosJoueur.hpp"
 #include "PaquetCarte.hpp"
 #include "Player.hpp"
