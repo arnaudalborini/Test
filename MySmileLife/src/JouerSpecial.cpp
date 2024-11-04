@@ -9,7 +9,6 @@
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
 #include "Player.hpp"
-#include "StatutPlateau.hpp"
 
 #include "JouerCarteMSL.hpp"
 #include "JouerSpecial.hpp"
@@ -61,7 +60,7 @@ bool hasEligibleProfession(_pc_Plateau plat) {
     return false;
   }
 }
-bool canPlayMalusCard(_pc_Plateau plat, _pc_Player pp, MySmileLife::_pc_JouerCarteMSL jCarte) {
+bool canPlayMalusCard(_pc_Plateau plat, CardGame::_pc_Player pp, MySmileLife::_pc_JouerCarteMSL jCarte) {
   int nbMalus = plat->getNbCarte(EmplacementsPlateau::EMalus);
   for (auto indice = 0; indice < nbMalus; indice++) {
     int IdMalus = plat->showIdN(EmplacementsPlateau::EMalus, indice);
@@ -72,11 +71,11 @@ bool canPlayMalusCard(_pc_Plateau plat, _pc_Player pp, MySmileLife::_pc_JouerCar
   return false;
 }
 
-bool JouerSpecial::peutEtreJoueeSpecial(_pc_Player pp, _pc_CarteMSL crt) const {
+bool JouerSpecial::peutEtreJoueeSpecial(CardGame::_pc_Player pp, _pc_CarteMSL crt) const {
   if (crt->getType() != carteSpecial) {
     return false;
   }
-  _p_Plateau plat = getMonitor()->getPlateauPlayer(pp);
+  CardGame::_p_Plateau plat = getMonitor()->getPlateauPlayer(pp);
   switch (crt->getSType()) {
   case csAdultere:
     return isMarriedButNotAdulterous(plat);
@@ -90,7 +89,7 @@ bool JouerSpecial::peutEtreJoueeSpecial(_pc_Player pp, _pc_CarteMSL crt) const {
   }
 }
 
-bool JouerSpecial::jouerCarteSpecial(_pc_Player pp, _pc_CarteMSL crt) const {
+bool JouerSpecial::jouerCarteSpecial(CardGame::_pc_Player pp, _pc_CarteMSL crt) const {
   if (peutEtreJoueeSpecial(pp, crt) == false) {
     return false;
   }
@@ -131,7 +130,6 @@ bool JouerSpecial::jouerCarteSpecial(_pc_Player pp, _pc_CarteMSL crt) const {
     jouerTsunami();
     break;
   case csVengeance:
-    cout << "la "<< endl;
     jouerVengeance(pp);
     break;
   case csLegionHonneur:
@@ -144,14 +142,14 @@ bool JouerSpecial::jouerCarteSpecial(_pc_Player pp, _pc_CarteMSL crt) const {
   return true;
 }
 
-void JouerSpecial::jouerAdultere(_pc_Player pp) const {
+void JouerSpecial::jouerAdultere(CardGame::_pc_Player pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(estAdultere, 1);
 }
 
-void JouerSpecial::jouerTroc(_pc_Player pp) const {
-  _pc_Player cc = getCible(pp, getCGen()->getCarteByType(carteSpecial, csTroc));
-  _p_Hand jh = getMonitor()->getInfosJoueurs(pp)->getHand();
-  _p_Hand ch = getMonitor()->getInfosJoueurs(cc)->getHand();
+void JouerSpecial::jouerTroc(CardGame::_pc_Player pp) const {
+  CardGame::_pc_Player cc = getCible(pp, getCGen()->getCarteByType(carteSpecial, csTroc));
+  CardGame::_p_Hand jh = getMonitor()->getInfosJoueurs(pp)->getHand();
+  CardGame::_p_Hand ch = getMonitor()->getInfosJoueurs(cc)->getHand();
 
   int nbCjh = jh->getNbCarte();
   int nbCch = ch->getNbCarte();
@@ -181,11 +179,11 @@ void JouerSpecial::jouerTroc(_pc_Player pp) const {
   }
 }
 
-void JouerSpecial::jouerCasino(_pc_Player pp) const {
+void JouerSpecial::jouerCasino(CardGame::_pc_Player pp) const {
   getMonitor()->getPlateau()->setStatut(casinoOuvert, 1);
 }
 
-void JouerSpecial::jouerChance(_pc_Player pp) const {
+void JouerSpecial::jouerChance(CardGame::_pc_Player pp) const {
   CardGame::_p_PaquetCarte pioche = getMonitor()->getPioche();
   vector<IdCarte> vecId = vector<IdCarte>(3);
   vecId[0] = pioche->piocher();
@@ -201,16 +199,16 @@ void JouerSpecial::jouerChance(_pc_Player pp) const {
   }
 }
 
-void JouerSpecial::jouerPiston(_pc_Player pp) const {
+void JouerSpecial::jouerPiston(CardGame::_pc_Player pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(PistonActif, 1);
 }
 
-void JouerSpecial::jouerAnniversaire(_pc_Player pp) const {
+void JouerSpecial::jouerAnniversaire(CardGame::_pc_Player pp) const {
   int nbJoueur = getMonitor()->getNbPlayer();
   int indPlayer = getMonitor()->getIndPlayer(pp);
   for (auto ind = 0; ind < nbJoueur; ind++) {
     if (ind != indPlayer) {
-      _pc_Player cc = getMonitor()->getPlayer(ind);
+      CardGame::_pc_Player cc = getMonitor()->getPlayer(ind);
       const vector<IdCarte> salD =
           getMonitor()->getInfosJoueurs(cc)->getPlateau()->showAllIdByEP(ESalairesD);
       if (salD.size() > 0) {
@@ -222,8 +220,8 @@ void JouerSpecial::jouerAnniversaire(_pc_Player pp) const {
   }
 }
 
-void JouerSpecial::jouerArcEnCiel(_pc_Player pp) const {
-  _pc_Hand h = getMonitor()->getInfosJoueurs(pp)->getHand();
+void JouerSpecial::jouerArcEnCiel(CardGame::_pc_Player pp) const {
+  CardGame::_pc_Hand h = getMonitor()->getInfosJoueurs(pp)->getHand();
   for (auto indice = 0; indice < 3; indice++) {
     int n = pp->choisirIndiceCarteAJouerMain(h);
     IdCarte id = h->getIdCarte(n);
@@ -235,20 +233,20 @@ void JouerSpecial::jouerArcEnCiel(_pc_Player pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(ArcEnCielJoue, 1);
 }
 
-void JouerSpecial::jouerEtoileFilante(_pc_Player pp) const {
+void JouerSpecial::jouerEtoileFilante(CardGame::_pc_Player pp) const {
   choisirEtJouerUneCarteDefausse(pp);
 }
 
-void JouerSpecial::jouerHeritage(_pc_Player pp) const {
+void JouerSpecial::jouerHeritage(CardGame::_pc_Player pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(HeritageDisponible, 3);
 }
 
 void JouerSpecial::jouerTsunami() const {
-  vector<_p_Hand> vecH;
+  vector<CardGame::_p_Hand> vecH;
   vector<int> vecNbCarte;
   vector<IdCarte> vecCrt;
   for (auto ind = 0; ind < getMonitor()->getNbPlayer(); ind++) {
-    _p_InfosJoueur ij = getMonitor()->getInfosJoueurs(ind);
+    CardGame::_p_InfosJoueur ij = getMonitor()->getInfosJoueurs(ind);
     vecH.push_back( ij->getHand());
     vecNbCarte.push_back( vecH[ind]->getNbCarte() );
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
@@ -265,7 +263,7 @@ void JouerSpecial::jouerTsunami() const {
   }
 }
 
-void JouerSpecial::jouerVengeance(_pc_Player pp) const {
+void JouerSpecial::jouerVengeance(CardGame::_pc_Player pp) const {
   const vector<IdCarte> malusC = getMonitor()->getInfosJoueurs(pp)->getPlateau()->showAllIdByEP(EMalus);
   if (malusC.size() > 0) {
     int indCrt = pp->choisirUneCarte(malusC);
@@ -274,10 +272,10 @@ void JouerSpecial::jouerVengeance(_pc_Player pp) const {
   }
 }
 
-void JouerSpecial::jouerLegionHonneur(_pc_Player pp) const {
+void JouerSpecial::jouerLegionHonneur(CardGame::_pc_Player pp) const {
   // rien à faire
 }
 
-void JouerSpecial::jouerGrandPrix(_pc_Player pp) const {
+void JouerSpecial::jouerGrandPrix(CardGame::_pc_Player pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(SalaireMax, 4);
 }

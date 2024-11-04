@@ -1,5 +1,4 @@
 #include "Plateau.hpp"
-#include "StatutPlateau.hpp"
 
 using CardGame::Plateau;
 using CardGame::IdCarte;

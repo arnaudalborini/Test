@@ -6,7 +6,7 @@
 #include "MyShuffle.hpp"
 #include "CartesMSLConfig.hpp"
 
-using namespace MySmileLife;
+using MySmileLife::CarteGenerateurStandard;
 
 CarteGenerateurStandard::CarteGenerateurStandard() {
   for(auto elt:vecMSLCarte){
@@ -25,7 +25,7 @@ void CarteGenerateurStandard::genCartesPioche(vector<IdCarte> &vecCartes) {
   //CardGame::myShuffle(vecCartes);
 }
 
-IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst, string nom)const {
+CardGame::IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst, string nom)const {
   set<IdCarte> sId = getSetIdCarte(ct, cst);
   for (auto elt : sId) {
     _pc_CarteMSL pcCmsl = std::dynamic_pointer_cast<const CarteMSL>(getCarteById(elt));
@@ -36,10 +36,10 @@ IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst,
   return -1;
 }
 
-IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst)const {
+CardGame::IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst)const {
   return getFirstSetIdCarte(ct, cst);
 }
-IdCarte CarteGenerateurStandard::getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{
+CardGame::IdCarte CarteGenerateurStandard::getFirstSetIdCarte(CarteType ct, CarteSousType cst)const{
 
   return (mMapMSLCarte.has({ct,cst}))?*(mMapMSLCarte[{ct,cst}].begin()):-1;
 }

@@ -5,7 +5,7 @@
 #include "Carte.hpp"
 
 namespace MySmileLife{
-    class CarteMSL final:public Carte{
+    class CarteMSL final:public CardGame::Carte{
         private:
             string mName;
             int mNbSmile;

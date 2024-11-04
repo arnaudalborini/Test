@@ -2,7 +2,6 @@
 #include "Hand.hpp"
 #include "Plateau.hpp"
 #include "GameMechanics.hpp"
-#include "StatutPlateau.hpp"
 
 using CardGame::InfosJoueur;
 

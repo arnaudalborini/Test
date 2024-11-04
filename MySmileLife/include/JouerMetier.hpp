@@ -7,14 +7,14 @@
 namespace MySmileLife{
     class JouerMetier: private std::enable_shared_from_this<JouerMetier>{
         protected:
-            bool peutEtreJoueeMetier(_pc_Player pp, _pc_CarteMSL crt)const;
-            bool jouerCarteMetier(_pc_Player pp, _pc_CarteMSL crt)const;
-            virtual void choisirEtJouerUneCarteDefausse(_pc_Player pp)const=0;
+            bool peutEtreJoueeMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
+            virtual void choisirEtJouerUneCarteDefausse(CardGame::_pc_Player pp)const=0;
         public:            
             virtual _pc_CarteGenerateurStandard          getCGen()const=0;
-            virtual _pc_GameMechanicsMonitor   getMonitor()const=0;
-            virtual bool peutEtreJouee(_pc_Player pp, IdCarte id)const=0;
-            virtual bool jouerCarte(_pc_Player pp, IdCarte id)const=0;
+            virtual CardGame::_pc_GameMechanicsMonitor   getMonitor()const=0;
+            virtual bool peutEtreJouee(CardGame::_pc_Player pp, IdCarte id)const=0;
+            virtual bool jouerCarte(CardGame::_pc_Player pp, IdCarte id)const=0;
     };
     namespace Metier{
         struct ProprietesMetier{

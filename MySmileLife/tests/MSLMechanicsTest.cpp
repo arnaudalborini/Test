@@ -9,7 +9,6 @@
 #include "Monitor.hpp"
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
-#include "StatutPlateau.hpp"
 #include "MSLTests.hpp"
 
 using namespace MySmileLife;
@@ -22,9 +21,9 @@ MSLMechanicsTest::~MSLMechanicsTest() {}
 void MSLMechanicsTest::playTurn(int indPlayer) const {
   cout << "MSLMechanicsTest::playTurn: " << indPlayer << endl;
   _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>(getPlayer(indPlayer));
-  _p_Hand jHand = getJoueurHand(indPlayer);
-  _p_Plateau platJ = getJoueurPlateau(indPlayer);
-  _p_Plateau platGeneral = getMainPlateau();
+  CardGame::_p_Hand jHand = getJoueurHand(indPlayer);
+  CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
+  CardGame::_p_Plateau platGeneral = getMainPlateau();
   cout << "Plateau: " << platJ->getEPMax() << endl;
   printHand(jHand);
   printStatut(platJ);
@@ -47,7 +46,7 @@ void MSLMechanicsTest::playTurn(int indPlayer) const {
   */
 
   // on s'arrete la avec un joli seg fault
-  Plateau *sf = nullptr;
+  CardGame::Plateau *sf = nullptr;
   sf->showIdN(0, 1);
 }
 
@@ -66,16 +65,16 @@ MSLMechanicsTest::genMapCartePlateauInitial() const {
 
 void MSLMechanicsTest::initSpeficiGame() {
   int indPlayer = 0;
-  _p_Hand jHand = getJoueurHand(indPlayer);
+  CardGame::_p_Hand jHand = getJoueurHand(indPlayer);
   for (auto elt : test.getInitHand()) {
     jHand->addCarte(elt);
   }
-  _p_Plateau platJ = getJoueurPlateau(indPlayer);
+  CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
   platJ->initStatut(test.getInitStatuts());
   platJ->initMap(test.getInitPlateau());
 }
 
-void MSLMechanicsTest::printHand(_pc_Hand h) const
+void MSLMechanicsTest::printHand(CardGame::_pc_Hand h) const
 {
   cout << "Hand: ";
   for(auto ind=0;ind<h->getNbCarte();ind++){
@@ -84,7 +83,7 @@ void MSLMechanicsTest::printHand(_pc_Hand h) const
   cout << endl;
 }
 
-void MSLMechanicsTest::printStatut(_pc_Plateau platJ) const
+void MSLMechanicsTest::printStatut(CardGame::_pc_Plateau platJ) const
 {
   cout << "Statuts: " << endl;
   for(auto ind=0;ind< platJ->getStatutMax();ind++){
@@ -94,7 +93,7 @@ void MSLMechanicsTest::printStatut(_pc_Plateau platJ) const
   }
 }
 
-void MSLMechanicsTest::printPlateau(_pc_Plateau platJ) const
+void MSLMechanicsTest::printPlateau(CardGame::_pc_Plateau platJ) const
 {  
   for (auto ind = 0; ind < platJ->getEPMax(); ind++) {
     if( platJ->getNbCarte(ind)>0 ){

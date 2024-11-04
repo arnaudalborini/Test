@@ -5,7 +5,6 @@
 #include "Plateau.hpp"
 #include "Hand.hpp"
 #include "InfosJoueur.hpp"
-#include "StatutPlateau.hpp"
 
 #include "JouerMalus.hpp"
 
@@ -17,13 +16,13 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
-bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp, CarteSousType st, _pc_Player cible) const
+bool JouerMalus::peutEtreJoueeMalus(CardGame::_pc_Player pp, CarteSousType st, CardGame::_pc_Player cible) const
 {
     if(cible==nullptr){
         return false;
     }
-    _p_Plateau plat       = getMonitor()->getPlateauPlayer(pp);
-    _p_Plateau platCible  = getMonitor()->getPlateauPlayer(cible);
+    CardGame::_p_Plateau plat       = getMonitor()->getPlateauPlayer(pp);
+    CardGame::_p_Plateau platCible  = getMonitor()->getPlateauPlayer(cible);
     switch(st){
         case csAccidents:
             return (platCible->getStatut(ResistantAccident) == 0);
@@ -47,7 +46,7 @@ bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp, CarteSousType st, _pc_Player 
             return false;
     }
 }
-bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp,_pc_CarteMSL crt) const
+bool JouerMalus::peutEtreJoueeMalus(CardGame::_pc_Player pp,_pc_CarteMSL crt) const
 {
     if(crt->getType()!=carteMalus){
         return false;
@@ -57,7 +56,7 @@ bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp,_pc_CarteMSL crt) const
         if(indice==indJoueur){
             continue;
         }
-        _pc_Player Cible = getMonitor()->getPlayer(indice);
+        CardGame::_pc_Player Cible = getMonitor()->getPlayer(indice);
         if(peutEtreJoueeMalus(pp,crt->getSType(),Cible)){
             return true;
         }
@@ -65,7 +64,7 @@ bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp,_pc_CarteMSL crt) const
     return false;
 }
 
-void JouerMalus::jouerAccident(_pc_Player cible)const{
+void JouerMalus::jouerAccident(CardGame::_pc_Player cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerAttentat()const{
@@ -73,35 +72,35 @@ void JouerMalus::jouerAttentat()const{
         getMonitor()->defausserTout( indPlayer, EEnfant );
     }
 }
-void JouerMalus::jouerBurnout(_pc_Player cible)const{
+void JouerMalus::jouerBurnout(CardGame::_pc_Player cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
-void JouerMalus::jouerDivorce(_pc_Player cible)const{
+void JouerMalus::jouerDivorce(CardGame::_pc_Player cible)const{
     getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMariage );
 }
-void JouerMalus::jouerImpots(_pc_Player cible)const{
+void JouerMalus::jouerImpots(CardGame::_pc_Player cible)const{
     getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), ESalairesD );
 }
-void JouerMalus::jouerLicenciement(_pc_Player cible)const{
+void JouerMalus::jouerLicenciement(CardGame::_pc_Player cible)const{
     getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMetier );
 }
-void JouerMalus::jouerMaladie(_pc_Player cible)const{
+void JouerMalus::jouerMaladie(CardGame::_pc_Player cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerPrison()const{
     for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
-        _p_Plateau p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
+        CardGame::_p_Plateau p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
         if(p->getStatut(RisquePrison)){
             getMonitor()->defausserTout( indPlayer, EMetier );
             getMonitor()->incStatut(indPlayer,TourAPasser,3);
         }
     }
 }
-void JouerMalus::jouerRedoublement(_pc_Player cible)const{
+void JouerMalus::jouerRedoublement(CardGame::_pc_Player cible)const{
     getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), EEtudes );
 }
 
-bool JouerMalus::jouerCarteMalus(_pc_Player pp, _pc_CarteMSL crt) const
+bool JouerMalus::jouerCarteMalus(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
     if(peutEtreJoueeMalus(pp,crt)==false){
         return false;
@@ -116,7 +115,7 @@ bool JouerMalus::jouerCarteMalus(_pc_Player pp, _pc_CarteMSL crt) const
             break;
     }
     getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
-    _pc_Player cible = getCible(pp,crt->getSType());
+    CardGame::_pc_Player cible = getCible(pp,crt->getSType());
     if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
         return false;
     }

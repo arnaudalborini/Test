@@ -7,7 +7,7 @@
 #include "PlayerInterface.hpp"
 
 namespace MySmileLife {
-class MSLPlayer : public Player {
+class MSLPlayer : public CardGame::Player {
 protected:
   _pc_CarteMSL getCarteMSL(IdCarte idC) const {
     return dynamic_pointer_cast<const CarteMSL>(getPlayerInterface()->getCarte(idC));

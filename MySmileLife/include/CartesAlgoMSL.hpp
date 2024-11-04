@@ -18,12 +18,12 @@ public:
       }
   ~CartesAlgoMSL() {  }
 
-  bool peutEtreJouee(_pc_Player pp, IdCarte id) const override {return jCarte->peutEtreJouee(pp, id);}
-  bool jouerCarte(_pc_Player pp, IdCarte id) const override {
+  bool peutEtreJouee(CardGame::_pc_Player pp, IdCarte id) const override {return jCarte->peutEtreJouee(pp, id);}
+  bool jouerCarte(CardGame::_pc_Player pp, IdCarte id) const override {
     return jCarte->jouerCarte(pp, id);
   }
 
-  int getNbSmile(_pc_Plateau pp, IdCarte id) const;
+  int getNbSmile(CardGame::_pc_Plateau pp, IdCarte id) const;
 
   void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt) override;
   void effetQuitterHand(const int indPlayer, const IdCarte idCrt) override;

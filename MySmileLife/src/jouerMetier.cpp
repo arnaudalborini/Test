@@ -5,7 +5,6 @@
 #include "Plateau.hpp"
 #include "Hand.hpp"
 #include "InfosJoueur.hpp"
-#include "StatutPlateau.hpp"
 #include "JouerMetier.hpp"
 #include "PaquetCarte.hpp"
 #include "Player.hpp"
@@ -18,13 +17,13 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
-bool JouerMetier::peutEtreJoueeMetier(_pc_Player pp, _pc_CarteMSL crt) const
+bool JouerMetier::peutEtreJoueeMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
     if(crt->getType()!=carteMetier){
         return false;
     }
     
-    _p_Plateau plat = getMonitor()->getPlateauPlayer(pp);
+    CardGame::_p_Plateau plat = getMonitor()->getPlateauPlayer(pp);
     int nbAnneeEtudeRequise = crt->getMetierNbAnnee();
     int sMax = crt->getMetierSalaireMax();
     if( (plat->getStatut(aUnTravail)==false) || (plat->getStatut(Interimaire)) ){
@@ -61,13 +60,13 @@ void voirMainAutresJoueur(CardGame::_pc_Player pp, CardGame::_pc_GameMechanicsMo
     }
 }
 
-bool JouerMetier::jouerCarteMetier(_pc_Player pp, _pc_CarteMSL crt) const
+bool JouerMetier::jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
     if(peutEtreJoueeMetier(pp,crt)==false){
         return false;
     }
     CardGame::_pc_GameMechanicsMonitor mMonitor = getMonitor();
-    _p_Plateau plat = mMonitor->getPlateauPlayer(pp);
+    CardGame::_p_Plateau plat = mMonitor->getPlateauPlayer(pp);
     if(plat->getStatut(aUnTravail)>0){
         mMonitor->defausserTout(mMonitor->getIndPlayer(pp),EMetier);
     }

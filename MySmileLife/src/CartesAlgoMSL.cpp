@@ -5,7 +5,7 @@
 
 using MySmileLife::CartesAlgoMSL;
 
-int CartesAlgoMSL::getNbSmile(_pc_Plateau pp, IdCarte id) const {
+int CartesAlgoMSL::getNbSmile(CardGame::_pc_Plateau pp, IdCarte id) const {
   _pc_CarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));
   if ((crt->getType() == carteAnimal) && (crt->getSType() == csLicorne)) {
     if ((pp->getStatut(DetailPlateau::ArcEnCielJoue)) &&
@@ -17,7 +17,7 @@ int CartesAlgoMSL::getNbSmile(_pc_Plateau pp, IdCarte id) const {
 }
 
 void CartesAlgoMSL::effetQuitterPlateau(const int indPlayer,
-                                        const CardGame::IdCarte idCrt) {
+                                        const IdCarte idCrt) {
   cout << "CartesAlgoMSL::effetQuitterPlateau" << endl;
   _pc_CarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idCrt));
   cout << "CartesAlgoMSL::effetQuitterPlateau: indPlayer " << indPlayer

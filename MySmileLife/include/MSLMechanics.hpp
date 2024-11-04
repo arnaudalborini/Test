@@ -8,7 +8,7 @@ namespace MySmileLife{
     class MSLMechanics :public CardGame::GameMechanicsSpe{
         protected:
             _pc_CarteMSL getCarteFromId(IdCarte id)const;
-            int  countSmile(_p_Plateau plateauJoueur)const;
+            int  countSmile(CardGame::_p_Plateau plateauJoueur)const;
         public:
             MSLMechanics();   
             ~MSLMechanics();   

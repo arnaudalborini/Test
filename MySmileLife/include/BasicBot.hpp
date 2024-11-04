@@ -10,7 +10,7 @@ namespace MySmileLife {
 class BasicBot : public MSLPlayer {
 private:
   void afficherCarte(_pc_CarteMSL carte) const;
-  void afficherCarte(CardGame::IdCarte id) const;
+  void afficherCarte(IdCarte id) const;
 
 public:
   BasicBot(){};
@@ -24,10 +24,10 @@ public:
     return 0;
   }
   void showNCartesPioche(const vector<IdCarte> &vecIdPioche) const override;
-  void showHandAutreJoueur(_pc_Hand h, int indAutrePlayer) const override;
+  void showHandAutreJoueur(CardGame::_pc_Hand h, int indAutrePlayer) const override;
   int choisirSalairePourPayer(
       const vector<IdCarte> &vecIdSalairesDisponibles) const override;
-  int choisirIndiceCarteAJouerMain(_pc_Hand h) const override { return 0; };
+  int choisirIndiceCarteAJouerMain(CardGame::_pc_Hand h) const override { return 0; };
   int choisirCible(IdCarte id) const override{ return 0; }
   int choisirIndiceHazard(int indiceMin, int indiceMax) const override{
     return 0;

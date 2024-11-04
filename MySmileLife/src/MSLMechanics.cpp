@@ -4,7 +4,6 @@
 #include "Monitor.hpp"
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
-#include "StatutPlateau.hpp"
 #include "CarteMSL.hpp"
 #include "Hand.hpp"
 #include "MSLPlayer.hpp"
@@ -24,7 +23,7 @@ MSLMechanics::~MSLMechanics()
 }
 
 _pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
-int  MSLMechanics::countSmile(_p_Plateau plateauJoueur)const{
+int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
         s += dynamic_pointer_cast<CartesAlgoMSL>(cAlgo)->getNbSmile(plateauJoueur,elt);
@@ -54,9 +53,9 @@ void MSLMechanics::playTurn(int indPlayer) const{
         return;
     }
     _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>( getPlayer(indPlayer) );
-    _p_Hand jHand = getJoueurHand(indPlayer);
-    _p_Plateau platJ = getJoueurPlateau(indPlayer);
-    _p_Plateau platGeneral = getMainPlateau();
+    CardGame::_p_Hand jHand = getJoueurHand(indPlayer);
+    CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
+    CardGame::_p_Plateau platGeneral = getMainPlateau();
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);

@@ -23,7 +23,7 @@ void BasicBot::showNCartesPioche(const vector<IdCarte> &vecIdPioche) const {
     }
 }
 
-void BasicBot::showHandAutreJoueur(_pc_Hand h, int indAutrePlayer) const {
+void BasicBot::showHandAutreJoueur(CardGame::_pc_Hand h, int indAutrePlayer) const {
   cout << "showHandAutreJoueur: " << getName() << endl;
   for (int indice = 0; indice < h->getNbCarte(); indice++) {
     cout << h->getIdCarte(indice) << endl;
