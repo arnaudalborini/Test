@@ -9,7 +9,7 @@
 namespace MySmileLife {
 class MSLPlayer : public Player {
 protected:
-  PCCarteMSL getCarteMSL(IdCarte idC) const {
+  _pc_CarteMSL getCarteMSL(IdCarte idC) const {
     return dynamic_pointer_cast<const CarteMSL>(getPlayerInterface()->getCarte(idC));
   }
 

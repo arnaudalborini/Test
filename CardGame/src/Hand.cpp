@@ -3,7 +3,7 @@
 using CardGame::Hand;
 using CardGame::IdCarte;
 
-Hand::Hand(PHandMonitor mm,const int idP):mMonitor(mm),idPlayer(idP){}
+Hand::Hand(_p_HandMonitor mm,const int idP):mMonitor(mm),idPlayer(idP){}
 
 Hand::~Hand(){}
 

@@ -6,13 +6,13 @@
 namespace CardGame {
 class PlayerInterface {
 public:
-  virtual PCInfosJoueur getInfosJoueurs(int indPlayer) const = 0;
-  virtual PCPlateau     getPlateau() const = 0;
-  virtual PCPaquetCarte getPioche() const = 0;
-  virtual PCPaquetCarte getDefausse() const = 0;
-  virtual PCCarte       getCarte(IdCarte idC) const = 0;
+  virtual _pc_InfosJoueur getInfosJoueurs(int indPlayer) const = 0;
+  virtual _pc_Plateau     getPlateau() const = 0;
+  virtual _pc_PaquetCarte getPioche() const = 0;
+  virtual _pc_PaquetCarte getDefausse() const = 0;
+  virtual _pc_Carte       getCarte(IdCarte idC) const = 0;
   virtual int           getStatutPlayer(int indPlayer, int dp) const = 0;
-  virtual int           getIdPlayer(PCPlayer pp) const = 0;
+  virtual int           getIdPlayer(_pc_Player pp) const = 0;
 };
 } // namespace CardGame
 

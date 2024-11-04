@@ -21,10 +21,10 @@ MSLMechanicsTest::~MSLMechanicsTest() {}
 
 void MSLMechanicsTest::playTurn(int indPlayer) const {
   cout << "MSLMechanicsTest::playTurn: " << indPlayer << endl;
-  PCMSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>(getPlayer(indPlayer));
-  PHand jHand = getJoueurHand(indPlayer);
-  PPlateau platJ = getJoueurPlateau(indPlayer);
-  PPlateau platGeneral = getMainPlateau();
+  _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>(getPlayer(indPlayer));
+  _p_Hand jHand = getJoueurHand(indPlayer);
+  _p_Plateau platJ = getJoueurPlateau(indPlayer);
+  _p_Plateau platGeneral = getMainPlateau();
   cout << "Plateau: " << platJ->getEPMax() << endl;
   printHand(jHand);
   printStatut(platJ);
@@ -66,16 +66,16 @@ MSLMechanicsTest::genMapCartePlateauInitial() const {
 
 void MSLMechanicsTest::initSpeficiGame() {
   int indPlayer = 0;
-  PHand jHand = getJoueurHand(indPlayer);
+  _p_Hand jHand = getJoueurHand(indPlayer);
   for (auto elt : test.getInitHand()) {
     jHand->addCarte(elt);
   }
-  PPlateau platJ = getJoueurPlateau(indPlayer);
+  _p_Plateau platJ = getJoueurPlateau(indPlayer);
   platJ->initStatut(test.getInitStatuts());
   platJ->initMap(test.getInitPlateau());
 }
 
-void MSLMechanicsTest::printHand(PCHand h) const
+void MSLMechanicsTest::printHand(_pc_Hand h) const
 {
   cout << "Hand: ";
   for(auto ind=0;ind<h->getNbCarte();ind++){
@@ -84,7 +84,7 @@ void MSLMechanicsTest::printHand(PCHand h) const
   cout << endl;
 }
 
-void MSLMechanicsTest::printStatut(PCPlateau platJ) const
+void MSLMechanicsTest::printStatut(_pc_Plateau platJ) const
 {
   cout << "Statuts: " << endl;
   for(auto ind=0;ind< platJ->getStatutMax();ind++){
@@ -94,7 +94,7 @@ void MSLMechanicsTest::printStatut(PCPlateau platJ) const
   }
 }
 
-void MSLMechanicsTest::printPlateau(PCPlateau platJ) const
+void MSLMechanicsTest::printPlateau(_pc_Plateau platJ) const
 {  
   for (auto ind = 0; ind < platJ->getEPMax(); ind++) {
     if( platJ->getNbCarte(ind)>0 ){

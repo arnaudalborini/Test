@@ -6,7 +6,7 @@
 
 using CardGame::GameMaster;
 
-GameMaster::GameMaster(int nj, PGameMechanics gm){
+GameMaster::GameMaster(int nj, _p_GameMechanics gm){
     mMonitor = make_shared<Monitor>();
     initGame(nj, gm);
 }
@@ -15,7 +15,7 @@ GameMaster::~GameMaster()
 {
 }
 
-void GameMaster::initGame(int nj, PGameMechanics gm){
+void GameMaster::initGame(int nj, _p_GameMechanics gm){
     mMonitor->initiateElements(nj,gm);
     mNbJoueur = nj;
     for(int ind=0;ind<4;ind++){
@@ -23,7 +23,7 @@ void GameMaster::initGame(int nj, PGameMechanics gm){
     }
 }
 
- CardGame::PCPlayerInterface GameMaster::login(PCPlayer pp)
+ CardGame::_pc_PlayerInterface GameMaster::login(_pc_Player pp)
 {
     int ind = 0;
     while ( (mJoueurPret[ind]) && (ind< mNbJoueur) ){
@@ -53,11 +53,11 @@ int GameMaster::getWinner() const{return mMonitor->getWinner();}
 
 
 
-int   GameMaster::getIdPlayer(PCPlayer pp)const{return mMonitor->getIndPlayer(pp);}
-CardGame::PCInfosJoueur GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
-CardGame::PCPlateau GameMaster::getPlateau()const{return mMonitor->getPlateau();}
-CardGame::PCPaquetCarte GameMaster::getPioche()const{return mMonitor->getPioche();}
-CardGame::PCPaquetCarte GameMaster::getDefausse()const{return mMonitor->getDefausse();}
-CardGame::PCCarte GameMaster::getCarte(IdCarte idC)const{return mMonitor->getCarte(idC);}
+int   GameMaster::getIdPlayer(_pc_Player pp)const{return mMonitor->getIndPlayer(pp);}
+CardGame::_pc_InfosJoueur GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
+CardGame::_pc_Plateau GameMaster::getPlateau()const{return mMonitor->getPlateau();}
+CardGame::_pc_PaquetCarte GameMaster::getPioche()const{return mMonitor->getPioche();}
+CardGame::_pc_PaquetCarte GameMaster::getDefausse()const{return mMonitor->getDefausse();}
+CardGame::_pc_Carte GameMaster::getCarte(IdCarte idC)const{return mMonitor->getCarte(idC);}
 
 int GameMaster::getStatutPlayer(int indPlayer, int dp) const{return getInfosJoueurs(indPlayer)->getPlateau()->getStatut(dp);}

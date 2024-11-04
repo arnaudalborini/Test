@@ -4,7 +4,7 @@
 
 using MySmileLife::BasicBot;
 
-void BasicBot::afficherCarte(PCCarteMSL carte) const {
+void BasicBot::afficherCarte(_pc_CarteMSL carte) const {
   cout << "Carte : " << carte->getName() << endl;
   cout << "Nombre de smileys : " << carte->getNbSmile() << endl;
   cout << "Type : " << carte->getType() << endl;
@@ -23,7 +23,7 @@ void BasicBot::showNCartesPioche(const vector<IdCarte> &vecIdPioche) const {
     }
 }
 
-void BasicBot::showHandAutreJoueur(PCHand h, int indAutrePlayer) const {
+void BasicBot::showHandAutreJoueur(_pc_Hand h, int indAutrePlayer) const {
   cout << "showHandAutreJoueur: " << getName() << endl;
   for (int indice = 0; indice < h->getNbCarte(); indice++) {
     cout << h->getIdCarte(indice) << endl;

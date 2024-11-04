@@ -12,7 +12,7 @@ namespace MySmileLife{
         class MSLTests{
             public:
                 static void TestCarteUnitaire();
-                static void CreationJoueur(CardGame::PGameInterface gI);
+                static void CreationJoueur(CardGame::_p_GameInterface gI);
                 static void MySmileLifeTest();
                 class MSLMechanicsTest;
         };

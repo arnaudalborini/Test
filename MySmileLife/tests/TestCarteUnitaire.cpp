@@ -68,8 +68,8 @@ void MSLTests::TestCarteUnitaire() {
 
 
   shared_ptr<MySmileLife::Tests::MSLMechanicsTest> gMe = make_shared<MySmileLife::Tests::MSLMechanicsTest>( test1 );
-  CardGame::PGameMaster gm = make_shared<CardGame::GameMaster>(2, gMe );
-  CardGame::PGameInterface gI = dynamic_pointer_cast<CardGame::GameInterface>(gm);
+  CardGame::_p_GameMaster gm = make_shared<CardGame::GameMaster>(2, gMe );
+  CardGame::_p_GameInterface gI = dynamic_pointer_cast<CardGame::GameInterface>(gm);
   CreationJoueur(gI);
   gm->startGame();
 }

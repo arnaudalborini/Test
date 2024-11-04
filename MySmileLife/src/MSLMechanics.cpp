@@ -12,7 +12,7 @@
 #include "InfosJoueur.hpp"
 
 using MySmileLife::MSLMechanics;
-using MySmileLife::PCCarteMSL;
+using MySmileLife::_pc_CarteMSL;
 
 MSLMechanics::MSLMechanics()
 {
@@ -23,8 +23,8 @@ MSLMechanics::~MSLMechanics()
 {
 }
 
-PCCarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
-int  MSLMechanics::countSmile(PPlateau plateauJoueur)const{
+_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
+int  MSLMechanics::countSmile(_p_Plateau plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){
         s += dynamic_pointer_cast<CartesAlgoMSL>(cAlgo)->getNbSmile(plateauJoueur,elt);
@@ -53,15 +53,15 @@ void MSLMechanics::playTurn(int indPlayer) const{
         mMonitor->getInfosJoueurs(indPlayer)->getPlateau()->incStatut(TourAPasser,-1);
         return;
     }
-    PCMSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>( getPlayer(indPlayer) );
-    PHand jHand = getJoueurHand(indPlayer);
-    PPlateau platJ = getJoueurPlateau(indPlayer);
-    PPlateau platGeneral = getMainPlateau();
+    _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>( getPlayer(indPlayer) );
+    _p_Hand jHand = getJoueurHand(indPlayer);
+    _p_Plateau platJ = getJoueurPlateau(indPlayer);
+    _p_Plateau platGeneral = getMainPlateau();
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarte();
     int id = jHand->getIdCarte(nbCarte-1);
     IdCarte idC = jHand->getCarte(0);
-    PCCarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idC));
+    _pc_CarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idC));
     cout << "MSLMechanics::playTurn:peutEtreJouee: " << crt->getName() << endl;
 
     if((peutEtreJouee(pp,idC)) && (jouerCarte(pp,idC)) ){

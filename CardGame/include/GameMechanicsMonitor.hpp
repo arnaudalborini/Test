@@ -6,16 +6,16 @@
 namespace CardGame{
     class GameMechanicsMonitor{
         public:      
-            virtual PPlateau        getPlateau()const=0;
-            virtual PPlateau        getPlateauPlayer(int indPlayer)const=0;
-            virtual PPlateau        getPlateauPlayer(PCPlayer pp)const=0;
-            virtual PPaquetCarte    getPioche()const=0;
-            virtual PPaquetCarte    getDefausse()const=0;
-            virtual PInfosJoueur    getInfosJoueurs(int ind)const=0;
-            virtual PInfosJoueur    getInfosJoueurs(PCPlayer pp)const=0;
-            virtual PCPlayer        getPlayer(int ind)const=0;
+            virtual _p_Plateau        getPlateau()const=0;
+            virtual _p_Plateau        getPlateauPlayer(int indPlayer)const=0;
+            virtual _p_Plateau        getPlateauPlayer(_pc_Player pp)const=0;
+            virtual _p_PaquetCarte    getPioche()const=0;
+            virtual _p_PaquetCarte    getDefausse()const=0;
+            virtual _p_InfosJoueur    getInfosJoueurs(int ind)const=0;
+            virtual _p_InfosJoueur    getInfosJoueurs(_pc_Player pp)const=0;
+            virtual _pc_Player        getPlayer(int ind)const=0;
             virtual int             getNbPlayer()const=0;
-            virtual int             getIndPlayer(PCPlayer pp)const=0;
+            virtual int             getIndPlayer(_pc_Player pp)const=0;
             virtual void            defausser(IdCarte crt, int indPlayer)const=0;
             virtual void            defausserDernier( int indPlayer, int EP)const=0;
             virtual void            defausserTout(int indPlayer, int EP)const=0;

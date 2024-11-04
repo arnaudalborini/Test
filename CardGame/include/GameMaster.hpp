@@ -8,26 +8,26 @@
 namespace CardGame{
     class GameMaster: public GameInterface, public PlayerInterface, private std::enable_shared_from_this<GameMaster>{
         private:
-            PGameMasterMonitor mMonitor;
+            _p_GameMasterMonitor mMonitor;
             int mNbJoueur;
             vector<bool> mJoueurPret;
-            vector<PPlayer> mJoueurs;
-            void initGame(int nj, PGameMechanics gm);
+            vector<_p_Player> mJoueurs;
+            void initGame(int nj, _p_GameMechanics gm);
         public:
-            GameMaster(int nj, PGameMechanics gm);
+            GameMaster(int nj, _p_GameMechanics gm);
             ~GameMaster();
             void startGame();
             int getWinner()const;
         public:
             //GameInterface
-            virtual PCPlayerInterface   login(PCPlayer pp);
-            virtual int                 getIdPlayer(PCPlayer pp)const;
+            virtual _pc_PlayerInterface   login(_pc_Player pp);
+            virtual int                 getIdPlayer(_pc_Player pp)const;
             //PlayerInterface
-            virtual PCInfosJoueur       getInfosJoueurs(int indPlayer)const;
-            virtual PCPlateau           getPlateau()const;
-            virtual PCPaquetCarte       getPioche()const;
-            virtual PCPaquetCarte       getDefausse()const;
-            virtual PCCarte             getCarte(IdCarte idC)const;
+            virtual _pc_InfosJoueur       getInfosJoueurs(int indPlayer)const;
+            virtual _pc_Plateau           getPlateau()const;
+            virtual _pc_PaquetCarte       getPioche()const;
+            virtual _pc_PaquetCarte       getDefausse()const;
+            virtual _pc_Carte             getCarte(IdCarte idC)const;
             virtual int                 getStatutPlayer(int indPlayer, int dp)const;
     };
 };

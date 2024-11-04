@@ -6,17 +6,21 @@
 
 using CardGame::InfosJoueur;
 
-InfosJoueur::InfosJoueur(PInfosJoueurMonitor mm, const int PlayerId):
-    mHand(make_shared<Hand>(mm,PlayerId)),
-    mPlateau(make_shared<Plateau>(mm,PlayerId)),
+InfosJoueur::InfosJoueur(_p_InfosJoueurMonitor mm, const int PlayerId):
     mPlayerId(PlayerId),
-    mMonitor(mm){}
+    mMonitor(mm)
+{ 
+        mHand       = make_shared<Hand>(mm,PlayerId);
+        mPlateau    = make_shared<Plateau>(mm,PlayerId);
+}
 
-InfosJoueur::InfosJoueur(PInfosJoueurMonitor mm, const CardGame::PGameMechanics gm,const int PlayerId):
-    mHand(make_shared<Hand>(mm,PlayerId)),
-    mPlateau(make_shared<Plateau>(mm,gm->getJoueurInitialStatuts(),PlayerId)),
+InfosJoueur::InfosJoueur(_p_InfosJoueurMonitor mm, const CardGame::_p_GameMechanics gm,const int PlayerId):
     mPlayerId(PlayerId),
-    mMonitor(mm){}
+    mMonitor(mm)
+{
+        mHand       = make_shared<Hand>(mm,PlayerId);
+        mPlateau    = make_shared<Plateau>(mm,gm->getJoueurInitialStatuts(),PlayerId);
+}
 
 InfosJoueur::~InfosJoueur()
 {

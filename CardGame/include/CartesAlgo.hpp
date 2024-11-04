@@ -6,15 +6,15 @@
 namespace CardGame {
 class CartesAlgo {
 protected:
-  PCCarteGenerator cGen;
-  PCGameMechanicsMonitor mMonitor;
+  _pc_CarteGenerator cGen;
+  _pc_GameMechanicsMonitor mMonitor;
 
 public:
-  CartesAlgo(PCCarteGenerator cc, PCGameMechanicsMonitor mm)
+  CartesAlgo(_pc_CarteGenerator cc, _pc_GameMechanicsMonitor mm)
       : cGen(cc), mMonitor(mm) {}
   ~CartesAlgo() {}
-  virtual bool peutEtreJouee(PCPlayer pp, IdCarte id) const {return false;}
-  virtual bool jouerCarte(PCPlayer pp, IdCarte id) const { return false; }
+  virtual bool peutEtreJouee(_pc_Player pp, IdCarte id) const {return false;}
+  virtual bool jouerCarte(_pc_Player pp, IdCarte id) const { return false; }
 
   virtual void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt) {}
   virtual void effetQuitterHand(const int indPlayer, const IdCarte idCrt) {}

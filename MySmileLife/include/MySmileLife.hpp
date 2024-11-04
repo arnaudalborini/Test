@@ -184,44 +184,44 @@ namespace MySmileLife{
     const int MAXEMPLACEMENTPLATEAU = EmplacementsPlateau::ECasinoSalaire;
 
     class CartesAlgoMSL;
-    typedef shared_ptr<const CartesAlgoMSL> PCCartesAlgoMSL;
-    typedef shared_ptr<CartesAlgoMSL> PCartesAlgoMSL;
+    typedef shared_ptr<const CartesAlgoMSL> _pc_CartesAlgoMSL;
+    typedef shared_ptr<CartesAlgoMSL> _p_CartesAlgoMSL;
 
     class BasicBot;
-    typedef shared_ptr<const BasicBot> PCBasicBot;
-    typedef shared_ptr<BasicBot> PBasicBot;
+    typedef shared_ptr<const BasicBot> _pc_BasicBot;
+    typedef shared_ptr<BasicBot> _p_BasicBot;
 
     class CarteMSL;
-    typedef shared_ptr<const CarteMSL> PCCarteMSL;
-    typedef shared_ptr<CarteMSL> PCarteMSL;
+    typedef shared_ptr<const CarteMSL> _pc_CarteMSL;
+    typedef shared_ptr<CarteMSL> _p_CarteMSL;
 
     class CarteGenerateurStandard;
-    typedef shared_ptr<const CarteGenerateurStandard> PCCarteGenerateurStandard;
-    typedef shared_ptr<CarteGenerateurStandard> PCarteGenerateurStandard;
+    typedef shared_ptr<const CarteGenerateurStandard> _pc_CarteGenerateurStandard;
+    typedef shared_ptr<CarteGenerateurStandard> _p_CarteGenerateurStandard;
 
     class JouerCarteMSL;
-    typedef shared_ptr<const JouerCarteMSL> PCJouerCarteMSL;
-    typedef shared_ptr<JouerCarteMSL> PJouerCarteMSL;
+    typedef shared_ptr<const JouerCarteMSL> _pc_JouerCarteMSL;
+    typedef shared_ptr<JouerCarteMSL> _p_JouerCarteMSL;
 
     class JouerMalus;
-    typedef shared_ptr<const JouerMalus> PCJouerMalus;
-    typedef shared_ptr<JouerMalus> PJouerMalus;
+    typedef shared_ptr<const JouerMalus> _pc_JouerMalus;
+    typedef shared_ptr<JouerMalus> _p_JouerMalus;
 
     class JouerMetier;
-    typedef shared_ptr<const JouerMetier> PCJouerMetier;
-    typedef shared_ptr<JouerMetier> PJouerMetier;
+    typedef shared_ptr<const JouerMetier> _pc_JouerMetier;
+    typedef shared_ptr<JouerMetier> _p_JouerMetier;
 
     class JouerSpecial;
-    typedef shared_ptr<const JouerSpecial> PCJouerSpecial;
-    typedef shared_ptr<JouerSpecial> PJouerSpecial;
+    typedef shared_ptr<const JouerSpecial> _pc_JouerSpecial;
+    typedef shared_ptr<JouerSpecial> _p_JouerSpecial;
 
     class MSLMechanics;
-    typedef shared_ptr<const MSLMechanics> PCMSLMechanics;
-    typedef shared_ptr<MSLMechanics> PMSLMechanics;
+    typedef shared_ptr<const MSLMechanics> _pc_MSLMechanics;
+    typedef shared_ptr<MSLMechanics> _p_MSLMechanics;
 
     class MSLPlayer;
-    typedef shared_ptr<const MSLPlayer> PCMSLPlayer;
-    typedef shared_ptr<MSLPlayer> PMSLPlayer;
+    typedef shared_ptr<const MSLPlayer> _pc_MSLPlayer;
+    typedef shared_ptr<MSLPlayer> _p_MSLPlayer;
 
 }
 

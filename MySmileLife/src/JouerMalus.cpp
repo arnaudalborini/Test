@@ -17,13 +17,13 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
-bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp, CarteSousType st, PCPlayer cible) const
+bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp, CarteSousType st, _pc_Player cible) const
 {
     if(cible==nullptr){
         return false;
     }
-    PPlateau plat       = getMonitor()->getPlateauPlayer(pp);
-    PPlateau platCible  = getMonitor()->getPlateauPlayer(cible);
+    _p_Plateau plat       = getMonitor()->getPlateauPlayer(pp);
+    _p_Plateau platCible  = getMonitor()->getPlateauPlayer(cible);
     switch(st){
         case csAccidents:
             return (platCible->getStatut(ResistantAccident) == 0);
@@ -47,7 +47,7 @@ bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp, CarteSousType st, PCPlayer cibl
             return false;
     }
 }
-bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp,PCCarteMSL crt) const
+bool JouerMalus::peutEtreJoueeMalus(_pc_Player pp,_pc_CarteMSL crt) const
 {
     if(crt->getType()!=carteMalus){
         return false;
@@ -57,7 +57,7 @@ bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp,PCCarteMSL crt) const
         if(indice==indJoueur){
             continue;
         }
-        PCPlayer Cible = getMonitor()->getPlayer(indice);
+        _pc_Player Cible = getMonitor()->getPlayer(indice);
         if(peutEtreJoueeMalus(pp,crt->getSType(),Cible)){
             return true;
         }
@@ -65,7 +65,7 @@ bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp,PCCarteMSL crt) const
     return false;
 }
 
-void JouerMalus::jouerAccident(PCPlayer cible)const{
+void JouerMalus::jouerAccident(_pc_Player cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerAttentat()const{
@@ -73,35 +73,35 @@ void JouerMalus::jouerAttentat()const{
         getMonitor()->defausserTout( indPlayer, EEnfant );
     }
 }
-void JouerMalus::jouerBurnout(PCPlayer cible)const{
+void JouerMalus::jouerBurnout(_pc_Player cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
-void JouerMalus::jouerDivorce(PCPlayer cible)const{
+void JouerMalus::jouerDivorce(_pc_Player cible)const{
     getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMariage );
 }
-void JouerMalus::jouerImpots(PCPlayer cible)const{
+void JouerMalus::jouerImpots(_pc_Player cible)const{
     getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), ESalairesD );
 }
-void JouerMalus::jouerLicenciement(PCPlayer cible)const{
+void JouerMalus::jouerLicenciement(_pc_Player cible)const{
     getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMetier );
 }
-void JouerMalus::jouerMaladie(PCPlayer cible)const{
+void JouerMalus::jouerMaladie(_pc_Player cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerPrison()const{
     for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
-        PPlateau p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
+        _p_Plateau p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
         if(p->getStatut(RisquePrison)){
             getMonitor()->defausserTout( indPlayer, EMetier );
             getMonitor()->incStatut(indPlayer,TourAPasser,3);
         }
     }
 }
-void JouerMalus::jouerRedoublement(PCPlayer cible)const{
+void JouerMalus::jouerRedoublement(_pc_Player cible)const{
     getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), EEtudes );
 }
 
-bool JouerMalus::jouerCarteMalus(PCPlayer pp, PCCarteMSL crt) const
+bool JouerMalus::jouerCarteMalus(_pc_Player pp, _pc_CarteMSL crt) const
 {
     if(peutEtreJoueeMalus(pp,crt)==false){
         return false;
@@ -116,7 +116,7 @@ bool JouerMalus::jouerCarteMalus(PCPlayer pp, PCCarteMSL crt) const
             break;
     }
     getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
-    PCPlayer cible = getCible(pp,crt->getSType());
+    _pc_Player cible = getCible(pp,crt->getSType());
     if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
         return false;
     }

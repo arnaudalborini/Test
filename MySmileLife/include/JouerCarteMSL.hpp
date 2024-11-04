@@ -9,37 +9,37 @@
 namespace MySmileLife{
     class JouerCarteMSL:public JouerMetier, public JouerSpecial, public JouerMalus{
         private:
-            CardGame::PCCarteGenerator cGen;
-            CardGame::PCGameMechanicsMonitor mMonitor;
+            CardGame::_pc_CarteGenerator cGen;
+            CardGame::_pc_GameMechanicsMonitor mMonitor;
             
-            PCCarteMSL getCarteMSL(IdCarte id)const;
-            void payer(PCPlayer  pp, PPlateau plat, int prix)const;
+            _pc_CarteMSL getCarteMSL(IdCarte id)const;
+            void payer(_pc_Player  pp, _p_Plateau plat, int prix)const;
 
-            bool peutEtreJoueeAnimal(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeEnfant(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeEtude(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeFlirt(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeMaison(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeMariage(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeSalaire(PCPlayer pp, PCCarteMSL crt)const;
-            bool peutEtreJoueeVoyage(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeAnimal(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeEnfant(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeEtude(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeFlirt(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeMaison(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeMariage(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeSalaire(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool peutEtreJoueeVoyage(_pc_Player pp, _pc_CarteMSL crt)const;
 
-            bool jouerCarteAnimal(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteEnfant(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteEtude(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteFlirt(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteMaison(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteMariage(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteSalaire(PCPlayer pp, PCCarteMSL crt)const;
-            bool jouerCarteVoyage(PCPlayer pp, PCCarteMSL crt)const;
-            void choisirEtJouerUneCarteDefausse(PCPlayer  pp)const override;
-            PCPlayer  getCible(PCPlayer  pp, IdCarte id)const override;
+            bool jouerCarteAnimal(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteEnfant(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteEtude(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteFlirt(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteMaison(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteMariage(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteSalaire(_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteVoyage(_pc_Player pp, _pc_CarteMSL crt)const;
+            void choisirEtJouerUneCarteDefausse(_pc_Player  pp)const override;
+            _pc_Player  getCible(_pc_Player  pp, IdCarte id)const override;
         public:
-            JouerCarteMSL(CardGame::PCCarteGenerator cc, CardGame::PCGameMechanicsMonitor mm):cGen( cc ),mMonitor( mm ){}            
-            bool peutEtreJouee(PCPlayer pp, IdCarte id)const;
-            bool jouerCarte(PCPlayer  pp, IdCarte id)const;
-            PCCarteGenerateurStandard getCGen()const override;
-            PCGameMechanicsMonitor getMonitor()const override;
+            JouerCarteMSL(CardGame::_pc_CarteGenerator cc, CardGame::_pc_GameMechanicsMonitor mm):cGen( cc ),mMonitor( mm ){}            
+            bool peutEtreJouee(_pc_Player pp, IdCarte id)const;
+            bool jouerCarte(_pc_Player  pp, IdCarte id)const;
+            _pc_CarteGenerateurStandard getCGen()const override;
+            _pc_GameMechanicsMonitor getMonitor()const override;
     };
 }
 

@@ -8,10 +8,10 @@ namespace CardGame{
     class Hand{
         private:
             vector<IdCarte> mCartes;
-            PHandMonitor mMonitor;
+            _p_HandMonitor mMonitor;
             const int idPlayer;
         public:
-            Hand(PHandMonitor mm,const int idP);
+            Hand(_p_HandMonitor mm,const int idP);
             ~Hand();
             void addCarte(IdCarte crt);
             IdCarte getCarte(int ind);

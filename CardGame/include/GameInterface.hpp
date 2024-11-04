@@ -6,7 +6,7 @@
 namespace CardGame{
     class GameInterface{
         public:
-            virtual PCPlayerInterface login(PCPlayer pp)=0;
+            virtual _pc_PlayerInterface login(_pc_Player pp)=0;
     };
 };
 

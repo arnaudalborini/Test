@@ -7,21 +7,21 @@
 namespace CardGame {
 class InfosJoueur {
 private:
-  PHand mHand;
-  PPlateau mPlateau;
+  _p_Hand mHand;
+  _p_Plateau mPlateau;
   const int mPlayerId;
-  PInfosJoueurMonitor mMonitor;
+  _p_InfosJoueurMonitor mMonitor;
 
 public:
-  InfosJoueur(PInfosJoueurMonitor mm, const int PlayerId=-1);
-  InfosJoueur(PInfosJoueurMonitor mm, const CardGame::PGameMechanics gm,
+  InfosJoueur(_p_InfosJoueurMonitor mm, const int PlayerId=-1);
+  InfosJoueur(_p_InfosJoueurMonitor mm, const CardGame::_p_GameMechanics gm,
               const int PlayerId=-1);
   ~InfosJoueur();
-  PHand getHand() {return mHand; }
-  PPlateau getPlateau() { return mPlateau; }
+  _p_Hand getHand() {return mHand; }
+  _p_Plateau getPlateau() { return mPlateau; }
 
-  PCHand getHand() const { return mHand; }
-  PCPlateau getPlateau() const { return mPlateau; }
+  _pc_Hand getHand() const { return mHand; }
+  _pc_Plateau getPlateau() const { return mPlateau; }
 };
 }; // namespace CardGame
 

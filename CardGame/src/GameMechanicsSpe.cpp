@@ -41,8 +41,8 @@ bool GameMechanicsSpe::endGameCondition() const { return getNbCartePioche() > 0;
 int GameMechanicsSpe::getWinnerPlayer() const{return 0;}
 void GameMechanicsSpe::playTurn(int indPlayer) const{
     cout << "GameMechanicsSpe::playTurn" << endl;
-    PCPlayer pp = getPlayer(indPlayer);
-    PHand jHand = getJoueurHand(indPlayer);
+    _pc_Player pp = getPlayer(indPlayer);
+    _p_Hand jHand = getJoueurHand(indPlayer);
     cout << "Joueur name: "<< pp->getName() << endl;
     cout << mMonitor->getPioche()->showIdLast() << endl;
     joueurPioche(indPlayer);

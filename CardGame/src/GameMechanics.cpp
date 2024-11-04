@@ -13,13 +13,13 @@ using CardGame::GameMechanics;
 using CardGame::Player;
 using CardGame::Hand;
 using CardGame::Plateau;
-using CardGame::PCCarte;
+using CardGame::_pc_Carte;
 
 GameMechanics::GameMechanics() : cGen(nullptr), cAlgo(nullptr) {}
 
 GameMechanics::~GameMechanics(){}
 
-void GameMechanics::setMonitor(PMonitor mm){
+void GameMechanics::setMonitor(_p_Monitor mm){
     mMonitor = dynamic_pointer_cast<GameMechanicsMonitor>(mm);
     initGame();
 }
@@ -37,13 +37,13 @@ void GameMechanics::initGame(){
     initSpeficiGame();
 }
 
-PCCarte GameMechanics::getCarte(IdCarte idC) const{return cGen->getCarteById(idC);}
+_pc_Carte GameMechanics::getCarte(IdCarte idC) const{return cGen->getCarteById(idC);}
 int  GameMechanics::getStatutPlayer(int indPlayer, int dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
 void GameMechanics::setStatutPlayer(int indPlayer, int dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
 void GameMechanics::incStatutPlayer(int indPlayer, int dp, int inc) {setStatutPlayer( indPlayer, dp, getStatutPlayer( indPlayer, dp ) + inc );}
 void GameMechanics::decStatutPlayer(int indPlayer, int dp, int inc) {incStatutPlayer(indPlayer,dp,-inc);}
-bool GameMechanics::peutEtreJouee(PCPlayer pp, IdCarte id) const{return cAlgo->peutEtreJouee(pp,id);}
-bool GameMechanics::jouerCarte(PCPlayer pp, IdCarte id) const{return cAlgo->jouerCarte(pp,id);}
+bool GameMechanics::peutEtreJouee(_pc_Player pp, IdCarte id) const{return cAlgo->peutEtreJouee(pp,id);}
+bool GameMechanics::jouerCarte(_pc_Player pp, IdCarte id) const{return cAlgo->jouerCarte(pp,id);}
 
 void GameMechanics::startGame()
 {
@@ -74,7 +74,7 @@ int  GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNb
 int  GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
 void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
 void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
-CardGame::PCPlayer GameMechanics::getPlayer(  int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
-CardGame::PHand    GameMechanics::getJoueurHand(   int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
-CardGame::PPlateau GameMechanics::getJoueurPlateau(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getPlateau();}
-CardGame::PPlateau GameMechanics::getMainPlateau() const{return mMonitor->getPlateau();}
+CardGame::_pc_Player GameMechanics::getPlayer(  int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
+CardGame::_p_Hand    GameMechanics::getJoueurHand(   int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
+CardGame::_p_Plateau GameMechanics::getJoueurPlateau(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getPlateau();}
+CardGame::_p_Plateau GameMechanics::getMainPlateau() const{return mMonitor->getPlateau();}

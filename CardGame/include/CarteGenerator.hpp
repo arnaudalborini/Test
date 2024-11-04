@@ -7,12 +7,12 @@
 namespace CardGame{
     class CarteGenerator{
         private:
-            map<IdCarte,PCCarte> mapCarte;
+            map<IdCarte,_pc_Carte> mapCarte;
         public:
             CarteGenerator();
             ~CarteGenerator();
-            PCCarte getCarteById(int id)const{return CardGame::myMapGet(mapCarte,id);}
-            void addCarte(PCCarte crt){
+            _pc_Carte getCarteById(int id)const{return CardGame::myMapGet(mapCarte,id);}
+            void addCarte(_pc_Carte crt){
                 mapCarte[crt->getId()]=crt;
             }
 
