@@ -3,15 +3,8 @@
 #include "InfosJoueur.hpp"
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
-#include "InfosJoueurMonitor.hpp"
 
-using CardGame::_p_InfosJoueur;
-using CardGame::_p_Monitor;
 using CardGame::Monitor;
-using CardGame::_p_PaquetCarte;
-using CardGame::_p_Plateau;
-using CardGame::_pc_Player;
-using CardGame::_pc_Carte;
 
 Monitor::Monitor() {
   mPioche = make_shared<PaquetCarte>();
@@ -23,22 +16,22 @@ Monitor::Monitor() {
 
 Monitor::~Monitor() {}
 
-_p_Plateau Monitor::getPlateau() const { return mPlateau; }
-_p_Plateau Monitor::getPlateauPlayer(int indPlayer) const {
+CardGame::_p_Plateau Monitor::getPlateau() const { return mPlateau; }
+CardGame::_p_Plateau Monitor::getPlateauPlayer(int indPlayer) const {
   return getInfosJoueurs(indPlayer)->getPlateau();
 }
-_p_Plateau Monitor::getPlateauPlayer(_pc_Player pp) const {
+CardGame::_p_Plateau Monitor::getPlateauPlayer(_pc_Player pp) const {
   return getInfosJoueurs(pp)->getPlateau();
 }
-_p_PaquetCarte Monitor::getPioche() const { return mPioche; }
-_p_PaquetCarte Monitor::getDefausse() const { return mDefausse; }
-_p_InfosJoueur Monitor::getInfosJoueurs(int ind) const {
+CardGame::_p_PaquetCarte Monitor::getPioche() const { return mPioche; }
+CardGame::_p_PaquetCarte Monitor::getDefausse() const { return mDefausse; }
+CardGame::_p_InfosJoueur Monitor::getInfosJoueurs(int ind) const {
   return mInfosJoueurs[ind];
 }
-_p_InfosJoueur Monitor::getInfosJoueurs(_pc_Player pp) const {
+CardGame::_p_InfosJoueur Monitor::getInfosJoueurs(_pc_Player pp) const {
   return getInfosJoueurs(getIndPlayer(pp));
 }
-_pc_Player Monitor::getPlayer(int ind) const { return mPlayer[ind]; }
+CardGame::_pc_Player Monitor::getPlayer(int ind) const { return mPlayer[ind]; }
 int Monitor::getIndPlayer(_pc_Player pp) const { return mapIdPlayer.at(pp); }
 
 int Monitor::getNbPlayer() const { return mNbJoueur; }
@@ -83,7 +76,7 @@ void Monitor::removePlayer(int index) { mPlayer[index] = nullptr; }
 void Monitor::startGame() { mGameMechanics->startGame(); }
 int Monitor::getWinner() const { return mGameMechanics->getWinnerPlayer(); }
 
-_pc_Carte Monitor::getCarte(IdCarte idC) const {
+CardGame::_pc_Carte Monitor::getCarte(IdCarte idC) const {
   return mGameMechanics->getCarte(idC);
 }
 

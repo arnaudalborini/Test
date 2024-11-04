@@ -1,21 +1,12 @@
-#include "CartesAlgoMSL.hpp"
+#include "JouerMetier.hpp"
 #include "CarteMSL.hpp"
-#include "CarteGenerateurStandard.hpp"
 #include "GameMechanicsMonitor.hpp"
 #include "Plateau.hpp"
-#include "Hand.hpp"
 #include "InfosJoueur.hpp"
-#include "JouerMetier.hpp"
 #include "PaquetCarte.hpp"
 #include "Player.hpp"
 
 using MySmileLife::JouerMetier;
-using MySmileLife::CarteMSL;
-using CardGame::Player;
-using CardGame::IdCarte;
-using CardGame::Plateau;
-using CardGame::Hand;
-using CardGame::InfosJoueur;
 
 bool JouerMetier::peutEtreJoueeMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
@@ -41,7 +32,7 @@ void voirNProchainesCartesPioche(CardGame::_pc_Player pp, CardGame::_pc_GameMech
     CardGame::_p_PaquetCarte pioche = mMonitor->getPioche();
     int nbcarte = pioche->getNbCarte();
     int indDebut = (nbcarte>=N)?nbcarte-1-N:0;
-    std::vector<IdCarte> vecId;
+    std::vector<CardGame::IdCarte> vecId;
     for(int indice = indDebut;indice<nbcarte;indice++){
         vecId.push_back(pioche->showNeme(indice));
     }

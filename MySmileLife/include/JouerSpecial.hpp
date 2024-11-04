@@ -1,7 +1,6 @@
 #ifndef JOUERSPECIAL_HPP
 #define JOUERSPECIAL_HPP
 
-#include "JouerMalus.hpp"
 #include "MySmileLife.hpp"
 #include <limits>
 

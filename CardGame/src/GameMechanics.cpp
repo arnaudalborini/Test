@@ -1,19 +1,13 @@
 #include "GameMechanics.hpp"
 #include "CarteGenerator.hpp"
 #include "Monitor.hpp"
-#include "GameMechanicsMonitor.hpp"
 #include "Plateau.hpp"
 #include "PaquetCarte.hpp"
-#include "Player.hpp"
 #include "InfosJoueur.hpp"
 #include "Hand.hpp"
 #include "CartesAlgo.hpp"
 
 using CardGame::GameMechanics;
-using CardGame::Player;
-using CardGame::Hand;
-using CardGame::Plateau;
-using CardGame::_pc_Carte;
 
 GameMechanics::GameMechanics() : cGen(nullptr), cAlgo(nullptr) {}
 
@@ -37,7 +31,7 @@ void GameMechanics::initGame(){
     initSpeficiGame();
 }
 
-_pc_Carte GameMechanics::getCarte(IdCarte idC) const{return cGen->getCarteById(idC);}
+CardGame::_pc_Carte GameMechanics::getCarte(IdCarte idC) const{return cGen->getCarteById(idC);}
 int  GameMechanics::getStatutPlayer(int indPlayer, int dp)const{return getJoueurPlateau(indPlayer)->getStatut(dp);}
 void GameMechanics::setStatutPlayer(int indPlayer, int dp, int value) {getJoueurPlateau(indPlayer)->setStatut(dp,value);}
 void GameMechanics::incStatutPlayer(int indPlayer, int dp, int inc) {setStatutPlayer( indPlayer, dp, getStatutPlayer( indPlayer, dp ) + inc );}

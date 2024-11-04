@@ -2,7 +2,6 @@
 #include "GameMechanicsMonitor.hpp"
 #include "PaquetCarte.hpp"
 #include "Player.hpp"
-#include "InfosJoueur.hpp"
 #include "Hand.hpp"
 #include "CarteGenerator.hpp"
 #include "CartesAlgo.hpp"
@@ -10,7 +9,6 @@
 using CardGame::GameMechanicsSpe;
 using CardGame::IdCarte;
 using std::vector;
-using std::map;
 
 GameMechanicsSpe::GameMechanicsSpe()
 {

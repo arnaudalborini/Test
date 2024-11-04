@@ -1,10 +1,10 @@
 #ifndef MSLPLAYER_HPP
 #define MSLPLAYER_HPP
 
-#include "CarteMSL.hpp"
 #include "MySmileLife.hpp"
 #include "Player.hpp"
 #include "PlayerInterface.hpp"
+#include "CarteMSL.hpp"
 
 namespace MySmileLife {
 class MSLPlayer : public CardGame::Player {

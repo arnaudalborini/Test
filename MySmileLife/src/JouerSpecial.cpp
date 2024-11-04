@@ -1,6 +1,5 @@
 #include "JouerSpecial.hpp"
 #include "CarteGenerateurStandard.hpp"
-#include "CarteGenerator.hpp"
 #include "CarteMSL.hpp"
 #include "GameMechanicsMonitor.hpp"
 #include "Hand.hpp"
@@ -9,22 +8,9 @@
 #include "PaquetCarte.hpp"
 #include "Plateau.hpp"
 #include "Player.hpp"
-
 #include "JouerCarteMSL.hpp"
-#include "JouerSpecial.hpp"
 
-using CardGame::Hand;
-using CardGame::IdCarte;
-using CardGame::InfosJoueur;
-using CardGame::_pc_Plateau;
-using CardGame::_pc_Player;
-using MySmileLife::CarteMSL;
-using MySmileLife::JouerMalus;
 using MySmileLife::JouerSpecial;
-
-using MySmileLife::CarteSousType;
-using MySmileLife::DetailPlateau;
-using MySmileLife::EmplacementsPlateau;
 
 /*
         csAdultere,
@@ -42,11 +28,11 @@ using MySmileLife::EmplacementsPlateau;
         csGrandPrixExcellence,
 */
 
-bool isMarriedButNotAdulterous(_pc_Plateau plat) {
+bool isMarriedButNotAdulterous(CardGame::_pc_Plateau plat) {
   return ((plat->getStatut(MySmileLife::estMarie)) &&
           (plat->getStatut(MySmileLife::estAdultere) == false));
 }
-bool hasEligibleProfession(_pc_Plateau plat) {
+bool hasEligibleProfession(CardGame::_pc_Plateau plat) {
   if (plat->getStatut(MySmileLife::aUnTravail)) {
     switch (plat->getStatut(MySmileLife::Profession)) {
     case MySmileLife::csJournaliste:
@@ -60,10 +46,10 @@ bool hasEligibleProfession(_pc_Plateau plat) {
     return false;
   }
 }
-bool canPlayMalusCard(_pc_Plateau plat, CardGame::_pc_Player pp, MySmileLife::_pc_JouerCarteMSL jCarte) {
-  int nbMalus = plat->getNbCarte(EmplacementsPlateau::EMalus);
+bool canPlayMalusCard(CardGame::_pc_Plateau plat, CardGame::_pc_Player pp, MySmileLife::_pc_JouerCarteMSL jCarte) {
+  int nbMalus = plat->getNbCarte(MySmileLife::EmplacementsPlateau::EMalus);
   for (auto indice = 0; indice < nbMalus; indice++) {
-    int IdMalus = plat->showIdN(EmplacementsPlateau::EMalus, indice);
+    int IdMalus = plat->showIdN(MySmileLife::EmplacementsPlateau::EMalus, indice);
     if (jCarte->peutEtreJouee(pp, IdMalus)) {
       return true;
     }

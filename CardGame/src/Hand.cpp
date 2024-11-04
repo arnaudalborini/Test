@@ -1,13 +1,12 @@
 #include "Hand.hpp"
 
 using CardGame::Hand;
-using CardGame::IdCarte;
 
 Hand::Hand(_p_HandMonitor mm,const int idP):mMonitor(mm),idPlayer(idP){}
 
 Hand::~Hand(){}
 
-IdCarte Hand::getCarte(int ind)
+CardGame::IdCarte Hand::getCarte(int ind)
 {
     IdCarte crt = mCartes[ind];
     mCartes.erase(mCartes.begin()+ind);

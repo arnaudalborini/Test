@@ -1,5 +1,4 @@
 #include "GameMaster.hpp"
-#include "GameMasterMonitor.hpp"
 #include "Monitor.hpp"
 #include "InfosJoueur.hpp"
 #include "Plateau.hpp"

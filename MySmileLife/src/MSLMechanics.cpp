@@ -11,7 +11,6 @@
 #include "InfosJoueur.hpp"
 
 using MySmileLife::MSLMechanics;
-using MySmileLife::_pc_CarteMSL;
 
 MSLMechanics::MSLMechanics()
 {
@@ -22,7 +21,7 @@ MSLMechanics::~MSLMechanics()
 {
 }
 
-_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
+MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
 int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllId() ){

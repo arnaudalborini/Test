@@ -1,12 +1,7 @@
 #include "PaquetCarte.hpp"
 
-#include <algorithm>
-#include <iostream>
-
 using CardGame::PaquetCarte;
 using CardGame::IdCarte;
-using std::cout;
-using std::endl;
 
 PaquetCarte::PaquetCarte(){}
 

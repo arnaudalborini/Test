@@ -1,7 +1,4 @@
 #include "CarteGenerateurStandard.hpp"
-#include "MySmileLife.hpp"
-
-#include "Carte.hpp"
 #include "CarteMSL.hpp"
 #include "MyShuffle.hpp"
 #include "CartesMSLConfig.hpp"

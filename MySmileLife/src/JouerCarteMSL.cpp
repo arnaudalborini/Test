@@ -7,9 +7,8 @@
 #include "PaquetCarte.hpp"
 
 using MySmileLife::JouerCarteMSL;
-using MySmileLife::_pc_CarteMSL;
 
-_pc_CarteMSL JouerCarteMSL::getCarteMSL(IdCarte id) const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
+MySmileLife::_pc_CarteMSL JouerCarteMSL::getCarteMSL(IdCarte id) const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
 
 bool JouerCarteMSL::peutEtreJouee(CardGame::_pc_Player pp, IdCarte id) const
 {
@@ -74,8 +73,8 @@ bool JouerCarteMSL::jouerCarte(CardGame::_pc_Player pp, IdCarte id) const
     return false;
 }
 
-MySmileLife::_pc_CarteGenerateurStandard MySmileLife::JouerCarteMSL::getCGen() const{return dynamic_pointer_cast<const MySmileLife::CarteGenerateurStandard>(cGen);}
-CardGame::_pc_GameMechanicsMonitor MySmileLife::JouerCarteMSL::getMonitor() const{return mMonitor;}
+MySmileLife::_pc_CarteGenerateurStandard JouerCarteMSL::getCGen() const{return dynamic_pointer_cast<const MySmileLife::CarteGenerateurStandard>(cGen);}
+CardGame::_pc_GameMechanicsMonitor JouerCarteMSL::getMonitor() const{return mMonitor;}
 
 bool JouerCarteMSL::peutEtreJoueeAnimal(CardGame::_pc_Player pp, _pc_CarteMSL crt) const{return true;}
 
