@@ -32,7 +32,7 @@ void GameMaster::initGame(int nj, PGameMechanics gm){
     if(ind < mNbJoueur){
         mJoueurPret[ind] = true;
         mMonitor->addPlayer(pp,ind);
-        return make_shared<const PlayerInterface>(this);
+        return shared_from_this();
     }
     return nullptr;
 }

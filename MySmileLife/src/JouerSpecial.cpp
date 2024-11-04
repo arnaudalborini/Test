@@ -17,8 +17,8 @@
 using CardGame::Hand;
 using CardGame::IdCarte;
 using CardGame::InfosJoueur;
-using CardGame::Plateau;
-using CardGame::Player;
+using CardGame::PCPlateau;
+using CardGame::PCPlayer;
 using MySmileLife::CarteMSL;
 using MySmileLife::JouerMalus;
 using MySmileLife::JouerSpecial;
@@ -43,11 +43,11 @@ using MySmileLife::EmplacementsPlateau;
         csGrandPrixExcellence,
 */
 
-bool isMarriedButNotAdulterous(const Plateau *plat) {
+bool isMarriedButNotAdulterous(PCPlateau plat) {
   return ((plat->getStatut(MySmileLife::estMarie)) &&
           (plat->getStatut(MySmileLife::estAdultere) == false));
 }
-bool hasEligibleProfession(const Plateau *plat) {
+bool hasEligibleProfession(PCPlateau plat) {
   if (plat->getStatut(MySmileLife::aUnTravail)) {
     switch (plat->getStatut(MySmileLife::Profession)) {
     case MySmileLife::csJournaliste:
@@ -61,8 +61,7 @@ bool hasEligibleProfession(const Plateau *plat) {
     return false;
   }
 }
-bool canPlayMalusCard(const Plateau *plat, const Player *pp,
-                      const MySmileLife::JouerCarteMSL *jCarte) {
+bool canPlayMalusCard(PCPlateau plat, PCPlayer pp, MySmileLife::PCJouerCarteMSL jCarte) {
   int nbMalus = plat->getNbCarte(EmplacementsPlateau::EMalus);
   for (auto indice = 0; indice < nbMalus; indice++) {
     int IdMalus = plat->showIdN(EmplacementsPlateau::EMalus, indice);
@@ -73,27 +72,25 @@ bool canPlayMalusCard(const Plateau *plat, const Player *pp,
   return false;
 }
 
-bool JouerSpecial::peutEtreJoueeSpecial(const Player *pp,
-                                        const CarteMSL *crt) const {
+bool JouerSpecial::peutEtreJoueeSpecial(PCPlayer pp, PCCarteMSL crt) const {
   if (crt->getType() != carteSpecial) {
     return false;
   }
-  Plateau *plat = getMonitor()->getPlateauPlayer(pp);
+  PPlateau plat = getMonitor()->getPlateauPlayer(pp);
   switch (crt->getSType()) {
   case csAdultere:
     return isMarriedButNotAdulterous(plat);
   case csGrandPrixExcellence:
     return hasEligibleProfession(plat);
   case csVengeance:
-    return canPlayMalusCard(plat, pp,
-                            dynamic_cast<const JouerCarteMSL *>(this));
+    
+    return canPlayMalusCard(plat, pp, dynamic_pointer_cast<const JouerCarteMSL>(shared_from_this()));
   default:
     return true;
   }
 }
 
-bool JouerSpecial::jouerCarteSpecial(const Player *pp,
-                                     const CarteMSL *crt) const {
+bool JouerSpecial::jouerCarteSpecial(PCPlayer pp, PCCarteMSL crt) const {
   if (peutEtreJoueeSpecial(pp, crt) == false) {
     return false;
   }
@@ -147,23 +144,20 @@ bool JouerSpecial::jouerCarteSpecial(const Player *pp,
   return true;
 }
 
-void JouerSpecial::jouerAdultere(const Player *pp) const {
+void JouerSpecial::jouerAdultere(PCPlayer pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(estAdultere, 1);
 }
 
-void JouerSpecial::jouerTroc(const Player *pp) const {
-  const Player *cc =
-      getCible(pp, getCGen()->getCarteByType(carteSpecial, csTroc));
-  Hand *jh = getMonitor()->getInfosJoueurs(pp)->getHand();
-  Hand *ch = getMonitor()->getInfosJoueurs(cc)->getHand();
+void JouerSpecial::jouerTroc(PCPlayer pp) const {
+  PCPlayer cc = getCible(pp, getCGen()->getCarteByType(carteSpecial, csTroc));
+  PHand jh = getMonitor()->getInfosJoueurs(pp)->getHand();
+  PHand ch = getMonitor()->getInfosJoueurs(cc)->getHand();
 
   int nbCjh = jh->getNbCarte();
   int nbCch = ch->getNbCarte();
 
-  bool ppProtege =
-      getMonitor()->getInfosJoueurs(pp)->getPlateau()->getStatut(TrocProtege);
-  bool ccProtege =
-      getMonitor()->getInfosJoueurs(cc)->getPlateau()->getStatut(TrocProtege);
+  bool ppProtege = getMonitor()->getInfosJoueurs(pp)->getPlateau()->getStatut(TrocProtege);
+  bool ccProtege = getMonitor()->getInfosJoueurs(cc)->getPlateau()->getStatut(TrocProtege);
   IdCarte idPPProtege, idCCProtege;
   if (ppProtege) {
     idPPProtege = jh->getCarte(pp->choisirIndiceHazard(0, nbCjh - 1));
@@ -187,12 +181,12 @@ void JouerSpecial::jouerTroc(const Player *pp) const {
   }
 }
 
-void JouerSpecial::jouerCasino(const Player *pp) const {
+void JouerSpecial::jouerCasino(PCPlayer pp) const {
   getMonitor()->getPlateau()->setStatut(casinoOuvert, 1);
 }
 
-void JouerSpecial::jouerChance(const Player *pp) const {
-  CardGame::PaquetCarte *pioche = getMonitor()->getPioche();
+void JouerSpecial::jouerChance(PCPlayer pp) const {
+  CardGame::PPaquetCarte pioche = getMonitor()->getPioche();
   vector<IdCarte> vecId = vector<IdCarte>(3);
   vecId[0] = pioche->piocher();
   vecId[1] = pioche->piocher();
@@ -207,31 +201,29 @@ void JouerSpecial::jouerChance(const Player *pp) const {
   }
 }
 
-void JouerSpecial::jouerPiston(const Player *pp) const {
+void JouerSpecial::jouerPiston(PCPlayer pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(PistonActif, 1);
 }
 
-void JouerSpecial::jouerAnniversaire(const Player *pp) const {
+void JouerSpecial::jouerAnniversaire(PCPlayer pp) const {
   int nbJoueur = getMonitor()->getNbPlayer();
   int indPlayer = getMonitor()->getIndPlayer(pp);
   for (auto ind = 0; ind < nbJoueur; ind++) {
     if (ind != indPlayer) {
-      const Player *cc = getMonitor()->getPlayer(ind);
+      PCPlayer cc = getMonitor()->getPlayer(ind);
       const vector<IdCarte> salD =
-          getMonitor()->getInfosJoueurs(cc)->getPlateau()->showAllIdByEP(
-              ESalairesD);
+          getMonitor()->getInfosJoueurs(cc)->getPlateau()->showAllIdByEP(ESalairesD);
       if (salD.size() > 0) {
         int indCrt = cc->choisirUneCarte(salD);
-        IdCarte id = getMonitor()->getInfosJoueurs(cc)->getPlateau()->getN(
-            ESalairesD, indCrt);
+        IdCarte id = getMonitor()->getInfosJoueurs(cc)->getPlateau()->getN(ESalairesD, indCrt);
         jouerCarteSalaire(cc, getCarteMSL(id));
       }
     }
   }
 }
 
-void JouerSpecial::jouerArcEnCiel(const Player *pp) const {
-  const Hand *h = getMonitor()->getInfosJoueurs(pp)->getHand();
+void JouerSpecial::jouerArcEnCiel(PCPlayer pp) const {
+  PCHand h = getMonitor()->getInfosJoueurs(pp)->getHand();
   for (auto indice = 0; indice < 3; indice++) {
     int n = pp->choisirIndiceCarteAJouerMain(h);
     IdCarte id = h->getIdCarte(n);
@@ -243,20 +235,20 @@ void JouerSpecial::jouerArcEnCiel(const Player *pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(ArcEnCielJoue, 1);
 }
 
-void JouerSpecial::jouerEtoileFilante(const Player *pp) const {
+void JouerSpecial::jouerEtoileFilante(PCPlayer pp) const {
   choisirEtJouerUneCarteDefausse(pp);
 }
 
-void JouerSpecial::jouerHeritage(const Player *pp) const {
+void JouerSpecial::jouerHeritage(PCPlayer pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(HeritageDisponible, 3);
 }
 
 void JouerSpecial::jouerTsunami() const {
-  vector<Hand *> vecH;
+  vector<PHand> vecH;
   vector<int> vecNbCarte;
   vector<IdCarte> vecCrt;
   for (auto ind = 0; ind < getMonitor()->getNbPlayer(); ind++) {
-    InfosJoueur *ij = getMonitor()->getInfosJoueurs(ind);
+    PInfosJoueur ij = getMonitor()->getInfosJoueurs(ind);
     vecH.push_back( ij->getHand());
     vecNbCarte.push_back( vecH[ind]->getNbCarte() );
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
@@ -273,7 +265,7 @@ void JouerSpecial::jouerTsunami() const {
   }
 }
 
-void JouerSpecial::jouerVengeance(const Player *pp) const {
+void JouerSpecial::jouerVengeance(PCPlayer pp) const {
   const vector<IdCarte> malusC = getMonitor()->getInfosJoueurs(pp)->getPlateau()->showAllIdByEP(EMalus);
   if (malusC.size() > 0) {
     int indCrt = pp->choisirUneCarte(malusC);
@@ -282,10 +274,10 @@ void JouerSpecial::jouerVengeance(const Player *pp) const {
   }
 }
 
-void JouerSpecial::jouerLegionHonneur(const Player *pp) const {
+void JouerSpecial::jouerLegionHonneur(PCPlayer pp) const {
   // rien à faire
 }
 
-void JouerSpecial::jouerGrandPrix(const Player *pp) const {
+void JouerSpecial::jouerGrandPrix(PCPlayer pp) const {
   getMonitor()->getPlateauPlayer(pp)->setStatut(SalaireMax, 4);
 }

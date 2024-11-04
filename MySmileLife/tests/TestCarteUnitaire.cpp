@@ -66,10 +66,10 @@ void MSLTests::TestCarteUnitaire() {
   TestScenario test1 = setTestScenario1();
   cout << test1.getInitPlateau().size() << endl;
 
-  MySmileLife::Tests::MSLMechanicsTest gMe =
-      MySmileLife::Tests::MSLMechanicsTest(test1);
-  CardGame::GameMaster gm = CardGame::GameMaster(2, &gMe);
-  CardGame::GameInterface *gI = dynamic_cast<CardGame::GameInterface *>(&gm);
+
+  shared_ptr<MySmileLife::Tests::MSLMechanicsTest> gMe = make_shared<MySmileLife::Tests::MSLMechanicsTest>( test1 );
+  CardGame::PGameMaster gm = make_shared<CardGame::GameMaster>(2, gMe );
+  CardGame::PGameInterface gI = dynamic_pointer_cast<CardGame::GameInterface>(gm);
   CreationJoueur(gI);
-  gm.startGame();
+  gm->startGame();
 }

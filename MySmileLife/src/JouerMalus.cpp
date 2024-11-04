@@ -17,13 +17,13 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
-bool JouerMalus::peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Player* cible) const
+bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp, CarteSousType st, PCPlayer cible) const
 {
     if(cible==nullptr){
         return false;
     }
-    Plateau* plat       = getMonitor()->getPlateauPlayer(pp);
-    Plateau* platCible  = getMonitor()->getPlateauPlayer(cible);
+    PPlateau plat       = getMonitor()->getPlateauPlayer(pp);
+    PPlateau platCible  = getMonitor()->getPlateauPlayer(cible);
     switch(st){
         case csAccidents:
             return (platCible->getStatut(ResistantAccident) == 0);
@@ -47,7 +47,7 @@ bool JouerMalus::peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Pl
             return false;
     }
 }
-bool JouerMalus::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
+bool JouerMalus::peutEtreJoueeMalus(PCPlayer pp,PCCarteMSL crt) const
 {
     if(crt->getType()!=carteMalus){
         return false;
@@ -57,7 +57,7 @@ bool JouerMalus::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
         if(indice==indJoueur){
             continue;
         }
-        const Player* Cible = getMonitor()->getPlayer(indice);
+        PCPlayer Cible = getMonitor()->getPlayer(indice);
         if(peutEtreJoueeMalus(pp,crt->getSType(),Cible)){
             return true;
         }
@@ -65,7 +65,7 @@ bool JouerMalus::peutEtreJoueeMalus(const Player *pp, const CarteMSL *crt) const
     return false;
 }
 
-void JouerMalus::jouerAccident(const Player *cible)const{
+void JouerMalus::jouerAccident(PCPlayer cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerAttentat()const{
@@ -73,35 +73,35 @@ void JouerMalus::jouerAttentat()const{
         getMonitor()->defausserTout( indPlayer, EEnfant );
     }
 }
-void JouerMalus::jouerBurnout(const Player *cible)const{
+void JouerMalus::jouerBurnout(PCPlayer cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
-void JouerMalus::jouerDivorce(const Player *cible)const{
+void JouerMalus::jouerDivorce(PCPlayer cible)const{
     getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMariage );
 }
-void JouerMalus::jouerImpots(const Player *cible)const{
+void JouerMalus::jouerImpots(PCPlayer cible)const{
     getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), ESalairesD );
 }
-void JouerMalus::jouerLicenciement(const Player *cible)const{
+void JouerMalus::jouerLicenciement(PCPlayer cible)const{
     getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMetier );
 }
-void JouerMalus::jouerMaladie(const Player *cible)const{
+void JouerMalus::jouerMaladie(PCPlayer cible)const{
     getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
 }
 void JouerMalus::jouerPrison()const{
     for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
-        Plateau * p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
+        PPlateau p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
         if(p->getStatut(RisquePrison)){
             getMonitor()->defausserTout( indPlayer, EMetier );
             getMonitor()->incStatut(indPlayer,TourAPasser,3);
         }
     }
 }
-void JouerMalus::jouerRedoublement(const Player *cible)const{
+void JouerMalus::jouerRedoublement(PCPlayer cible)const{
     getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), EEtudes );
 }
 
-bool JouerMalus::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
+bool JouerMalus::jouerCarteMalus(PCPlayer pp, PCCarteMSL crt) const
 {
     if(peutEtreJoueeMalus(pp,crt)==false){
         return false;
@@ -116,7 +116,7 @@ bool JouerMalus::jouerCarteMalus(const Player *pp, const CarteMSL *crt) const
             break;
     }
     getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
-    const Player* cible = getCible(pp,crt->getSType());
+    PCPlayer cible = getCible(pp,crt->getSType());
     if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
         return false;
     }

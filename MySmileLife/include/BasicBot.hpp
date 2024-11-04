@@ -9,7 +9,7 @@
 namespace MySmileLife {
 class BasicBot : public MSLPlayer {
 private:
-  void afficherCarte(const CarteMSL *carte) const;
+  void afficherCarte(PCCarteMSL carte) const;
   void afficherCarte(CardGame::IdCarte id) const;
 
 public:
@@ -17,17 +17,17 @@ public:
   virtual ~BasicBot(){};
 
   string getName() const override { return "basicbot"; }
-  int choisirUneCarte(CardGame::PaquetCarte *paq) const override {
+  int choisirUneCarte(CardGame::PPaquetCarte paq) const override {
     return 0;
   }
   int choisirUneCarte(const vector<IdCarte> &vecId) const {
     return 0;
   }
   void showNCartesPioche(const vector<IdCarte> &vecIdPioche) const override;
-  void showHandAutreJoueur(const Hand *h, int indAutrePlayer) const override;
+  void showHandAutreJoueur(PCHand h, int indAutrePlayer) const override;
   int choisirSalairePourPayer(
       const vector<IdCarte> &vecIdSalairesDisponibles) const override;
-  int choisirIndiceCarteAJouerMain(const Hand *h) const override { return 0; };
+  int choisirIndiceCarteAJouerMain(PCHand h) const override { return 0; };
   int choisirCible(IdCarte id) const override{ return 0; }
   int choisirIndiceHazard(int indiceMin, int indiceMax) const override{
     return 0;

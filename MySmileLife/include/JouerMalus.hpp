@@ -5,29 +5,29 @@
 #include <limits>
 
 namespace MySmileLife{
-    class JouerMalus{
+    class JouerMalus: private std::enable_shared_from_this<JouerMalus>{
         protected:
-            bool peutEtreJoueeMalus(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteMalus(const Player *pp, const CarteMSL* crt)const;
+            bool peutEtreJoueeMalus(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteMalus(PCPlayer pp, PCCarteMSL crt)const;
         public:            
-            virtual const CarteGenerateurStandard*          getCGen()const=0;
-            virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
-            virtual bool peutEtreJouee(const Player *pp, IdCarte id)const=0;
-            virtual bool jouerCarte(const Player* pp, IdCarte id)const=0;
-            virtual const Player* getCible(const Player* pp, IdCarte id)const=0;
+            virtual PCCarteGenerateurStandard          getCGen()const=0;
+            virtual PCGameMechanicsMonitor   getMonitor()const=0;
+            virtual bool peutEtreJouee(PCPlayer pp, IdCarte id)const=0;
+            virtual bool jouerCarte(PCPlayer pp, IdCarte id)const=0;
+            virtual PCPlayer getCible(PCPlayer pp, IdCarte id)const=0;
 
         private:
-            bool peutEtreJoueeMalus(const Player *pp, CarteSousType st, const Player* Cible) const;
+            bool peutEtreJoueeMalus(PCPlayer pp, CarteSousType st, PCPlayer Cible) const;
 
-            void jouerAccident(const Player *pp)const;
+            void jouerAccident(PCPlayer pp)const;
             void jouerAttentat()const;
-            void jouerBurnout(const Player *pp)const;
-            void jouerDivorce(const Player *pp)const;
-            void jouerImpots(const Player *pp)const;
-            void jouerLicenciement(const Player *pp)const;
-            void jouerMaladie(const Player *pp)const;
+            void jouerBurnout(PCPlayer pp)const;
+            void jouerDivorce(PCPlayer pp)const;
+            void jouerImpots(PCPlayer pp)const;
+            void jouerLicenciement(PCPlayer pp)const;
+            void jouerMaladie(PCPlayer pp)const;
             void jouerPrison()const;
-            void jouerRedoublement(const Player *pp)const;
+            void jouerRedoublement(PCPlayer pp)const;
 
     };
 }

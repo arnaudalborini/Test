@@ -200,7 +200,7 @@ namespace MySmileLife{
     typedef shared_ptr<CarteGenerateurStandard> PCarteGenerateurStandard;
 
     class JouerCarteMSL;
-    typedef shared_ptr<const JouerCarteMSL> PJouerCarteMSL;
+    typedef shared_ptr<const JouerCarteMSL> PCJouerCarteMSL;
     typedef shared_ptr<JouerCarteMSL> PJouerCarteMSL;
 
     class JouerMalus;

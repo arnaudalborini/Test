@@ -6,7 +6,7 @@
 #include "PlayerInterface.hpp"
 
 namespace CardGame{
-    class GameMaster: public GameInterface, public PlayerInterface{
+    class GameMaster: public GameInterface, public PlayerInterface, private std::enable_shared_from_this<GameMaster>{
         private:
             PGameMasterMonitor mMonitor;
             int mNbJoueur;
@@ -20,14 +20,14 @@ namespace CardGame{
             int getWinner()const;
         public:
             //GameInterface
-            virtual PCPlayerInterface login(PCPlayer pp);
-            virtual int   getIdPlayer(PCPlayer)const;
+            virtual PCPlayerInterface   login(PCPlayer pp);
+            virtual int                 getIdPlayer(PCPlayer pp)const;
             //PlayerInterface
-            virtual PCInfosJoueur   getInfosJoueurs(int indPlayer)const;
-            virtual PCPlateau      getPlateau()const;
-            virtual PCPaquetCarte  getPioche()const;
-            virtual PCPaquetCarte  getDefausse()const;
-            virtual PCCarte        getCarte(IdCarte idC)const;
+            virtual PCInfosJoueur       getInfosJoueurs(int indPlayer)const;
+            virtual PCPlateau           getPlateau()const;
+            virtual PCPaquetCarte       getPioche()const;
+            virtual PCPaquetCarte       getDefausse()const;
+            virtual PCCarte             getCarte(IdCarte idC)const;
             virtual int                 getStatutPlayer(int indPlayer, int dp)const;
     };
 };

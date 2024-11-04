@@ -9,8 +9,6 @@
 
 #include <memory>
 
-#include "boost/shared_ptr.hpp"
-
 namespace CardGame{
     using std::cout;
     using std::endl;

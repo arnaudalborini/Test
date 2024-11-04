@@ -11,9 +11,9 @@ using namespace MySmileLife;
 class MSLMechanicsTest : public MSLMechanics {
 private:
   TestScenario test;
-  void printHand(const Hand* h)const;
-  void printStatut(const Plateau* h)const;
-  void printPlateau(const Plateau* h)const;
+  void printHand(PCHand h)const;
+  void printStatut(PCPlateau h)const;
+  void printPlateau(PCPlateau h)const;
 
 public:
   MSLMechanicsTest(const TestScenario &test);

@@ -11,7 +11,8 @@ using namespace MySmileLife;
 CarteGenerateurStandard::CarteGenerateurStandard() {
   for(auto elt:vecMSLCarte){
     mMapMSLCarte[{elt.cType, elt.csType}].insert(elt.id);
-    addCarte( new CarteMSL(elt.id, elt.nom, elt.nbSmile, elt.cType, elt.csType));
+    CardGame::PCCarte pcCrt = make_shared<const CarteMSL>(elt.id, elt.nom, elt.nbSmile, elt.cType, elt.csType);
+    addCarte(pcCrt );
   }
 }
 
@@ -27,7 +28,8 @@ void CarteGenerateurStandard::genCartesPioche(vector<IdCarte> &vecCartes) {
 IdCarte CarteGenerateurStandard::getCarteByType(CarteType ct, CarteSousType cst, string nom)const {
   set<IdCarte> sId = getSetIdCarte(ct, cst);
   for (auto elt : sId) {
-    if (dynamic_cast<const CarteMSL*>( getCarteById(elt) )->getName() == nom) {
+    PCCarteMSL pcCmsl = std::dynamic_pointer_cast<const CarteMSL>(getCarteById(elt));
+    if (pcCmsl->getName() == nom) {
       return elt;
     }
   }

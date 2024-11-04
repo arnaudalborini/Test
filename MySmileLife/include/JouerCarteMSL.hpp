@@ -9,37 +9,37 @@
 namespace MySmileLife{
     class JouerCarteMSL:public JouerMetier, public JouerSpecial, public JouerMalus{
         private:
-            const CardGame::CarteGenerator* cGen;
-            const CardGame::GameMechanicsMonitor* mMonitor;
+            CardGame::PCCarteGenerator cGen;
+            CardGame::PCGameMechanicsMonitor mMonitor;
             
-            const CarteMSL* getCarteMSL(IdCarte id)const;
-            void payer(const Player* pp, Plateau* plat, int prix)const;
+            PCCarteMSL getCarteMSL(IdCarte id)const;
+            void payer(PCPlayer  pp, PPlateau plat, int prix)const;
 
-            bool peutEtreJoueeAnimal(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeEnfant(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeEtude(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeFlirt(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeMaison(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeMariage(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeSalaire(const Player *pp, const CarteMSL* crt)const;
-            bool peutEtreJoueeVoyage(const Player *pp, const CarteMSL* crt)const;
+            bool peutEtreJoueeAnimal(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeEnfant(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeEtude(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeFlirt(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeMaison(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeMariage(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeSalaire(PCPlayer pp, PCCarteMSL crt)const;
+            bool peutEtreJoueeVoyage(PCPlayer pp, PCCarteMSL crt)const;
 
-            bool jouerCarteAnimal(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteEnfant(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteEtude(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteFlirt(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteMaison(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteMariage(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteSalaire(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteVoyage(const Player *pp, const CarteMSL* crt)const;
-            void choisirEtJouerUneCarteDefausse(const Player* pp)const override;
-            const Player* getCible(const Player* pp, IdCarte id)const override;
+            bool jouerCarteAnimal(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteEnfant(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteEtude(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteFlirt(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteMaison(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteMariage(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteSalaire(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteVoyage(PCPlayer pp, PCCarteMSL crt)const;
+            void choisirEtJouerUneCarteDefausse(PCPlayer  pp)const override;
+            PCPlayer  getCible(PCPlayer  pp, IdCarte id)const override;
         public:
-            JouerCarteMSL(const CardGame::CarteGenerator* cc, const CardGame::GameMechanicsMonitor* mm):cGen(cc),mMonitor(mm){}            
-            bool peutEtreJouee(const Player *pp, IdCarte id)const;
-            bool jouerCarte(const Player* pp, IdCarte id)const;
-            const CarteGenerateurStandard* getCGen()const override;
-            const CardGame::GameMechanicsMonitor* getMonitor()const override;
+            JouerCarteMSL(CardGame::PCCarteGenerator cc, CardGame::PCGameMechanicsMonitor mm):cGen( cc ),mMonitor( mm ){}            
+            bool peutEtreJouee(PCPlayer pp, IdCarte id)const;
+            bool jouerCarte(PCPlayer  pp, IdCarte id)const;
+            PCCarteGenerateurStandard getCGen()const override;
+            PCGameMechanicsMonitor getMonitor()const override;
     };
 }
 

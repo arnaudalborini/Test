@@ -8,20 +8,20 @@
 namespace MySmileLife {
 class CartesAlgoMSL final : public CardGame::CartesAlgo {
 private:
-  const JouerCarteMSL *jCarte;
+  PCJouerCarteMSL jCarte;
 
 public:
-  CartesAlgoMSL(const CardGame::CarteGenerator *cc,
-                const CardGame::GameMechanicsMonitor *mm)
-      : CardGame::CartesAlgo(cc, mm), jCarte(new JouerCarteMSL(cc, mm)) {}
-  ~CartesAlgoMSL() { delete jCarte; }
+  CartesAlgoMSL(CardGame::PCCarteGenerator cc,
+                CardGame::PCGameMechanicsMonitor mm)
+      : CardGame::CartesAlgo(cc, mm), jCarte(make_shared<const JouerCarteMSL>(cc, mm)) {}
+  ~CartesAlgoMSL() {  }
 
-  bool peutEtreJouee(const Player *pp, IdCarte id) const override {return jCarte->peutEtreJouee(pp, id);}
-  bool jouerCarte(const Player *pp, IdCarte id) const override {
+  bool peutEtreJouee(PCPlayer pp, IdCarte id) const override {return jCarte->peutEtreJouee(pp, id);}
+  bool jouerCarte(PCPlayer pp, IdCarte id) const override {
     return jCarte->jouerCarte(pp, id);
   }
 
-  int getNbSmile(const Plateau *pp, IdCarte id) const;
+  int getNbSmile(PCPlateau pp, IdCarte id) const;
 
   void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt) override;
   void effetQuitterHand(const int indPlayer, const IdCarte idCrt) override;

@@ -6,36 +6,36 @@
 #include <limits>
 
 namespace MySmileLife {
-class JouerSpecial {
+class JouerSpecial: private std::enable_shared_from_this<JouerSpecial> {
 protected:
-     virtual const CarteMSL *getCarteMSL(IdCarte id) const = 0;
-  bool peutEtreJoueeSpecial(const Player *pp, const CarteMSL *crt) const;
-  bool jouerCarteSpecial(const Player *pp, const CarteMSL *crt) const;
-  virtual void choisirEtJouerUneCarteDefausse(const Player *pp) const = 0;
-  virtual bool jouerCarteSalaire(const Player *pp,
-                                 const CarteMSL *crt) const = 0;
+     virtual PCCarteMSL getCarteMSL(IdCarte id) const = 0;
+  bool peutEtreJoueeSpecial(PCPlayer pp, PCCarteMSL crt) const;
+  bool jouerCarteSpecial(PCPlayer pp, PCCarteMSL crt) const;
+  virtual void choisirEtJouerUneCarteDefausse(PCPlayer pp) const = 0;
+  virtual bool jouerCarteSalaire(PCPlayer pp,
+                                 PCCarteMSL crt) const = 0;
 
 public:
-  virtual const CarteGenerateurStandard *getCGen() const = 0;
-  virtual const CardGame::GameMechanicsMonitor *getMonitor() const = 0;
-  virtual bool peutEtreJouee(const Player *pp, IdCarte id) const = 0;
-  virtual bool jouerCarte(const Player *pp, IdCarte id) const = 0;
-  virtual const Player *getCible(const Player *pp, IdCarte id) const = 0;
+  virtual PCCarteGenerateurStandard getCGen() const = 0;
+  virtual CardGame::PCGameMechanicsMonitor getMonitor() const = 0;
+  virtual bool peutEtreJouee(PCPlayer pp, IdCarte id) const = 0;
+  virtual bool jouerCarte(PCPlayer pp, IdCarte id) const = 0;
+  virtual PCPlayer getCible(PCPlayer pp, IdCarte id) const = 0;
 
 private:
-  void jouerAdultere(const Player *pp) const;
-  void jouerTroc(const Player *pp) const;
-  void jouerCasino(const Player *pp) const;
-  void jouerChance(const Player *pp) const;
-  void jouerPiston(const Player *pp) const;
-  void jouerAnniversaire(const Player *pp) const;
-  void jouerArcEnCiel(const Player *pp) const;
-  void jouerEtoileFilante(const Player *pp) const;
-  void jouerHeritage(const Player *pp) const;
+  void jouerAdultere(PCPlayer pp) const;
+  void jouerTroc(PCPlayer pp) const;
+  void jouerCasino(PCPlayer pp) const;
+  void jouerChance(PCPlayer pp) const;
+  void jouerPiston(PCPlayer pp) const;
+  void jouerAnniversaire(PCPlayer pp) const;
+  void jouerArcEnCiel(PCPlayer pp) const;
+  void jouerEtoileFilante(PCPlayer pp) const;
+  void jouerHeritage(PCPlayer pp) const;
   void jouerTsunami() const;
-  void jouerVengeance(const Player *pp) const;
-  void jouerLegionHonneur(const Player *pp) const;
-  void jouerGrandPrix(const Player *pp) const;
+  void jouerVengeance(PCPlayer pp) const;
+  void jouerLegionHonneur(PCPlayer pp) const;
+  void jouerGrandPrix(PCPlayer pp) const;
 };
 } // namespace MySmileLife
 #endif

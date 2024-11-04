@@ -5,8 +5,8 @@
 
 using MySmileLife::CartesAlgoMSL;
 
-int CartesAlgoMSL::getNbSmile(const Plateau *pp, IdCarte id) const {
-  const CarteMSL *crt = dynamic_cast<const CarteMSL *>(cGen->getCarteById(id));
+int CartesAlgoMSL::getNbSmile(PCPlateau pp, IdCarte id) const {
+  PCCarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));
   if ((crt->getType() == carteAnimal) && (crt->getSType() == csLicorne)) {
     if ((pp->getStatut(DetailPlateau::ArcEnCielJoue)) &&
         (pp->getStatut(DetailPlateau::EtoileFilanteJouee))) {
@@ -19,16 +19,14 @@ int CartesAlgoMSL::getNbSmile(const Plateau *pp, IdCarte id) const {
 void CartesAlgoMSL::effetQuitterPlateau(const int indPlayer,
                                         const CardGame::IdCarte idCrt) {
   cout << "CartesAlgoMSL::effetQuitterPlateau" << endl;
-  const CarteMSL *crt =
-      dynamic_cast<const CarteMSL *>(cGen->getCarteById(idCrt));
+  PCCarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idCrt));
   cout << "CartesAlgoMSL::effetQuitterPlateau: indPlayer " << indPlayer
        << " crt: " << crt->getName() << endl;
 }
 void CartesAlgoMSL::effetQuitterHand(const int indPlayer,
                                      const CardGame::IdCarte idCrt) {
   cout << "CartesAlgoMSL::effetQuitterHand" << endl;
-  const CarteMSL *crt =
-      dynamic_cast<const CarteMSL *>(cGen->getCarteById(idCrt));
+  PCCarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idCrt));
   cout << "CartesAlgoMSL::effetQuitterHand: indPlayer " << indPlayer
        << " crt: " << crt->getName() << endl;
 }

@@ -1,9 +1,10 @@
 #include "BasicBot.hpp"
 #include "Hand.hpp"
+#include "MySmileLife.hpp"
 
 using MySmileLife::BasicBot;
 
-void BasicBot::afficherCarte(const CarteMSL *carte) const {
+void BasicBot::afficherCarte(PCCarteMSL carte) const {
   cout << "Carte : " << carte->getName() << endl;
   cout << "Nombre de smileys : " << carte->getNbSmile() << endl;
   cout << "Type : " << carte->getType() << endl;
@@ -22,7 +23,7 @@ void BasicBot::showNCartesPioche(const vector<IdCarte> &vecIdPioche) const {
     }
 }
 
-void BasicBot::showHandAutreJoueur(const Hand *h, int indAutrePlayer) const {
+void BasicBot::showHandAutreJoueur(PCHand h, int indAutrePlayer) const {
   cout << "showHandAutreJoueur: " << getName() << endl;
   for (int indice = 0; indice < h->getNbCarte(); indice++) {
     cout << h->getIdCarte(indice) << endl;

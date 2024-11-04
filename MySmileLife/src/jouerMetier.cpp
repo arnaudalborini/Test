@@ -18,13 +18,13 @@ using CardGame::Plateau;
 using CardGame::Hand;
 using CardGame::InfosJoueur;
 
-bool JouerMetier::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) const
+bool JouerMetier::peutEtreJoueeMetier(PCPlayer pp, PCCarteMSL crt) const
 {
     if(crt->getType()!=carteMetier){
         return false;
     }
     
-    Plateau* plat = getMonitor()->getPlateauPlayer(pp);
+    PPlateau plat = getMonitor()->getPlateauPlayer(pp);
     int nbAnneeEtudeRequise = crt->getMetierNbAnnee();
     int sMax = crt->getMetierSalaireMax();
     if( (plat->getStatut(aUnTravail)==false) || (plat->getStatut(Interimaire)) ){
@@ -38,8 +38,8 @@ bool JouerMetier::peutEtreJoueeMetier(const Player *pp, const CarteMSL *crt) con
     return false;
 }
 
-void voirNProchainesCartesPioche(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor, int N){
-    CardGame::PaquetCarte* pioche = mMonitor->getPioche();
+void voirNProchainesCartesPioche(CardGame::PCPlayer pp, CardGame::PCGameMechanicsMonitor mMonitor, int N){
+    CardGame::PPaquetCarte pioche = mMonitor->getPioche();
     int nbcarte = pioche->getNbCarte();
     int indDebut = (nbcarte>=N)?nbcarte-1-N:0;
     std::vector<IdCarte> vecId;
@@ -49,25 +49,25 @@ void voirNProchainesCartesPioche(const Player* pp, const CardGame::GameMechanics
     pp->showNCartesPioche(vecId);
 }
 
-void voirMainAutresJoueur(const Player* pp, const CardGame::GameMechanicsMonitor* mMonitor)
+void voirMainAutresJoueur(CardGame::PCPlayer pp, CardGame::PCGameMechanicsMonitor mMonitor)
 {
     int indPlayer = mMonitor->getIndPlayer(pp);
     for(int indice=0;indice<mMonitor->getNbPlayer();indice++){
         if(indice==indPlayer){
             continue;
         }
-        const Hand* jH = mMonitor->getInfosJoueurs(indice)->getHand();
+        CardGame::PCHand jH = mMonitor->getInfosJoueurs(indice)->getHand();
         pp->showHandAutreJoueur(jH,indice);
     }
 }
 
-bool JouerMetier::jouerCarteMetier(const Player *pp, const CarteMSL *crt) const
+bool JouerMetier::jouerCarteMetier(PCPlayer pp, PCCarteMSL crt) const
 {
     if(peutEtreJoueeMetier(pp,crt)==false){
         return false;
     }
-    const CardGame::GameMechanicsMonitor * mMonitor = getMonitor();
-    Plateau* plat = mMonitor->getPlateauPlayer(pp);
+    CardGame::PCGameMechanicsMonitor mMonitor = getMonitor();
+    PPlateau plat = mMonitor->getPlateauPlayer(pp);
     if(plat->getStatut(aUnTravail)>0){
         mMonitor->defausserTout(mMonitor->getIndPlayer(pp),EMetier);
     }

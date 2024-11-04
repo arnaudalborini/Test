@@ -18,7 +18,7 @@ Monitor::Monitor() {
   mDefausse = make_shared<PaquetCarte>();
   mInfosJoueurs = vector<PInfosJoueur>();
   mPlayer = vector<PCPlayer>();
-  mPlateau = make_shared<Plateau>(this,-1);
+  mPlateau = make_shared<Plateau>(shared_from_this(),-1);
 }
 
 Monitor::~Monitor() {}
@@ -69,9 +69,9 @@ void Monitor::initiateElements(int nbJoueurs, PGameMechanics gm) {
   mPlayer = vector<PCPlayer>(nbJoueurs);
   mInfosJoueurs = vector<PInfosJoueur>(nbJoueurs);
   for (auto ind = 0; ind < nbJoueurs; ind++) {
-    mInfosJoueurs[ind] = make_shared<InfosJoueur>(this,mGameMechanics, ind);
+    mInfosJoueurs[ind] = make_shared<InfosJoueur>(shared_from_this(),mGameMechanics, ind);
   }
-  mGameMechanics->setMonitor(make_shared<Monitor>(this));
+  mGameMechanics->setMonitor(shared_from_this());
 }
 
 void Monitor::addPlayer(PCPlayer pp, int index) {

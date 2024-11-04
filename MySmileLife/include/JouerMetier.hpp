@@ -5,16 +5,16 @@
 #include <limits>
 
 namespace MySmileLife{
-    class JouerMetier{
+    class JouerMetier: private std::enable_shared_from_this<JouerMetier>{
         protected:
-            bool peutEtreJoueeMetier(const Player *pp, const CarteMSL* crt)const;
-            bool jouerCarteMetier(const Player *pp, const CarteMSL* crt)const;
-            virtual void choisirEtJouerUneCarteDefausse(const Player* pp)const=0;
+            bool peutEtreJoueeMetier(PCPlayer pp, PCCarteMSL crt)const;
+            bool jouerCarteMetier(PCPlayer pp, PCCarteMSL crt)const;
+            virtual void choisirEtJouerUneCarteDefausse(PCPlayer pp)const=0;
         public:            
-            virtual const CarteGenerateurStandard*          getCGen()const=0;
-            virtual const CardGame::GameMechanicsMonitor*   getMonitor()const=0;
-            virtual bool peutEtreJouee(const Player *pp, IdCarte id)const=0;
-            virtual bool jouerCarte(const Player* pp, IdCarte id)const=0;
+            virtual PCCarteGenerateurStandard          getCGen()const=0;
+            virtual PCGameMechanicsMonitor   getMonitor()const=0;
+            virtual bool peutEtreJouee(PCPlayer pp, IdCarte id)const=0;
+            virtual bool jouerCarte(PCPlayer pp, IdCarte id)const=0;
     };
     namespace Metier{
         struct ProprietesMetier{

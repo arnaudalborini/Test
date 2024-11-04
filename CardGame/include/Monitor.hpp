@@ -8,7 +8,8 @@
 
 namespace CardGame {
 class Monitor : public GameMasterMonitor,
-                public InfosJoueurMonitor {
+                public InfosJoueurMonitor,
+                private std::enable_shared_from_this<Monitor> {
 protected:
   int mNbJoueur;
   PGameMechanics mGameMechanics;

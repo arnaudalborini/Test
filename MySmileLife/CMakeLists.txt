@@ -22,11 +22,7 @@ add_library(MySmileLife SHARED
     ${header_files} 
 )
 
-
-find_package(boost 1.74 COMPONENTS ALL )
-INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR})
-
-target_link_libraries(MySmileLife CardGame ${Boost_LIBRARIES})
+target_link_libraries(MySmileLife CardGame)
 target_include_directories(MySmileLife PRIVATE ${PROJECT_INCLUDE_DIR} ../CardGame/include)
 
 #add_executable(MySmileLifeTests tests/MySmileLifeTest.cpp tests/CreationJoueur.cpp)
