@@ -9,25 +9,25 @@ Plateau::Plateau(_p_PlateauMonitor mm):mMonitor(mm){}
 Plateau::Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut) : mMonitor(mm),mVecStatut(vecStatut) {}
 Plateau::~Plateau(){}
 
-IdCarte Plateau::showIdN(int EP, int N)const
+IdCarte Plateau::showIdNByEP(int EP, int N)const
 {
-    if(getNbCarte(EP) >= N+1){
+    if(getNbCarteByEP(EP) >= N+1){
         return mVecCarte.at(EP)[N];
     }else{
         return IdCarte(-1);
     }
 }
-IdCarte Plateau::showIdLast(int EP)const { 
-    if(getNbCarte(EP) == 0){
+IdCarte Plateau::showIdLastByEP(int EP)const { 
+    if(getNbCarteByEP(EP) == 0){
         return IdCarte(-1);
     }else{
         return mVecCarte.at(EP).back();
     }
 }
-IdCarte Plateau::getLast(int EP){return getN(EP,getNbCarte(EP)-1);}
-IdCarte Plateau::getN(int EP,int N)
+IdCarte Plateau::getLastByEP(int EP){return getNByEP(EP,getNbCarteByEP(EP)-1);}
+IdCarte Plateau::getNByEP(int EP,int N)
 {
-    if(getNbCarte(EP) >= N+1){
+    if(getNbCarteByEP(EP) >= N+1){
         IdCarte id = mVecCarte.at(EP)[N];
         mVecCarte.at(EP).erase(mVecCarte.at(EP).begin()+N);
         mMonitor->effetQuitterPlateau(getIdPlayer(),id);
@@ -36,10 +36,10 @@ IdCarte Plateau::getN(int EP,int N)
         return IdCarte(-1);
     }
 }
-void Plateau::addLast( int EP, IdCarte crt){
+void Plateau::addCarteToEP( int EP, IdCarte crt){
     mVecCarte[EP].push_back(crt);
 }
-int Plateau::getNbCarte(int EP) const{
+int Plateau::getNbCarteByEP(int EP) const{
     if(EP >= 0 && EP < mVecCarte.size()){
         return static_cast<int>(mVecCarte.at(EP).size());
     }else{
@@ -47,7 +47,7 @@ int Plateau::getNbCarte(int EP) const{
     }
 }
 
-std::vector<IdCarte> Plateau::showAllId()const{
+std::vector<IdCarte> Plateau::showAllIdAllEP()const{
     vector<IdCarte> vecId;
     for (auto EPvecId : mVecCarte){
         vecId.insert(vecId.end(),EPvecId.begin(),EPvecId.end());

@@ -16,19 +16,19 @@ namespace CardGame{
             Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut);
             ~Plateau();
 
-            void addLast(int EP, IdCarte crt);
-            int getNbCarte(int EP)const;
+            void addCarteToEP(int EP, IdCarte crt);
+            int getNbCarteByEP(int EP)const;
 
-            IdCarte showIdLast(int EP)const;
-            IdCarte getLast(int EP);
-            IdCarte showIdN(int EP,int N)const;
-            IdCarte getN(int EP,int N);
-            vector<IdCarte> showAllId()const;
+            IdCarte showIdLastByEP(int EP)const;
+            IdCarte getLastByEP(int EP);
+            IdCarte showIdNByEP(int EP,int N)const;
+            IdCarte getNByEP(int EP,int N);
+            vector<IdCarte> showAllIdAllEP()const;
             const vector<IdCarte> showAllIdByEP(int ET)const;
 
             int getStatut(int statutKey)const{return mVecStatut.at(statutKey);}
             void initStatut(const vector<int> &vecSt){mVecStatut=vector<int>(vecSt.begin(),vecSt.end());}
-            void initMap(const vector<vector<IdCarte>> &initMap){mVecCarte=vector<vector<IdCarte>>(initMap.begin(),initMap.end());}
+            void initCartesPlateau(const vector<vector<IdCarte>> &initVec){mVecCarte.clear();mVecCarte=vector<vector<IdCarte>>(initVec.begin(),initVec.end());}
             void setStatut(int statutKey, int value){mVecStatut[statutKey]=value;}  
 
             void incStatut(int statutKey, int inc=1){mVecStatut[statutKey]+=inc;}

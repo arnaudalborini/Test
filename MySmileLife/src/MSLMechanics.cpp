@@ -22,7 +22,7 @@ MSLMechanics::~MSLMechanics()
 MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
 int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
     int s=0;
-    for(auto elt : plateauJoueur->showAllId() ){
+    for(auto elt : plateauJoueur->showAllIdAllEP() ){
         s += dynamic_pointer_cast<CartesAlgoMSL>(cAlgo)->getNbSmile(plateauJoueur,elt);
     }
     return s;

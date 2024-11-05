@@ -45,9 +45,9 @@ bool hasEligibleProfession(CardGame::_pc_Plateau plat) {
   }
 }
 bool canPlayMalusCard(CardGame::_pc_Plateau plat, CardGame::_pc_Player pp, MySmileLife::_pc_JouerCarteMSL jCarte) {
-  int nbMalus = plat->getNbCarte(MySmileLife::EmplacementsPlateau::EMalus);
+  int nbMalus = plat->getNbCarteByEP(MySmileLife::EmplacementsPlateau::EMalus);
   for (auto indice = 0; indice < nbMalus; indice++) {
-    int IdMalus = plat->showIdN(MySmileLife::EmplacementsPlateau::EMalus, indice);
+    int IdMalus = plat->showIdNByEP(MySmileLife::EmplacementsPlateau::EMalus, indice);
     if (jCarte->peutEtreJouee(pp, IdMalus)) {
       return true;
     }
@@ -78,9 +78,9 @@ bool JouerSpecial::jouerCarteSpecial(CardGame::_pc_Player pp, _pc_CarteMSL crt) 
     return false;
   }
   if (crt->getSType() == csCasino) {
-    getMonitor()->getPlateau()->addLast(ESpecial, crt->getId());
+    getMonitor()->getPlateau()->addCarteToEP(ESpecial, crt->getId());
   } else {
-    getMonitor()->getPlateauPlayer(pp)->addLast(ESpecial, crt->getId());
+    getMonitor()->getPlateauPlayer(pp)->addCarteToEP(ESpecial, crt->getId());
   }
   switch (crt->getSType()) {
   case csAdultere:
@@ -197,7 +197,7 @@ void JouerSpecial::jouerAnniversaire(CardGame::_pc_Player pp) const {
           getMonitor()->getInfosJoueurs(cc)->getPlateau()->showAllIdByEP(ESalairesD);
       if (salD.size() > 0) {
         int indCrt = cc->choisirUneCarte(salD);
-        IdCarte id = getMonitor()->getInfosJoueurs(cc)->getPlateau()->getN(ESalairesD, indCrt);
+        IdCarte id = getMonitor()->getInfosJoueurs(cc)->getPlateau()->getNByEP(ESalairesD, indCrt);
         jouerCarteSalaire(cc, getCarteMSL(id));
       }
     }
@@ -251,7 +251,7 @@ void JouerSpecial::jouerVengeance(CardGame::_pc_Player pp) const {
   const vector<IdCarte> malusC = getMonitor()->getInfosJoueurs(pp)->getPlateau()->showAllIdByEP(EMalus);
   if (malusC.size() > 0) {
     int indCrt = pp->choisirUneCarte(malusC);
-    IdCarte id = getMonitor()->getInfosJoueurs(pp)->getPlateau()->getN( EMalus, indCrt);
+    IdCarte id = getMonitor()->getInfosJoueurs(pp)->getPlateau()->getNByEP( EMalus, indCrt);
     jouerCarte(pp, id);
   }
 }

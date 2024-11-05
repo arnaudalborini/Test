@@ -1,11 +1,11 @@
 #include "GameMaster.hpp"
-#include "Monitor.hpp"
+#include "ConcreteMonitor.hpp"
 #include "InfosJoueur.hpp"
 
 using CardGame::GameMaster;
 
 GameMaster::GameMaster(int nj, _p_GameMechanics gm){
-    mMonitor = make_shared<Monitor>();
+    mMonitor = dynamic_pointer_cast<GameMasterMonitor>(make_shared<ConcreteMonitor>());
     initGame(nj, gm);
 }
 

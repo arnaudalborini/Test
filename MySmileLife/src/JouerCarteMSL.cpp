@@ -154,13 +154,13 @@ bool JouerCarteMSL::peutEtreJoueeVoyage(CardGame::_pc_Player pp, _pc_CarteMSL cr
 
 bool JouerCarteMSL::jouerCarteAnimal(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor->getPlateauPlayer(pp)->addLast(EDivers,crt->getId());
+    mMonitor->getPlateauPlayer(pp)->addCarteToEP(EDivers,crt->getId());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteEnfant(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor->getPlateauPlayer(pp)->addLast(EEnfant,crt->getId());
+    mMonitor->getPlateauPlayer(pp)->addCarteToEP(EEnfant,crt->getId());
     return true;
 }
 
@@ -169,12 +169,12 @@ bool JouerCarteMSL::jouerCarteEtude(CardGame::_pc_Player pp, _pc_CarteMSL crt) c
     CardGame::_p_Plateau plat = mMonitor->getPlateauPlayer(pp);
     if(plat->getStatut(aUnTravail)==false){
         if(plat->getStatut(NbAnneeEtude) + crt->getNbEtude()<=6){
-            mMonitor->getPlateauPlayer(pp)->addLast(EEtudes,crt->getId());
+            mMonitor->getPlateauPlayer(pp)->addCarteToEP(EEtudes,crt->getId());
             mMonitor->getPlateauPlayer(pp)->setStatut(DerniereEtudeRedoublable,crt->getNbEtude());
         }
     }
     if(plat->getStatut(EtudesContinues)){
-        mMonitor->getPlateauPlayer(pp)->addLast(EEtudesContinues,crt->getId());
+        mMonitor->getPlateauPlayer(pp)->addCarteToEP(EEtudesContinues,crt->getId());
     }
     mMonitor->getPlateauPlayer(pp)->incStatut(NbAnneeEtude,crt->getNbEtude());
     return true;
@@ -185,11 +185,11 @@ bool JouerCarteMSL::jouerCarteFlirt(CardGame::_pc_Player pp, _pc_CarteMSL crt) c
     CardGame::_p_Plateau plat = mMonitor->getPlateauPlayer(pp);
     if( plat->getStatut(estMarie) ){
         if(plat->getStatut(estAdultere)){
-            mMonitor->getPlateauPlayer(pp)->addLast(EFlirtAdultere,crt->getId());
+            mMonitor->getPlateauPlayer(pp)->addCarteToEP(EFlirtAdultere,crt->getId());
         }
     }else{
         if( (plat->getStatut(Profession)==csBarman) || (plat->getStatut(NombreFlirt)<5) ){
-            mMonitor->getPlateauPlayer(pp)->addLast(EFlirt,crt->getId());
+            mMonitor->getPlateauPlayer(pp)->addCarteToEP(EFlirt,crt->getId());
         }
     }
     return true;
@@ -206,9 +206,9 @@ void JouerCarteMSL::payer(CardGame::_pc_Player pp, CardGame::_p_Plateau plat, in
         int indice = mslPP->choisirSalairePourPayer(vecId);
         indice = (indice<0)?0:indice;
         indice = (indice>vecId.size())?vecId.size()-1:indice;
-        IdCarte id = plat->getN(ESalairesD,indice);
+        IdCarte id = plat->getNByEP(ESalairesD,indice);
         int salCrt = getCarteMSL(id)->getSalaire();
-        plat->addLast(EDivers,id);
+        plat->addCarteToEP(EDivers,id);
         plat->incStatut(SalairesDisponibles,-salCrt);
         prix -= salCrt;
     }
@@ -220,20 +220,20 @@ bool JouerCarteMSL::jouerCarteMaison(CardGame::_pc_Player pp, _pc_CarteMSL crt) 
     int prixBase = crt->getPrixMaison();
     int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
     payer(pp,plat,prix);
-    plat->addLast(EDivers,crt->getId());
+    plat->addCarteToEP(EDivers,crt->getId());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteMariage(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor->getPlateauPlayer(pp)->addLast(EMariage,crt->getId());
+    mMonitor->getPlateauPlayer(pp)->addCarteToEP(EMariage,crt->getId());
     mMonitor->getPlateauPlayer(pp)->setStatut(estMarie,true);
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteSalaire(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor->getPlateauPlayer(pp)->addLast(ESalairesD,crt->getId());
+    mMonitor->getPlateauPlayer(pp)->addCarteToEP(ESalairesD,crt->getId());
     mMonitor->getPlateauPlayer(pp)->incStatut(SalairesDisponibles,crt->getSalaire());
     return true;
 }
@@ -242,7 +242,7 @@ bool JouerCarteMSL::jouerCarteVoyage(CardGame::_pc_Player pp, _pc_CarteMSL crt) 
 {    
     CardGame::_p_Plateau plat = mMonitor->getPlateauPlayer(pp);
     payer(pp,plat,crt->getPrixVoyage());
-    plat->addLast(EDivers,crt->getId());
+    plat->addCarteToEP(EDivers,crt->getId());
     return true;
 }
 

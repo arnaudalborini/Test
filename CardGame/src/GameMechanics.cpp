@@ -23,7 +23,7 @@ void GameMechanics::initGame(){
     vecC = genVecCartesDefausse();
     mMonitor->getDefausse()->initializePaquet( vecC );
     vector<vector<IdCarte>> vecCrt = genMapCartePlateauInitial();
-    mMonitor->getPlateau()->initMap(vecCrt);
+    mMonitor->getPlateau()->initCartesPlateau(vecCrt);
     vector<int> vecSt = getInitialStatuts();
     mMonitor->getPlateau()->initStatut(vecSt);
     initSpeficiGame();

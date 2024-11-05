@@ -30,6 +30,9 @@ namespace CardGame{
     class CarteGenerator;
     typedef shared_ptr<const CarteGenerator> _pc_CarteGenerator;
     typedef shared_ptr<CarteGenerator> _p_CarteGenerator;
+    class ConcreteMonitor;
+    typedef shared_ptr<const ConcreteMonitor> _pc_ConcreteMonitor;
+    typedef shared_ptr<ConcreteMonitor> _p_ConcreteMonitor;
     class GameInterface;
     typedef shared_ptr<const GameInterface> _pc_GameInterface;
     typedef shared_ptr<GameInterface> _p_GameInterface;

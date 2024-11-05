@@ -64,7 +64,7 @@ bool JouerMetier::jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) co
     plat->setStatut(aUnTravail,1);
     plat->setStatut(Profession,crt->getSType());
     plat->setStatut(SalaireMax,crt->getMetierSalaireMax());
-    plat->addLast(EMetier,crt->getId());
+    plat->addCarteToEP(EMetier,crt->getId());
     IdCarte id;
 
     switch(crt->getSType()){

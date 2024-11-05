@@ -45,7 +45,7 @@ void MSLMechanicsTest::playTurn(int indPlayer) const {
 
   // on s'arrete la avec un joli seg fault
   CardGame::Plateau *sf = nullptr;
-  sf->showIdN(0, 1);
+  sf->showIdNByEP(0, 1);
 }
 
 std::vector<int> MSLMechanicsTest::getJoueurInitialStatuts() const {
@@ -69,7 +69,7 @@ void MSLMechanicsTest::initSpeficiGame() {
   }
   CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
   platJ->initStatut(test.getInitStatuts());
-  platJ->initMap(test.getInitPlateau());
+  platJ->initCartesPlateau(test.getInitPlateau());
 }
 
 void MSLMechanicsTest::printHand(CardGame::_pc_Hand h) const
@@ -94,10 +94,10 @@ void MSLMechanicsTest::printStatut(CardGame::_pc_Plateau platJ) const
 void MSLMechanicsTest::printPlateau(CardGame::_pc_Plateau platJ) const
 {  
   for (auto ind = 0; ind < platJ->getEPMax(); ind++) {
-    if( platJ->getNbCarte(ind)>0 ){
+    if( platJ->getNbCarteByEP(ind)>0 ){
       cout << MySmileLife::toStringEP(EmplacementsPlateau(ind)) << " : " << endl;
-      for (auto ind2 = 0; ind2 < platJ->getNbCarte(ind); ind2++) {
-        cout << "    " << ind2 << " : " << getCarteFromId(platJ->showIdN(ind, ind2))->getName() << endl;
+      for (auto ind2 = 0; ind2 < platJ->getNbCarteByEP(ind); ind2++) {
+        cout << "    " << ind2 << " : " << getCarteFromId(platJ->showIdNByEP(ind, ind2))->getName() << endl;
       }
     }
   }

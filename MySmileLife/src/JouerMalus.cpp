@@ -98,7 +98,7 @@ bool JouerMalus::jouerCarteMalus(CardGame::_pc_Player pp, _pc_CarteMSL crt) cons
     switch(crt->getSType()){
         case csAttentat:
             jouerAttentat();
-            getMonitor()->getPlateauPlayer( pp )->addLast(EMalus, crt->getId());
+            getMonitor()->getPlateauPlayer( pp )->addCarteToEP(EMalus, crt->getId());
             break;
         case csPrison:
             jouerPrison();
@@ -109,7 +109,7 @@ bool JouerMalus::jouerCarteMalus(CardGame::_pc_Player pp, _pc_CarteMSL crt) cons
     if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
         return false;
     }
-    getMonitor()->getPlateauPlayer(cible)->addLast(EMalus,crt->getId());
+    getMonitor()->getPlateauPlayer(cible)->addCarteToEP(EMalus,crt->getId());
     switch(crt->getSType()){
         case csAccidents:
             jouerAccident(cible);
