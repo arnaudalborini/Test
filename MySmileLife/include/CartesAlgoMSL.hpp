@@ -11,8 +11,7 @@ private:
   _pc_JouerCarteMSL jCarte;
 
 public:
-  CartesAlgoMSL(CardGame::_pc_CarteGenerator cc,
-                CardGame::_pc_GameMechanicsMonitor mm)
+  CartesAlgoMSL(weak_ptr<const CardGame::CarteGenerator> cc, weak_ptr<const CardGame::GameMechanicsMonitor> mm)
       : CardGame::CartesAlgo(cc, mm){
         jCarte = make_shared<const JouerCarteMSL>(cc, mm);
       }

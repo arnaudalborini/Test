@@ -17,7 +17,7 @@ bool JouerMalus::peutEtreJoueeMalus(CardGame::_pc_Player pp, CarteSousType st, C
         case csAccidents:
             return (platCible->getStatut(ResistantAccident) == 0);
         case csAttentat:
-            return ( getMonitor()->getPlateau()->getStatut(antiAttentat) == 0 );
+            return ( getMonitor()->getPlateauGeneral()->getStatut(antiAttentat) == 0 );
         case csBurnOut:
             return (platCible->getStatut(aUnTravail));
         case csDivorce:

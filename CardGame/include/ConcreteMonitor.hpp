@@ -6,7 +6,7 @@
 
 namespace CardGame {
 class ConcreteMonitor : public Monitor, private std::enable_shared_from_this<ConcreteMonitor> {
-protected:
+private:
   int mNbJoueur;
   _p_GameMechanics mGameMechanics;
   vector<_p_InfosJoueur> mInfosJoueurs;
@@ -15,19 +15,19 @@ protected:
   _p_PaquetCarte mPioche;
   _p_PaquetCarte mDefausse;
   map<_pc_Player, int> mapIdPlayer;
-
+protected:
+  _pc_Player getPlayer(int ind) const override;
 public:
   ConcreteMonitor();
   ~ConcreteMonitor();
   // GameMechanicsMonitor
-  _p_Plateau getPlateau() const override;
+  _p_Plateau getPlateauGeneral() const override;
   _p_Plateau getPlateauPlayer(int indPlayer) const override;
   _p_Plateau getPlateauPlayer( _pc_Player pp) const override;
   _p_PaquetCarte getPioche() const override;
   _p_PaquetCarte getDefausse() const override;
   _p_InfosJoueur getInfosJoueurs(int ind) const override;
   _p_InfosJoueur getInfosJoueurs(_pc_Player pp) const override;
-  _pc_Player getPlayer(int ind) const override;
   int getIndPlayer(_pc_Player pp) const override;
   int getNbPlayer() const override;
   void defausser(IdCarte crt, int indPlayer) const override;

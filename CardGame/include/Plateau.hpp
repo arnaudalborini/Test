@@ -8,7 +8,7 @@ namespace CardGame{
     class Plateau{
             vector<vector<IdCarte>> mVecCarte;
             vector<int> mVecStatut;
-            _p_PlateauMonitor mMonitor;
+            weak_ptr<PlateauMonitor> mMonitor;
         protected:
             virtual int getIdPlayer()const;
         public:

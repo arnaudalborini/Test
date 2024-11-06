@@ -15,7 +15,7 @@ ConcreteMonitor::ConcreteMonitor() {
 
 ConcreteMonitor::~ConcreteMonitor() {}
 
-CardGame::_p_Plateau ConcreteMonitor::getPlateau() const { return mPlateau; }
+CardGame::_p_Plateau ConcreteMonitor::getPlateauGeneral() const { return mPlateau; }
 CardGame::_p_Plateau ConcreteMonitor::getPlateauPlayer(int indPlayer) const {
   return getInfosJoueurs(indPlayer)->getPlateau();
 }

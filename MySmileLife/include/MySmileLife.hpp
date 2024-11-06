@@ -21,6 +21,7 @@ namespace MySmileLife{
     using std::set;
     using CardGame::shared_ptr;
     using CardGame::make_shared;
+    using CardGame::weak_ptr;
     using CardGame::dynamic_pointer_cast;
     using CardGame::IdCarte;
     enum CarteType:int{

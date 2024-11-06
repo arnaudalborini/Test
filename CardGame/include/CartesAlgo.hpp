@@ -6,11 +6,11 @@
 namespace CardGame {
 class CartesAlgo {
 protected:
-  _pc_CarteGenerator cGen;
-  _pc_GameMechanicsMonitor mMonitor;
+  weak_ptr<const CarteGenerator> cGen;
+  weak_ptr<const GameMechanicsMonitor> mMonitor;
 
 public:
-  CartesAlgo(_pc_CarteGenerator cc, _pc_GameMechanicsMonitor mm)
+  CartesAlgo(weak_ptr<const CarteGenerator> cc, weak_ptr<const GameMechanicsMonitor> mm)
       : cGen(cc), mMonitor(mm) {}
   ~CartesAlgo() {}
   virtual bool peutEtreJouee(_pc_Player pp, IdCarte id) const {return false;}

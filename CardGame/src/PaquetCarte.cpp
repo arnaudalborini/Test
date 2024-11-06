@@ -7,7 +7,7 @@ PaquetCarte::PaquetCarte(){}
 
 PaquetCarte::~PaquetCarte(){}
 
-void PaquetCarte::initializePaquet( vector<IdCarte> &vecCartes){mCartes.insert(mCartes.end(),vecCartes.begin(),vecCartes.end());}
+void PaquetCarte::initializePaquet( const vector<IdCarte> &vecCartes){mCartes.insert(mCartes.end(),vecCartes.begin(),vecCartes.end());}
 
 void PaquetCarte::initializePaquet(const vector<IdCarte> &vecCartes, const vector<int> &playedBy)
 {

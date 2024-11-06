@@ -18,14 +18,14 @@ void GameMechanics::setMonitor(_p_Monitor mm){
 
 void GameMechanics::initGame(){
     vector<int> vecC = genVecCartesPioche();
-    mMonitor->getPioche()->initializePaquet( vecC );
+    (mMonitor.lock())->getPioche()->initializePaquet( vecC );
     vecC.clear();
     vecC = genVecCartesDefausse();
-    mMonitor->getDefausse()->initializePaquet( vecC );
+    (mMonitor.lock())->getDefausse()->initializePaquet( vecC );
     vector<vector<IdCarte>> vecCrt = genMapCartePlateauInitial();
-    mMonitor->getPlateau()->initCartesPlateau(vecCrt);
+    (mMonitor.lock())->getPlateauGeneral()->initCartesPlateau(vecCrt);
     vector<int> vecSt = getInitialStatuts();
-    mMonitor->getPlateau()->initStatut(vecSt);
+    (mMonitor.lock())->getPlateauGeneral()->initStatut(vecSt);
     initSpeficiGame();
 }
 
@@ -40,13 +40,13 @@ bool GameMechanics::jouerCarte(_pc_Player pp, IdCarte id) const{return cAlgo->jo
 void GameMechanics::startGame()
 {
     cout << "GameMechanics::startGame" << endl;
-    for(auto indPlayer=0;indPlayer < mMonitor->getNbPlayer(); indPlayer++){
+    for(auto indPlayer=0;indPlayer < (mMonitor.lock())->getNbPlayer(); indPlayer++){
         remplirMain(indPlayer);
     }
     int indPlayer=0;
     cout << "endGameCondition: " << endGameCondition() << endl;
     while( endGameCondition() ){
-        if(indPlayer >= mMonitor->getNbPlayer()){
+        if(indPlayer >= (mMonitor.lock())->getNbPlayer()){
             indPlayer=0;
         }
         playTurn(indPlayer);
@@ -55,18 +55,18 @@ void GameMechanics::startGame()
     cout << "GameMechanics::startGame fin" << endl;
 }
 
-void GameMechanics::joueurPioche(int indPlayer)const{mMonitor->getInfosJoueurs(indPlayer)->addCarteHand( mMonitor->getPioche()->piocher() );}
+void GameMechanics::joueurPioche(int indPlayer)const{(mMonitor.lock())->getInfosJoueurs(indPlayer)->addCarteHand( (mMonitor.lock())->getPioche()->piocher() );}
 void GameMechanics::remplirMain(int indPlayer) const
 {
-    while( ( mMonitor->getInfosJoueurs(indPlayer)->getNbCarteHand() < getStandardHandNbCarte()) && (mMonitor->getPioche()->getNbCarte()) ){
+    while( ( (mMonitor.lock())->getInfosJoueurs(indPlayer)->getNbCarteHand() < getStandardHandNbCarte()) && ((mMonitor.lock())->getPioche()->getNbCarte()) ){
         joueurPioche( indPlayer );
     }
 }
-int  GameMechanics::getNbCartePioche() const{return mMonitor->getPioche()->getNbCarte();}
-int  GameMechanics::getNbCarteDefausse() const{return mMonitor->getDefausse()->getNbCarte();}
-void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{mMonitor->getDefausse()->addCarte(idC,IdPlayer);}
+int  GameMechanics::getNbCartePioche() const{return (mMonitor.lock())->getPioche()->getNbCarte();}
+int  GameMechanics::getNbCarteDefausse() const{return (mMonitor.lock())->getDefausse()->getNbCarte();}
+void GameMechanics::addCarteDefausse(IdCarte idC, int IdPlayer)const{(mMonitor.lock())->getDefausse()->addCarte(idC,IdPlayer);}
 void GameMechanics::addCarteDefausse(IdCarte idC) const{addCarteDefausse(idC,-1);}
-CardGame::_pc_Player GameMechanics::getPlayer(  int indPlayer) const{return mMonitor->getPlayer(indPlayer);}
-CardGame::_p_Hand    GameMechanics::getJoueurHand(   int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getHand();}
-CardGame::_p_Plateau GameMechanics::getJoueurPlateau(int indPlayer) const{return mMonitor->getInfosJoueurs(indPlayer)->getPlateau();}
-CardGame::_p_Plateau GameMechanics::getMainPlateau() const{return mMonitor->getPlateau();}
+CardGame::_pc_Player GameMechanics::getPlayer(  int indPlayer) const{return (mMonitor.lock())->getPlayer(indPlayer);}
+CardGame::_p_Hand    GameMechanics::getJoueurHand(   int indPlayer) const{return (mMonitor.lock())->getInfosJoueurs(indPlayer)->getHand();}
+CardGame::_p_Plateau GameMechanics::getJoueurPlateau(int indPlayer) const{return (mMonitor.lock())->getInfosJoueurs(indPlayer)->getPlateau();}
+CardGame::_p_Plateau GameMechanics::getMainPlateau() const{return (mMonitor.lock())->getPlateauGeneral();}

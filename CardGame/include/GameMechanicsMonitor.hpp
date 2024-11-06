@@ -8,7 +8,7 @@ namespace CardGame{
         public:      
             virtual _p_InfosJoueur    getInfosJoueurs(int ind)const=0;
             virtual _p_InfosJoueur    getInfosJoueurs(_pc_Player pp)const=0;
-            virtual _p_Plateau        getPlateau()const=0;
+            virtual _p_Plateau        getPlateauGeneral()const=0;
             virtual _p_PaquetCarte    getPioche()const=0;
             virtual _p_PaquetCarte    getDefausse()const=0;
             virtual _p_Plateau        getPlateauPlayer(int indPlayer)const=0;

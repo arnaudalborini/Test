@@ -30,7 +30,7 @@ IdCarte Plateau::getNByEP(int EP,int N)
     if(getNbCarteByEP(EP) >= N+1){
         IdCarte id = mVecCarte.at(EP)[N];
         mVecCarte.at(EP).erase(mVecCarte.at(EP).begin()+N);
-        mMonitor->effetQuitterPlateau(getIdPlayer(),id);
+        (mMonitor.lock())->effetQuitterPlateau(getIdPlayer(),id);
         return id;
     }else{
         return IdCarte(-1);

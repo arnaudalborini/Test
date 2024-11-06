@@ -24,7 +24,7 @@ namespace CardGame{
             virtual int                 getIdPlayer(_pc_Player pp)const;
             //PlayerInterface
             virtual _pc_InfosJoueur       getInfosJoueurs(int indPlayer)const;
-            virtual _pc_Plateau           getPlateau()const;
+            virtual _pc_Plateau           getPlateauGeneral()const;
             virtual _pc_PaquetCarte       getPioche()const;
             virtual _pc_PaquetCarte       getDefausse()const;
             virtual _pc_Carte             getCarte(IdCarte idC)const;

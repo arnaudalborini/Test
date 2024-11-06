@@ -10,7 +10,7 @@ CardGame::IdCarte Hand::getCarteHand(int ind)
 {
     IdCarte crt = mCartes[ind];
     mCartes.erase(mCartes.begin()+ind);
-    getHandMonitor()->effetQuitterHand(getIdPlayer(),crt);
+    (getHandMonitor().lock())->effetQuitterHand(getIdPlayer(),crt);
     return crt;
 }
 

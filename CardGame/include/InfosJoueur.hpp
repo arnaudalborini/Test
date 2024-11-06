@@ -10,10 +10,10 @@ namespace CardGame {
 class InfosJoueur:public Plateau, public Hand, private std::enable_shared_from_this<InfosJoueur> {
 private:
   const int mPlayerId;
-  _p_InfosJoueurMonitor mMonitor;
+  weak_ptr<InfosJoueurMonitor> mMonitor;
 
 protected:
-  virtual _p_HandMonitor getHandMonitor()const;
+  virtual weak_ptr<HandMonitor> getHandMonitor()const;
   virtual int getIdPlayer()const;
 
 public:

@@ -53,7 +53,7 @@ int GameMaster::getWinner() const{return mMonitor->getWinner();}
 
 int   GameMaster::getIdPlayer(_pc_Player pp)const{return mMonitor->getIndPlayer(pp);}
 CardGame::_pc_InfosJoueur GameMaster::getInfosJoueurs(int indPlayer)const{return mMonitor->getInfosJoueurs(indPlayer);}
-CardGame::_pc_Plateau GameMaster::getPlateau()const{return mMonitor->getPlateau();}
+CardGame::_pc_Plateau GameMaster::getPlateauGeneral()const{return mMonitor->getPlateauGeneral();}
 CardGame::_pc_PaquetCarte GameMaster::getPioche()const{return mMonitor->getPioche();}
 CardGame::_pc_PaquetCarte GameMaster::getDefausse()const{return mMonitor->getDefausse();}
 CardGame::_pc_Carte GameMaster::getCarte(IdCarte idC)const{return mMonitor->getCarte(idC);}

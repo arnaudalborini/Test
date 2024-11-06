@@ -113,12 +113,12 @@ bool JouerMetier::jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) co
             break;
         case csPolicier:
             plat->setStatut(Fonctionnaire,1);
-            mMonitor->getPlateau()->setStatut(antiBandit,1);
-            mMonitor->getPlateau()->setStatut(antiGourou,1);
+            mMonitor->getPlateauGeneral()->setStatut(antiBandit,1);
+            mMonitor->getPlateauGeneral()->setStatut(antiGourou,1);
             break;
         case csMilitaire:
             plat->setStatut(Fonctionnaire,1);
-            mMonitor->getPlateau()->setStatut(antiAttentat,1);
+            mMonitor->getPlateauGeneral()->setStatut(antiAttentat,1);
             break;
         case csGrandProf:
         case csProf:

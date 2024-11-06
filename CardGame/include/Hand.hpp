@@ -9,7 +9,7 @@ namespace CardGame{
         private:
             vector<IdCarte> mCartes;
         protected:
-            virtual _p_HandMonitor getHandMonitor()const=0;
+            virtual weak_ptr<HandMonitor> getHandMonitor()const=0;
             virtual int getIdPlayer()const=0;
         public:
             Hand();

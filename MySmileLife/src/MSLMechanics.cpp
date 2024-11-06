@@ -32,10 +32,10 @@ int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
 void MSLMechanics::initSpeficiGame(){cAlgo = make_shared<CartesAlgoMSL>(cGen,mMonitor);}
 int  MSLMechanics::getStandardHandNbCarte() const{return MySmileLife::DEFAULTMAXHANDSIZE;}
 int  MSLMechanics::getWinnerPlayer()const{
-    int baseSmile = countSmile( mMonitor->getInfosJoueurs( 0 )->getPlateau() );
+    int baseSmile = countSmile( mMonitor.lock()->getInfosJoueurs( 0 )->getPlateau() );
     int indBest = 0;
-    for(int indPlayer=0;indPlayer<mMonitor->getNbPlayer();indPlayer++){
-        int cSmile = countSmile( mMonitor->getInfosJoueurs( indPlayer )->getPlateau() );
+    for(int indPlayer=0;indPlayer<mMonitor.lock()->getNbPlayer();indPlayer++){
+        int cSmile = countSmile( mMonitor.lock()->getInfosJoueurs( indPlayer )->getPlateau() );
         if(baseSmile<cSmile){
             baseSmile = cSmile;
             indBest = indPlayer;
@@ -45,8 +45,8 @@ int  MSLMechanics::getWinnerPlayer()const{
 }
 void MSLMechanics::playTurn(int indPlayer) const{
     cout << "MSLMechanics::playTurn: " << indPlayer << endl;
-    if(mMonitor->getInfosJoueurs(indPlayer)->getPlateau()->getStatut(TourAPasser)>0){
-        mMonitor->getInfosJoueurs(indPlayer)->getPlateau()->incStatut(TourAPasser,-1);
+    if(mMonitor.lock()->getInfosJoueurs(indPlayer)->getPlateau()->getStatut(TourAPasser)>0){
+        mMonitor.lock()->getInfosJoueurs(indPlayer)->getPlateau()->incStatut(TourAPasser,-1);
         return;
     }
     _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>( getPlayer(indPlayer) );

@@ -11,7 +11,7 @@ namespace CardGame{
         public:
             PaquetCarte();
             ~PaquetCarte();
-            void initializePaquet(vector<IdCarte> &vecCartes);
+            void initializePaquet(const vector<IdCarte> &vecCartes);
             void initializePaquet(const vector<IdCarte> &vecCartes, const vector<int> &playedBy);
             IdCarte piocher();
             IdCarte piocherNeme(int N);

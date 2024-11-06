@@ -6,7 +6,7 @@
 namespace CardGame {
 class GameMechanics {
 protected:
-  _p_GameMechanicsMonitor mMonitor;
+  weak_ptr<GameMechanicsMonitor> mMonitor;
   _p_CarteGenerator cGen;
   _p_CartesAlgo cAlgo;
 

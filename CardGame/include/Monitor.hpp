@@ -21,7 +21,7 @@ namespace CardGame{
             virtual _pc_Carte getCarte(IdCarte idC)const=0;
             
             //GameMechanicsMonitor
-            virtual _p_Plateau        getPlateau()const=0;
+            virtual _p_Plateau        getPlateauGeneral()const=0;
             virtual _p_Plateau        getPlateauPlayer(int indPlayer)const=0;
             virtual _p_Plateau        getPlateauPlayer(_pc_Player pp)const=0;
             virtual _p_PaquetCarte    getPioche()const=0;

@@ -78,7 +78,7 @@ bool JouerSpecial::jouerCarteSpecial(CardGame::_pc_Player pp, _pc_CarteMSL crt) 
     return false;
   }
   if (crt->getSType() == csCasino) {
-    getMonitor()->getPlateau()->addCarteToEP(ESpecial, crt->getId());
+    getMonitor()->getPlateauGeneral()->addCarteToEP(ESpecial, crt->getId());
   } else {
     getMonitor()->getPlateauPlayer(pp)->addCarteToEP(ESpecial, crt->getId());
   }
@@ -164,7 +164,7 @@ void JouerSpecial::jouerTroc(CardGame::_pc_Player pp) const {
 }
 
 void JouerSpecial::jouerCasino(CardGame::_pc_Player pp) const {
-  getMonitor()->getPlateau()->setStatut(casinoOuvert, 1);
+  getMonitor()->getPlateauGeneral()->setStatut(casinoOuvert, 1);
 }
 
 void JouerSpecial::jouerChance(CardGame::_pc_Player pp) const {

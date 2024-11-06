@@ -18,6 +18,7 @@ namespace CardGame{
     using std::list;
     using std::shared_ptr;
     using std::make_shared;
+    using std::weak_ptr;
     using std::dynamic_pointer_cast;
     enum EmplacementPlateau:int;
     typedef int IdCarte;

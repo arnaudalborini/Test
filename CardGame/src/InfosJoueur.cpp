@@ -5,7 +5,7 @@
 
 using CardGame::InfosJoueur;
 
-CardGame::_p_HandMonitor InfosJoueur::getHandMonitor() const{return dynamic_pointer_cast<HandMonitor>(mMonitor);}
+CardGame::weak_ptr<CardGame::HandMonitor> InfosJoueur::getHandMonitor() const{return mMonitor.lock();}
 
 int InfosJoueur::getIdPlayer() const{return mPlayerId;}
 

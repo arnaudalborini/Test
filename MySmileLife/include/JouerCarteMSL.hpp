@@ -9,8 +9,8 @@
 namespace MySmileLife{
     class JouerCarteMSL:public JouerMetier, public JouerSpecial, public JouerMalus{
         private:
-            CardGame::_pc_CarteGenerator cGen;
-            CardGame::_pc_GameMechanicsMonitor mMonitor;
+            weak_ptr<const CardGame::CarteGenerator> cGen;
+            weak_ptr<const CardGame::GameMechanicsMonitor> mMonitor;
             
             _pc_CarteMSL getCarteMSL(IdCarte id)const;
             void payer(CardGame::_pc_Player  pp, CardGame::_p_Plateau plat, int prix)const;
@@ -35,7 +35,7 @@ namespace MySmileLife{
             void choisirEtJouerUneCarteDefausse(CardGame::_pc_Player  pp)const override;
             CardGame::_pc_Player  getCible(CardGame::_pc_Player  pp, IdCarte id)const override;
         public:
-            JouerCarteMSL(CardGame::_pc_CarteGenerator cc, CardGame::_pc_GameMechanicsMonitor mm):cGen( cc ),mMonitor( mm ){}            
+            JouerCarteMSL(weak_ptr<const CardGame::CarteGenerator> cc, weak_ptr<const CardGame::GameMechanicsMonitor> mm):cGen( cc ),mMonitor( mm ){}            
             bool peutEtreJouee(CardGame::_pc_Player pp, IdCarte id)const;
             bool jouerCarte(CardGame::_pc_Player  pp, IdCarte id)const;
             _pc_CarteGenerateurStandard getCGen()const override;

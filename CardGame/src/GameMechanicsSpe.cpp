@@ -42,7 +42,7 @@ void GameMechanicsSpe::playTurn(int indPlayer) const{
     _pc_Player pp = getPlayer(indPlayer);
     _p_Hand jHand = getJoueurHand(indPlayer);
     cout << "Joueur name: "<< pp->getName() << endl;
-    cout << mMonitor->getPioche()->showIdLast() << endl;
+    cout << mMonitor.lock()->getPioche()->showIdLast() << endl;
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarteHand();
     cout << "nombre de cartes en main: " << nbCarte << endl;
