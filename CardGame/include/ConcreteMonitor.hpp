@@ -5,7 +5,7 @@
 #include "Monitor.hpp"
 
 namespace CardGame {
-class ConcreteMonitor : public Monitor, private std::enable_shared_from_this<ConcreteMonitor> {
+class ConcreteMonitor : public Monitor, public std::enable_shared_from_this<ConcreteMonitor> {
 private:
   int mNbJoueur;
   _p_GameMechanics mGameMechanics;

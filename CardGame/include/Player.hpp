@@ -5,7 +5,7 @@
 #include "GameInterface.hpp"
 
 namespace CardGame{
-    class Player: private std::enable_shared_from_this<Player>{
+    class Player: public std::enable_shared_from_this<Player>{
         private:
             _pc_PlayerInterface pI;
         protected:

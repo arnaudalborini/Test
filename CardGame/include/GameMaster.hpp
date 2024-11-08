@@ -6,7 +6,7 @@
 #include "PlayerInterface.hpp"
 
 namespace CardGame{
-    class GameMaster: public GameInterface, public PlayerInterface, private std::enable_shared_from_this<GameMaster>{
+    class GameMaster: public GameInterface, public PlayerInterface, public std::enable_shared_from_this<GameMaster>{
         private:
             _p_GameMasterMonitor mMonitor;
             int mNbJoueur;

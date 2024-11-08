@@ -5,7 +5,7 @@
 #include <limits>
 
 namespace MySmileLife{
-    class JouerMetier: private std::enable_shared_from_this<JouerMetier>{
+    class JouerMetier: public std::enable_shared_from_this<JouerMetier>{
         protected:
             bool peutEtreJoueeMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
             bool jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;

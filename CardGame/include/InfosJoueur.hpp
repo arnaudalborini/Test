@@ -7,7 +7,7 @@
 #include "Hand.hpp"
 
 namespace CardGame {
-class InfosJoueur:public Plateau, public Hand, private std::enable_shared_from_this<InfosJoueur> {
+class InfosJoueur:public Plateau, public Hand, public std::enable_shared_from_this<InfosJoueur> {
 private:
   const int mPlayerId;
   weak_ptr<InfosJoueurMonitor> mMonitor;

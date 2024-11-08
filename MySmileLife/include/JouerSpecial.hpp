@@ -5,7 +5,7 @@
 #include <limits>
 
 namespace MySmileLife {
-class JouerSpecial: private std::enable_shared_from_this<JouerSpecial> {
+class JouerSpecial: public std::enable_shared_from_this<JouerSpecial> {
 protected:
      virtual _pc_CarteMSL getCarteMSL(IdCarte id) const = 0;
   bool peutEtreJoueeSpecial(CardGame::_pc_Player pp, _pc_CarteMSL crt) const;

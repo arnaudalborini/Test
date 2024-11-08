@@ -10,7 +10,6 @@ ConcreteMonitor::ConcreteMonitor() {
   mDefausse = make_shared<PaquetCarte>();
   mInfosJoueurs = vector<_p_InfosJoueur>();
   mPlayer = vector<_pc_Player>();
-  mPlateau = make_shared<Plateau>(shared_from_this());
 }
 
 ConcreteMonitor::~ConcreteMonitor() {}
@@ -56,6 +55,8 @@ void ConcreteMonitor::incStatut(int indPlayer, int statut, int inc) const {
 }
 
 void ConcreteMonitor::initiateElements(int nbJoueurs, _p_GameMechanics gm) {
+  shared_ptr<ConcreteMonitor> tmp = shared_from_this();
+  mPlateau = make_shared<Plateau>(tmp);
   mNbJoueur = nbJoueurs;
   mGameMechanics = gm;
   mPlayer = vector<_pc_Player>(nbJoueurs);

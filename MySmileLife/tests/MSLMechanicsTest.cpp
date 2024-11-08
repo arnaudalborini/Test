@@ -43,8 +43,8 @@ void MSLMechanicsTest::playTurn(int indPlayer) const {
   */
 
   // on s'arrete la avec un joli seg fault
-  CardGame::Plateau *sf = nullptr;
-  sf->showIdNByEP(0, 1);
+  //CardGame::Plateau *sf = nullptr;
+  //sf->showIdNByEP(0, 1);
 }
 
 std::vector<int> MSLMechanicsTest::getJoueurInitialStatuts() const {
