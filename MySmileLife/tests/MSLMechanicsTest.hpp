@@ -24,6 +24,8 @@ using namespace MySmileLife;
     vector<int> getInitialStatuts() const override;
     vector<vector<IdCarte>> genMapCartePlateauInitial() const override;
     void initSpeficiGame() override;
+    
+    virtual bool endGameCondition() const override;
   };
 } // namespace MySmileLifeTests
 #endif

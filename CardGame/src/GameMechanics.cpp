@@ -44,7 +44,6 @@ void GameMechanics::startGame()
         remplirMain(indPlayer);
     }
     int indPlayer=0;
-    cout << "endGameCondition: " << endGameCondition() << endl;
     while( endGameCondition() ){
         if(indPlayer >= (mMonitor.lock())->getNbPlayer()){
             indPlayer=0;
@@ -52,7 +51,6 @@ void GameMechanics::startGame()
         playTurn(indPlayer);
         indPlayer++;
     }
-    cout << "GameMechanics::startGame fin" << endl;
 }
 
 void GameMechanics::joueurPioche(int indPlayer)const{(mMonitor.lock())->getInfosJoueurs(indPlayer)->addCarteHand( (mMonitor.lock())->getPioche()->piocher() );}

@@ -61,12 +61,31 @@ TestScenario setTestScenario1() {
   return test;
 }
 
+TestScenario setTestEtude() {
+  TestScenario test;
+  IdCarte id1 = idEtu(1);
+  IdCarte id2 = idEtu(2);
+  IdCarte id3 = id1;
+  IdCarte id4 = id2;
+  IdCarte id5 = id1;
+  test.setHand(vector<int>{id1, id2, id3, id4, id5});
+  map<int, int> tmpS = {{MySmileLife::DetailPlateau::Profession, -1},
+                        {MySmileLife::DetailPlateau::NbAnneeEtude, 0},
+                        {MySmileLife::DetailPlateau::DerniereEtudeRedoublable, 0}};
+  test.setStatuts(tmpS);
+  map<int, vector<CardGame::IdCarte>> tmpP = {};
+  test.setPlateau(tmpP);
+  return test;
+}
+
 void MSLTests::TestCarteUnitaire() {
   TestScenario test1 = setTestScenario1();
   cout << test1.getInitPlateau().size() << endl;
+  TestScenario testEtu = setTestScenario1();
+  cout << testEtu.getInitPlateau().size() << endl;
 
 
-  shared_ptr<MySmileLifeTests::MSLMechanicsTest> gMe = make_shared<MySmileLifeTests::MSLMechanicsTest>( test1 );
+  shared_ptr<MySmileLifeTests::MSLMechanicsTest> gMe = make_shared<MySmileLifeTests::MSLMechanicsTest>( testEtu );
   CardGame::_p_GameMaster gm = make_shared<CardGame::GameMaster>(2, gMe );
   CardGame::_p_GameInterface gI = dynamic_pointer_cast<CardGame::GameInterface>(gm);
   CreationJoueur(gI);

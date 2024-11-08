@@ -71,6 +71,17 @@ void MSLMechanicsTest::initSpeficiGame() {
   platJ->initCartesPlateau(test.getInitPlateau());
 }
 
+bool MySmileLifeTests::MSLMechanicsTest::endGameCondition() const
+{
+  static bool test = true;
+  if(test){
+    test = false;
+    return true;
+  }else{
+    return false;
+  }
+}
+
 void MSLMechanicsTest::printHand(CardGame::_pc_Hand h) const
 {
   cout << "Hand: ";
