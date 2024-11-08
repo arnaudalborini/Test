@@ -2,7 +2,7 @@
 #include "GameMaster.hpp"
 #include "GameMechanicsSpe.hpp"
 #include "MSLMechanics.hpp"
-using MySmileLife::Tests::MSLTests;
+using MySmileLifeTests::MSLTests;
 
 
     std::string MySmileLife::toStringCT(CarteType ct){

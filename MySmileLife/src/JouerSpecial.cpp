@@ -122,6 +122,8 @@ bool JouerSpecial::jouerCarteSpecial(CardGame::_pc_Player pp, _pc_CarteMSL crt) 
   case csGrandPrixExcellence:
     jouerGrandPrix(pp);
     break;
+  default:
+    break;
   }
   return true;
 }

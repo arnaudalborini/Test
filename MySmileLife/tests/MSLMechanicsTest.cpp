@@ -9,8 +9,7 @@
 #include "PaquetCarte.hpp"
 #include "MSLTests.hpp"
 
-using namespace MySmileLife;
-using namespace MySmileLife::Tests;
+using namespace MySmileLifeTests;
 
 MSLMechanicsTest::MSLMechanicsTest(const TestScenario &testP) { test = testP; }
 

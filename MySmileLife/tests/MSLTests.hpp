@@ -8,16 +8,16 @@ namespace MySmileLife{
     string toStringEP(EmplacementsPlateau ep);
     string toStringCST(CarteSousType cst);
     string toStringCT(CarteType ct);
-    namespace Tests{
-        class MSLTests{
-            public:
-                static void TestCarteUnitaire();
-                static void CreationJoueur(CardGame::_p_GameInterface gI);
-                static void MySmileLifeTest();
-                class MSLMechanicsTest;
-        };
-        
-    }
+
+}
+namespace MySmileLifeTests{
+    class MSLTests{
+        public:
+            static void TestCarteUnitaire();
+            static void CreationJoueur(CardGame::_p_GameInterface gI);
+            static void MySmileLifeTest();
+            class MSLMechanicsTest;
+    };
 }
 
 #endif

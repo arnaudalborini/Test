@@ -128,6 +128,8 @@ bool JouerMetier::jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) co
         case csStripteaser:
             plat->setStatut(Interimaire,1);
             break;
+        default:
+        break;
     }
     return true;
 }

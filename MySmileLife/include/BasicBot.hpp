@@ -20,7 +20,7 @@ public:
   int choisirUneCarte(CardGame::_p_PaquetCarte paq) const override {
     return 0;
   }
-  int choisirUneCarte(const vector<IdCarte> &vecId) const {
+  int choisirUneCarte(const vector<IdCarte> &vecId) const override {
     return 0;
   }
   void showNCartesPioche(const vector<IdCarte> &vecIdPioche) const override;

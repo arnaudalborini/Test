@@ -103,6 +103,8 @@ bool JouerMalus::jouerCarteMalus(CardGame::_pc_Player pp, _pc_CarteMSL crt) cons
         case csPrison:
             jouerPrison();
             break;
+        default:
+            break;
     }
     getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
     CardGame::_pc_Player cible = getCible(pp,crt->getSType());
@@ -131,6 +133,8 @@ bool JouerMalus::jouerCarteMalus(CardGame::_pc_Player pp, _pc_CarteMSL crt) cons
             break;
         case csRedoublement:
             jouerRedoublement(cible);
+            break;
+        default:
             break;
     }
     return true;

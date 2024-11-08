@@ -3,7 +3,8 @@
 #include "BasicBot.hpp"
 #include "GameInterface.hpp"
 
-using MySmileLife::Tests::MSLTests;
+using namespace MySmileLifeTests;
+using namespace MySmileLife;
 
 void MSLTests::CreationJoueur(CardGame::_p_GameInterface  gI){
     _p_BasicBot bb1 = std::make_shared<BasicBot>();

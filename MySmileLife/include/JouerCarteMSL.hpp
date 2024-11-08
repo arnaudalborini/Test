@@ -12,7 +12,7 @@ namespace MySmileLife{
             weak_ptr<const CardGame::CarteGenerator> cGen;
             weak_ptr<const CardGame::GameMechanicsMonitor> mMonitor;
             
-            _pc_CarteMSL getCarteMSL(IdCarte id)const;
+            _pc_CarteMSL getCarteMSL(IdCarte id)const override;
             void payer(CardGame::_pc_Player  pp, CardGame::_p_Plateau plat, int prix)const;
 
             bool peutEtreJoueeAnimal(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
@@ -30,14 +30,14 @@ namespace MySmileLife{
             bool jouerCarteFlirt(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
             bool jouerCarteMaison(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
             bool jouerCarteMariage(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
-            bool jouerCarteSalaire(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
+            bool jouerCarteSalaire(CardGame::_pc_Player pp, _pc_CarteMSL crt)const override;
             bool jouerCarteVoyage(CardGame::_pc_Player pp, _pc_CarteMSL crt)const;
             void choisirEtJouerUneCarteDefausse(CardGame::_pc_Player  pp)const override;
             CardGame::_pc_Player  getCible(CardGame::_pc_Player  pp, IdCarte id)const override;
         public:
             JouerCarteMSL(weak_ptr<const CardGame::CarteGenerator> cc, weak_ptr<const CardGame::GameMechanicsMonitor> mm):cGen( cc ),mMonitor( mm ){}            
-            bool peutEtreJouee(CardGame::_pc_Player pp, IdCarte id)const;
-            bool jouerCarte(CardGame::_pc_Player  pp, IdCarte id)const;
+            bool peutEtreJouee(CardGame::_pc_Player pp, IdCarte id)const override;
+            bool jouerCarte(CardGame::_pc_Player  pp, IdCarte id)const override;
             _pc_CarteGenerateurStandard getCGen()const override;
             CardGame::_pc_GameMechanicsMonitor getMonitor()const override;
     };

@@ -1,6 +1,6 @@
 #include "TestScenario.hpp"
 
-using MySmileLife::Tests::TestScenario;
+using MySmileLifeTests::TestScenario;
 
 void TestScenario::setHand(const vector<int> &vH){
 	vecInitHand.clear();

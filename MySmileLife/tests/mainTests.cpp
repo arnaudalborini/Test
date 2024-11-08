@@ -2,7 +2,7 @@
 #include <cassert>
 
 
-using namespace MySmileLife::Tests;
+using namespace MySmileLifeTests;
 
 int main() {
 	MSLTests::MySmileLifeTest();

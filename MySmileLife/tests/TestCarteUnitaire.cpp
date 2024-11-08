@@ -5,8 +5,7 @@
 #include "TestScenario.hpp"
 #include "CarteGenerateurStandard.hpp"
 
-using namespace MySmileLife;
-using namespace MySmileLife::Tests;
+using namespace MySmileLifeTests;
 
 const CarteGenerateurStandard cGen = CarteGenerateurStandard();
 
@@ -67,7 +66,7 @@ void MSLTests::TestCarteUnitaire() {
   cout << test1.getInitPlateau().size() << endl;
 
 
-  shared_ptr<MySmileLife::Tests::MSLMechanicsTest> gMe = make_shared<MySmileLife::Tests::MSLMechanicsTest>( test1 );
+  shared_ptr<MySmileLifeTests::MSLMechanicsTest> gMe = make_shared<MySmileLifeTests::MSLMechanicsTest>( test1 );
   CardGame::_p_GameMaster gm = make_shared<CardGame::GameMaster>(2, gMe );
   CardGame::_p_GameInterface gI = dynamic_pointer_cast<CardGame::GameInterface>(gm);
   CreationJoueur(gI);

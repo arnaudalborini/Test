@@ -21,14 +21,14 @@ namespace CardGame{
         public:
             //GameInterface
             virtual _pc_PlayerInterface   login(_pc_Player pp);
-            virtual int                 getIdPlayer(_pc_Player pp)const;
+            virtual int                   getIdPlayer(_pc_Player pp)const;
             //PlayerInterface
             virtual _pc_InfosJoueur       getInfosJoueurs(int indPlayer)const;
             virtual _pc_Plateau           getPlateauGeneral()const;
             virtual _pc_PaquetCarte       getPioche()const;
             virtual _pc_PaquetCarte       getDefausse()const;
             virtual _pc_Carte             getCarte(IdCarte idC)const;
-            virtual int                 getStatutPlayer(int indPlayer, int dp)const;
+            virtual int                   getStatutPlayer(int indPlayer, int dp)const;
     };
 };
 
