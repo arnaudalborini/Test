@@ -33,7 +33,12 @@ public:
   void defausser(IdCarte crt, int indPlayer) const override;
   void defausserDernier(int indPlayer, int EP) const override;
   void defausserTout(int indPlayer, int EP) const override;
+  int  getStatut(int indPlayer, int statut) const override;
   void incStatut(int indPlayer, int statut, int inc) const override;
+  void setStatut(int indPlayer, int statut, int value) const override;
+  void incStatutGeneral(int statut, int inc) const override;
+  void setStatutGeneral(int statut, int value) const override;
+  int  getStatutGeneral(int statut) const override;
   // GameMasterMonitor
   void initiateElements(int nbJoueurs, _p_GameMechanics gm) override;
   void addPlayer(_pc_Player pp, int index) override;

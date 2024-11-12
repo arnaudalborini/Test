@@ -19,7 +19,12 @@ namespace CardGame{
             virtual void            defausser(IdCarte crt, int indPlayer)const=0;
             virtual void            defausserDernier( int indPlayer, int EP)const=0;
             virtual void            defausserTout(int indPlayer, int EP)const=0;
+            virtual int             getStatut(int indPlayer, int statut)const=0;
             virtual void            incStatut(int indPlayer, int statut, int inc)const=0;
+            virtual void            setStatut(int indPlayer, int statut, int inc)const=0;
+            virtual void            incStatutGeneral(int statut, int inc)const=0;
+            virtual void            setStatutGeneral(int statut, int inc)const=0;
+            virtual int             getStatutGeneral(int statut)const=0;
     };
 }
 

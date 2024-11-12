@@ -203,6 +203,10 @@ namespace MySmileLife{
     typedef shared_ptr<const CarteGenerateurStandard> _pc_CarteGenerateurStandard;
     typedef shared_ptr<CarteGenerateurStandard> _p_CarteGenerateurStandard;
 
+    class EffetCartePlateauMain;
+    typedef shared_ptr<const EffetCartePlateauMain> _pc_EffetCartePlateau;
+    typedef shared_ptr<EffetCartePlateauMain> _p_EffetCartePlateau;
+
     class JouerCarteMSL;
     typedef shared_ptr<const JouerCarteMSL> _pc_JouerCarteMSL;
     typedef shared_ptr<JouerCarteMSL> _p_JouerCarteMSL;

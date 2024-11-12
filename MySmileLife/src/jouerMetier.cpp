@@ -61,40 +61,12 @@ bool JouerMetier::jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) co
         mMonitor->defausserTout(mMonitor->getIndPlayer(pp),EMetier);
     }
 
-    plat->setStatut(aUnTravail,1);
-    plat->setStatut(Profession,crt->getSType());
-    plat->setStatut(SalaireMax,crt->getMetierSalaireMax());
     plat->addCarteToEP(EMetier,crt->getId());
     IdCarte id;
 
     switch(crt->getSType()){
-        case csArchitecte:
-            plat->setStatut(MaisonOfferte,1);
-            break;
         case csAstronaute:
             choisirEtJouerUneCarteDefausse(pp);
-            break;
-        case csAvocat:
-            plat->setStatut(ResistantDivorce,1);
-            break;
-        case csBandit:
-            plat->setStatut(ResistantLicenciement,1);
-            plat->setStatut(ResistantImpots,1);
-            plat->setStatut(RisquePrison,1);
-            break;
-        case csBarman:
-            plat->setStatut(FlirtIllimites,1);
-            plat->setStatut(Interimaire,1);
-            break;
-        case csChefDesAchats:
-        case csChefDesVentes:
-            plat->setStatut(TrocProtege,1);
-            break;
-        case csChercheur:
-            plat->setStatut(LimiteCarte6,1);
-            break;
-        case csGaragiste:
-            plat->setStatut(ResistantAccident,1);
             break;
         case csJournaliste:
             voirMainAutresJoueur(pp,mMonitor);
@@ -102,31 +74,8 @@ bool JouerMetier::jouerCarteMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt) co
         case csMedium:
             voirNProchainesCartesPioche(pp,mMonitor,13);
             break;
-        case csMedecin:
-        case csChirurgien:
-            plat->setStatut(EtudesContinues,1);
-        case csPharmacien:
-            plat->setStatut(ResistantMaladie,1);
-            break;
-        case csPiloteDeLigne:
-            plat->setStatut(VoyagesGratuit,1);
-            break;
         case csPolicier:
-            plat->setStatut(Fonctionnaire,1);
-            mMonitor->getPlateauGeneral()->setStatut(antiBandit,1);
-            mMonitor->getPlateauGeneral()->setStatut(antiGourou,1);
-            break;
-        case csMilitaire:
-            plat->setStatut(Fonctionnaire,1);
-            mMonitor->getPlateauGeneral()->setStatut(antiAttentat,1);
-            break;
-        case csGrandProf:
-        case csProf:
-            plat->setStatut(Fonctionnaire,1);
-            break;
-        case csServeur:
-        case csStripteaser:
-            plat->setStatut(Interimaire,1);
+            //TODO licenciement des bandits et gourou
             break;
         default:
         break;

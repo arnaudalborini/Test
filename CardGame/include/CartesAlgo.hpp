@@ -16,7 +16,7 @@ public:
   virtual bool peutEtreJouee(_pc_Player pp, IdCarte id) const {return false;}
   virtual bool jouerCarte(_pc_Player pp, IdCarte id) const { return false; }
 
-  virtual void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt) {}
+  virtual void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt, int EP) {}
   virtual void effetQuitterHand(const int indPlayer, const IdCarte idCrt) {}
 };
 } // namespace CardGame

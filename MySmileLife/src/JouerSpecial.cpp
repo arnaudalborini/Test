@@ -12,18 +12,18 @@ using MySmileLife::JouerSpecial;
 
 /*
         csAdultere,
-        csTroc,
-        csCasino,
-        csChance,
-        csPiston,
         csAnniversaire,
         csArcEnCiel,
+        csCasino,
+        csChance,
         csEtoileFilante,
+        csGrandPrixExcellence,
         csHeritage,
+        csLegionHonneur,
+        csPiston,
+        csTroc,
         csTsunami,
         csVengeance,
-        csLegionHonneur,
-        csGrandPrixExcellence,
 */
 
 bool isMarriedButNotAdulterous(CardGame::_pc_Plateau plat) {
@@ -66,7 +66,6 @@ bool JouerSpecial::peutEtreJoueeSpecial(CardGame::_pc_Player pp, _pc_CarteMSL cr
   case csGrandPrixExcellence:
     return hasEligibleProfession(plat);
   case csVengeance:
-    
     return canPlayMalusCard(plat, pp, dynamic_pointer_cast<const JouerCarteMSL>(shared_from_this()));
   default:
     return true;
@@ -166,7 +165,6 @@ void JouerSpecial::jouerTroc(CardGame::_pc_Player pp) const {
 }
 
 void JouerSpecial::jouerCasino(CardGame::_pc_Player pp) const {
-  getMonitor()->getPlateauGeneral()->setStatut(casinoOuvert, 1);
 }
 
 void JouerSpecial::jouerChance(CardGame::_pc_Player pp) const {
@@ -186,7 +184,7 @@ void JouerSpecial::jouerChance(CardGame::_pc_Player pp) const {
 }
 
 void JouerSpecial::jouerPiston(CardGame::_pc_Player pp) const {
-  getMonitor()->getPlateauPlayer(pp)->setStatut(PistonActif, 1);
+
 }
 
 void JouerSpecial::jouerAnniversaire(CardGame::_pc_Player pp) const {
@@ -216,7 +214,6 @@ void JouerSpecial::jouerArcEnCiel(CardGame::_pc_Player pp) const {
       jouerCarte(pp, id);
     }
   }
-  getMonitor()->getPlateauPlayer(pp)->setStatut(ArcEnCielJoue, 1);
 }
 
 void JouerSpecial::jouerEtoileFilante(CardGame::_pc_Player pp) const {
@@ -224,7 +221,6 @@ void JouerSpecial::jouerEtoileFilante(CardGame::_pc_Player pp) const {
 }
 
 void JouerSpecial::jouerHeritage(CardGame::_pc_Player pp) const {
-  getMonitor()->getPlateauPlayer(pp)->setStatut(HeritageDisponible, 3);
 }
 
 void JouerSpecial::jouerTsunami() const {
@@ -239,7 +235,7 @@ void JouerSpecial::jouerTsunami() const {
       vecCrt.push_back(vecH[ind]->getCarteHand(0));
     }
   }
-  //CardGame::myShuffle(vecCrt);
+  CardGame::myShuffle(vecCrt);
   for (auto ind = 0; ind < getMonitor()->getNbPlayer(); ind++) {
     for (auto indh = 0; indh < vecNbCarte[ind]; indh++) {
       IdCarte id = vecCrt.back();
@@ -263,5 +259,4 @@ void JouerSpecial::jouerLegionHonneur(CardGame::_pc_Player pp) const {
 }
 
 void JouerSpecial::jouerGrandPrix(CardGame::_pc_Player pp) const {
-  getMonitor()->getPlateauPlayer(pp)->setStatut(SalaireMax, 4);
 }

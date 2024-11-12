@@ -50,8 +50,32 @@ void ConcreteMonitor::defausserTout(int indPlayer, int EP) const {
   }
 }
 
+int ConcreteMonitor::getStatut(int indPlayer, int statut) const
+{
+  return getInfosJoueurs(indPlayer)->getPlateau()->getStatut(statut);
+}
+
 void ConcreteMonitor::incStatut(int indPlayer, int statut, int inc) const {
   getInfosJoueurs(indPlayer)->getPlateau()->incStatut(statut, inc);
+}
+
+void ConcreteMonitor::setStatut(int indPlayer, int statut, int value) const {
+  getInfosJoueurs(indPlayer)->getPlateau()->setStatut(statut, value);
+}
+
+void ConcreteMonitor::incStatutGeneral(int statut, int inc) const
+{
+  getPlateauGeneral()->incStatut(statut, inc);
+}
+
+void ConcreteMonitor::setStatutGeneral(int statut, int value) const
+{
+  getPlateauGeneral()->setStatut(statut, value);
+}
+
+int ConcreteMonitor::getStatutGeneral(int statut) const
+{
+    return getPlateauGeneral()->getStatut(statut);
 }
 
 void ConcreteMonitor::initiateElements(int nbJoueurs, _p_GameMechanics gm) {
