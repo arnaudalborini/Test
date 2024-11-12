@@ -9,17 +9,17 @@ CardGame::weak_ptr<CardGame::HandMonitor> InfosJoueur::getHandMonitor() const{re
 
 int InfosJoueur::getIdPlayer() const{return mPlayerId;}
 
-InfosJoueur::InfosJoueur(_p_InfosJoueurMonitor mm, const int PlayerId) : 
+InfosJoueur::InfosJoueur(_p_InfosJoueurMonitor mm, const int PlayerId) :
+    Plateau(dynamic_pointer_cast<PlateauMonitor>(mm)), 
     Hand(), 
-    Plateau(dynamic_pointer_cast<PlateauMonitor>(mm)),
     mPlayerId(PlayerId),
     mMonitor(mm)
 {
 }
 
 InfosJoueur::InfosJoueur(_p_InfosJoueurMonitor mm, const vector<IdCarte> &vec,const int PlayerId):
-    Hand(),
     Plateau(dynamic_pointer_cast<PlateauMonitor>(mm),vec),
+    Hand(),
     mPlayerId(PlayerId),
     mMonitor(mm)
 {

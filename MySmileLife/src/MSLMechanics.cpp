@@ -65,7 +65,7 @@ void MSLMechanics::playTurn(int indPlayer) const{
     CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
     CardGame::_p_Plateau platGeneral = getMainPlateau();
     joueurPioche(indPlayer);
-    int nbCarte = jHand->getNbCarteHand();
+    //int nbCarte = jHand->getNbCarteHand();
     //int id = jHand->getIdCarteHand(nbCarte-1);
     IdCarte idC = jHand->getCarteHand(0);
     _pc_CarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idC));

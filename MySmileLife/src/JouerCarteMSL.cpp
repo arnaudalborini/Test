@@ -128,7 +128,7 @@ bool JouerCarteMSL::peutEtreJoueeMaison(CardGame::_pc_Player pp, _pc_CarteMSL cr
 {
     CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
     int prixBase = crt->getPrixMaison();
-    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible?3:0));
+    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible)?3:0);
     int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
     return (tresorerie>prix);
 }
@@ -148,7 +148,7 @@ bool JouerCarteMSL::peutEtreJoueeSalaire(CardGame::_pc_Player pp, _pc_CarteMSL c
 bool JouerCarteMSL::peutEtreJoueeVoyage(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
     CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible?3:0));
+    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible)?3:0);
     return ( tresorerie > crt->getPrixVoyage() );
 }
 
@@ -205,7 +205,7 @@ void JouerCarteMSL::payer(CardGame::_pc_Player pp, CardGame::_p_Plateau plat, in
         const vector<IdCarte> vecId = plat->showAllIdByEP(ESalairesD);
         int indice = mslPP->choisirSalairePourPayer(vecId);
         indice = (indice<0)?0:indice;
-        indice = (indice>vecId.size())?vecId.size()-1:indice;
+        indice = (indice>static_cast<int>(vecId.size()))?vecId.size()-1:indice;
         IdCarte id = plat->getNByEP(ESalairesD,indice);
         int salCrt = getCarteMSL(id)->getSalaire();
         plat->addCarteToEP(EDivers,id);

@@ -18,10 +18,10 @@ public:
   virtual int getStandardHandNbCarte() const override;
   virtual bool endGameCondition() const override;
   virtual int getWinnerPlayer() const override;
-  virtual void effetQuitterPlateau(const int indPlayer,
-                                   const IdCarte idCrt) override {}
-  virtual void effetQuitterHand(const int indPlayer,
-                                const IdCarte idCrt) override {}
+  virtual void effetQuitterPlateau([[maybe_unused]]const int indPlayer,
+                                   [[maybe_unused]]const IdCarte idCrt) override {}
+  virtual void effetQuitterHand([[maybe_unused]]const int indPlayer,
+                                [[maybe_unused]]const IdCarte idCrt) override {}
 };
 } // namespace CardGame
 #endif

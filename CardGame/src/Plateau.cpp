@@ -6,7 +6,7 @@ using CardGame::IdCarte;
 int Plateau::getIdPlayer() const{return -1;}
 
 Plateau::Plateau(_p_PlateauMonitor mm):mMonitor(mm){}
-Plateau::Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut) : mMonitor(mm),mVecStatut(vecStatut) {}
+Plateau::Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut) : mVecStatut(vecStatut),mMonitor(mm) {}
 Plateau::~Plateau(){}
 
 IdCarte Plateau::showIdNByEP(int EP, int N)const
@@ -40,7 +40,7 @@ void Plateau::addCarteToEP( int EP, IdCarte crt){
     mVecCarte[EP].push_back(crt);
 }
 int Plateau::getNbCarteByEP(int EP) const{
-    if(EP >= 0 && EP < mVecCarte.size()){
+    if(EP >= 0 && EP < static_cast<int>( mVecCarte.size())){
         return static_cast<int>(mVecCarte.at(EP).size());
     }else{
         return -1;
@@ -56,7 +56,7 @@ std::vector<IdCarte> Plateau::showAllIdAllEP()const{
 }
 
 const std::vector<IdCarte> Plateau::showAllIdByEP(int EP) const{
-    if(EP >= 0 && EP < mVecCarte.size()){
+    if(EP >= 0 && EP < static_cast<int>(mVecCarte.size())){
         return mVecCarte.at(EP);
     }else{
         return vector<IdCarte>();
