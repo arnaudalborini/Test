@@ -8,6 +8,6 @@ namespace CardGame{
         public:
             virtual _pc_PlayerInterface login(_pc_Player pp)=0;
     };
-};
+}
 
 #endif

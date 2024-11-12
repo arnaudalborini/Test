@@ -35,6 +35,6 @@ namespace CardGame{
             int getStatutMax()const{return mVecStatut.size();}
             int getEPMax()const{return mVecCarte.size();}
     };
-};
+}
 
 #endif

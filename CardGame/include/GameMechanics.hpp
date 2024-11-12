@@ -50,6 +50,6 @@ public:
   virtual void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt)=0;
   virtual void effetQuitterHand(const int indPlayer, const IdCarte idCrt)=0;
 };
-}; // namespace CardGame
+} // namespace CardGame
 
 #endif

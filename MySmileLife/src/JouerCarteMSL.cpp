@@ -196,7 +196,7 @@ bool JouerCarteMSL::jouerCarteFlirt(CardGame::_pc_Player pp, _pc_CarteMSL crt) c
 }
 
 void JouerCarteMSL::payer(CardGame::_pc_Player pp, CardGame::_p_Plateau plat, int prix)const{
-    if(plat->getStatut(HeritageDisponible?3:0)){
+    if(plat->getStatut(HeritageDisponible)>0){
         plat->setStatut(HeritageDisponible,0);
         prix-=3;
     }

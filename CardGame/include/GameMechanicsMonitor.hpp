@@ -25,6 +25,11 @@ namespace CardGame{
             virtual void            incStatutGeneral(int statut, int inc)const=0;
             virtual void            setStatutGeneral(int statut, int inc)const=0;
             virtual int             getStatutGeneral(int statut)const=0;
+            virtual int             getNbCarteHand(int indPlayer)const=0;
+            virtual IdCarte         joueurPioche(int indPlayer)const=0;
+            virtual IdCarte         joueurDefausse(int indPlayer)const=0;
+            virtual void voirMainAutresJoueur(_pc_Player pp)const=0;
+            virtual void voirNProchainesCartesPioche(_pc_Player pp, int N)const=0;
     };
 }
 

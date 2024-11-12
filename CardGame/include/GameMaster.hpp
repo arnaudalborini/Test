@@ -30,6 +30,6 @@ namespace CardGame{
             virtual _pc_Carte             getCarte(IdCarte idC)const;
             virtual int                   getStatutPlayer(int indPlayer, int dp)const;
     };
-};
+}
 
 #endif

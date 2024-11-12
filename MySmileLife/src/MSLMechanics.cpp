@@ -19,7 +19,18 @@ MSLMechanics::~MSLMechanics()
 {
 }
 
-MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id)const{return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id));}
+void MSLMechanics::remplirMain(int indPlayer) const
+{
+    int nbCarteMax = mMonitor.lock()->getStatut(indPlayer,DetailPlateau::LimiteCarte6)?6:this->getStandardHandNbCarte();
+    while( mMonitor.lock()->getNbCarteHand(indPlayer) < nbCarteMax){
+        mMonitor.lock()->joueurPioche(indPlayer);
+    }
+    while( mMonitor.lock()->getNbCarteHand(indPlayer) > nbCarteMax){
+        mMonitor.lock()->joueurDefausse(indPlayer);
+    }
+}
+
+MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id) const { return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id)); }
 int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllIdAllEP() ){
@@ -55,7 +66,7 @@ void MSLMechanics::playTurn(int indPlayer) const{
     CardGame::_p_Plateau platGeneral = getMainPlateau();
     joueurPioche(indPlayer);
     int nbCarte = jHand->getNbCarteHand();
-    int id = jHand->getIdCarteHand(nbCarte-1);
+    //int id = jHand->getIdCarteHand(nbCarte-1);
     IdCarte idC = jHand->getCarteHand(0);
     _pc_CarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idC));
     cout << "MSLMechanics::playTurn:peutEtreJouee: " << crt->getName() << endl;
@@ -67,6 +78,7 @@ void MSLMechanics::playTurn(int indPlayer) const{
         cout << "MSLMechanics::playTurn:addCarteDefausse" << endl;
         addCarteDefausse(idC,indPlayer);
     }
+    this->remplirMain(indPlayer);
 }
 std::vector<int> MSLMechanics::getJoueurInitialStatuts() const
 {

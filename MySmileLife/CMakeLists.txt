@@ -1,5 +1,6 @@
 set(PROJECT_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(PROJECT_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_compile_options(-Wall -Wextra -Wpedantic)
 
 file(GLOB_RECURSE
      source_files

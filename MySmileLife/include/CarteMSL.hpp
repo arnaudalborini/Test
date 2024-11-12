@@ -26,6 +26,6 @@ namespace MySmileLife{
             int getPrixVoyage()const;
             int getSalaire()const;
     };
-};
+}
 
 #endif

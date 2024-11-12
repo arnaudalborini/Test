@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(MySmileLifeProject)
+add_compile_options(-Wall -Wextra -Wpedantic)
 
 # Ajout des sous-projets
 add_subdirectory(CardGame)
