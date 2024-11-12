@@ -26,6 +26,6 @@ public:
   _pc_Hand getHand() const;
   _pc_Plateau getPlateau() const;
 };
-}; // namespace CardGame
+} // namespace CardGame
 
 #endif

@@ -39,6 +39,11 @@ public:
   void incStatutGeneral(int statut, int inc) const override;
   void setStatutGeneral(int statut, int value) const override;
   int  getStatutGeneral(int statut) const override;
+  virtual int getNbCarteHand(int indPlayer)const;
+  virtual IdCarte joueurPioche(int indPlayer)const;
+  virtual IdCarte joueurDefausse(int indPlayer)const;
+  virtual void voirMainAutresJoueur(_pc_Player pp)const;
+  virtual void voirNProchainesCartesPioche(_pc_Player pp, int N)const;
   // GameMasterMonitor
   void initiateElements(int nbJoueurs, _p_GameMechanics gm) override;
   void addPlayer(_pc_Player pp, int index) override;

@@ -88,12 +88,7 @@ namespace CardGame{
             return mMap.at(k);
         }
         return T();
-    }
-
-
-    
-
-     
-};
+    }    
+}
 
 #endif

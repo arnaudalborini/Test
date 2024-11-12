@@ -29,6 +29,6 @@ namespace CardGame{
             virtual int choisirCible(IdCarte id)const=0;
             virtual int choisirIndiceHazard(int indiceMin,int indiceMax)const=0;
     };
-};
+}
 
 #endif

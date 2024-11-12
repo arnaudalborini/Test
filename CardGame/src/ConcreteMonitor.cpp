@@ -2,6 +2,7 @@
 #include "GameMechanics.hpp"
 #include "InfosJoueur.hpp"
 #include "PaquetCarte.hpp"
+#include "Player.hpp"
 
 using CardGame::ConcreteMonitor;
 
@@ -76,6 +77,63 @@ void ConcreteMonitor::setStatutGeneral(int statut, int value) const
 int ConcreteMonitor::getStatutGeneral(int statut) const
 {
     return getPlateauGeneral()->getStatut(statut);
+}
+
+int ConcreteMonitor::getNbCarteHand(int indPlayer) const
+{
+    if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+      return mInfosJoueurs[indPlayer]->getNbCarteHand();
+    }
+    return -1;
+}
+
+CardGame::IdCarte ConcreteMonitor::joueurPioche(int indPlayer) const
+{
+  if(mPioche->getNbCarte()>0){
+    if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+      IdCarte id = mPioche->piocher();
+      mInfosJoueurs[indPlayer]->addCarteHand(id);
+      return id;
+    }
+  }
+  return -1;
+}
+
+CardGame::IdCarte ConcreteMonitor::joueurDefausse(int indPlayer) const
+{
+  if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+    _pc_Player pp = getPlayer(indPlayer);
+    _p_Hand hh = mInfosJoueurs[indPlayer]->getHand();
+    int ind = pp->choisirIndiceCarteAJouerMain( hh );
+    IdCarte id = hh->getCarteHand(ind);
+    defausser(id,indPlayer);
+    return id;
+  }
+  return -1;
+}
+
+void CardGame::ConcreteMonitor::voirMainAutresJoueur(_pc_Player pp) const
+{    
+  int indPlayer = this->getIndPlayer(pp);
+  for(int indice=0;indice<this->getNbPlayer();indice++){
+      if(indice==indPlayer){
+          continue;
+      }
+      CardGame::_pc_Hand jH = this->getInfosJoueurs(indice)->getHand();
+      pp->showHandAutreJoueur(jH,indice);
+  }
+}
+
+void ConcreteMonitor::voirNProchainesCartesPioche(_pc_Player pp, int N) const
+{
+  CardGame::_p_PaquetCarte pioche = this->getPioche();
+  int nbcarte = pioche->getNbCarte();
+  int indDebut = (nbcarte>=N)?nbcarte-1-N:0;
+  std::vector<CardGame::IdCarte> vecId;
+  for(int indice = indDebut;indice<nbcarte;indice++){
+      vecId.push_back(pioche->showNeme(indice));
+  }
+  pp->showNCartesPioche(vecId);
 }
 
 void ConcreteMonitor::initiateElements(int nbJoueurs, _p_GameMechanics gm) {

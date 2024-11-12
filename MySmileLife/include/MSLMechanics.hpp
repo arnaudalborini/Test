@@ -6,6 +6,8 @@
 
 namespace MySmileLife{
     class MSLMechanics :public CardGame::GameMechanicsSpe{
+        private:
+            void remplirMain(int indPlayer)const;
         protected:
             _pc_CarteMSL getCarteFromId(IdCarte id)const;
             int  countSmile(CardGame::_p_Plateau plateauJoueur)const;

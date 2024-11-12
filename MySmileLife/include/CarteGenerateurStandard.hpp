@@ -20,6 +20,6 @@ namespace MySmileLife{
             IdCarte getCarteByType(CarteType ct, CarteSousType cst)const;
     };
 
-};
+}
 
 #endif

@@ -19,6 +19,6 @@ namespace CardGame{
             int getNbCarteHand()const;
             int getIdCarteHand(int ind)const;
     };
-};
+}
 
 #endif

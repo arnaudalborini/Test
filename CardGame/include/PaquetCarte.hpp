@@ -22,6 +22,6 @@ namespace CardGame{
             void addCarte(IdCarte idC,int playedBy);
             int showLastPlayedBy()const;
     };
-};
+}
 
 #endif
