@@ -49,6 +49,9 @@ public:
   _p_InfosJoueur  getInfosJoueurs(_pc_Player pp)const override;
   void voirMainAutresJoueur(_pc_Player pp)const override;
   void voirNProchainesCartesPioche(_pc_Player pp, int N)const override;
+  int             getStatut(_pc_Player pp, int statut)const override;
+  void            incStatut(_pc_Player pp, int statut, int inc)const override;
+  void            setStatut(_pc_Player pp, int statut, int inc)const override;
   // GameMasterMonitor
   void initiateElements(int nbJoueurs, _p_GameMechanics gm) override;
   void addPlayer(_pc_Player pp, int index) override;

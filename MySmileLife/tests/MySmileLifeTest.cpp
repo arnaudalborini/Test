@@ -265,8 +265,6 @@ using MySmileLifeTests::MSLTests;
         switch(ep){
             case EFlirt:
                 return "EFlirt";
-            case EFlirtAdultere:
-                return "EFlirtAdultere";
             case EMariage:
                 return "EMariage";
             case EMetier:

@@ -147,6 +147,21 @@ void ConcreteMonitor::voirNProchainesCartesPioche(_pc_Player pp, int N) const
   pp->showNCartesPioche(vecId);
 }
 
+int ConcreteMonitor::getStatut(_pc_Player pp, int statut) const
+{
+    return getStatut(getIndPlayer(pp),statut);
+}
+
+void ConcreteMonitor::incStatut(_pc_Player pp, int statut, int inc) const
+{
+  incStatut(getIndPlayer(pp),statut,inc);
+}
+
+void ConcreteMonitor::setStatut(_pc_Player pp, int statut, int inc) const
+{
+  setStatut(getIndPlayer(pp),statut,inc);
+}
+
 void ConcreteMonitor::voirNProchainesCartesPioche(int indPlayer, int N) const
 {
   voirNProchainesCartesPioche(getPlayer(indPlayer),N);

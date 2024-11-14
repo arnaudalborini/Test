@@ -8,7 +8,24 @@
 
 using MySmileLife::JouerCarteMSL;
 
-MySmileLife::_pc_CarteMSL JouerCarteMSL::getCarteMSL(IdCarte id) const{return dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(id));}
+int JouerCarteMSL::getStatut(CardGame::_pc_Player pp, int statut) const
+{
+    return mMonitor.lock()->getStatut(pp,statut);
+}
+
+void JouerCarteMSL::setStatut(CardGame::_pc_Player pp, int statut, int value) const
+{
+    mMonitor.lock()->setStatut(pp,statut,value);
+}
+
+void JouerCarteMSL::incStatut(CardGame::_pc_Player pp, int statut, int value) const
+{
+    mMonitor.lock()->incStatut(pp,statut,value);
+}
+
+void MySmileLife::JouerCarteMSL::addCarteToEP(CardGame::_pc_Player pp, int EP, IdCarte id) const{mMonitor.lock()->addCarteToEP(pp,EP,id);}
+
+MySmileLife::_pc_CarteMSL JouerCarteMSL::getCarteMSL(IdCarte id) const { return dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(id)); }
 
 bool JouerCarteMSL::peutEtreJouee(CardGame::_pc_Player pp, IdCarte id) const
 {
@@ -80,12 +97,11 @@ bool JouerCarteMSL::peutEtreJoueeAnimal(CardGame::_pc_Player pp, _pc_CarteMSL cr
 
 bool JouerCarteMSL::peutEtreJoueeEnfant(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    if(plat->getStatut(estMarie)){
+    if(getStatut(pp,estMarie)){
         return true;
     }
-    if(plat->getStatut(NombreBebePossibleHorsMariage)>0){
-        plat->incStatut(NombreBebePossibleHorsMariage,-1);
+    if(getStatut(pp,NombreBebePossibleHorsMariage)>0){
+        incStatut(pp,NombreBebePossibleHorsMariage,-1);
         return true;
     }
     return false;
@@ -93,13 +109,12 @@ bool JouerCarteMSL::peutEtreJoueeEnfant(CardGame::_pc_Player pp, _pc_CarteMSL cr
 
 bool JouerCarteMSL::peutEtreJoueeEtude(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    if(plat->getStatut(aUnTravail)==false){
-        if(plat->getStatut(NbAnneeEtude) + crt->getNbEtude()<=6){
+    if(getStatut(pp,aUnTravail)==false){
+        if(getStatut(pp,NbAnneeEtude) + crt->getParam()<=6){
             return true;
         }
     }
-    if(plat->getStatut(EtudesContinues)){
+    if(getStatut(pp,EtudesContinues)){
         return true;
     }
     return false;
@@ -107,16 +122,15 @@ bool JouerCarteMSL::peutEtreJoueeEtude(CardGame::_pc_Player pp, _pc_CarteMSL crt
 
 bool JouerCarteMSL::peutEtreJoueeFlirt(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    if( plat->getStatut(estMarie) ){
-        if(plat->getStatut(estAdultere)){
+    if( getStatut(pp,estMarie) ){
+        if(getStatut(pp,estAdultere)){
             return true;
         }
     }else{
-        if(plat->getStatut(Profession)==csBarman){
+        if(getStatut(pp,Profession)==csBarman){
             return true;
         }else{
-            if(plat->getStatut(NombreFlirt)<5){
+            if(getStatut(pp,NombreFlirt)<5){
                 return true;
             }
         }
@@ -126,78 +140,72 @@ bool JouerCarteMSL::peutEtreJoueeFlirt(CardGame::_pc_Player pp, _pc_CarteMSL crt
 
 bool JouerCarteMSL::peutEtreJoueeMaison(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    int prixBase = crt->getPrixMaison();
-    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible)?3:0);
-    int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
+    int prixBase = crt->getParam();
+    int tresorerie = getStatut(pp,SalairesDisponibles) + (getStatut(pp,HeritageDisponible)?3:0);
+    int prix = getStatut(pp,estMarie)?prixBase/2:prixBase;
     return (tresorerie>prix);
 }
 
 bool JouerCarteMSL::peutEtreJoueeMariage(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    return (plat->getStatut(estMarie)==false) && (plat->getStatut(NombreFlirt)>0);
+    return (getStatut(pp,estMarie)==false) && (getStatut(pp,NombreFlirt)>0);
 }
 
 bool JouerCarteMSL::peutEtreJoueeSalaire(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    return (plat->getStatut(aUnTravail)>0) && (plat->getStatut(SalaireMax)>=crt->getSalaire());
+    return (getStatut(pp,aUnTravail)>0) && (getStatut(pp,SalaireMax)>=crt->getParam());
 }
 
 bool JouerCarteMSL::peutEtreJoueeVoyage(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    int tresorerie = plat->getStatut(SalairesDisponibles) + (plat->getStatut(HeritageDisponible)?3:0);
-    return ( tresorerie > crt->getPrixVoyage() );
+    int tresorerie = getStatut(pp,SalairesDisponibles) + (getStatut(pp,HeritageDisponible)?3:0);
+    return ( tresorerie > crt->getParam() );
 }
 
 bool JouerCarteMSL::jouerCarteAnimal(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EDivers,crt->getId());
+    addCarteToEP(pp,EDivers,crt->getId());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteEnfant(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EEnfant,crt->getId());
+    addCarteToEP(pp,EEnfant,crt->getId());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteEtude(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    if(plat->getStatut(aUnTravail)==false){
-        if(plat->getStatut(NbAnneeEtude) + crt->getNbEtude()<=6){
-            mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EEtudes,crt->getId());
-            mMonitor.lock()->getPlateauPlayer(pp)->setStatut(DerniereEtudeRedoublable,crt->getNbEtude());
+    if(getStatut(pp,aUnTravail)==false){
+        if(getStatut(pp,NbAnneeEtude) + crt->getParam()<=6){
+            addCarteToEP(pp,EEtudes,crt->getId());
+            setStatut(pp,DerniereEtudeRedoublable,crt->getParam());
         }
     }
-    if(plat->getStatut(EtudesContinues)){
-        mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EEtudesContinues,crt->getId());
+    if(getStatut(pp,EtudesContinues)){
+        addCarteToEP(pp,EEtudesContinues,crt->getId());
     }
-    mMonitor.lock()->getPlateauPlayer(pp)->incStatut(NbAnneeEtude,crt->getNbEtude());
+    incStatut(pp,NbAnneeEtude,crt->getParam());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteFlirt(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    if( plat->getStatut(estMarie) ){
-        if(plat->getStatut(estAdultere)){
-            mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EFlirtAdultere,crt->getId());
+    if( getStatut(pp,estMarie) ){
+        if(getStatut(pp,estAdultere)){
+            addCarteToEP(pp,EFlirt,crt->getId());
         }
     }else{
-        if( (plat->getStatut(Profession)==csBarman) || (plat->getStatut(NombreFlirt)<5) ){
-            mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EFlirt,crt->getId());
+        if( (getStatut(pp,Profession)==csBarman) || (getStatut(pp,NombreFlirt)<5) ){
+            addCarteToEP(pp,EFlirt,crt->getId());
         }
     }
     return true;
 }
 
 void JouerCarteMSL::payer(CardGame::_pc_Player pp, CardGame::_p_Plateau plat, int prix)const{
-    if(plat->getStatut(HeritageDisponible)>0){
-        plat->setStatut(HeritageDisponible,0);
+    if(getStatut(pp,HeritageDisponible)>0){
+        setStatut(pp,HeritageDisponible,0);
         prix-=3;
     }
     _pc_MSLPlayer mslPP = dynamic_pointer_cast<const MSLPlayer>(pp);   
@@ -207,9 +215,9 @@ void JouerCarteMSL::payer(CardGame::_pc_Player pp, CardGame::_p_Plateau plat, in
         indice = (indice<0)?0:indice;
         indice = (indice>static_cast<int>(vecId.size()))?vecId.size()-1:indice;
         IdCarte id = plat->getNByEP(ESalairesD,indice);
-        int salCrt = getCarteMSL(id)->getSalaire();
-        plat->addCarteToEP(EDivers,id);
-        plat->incStatut(SalairesDisponibles,-salCrt);
+        int salCrt = getCarteMSL(id)->getParam();
+        addCarteToEP(pp,EDivers,id);
+        incStatut(pp,SalairesDisponibles,-salCrt);
         prix -= salCrt;
     }
 }
@@ -217,32 +225,32 @@ void JouerCarteMSL::payer(CardGame::_pc_Player pp, CardGame::_p_Plateau plat, in
 bool JouerCarteMSL::jouerCarteMaison(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
     CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    int prixBase = crt->getPrixMaison();
-    int prix = plat->getStatut(estMarie)?prixBase/2:prixBase;
+    int prixBase = crt->getParam();
+    int prix = getStatut(pp,estMarie)?prixBase/2:prixBase;
     payer(pp,plat,prix);
-    plat->addCarteToEP(EDivers,crt->getId());
+    addCarteToEP(pp,EDivers,crt->getId());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteMariage(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(EMariage,crt->getId());
-    mMonitor.lock()->getPlateauPlayer(pp)->setStatut(estMarie,true);
+    addCarteToEP(pp,EMariage,crt->getId());
+    setStatut(pp,estMarie,true);
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteSalaire(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
-    mMonitor.lock()->getPlateauPlayer(pp)->addCarteToEP(ESalairesD,crt->getId());
-    mMonitor.lock()->getPlateauPlayer(pp)->incStatut(SalairesDisponibles,crt->getSalaire());
+    addCarteToEP(pp,ESalairesD,crt->getId());
+    incStatut(pp,SalairesDisponibles,crt->getParam());
     return true;
 }
 
 bool JouerCarteMSL::jouerCarteVoyage(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {    
     CardGame::_p_Plateau plat = mMonitor.lock()->getPlateauPlayer(pp);
-    payer(pp,plat,crt->getPrixVoyage());
-    plat->addCarteToEP(EDivers,crt->getId());
+    payer(pp,plat,crt->getParam());
+    addCarteToEP(pp,EDivers,crt->getId());
     return true;
 }
 

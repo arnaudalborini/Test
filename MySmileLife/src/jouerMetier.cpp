@@ -13,7 +13,7 @@ bool JouerMetier::peutEtreJoueeMetier(CardGame::_pc_Player pp, _pc_CarteMSL crt)
         return false;
     }
     CardGame::_p_Plateau plat = getMonitor()->getPlateauPlayer(pp);
-    int nbAnneeEtudeRequise = crt->getMetierNbAnnee();
+    int nbAnneeEtudeRequise = crt->getParam(0);
     if( (plat->getStatut(aUnTravail)==false) || (plat->getStatut(Interimaire)) ){
         if(plat->getStatut(NbAnneeEtude)>=nbAnneeEtudeRequise){
             return true;

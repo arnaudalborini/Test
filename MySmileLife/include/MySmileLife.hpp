@@ -173,17 +173,16 @@ namespace MySmileLife{
     const int PRIXVOYAGE = 3;
     enum EmplacementsPlateau:int{
         EFlirt = 0,
-        EFlirtAdultere = 1,
+        EEnfant = 1,
         EMariage = 2,
         EMetier = 3,
         ESpecial = 4,
         ESalairesD = 5,
         EMalus = 6,
-        EEnfant = 7,
+        EEtudesContinues = 7,
         EEtudes = 8,
-        EEtudesContinues = 9,
-        EDivers = 10,
-        ECasinoSalaire = 11
+        EDivers = 9,
+        ECasinoSalaire = 10
     };
     const int MAXEMPLACEMENTPLATEAU = EmplacementsPlateau::ECasinoSalaire;
 

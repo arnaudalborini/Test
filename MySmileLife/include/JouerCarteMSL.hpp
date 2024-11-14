@@ -11,7 +11,12 @@ namespace MySmileLife{
         private:
             weak_ptr<const CardGame::CarteGenerator> cGen;
             weak_ptr<const CardGame::GameMechanicsMonitor> mMonitor;
-            
+
+            int getStatut(CardGame::_pc_Player pp, int statut)const;
+            void setStatut(CardGame::_pc_Player pp, int statut,int value)const;
+            void incStatut(CardGame::_pc_Player pp, int statut,int value)const;
+            void addCarteToEP(CardGame::_pc_Player pp, int EP,IdCarte id)const;
+
             _pc_CarteMSL getCarteMSL(IdCarte id)const override;
             void payer(CardGame::_pc_Player  pp, CardGame::_p_Plateau plat, int prix)const;
 

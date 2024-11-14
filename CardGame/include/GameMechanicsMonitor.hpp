@@ -35,6 +35,9 @@ namespace CardGame{
             virtual _p_InfosJoueur  getInfosJoueurs(_pc_Player pp)const=0;
             virtual void voirMainAutresJoueur(_pc_Player pp)const=0;
             virtual void voirNProchainesCartesPioche(_pc_Player pp, int N)const=0;
+            virtual int             getStatut(_pc_Player pp, int statut)const=0;
+            virtual void            incStatut(_pc_Player pp, int statut, int inc)const=0;
+            virtual void            setStatut(_pc_Player pp, int statut, int inc)const=0;
     };
 }
 

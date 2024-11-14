@@ -17,25 +17,25 @@ void EffetCartePlateauMain::effetEntrerPlateauSpe(const int indPlayer, const Car
 {
     switch(cst){
         case csAdultere:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::estAdultere,1);
+            setStatut(indPlayer,DetailPlateau::estAdultere,1);
             break;
         case csArcEnCiel:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ArcEnCielJoue,1);
+            setStatut(indPlayer,DetailPlateau::ArcEnCielJoue,1);
             break;
         case csCasino:
-            mMonitor.lock()->setStatutGeneral(DetailPlateau::casinoOuvert,1);
+            setStatutGeneral(DetailPlateau::casinoOuvert,1);
             break;
         case csEtoileFilante:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::EtoileFilanteJouee,1);
+            setStatut(indPlayer,DetailPlateau::EtoileFilanteJouee,1);
             break;
         case csGrandPrixExcellence:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::SalaireMax,4);
+            setStatut(indPlayer,DetailPlateau::SalaireMax,4);
             break;
         case csHeritage:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::HeritageDisponible,3);
+            setStatut(indPlayer,DetailPlateau::HeritageDisponible,3);
             break;
         case csPiston:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::PistonActif,3);
+            setStatut(indPlayer,DetailPlateau::PistonActif,3);
             break;
         default:
             break;
@@ -45,7 +45,7 @@ void EffetCartePlateauMain::effetQuitterPlateauSpe(const int indPlayer, const Ca
 {
     switch(cst){
         case csAdultere:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::estAdultere,0);
+            setStatut(indPlayer,DetailPlateau::estAdultere,0);
             break;
         default:
             break;
@@ -53,61 +53,61 @@ void EffetCartePlateauMain::effetQuitterPlateauSpe(const int indPlayer, const Ca
 }
 void EffetCartePlateauMain::effetEntrerPlateauMetier(const int indPlayer, _pc_CarteMSL crt) const
 {
-    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::aUnTravail,1);
-    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Profession,crt->getSType());
-    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::SalaireMax,crt->getMetierSalaireMax());
+    setStatut(indPlayer,DetailPlateau::aUnTravail,1);
+    setStatut(indPlayer,DetailPlateau::Profession,crt->getSType());
+    setStatut(indPlayer,DetailPlateau::SalaireMax,crt->getParam(1));
     switch (crt->getSType())
     {
     case csArchitecte:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::MaisonOfferte,1);
+        setStatut(indPlayer,DetailPlateau::MaisonOfferte,1);
         break;
     case csAvocat:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantDivorce,1);
+        setStatut(indPlayer,DetailPlateau::ResistantDivorce,1);
         break;
     case csBandit:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::RisquePrison,1);
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantImpots,1);
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantLicenciement,1);
+        setStatut(indPlayer,DetailPlateau::RisquePrison,1);
+        setStatut(indPlayer,DetailPlateau::ResistantImpots,1);
+        setStatut(indPlayer,DetailPlateau::ResistantLicenciement,1);
         break;
     case csBarman:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::FlirtIllimites,1);
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Interimaire,1);
+        setStatut(indPlayer,DetailPlateau::FlirtIllimites,1);
+        setStatut(indPlayer,DetailPlateau::Interimaire,1);
         break;
     case csChefDesAchats:
     case csChefDesVentes:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::TrocProtege,1);
+        setStatut(indPlayer,DetailPlateau::TrocProtege,1);
         break;
     case csChercheur:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::LimiteCarte6,1);
+        setStatut(indPlayer,DetailPlateau::LimiteCarte6,1);
         break;
     case csGaragiste:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantAccident,1);
+        setStatut(indPlayer,DetailPlateau::ResistantAccident,1);
         break;
     case csMedecin:
     case csChirurgien:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::EtudesContinues,1);
+        setStatut(indPlayer,DetailPlateau::EtudesContinues,1);
     case csPharmacien:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantMaladie,1);
+        setStatut(indPlayer,DetailPlateau::ResistantMaladie,1);
         break;
     case csPiloteDeLigne:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::VoyagesGratuit,1);
+        setStatut(indPlayer,DetailPlateau::VoyagesGratuit,1);
         break;
     case csPolicier:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Fonctionnaire,1);
-        mMonitor.lock()->setStatutGeneral(DetailPlateau::antiBandit,1);
-        mMonitor.lock()->setStatutGeneral(DetailPlateau::antiGourou,1);
+        setStatut(indPlayer,DetailPlateau::Fonctionnaire,1);
+        setStatutGeneral(DetailPlateau::antiBandit,1);
+        setStatutGeneral(DetailPlateau::antiGourou,1);
         break;
     case csMilitaire:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Fonctionnaire,1);
-        mMonitor.lock()->setStatutGeneral(DetailPlateau::antiAttentat,1);
+        setStatut(indPlayer,DetailPlateau::Fonctionnaire,1);
+        setStatutGeneral(DetailPlateau::antiAttentat,1);
         break;
     case csGrandProf:
     case csProf:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Fonctionnaire,1);
+        setStatut(indPlayer,DetailPlateau::Fonctionnaire,1);
         break;
     case csServeur:
     case csStripteaser:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Interimaire,1);
+        setStatut(indPlayer,DetailPlateau::Interimaire,1);
         break;
     default:
         break;
@@ -115,65 +115,89 @@ void EffetCartePlateauMain::effetEntrerPlateauMetier(const int indPlayer, _pc_Ca
 }
 void EffetCartePlateauMain::effetQuitterPlateauMetier(const int indPlayer, _pc_CarteMSL crt) const
 {
-    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::aUnTravail,0);
-    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Profession,0);
-    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::SalaireMax,0);
+    setStatut(indPlayer,DetailPlateau::aUnTravail,0);
+    setStatut(indPlayer,DetailPlateau::Profession,0);
+    setStatut(indPlayer,DetailPlateau::SalaireMax,0);
     switch (crt->getSType())
     {
     case csArchitecte:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::MaisonOfferte,0);
+        setStatut(indPlayer,DetailPlateau::MaisonOfferte,0);
         break;
     case csAvocat:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantDivorce,0);
+        setStatut(indPlayer,DetailPlateau::ResistantDivorce,0);
         break;
     case csBandit:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::RisquePrison,0);
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantImpots,0);
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantLicenciement,0);
+        setStatut(indPlayer,DetailPlateau::RisquePrison,0);
+        setStatut(indPlayer,DetailPlateau::ResistantImpots,0);
+        setStatut(indPlayer,DetailPlateau::ResistantLicenciement,0);
         break;
     case csBarman:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::FlirtIllimites,0);
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Interimaire,0);
+        setStatut(indPlayer,DetailPlateau::FlirtIllimites,0);
+        setStatut(indPlayer,DetailPlateau::Interimaire,0);
         break;
     case csChefDesAchats:
     case csChefDesVentes:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::TrocProtege,0);
+        setStatut(indPlayer,DetailPlateau::TrocProtege,0);
         break;
     case csChercheur:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::LimiteCarte6,0);
+        setStatut(indPlayer,DetailPlateau::LimiteCarte6,0);
         break;
     case csGaragiste:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantAccident,0);
+        setStatut(indPlayer,DetailPlateau::ResistantAccident,0);
         break;
     case csMedecin:
     case csChirurgien:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::EtudesContinues,0);
+        setStatut(indPlayer,DetailPlateau::EtudesContinues,0);
     case csPharmacien:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::ResistantMaladie,0);
+        setStatut(indPlayer,DetailPlateau::ResistantMaladie,0);
         break;
     case csPiloteDeLigne:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::VoyagesGratuit,0);
+        setStatut(indPlayer,DetailPlateau::VoyagesGratuit,0);
         break;
     case csPolicier:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Fonctionnaire,0);
-        mMonitor.lock()->setStatutGeneral(DetailPlateau::antiBandit,0);
-        mMonitor.lock()->setStatutGeneral(DetailPlateau::antiGourou,0);
+        setStatut(indPlayer,DetailPlateau::Fonctionnaire,0);
+        setStatutGeneral(DetailPlateau::antiBandit,0);
+        setStatutGeneral(DetailPlateau::antiGourou,0);
         break;
     case csMilitaire:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Fonctionnaire,0);
-        mMonitor.lock()->setStatutGeneral(DetailPlateau::antiAttentat,0);
+        setStatut(indPlayer,DetailPlateau::Fonctionnaire,0);
+        setStatutGeneral(DetailPlateau::antiAttentat,0);
         break;
     case csGrandProf:
     case csProf:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Fonctionnaire,0);
+        setStatut(indPlayer,DetailPlateau::Fonctionnaire,0);
         break;
     case csServeur:
     case csStripteaser:
-        mMonitor.lock()->setStatut(indPlayer,DetailPlateau::Interimaire,0);
+        setStatut(indPlayer,DetailPlateau::Interimaire,0);
         break;
     default:
         break;
     }
+}
+
+void EffetCartePlateauMain::setStatut(int indPlayer, int statut, int value) const{mMonitor.lock()->setStatut(indPlayer,statut,value);}
+void EffetCartePlateauMain::incStatut(int indPlayer, int statut, int value) const{mMonitor.lock()->incStatut(indPlayer,statut,value);}
+void EffetCartePlateauMain::setStatutGeneral(int statut, int value) const{setStatutGeneral(statut,value);}
+
+void EffetCartePlateauMain::changeStatutLast(int indPlayer, int mainStatut, int dernierStatut, int EP, int value) const
+{
+    int updateValue = 0;
+    incStatut(indPlayer,mainStatut,value);
+    IdCarte lastId = showIdLastByEP(indPlayer, EP);
+    if(lastId != -1){
+        updateValue = getCrt(lastId)->getParam();
+    }
+    setStatut(indPlayer,dernierStatut,updateValue);
+}
+
+MySmileLife::_pc_CarteMSL EffetCartePlateauMain::getCrt(IdCarte id) const{
+    return dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(id));
+}
+
+CardGame::IdCarte EffetCartePlateauMain::showIdLastByEP(int indPlayer, int EP) const
+{
+    return mMonitor.lock()->getInfosJoueurs(indPlayer)->showIdLastByEP(EP);
 }
 
 //Public
@@ -181,31 +205,31 @@ void EffetCartePlateauMain::effetEntrerPlateau(const int indPlayer, _pc_CarteMSL
 {
     switch( crt->getType() ){
         case CarteType::carteEnfant:
-            mMonitor.lock()->incStatut(indPlayer,DetailPlateau::NbEnfant,1);
+            incStatut(indPlayer,DetailPlateau::NbEnfant,1);
             break;
         case CarteType::carteEtude:
-            mMonitor.lock()->incStatut(indPlayer,DetailPlateau::NbAnneeEtude,crt->getNbEtude());
+            incStatut(indPlayer,DetailPlateau::NbAnneeEtude,crt->getParam());
             if(EP==EmplacementsPlateau::EEtudes){
-                mMonitor.lock()->setStatut(indPlayer,DetailPlateau::DerniereEtudeRedoublable,crt->getNbEtude());
+                setStatut(indPlayer,DetailPlateau::DerniereEtudeRedoublable,crt->getParam());
             }
             break;
         case CarteType::carteFlirt:
-            mMonitor.lock()->incStatut(indPlayer,DetailPlateau::NombreFlirt,1);
+            incStatut(indPlayer,DetailPlateau::NombreFlirt,1);
             if(EP==EFlirt){
                 CarteSousType lieuFlirt = crt->getSType();
-                mMonitor.lock()->setStatut(indPlayer,DetailPlateau::LieuDernierFlirt,lieuFlirt);
+                setStatut(indPlayer,DetailPlateau::LieuDernierFlirt,lieuFlirt);
             }
             break;
         case CarteType::carteMariage:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::estMarie,1);
+            setStatut(indPlayer,DetailPlateau::estMarie,1);
             break;
         case CarteType::carteMetier:
             effetEntrerPlateauMetier(indPlayer,crt);
             break;
         case CarteType::carteSalaire:
             if(EP==ESalairesD){
-                mMonitor.lock()->incStatut(indPlayer,DetailPlateau::SalairesDisponibles,crt->getSalaire());
-                mMonitor.lock()->setStatut(indPlayer,DetailPlateau::DernierSalaireDisponible,crt->getSalaire());
+                incStatut(indPlayer,DetailPlateau::SalairesDisponibles,crt->getParam());
+                setStatut(indPlayer,DetailPlateau::DernierSalaireDisponible,crt->getParam());
             }
             break;
         case CarteType::carteSpecial:
@@ -219,49 +243,22 @@ void EffetCartePlateauMain::effetQuitterPlateau(const int indPlayer, _pc_CarteMS
 {
     switch( crt->getType() ){
         case CarteType::carteEnfant:
-            mMonitor.lock()->incStatut(indPlayer,DetailPlateau::NbEnfant,-1);
+            incStatut(indPlayer,DetailPlateau::NbEnfant,-1);
             break;
         case CarteType::carteEtude:
-            mMonitor.lock()->incStatut(indPlayer,DetailPlateau::NbAnneeEtude,-crt->getNbEtude());
-            if(EP==EmplacementsPlateau::EEtudes){
-                IdCarte lastEtuId = mMonitor.lock()->getInfosJoueurs(indPlayer)->getLastByEP(EP);
-                if(lastEtuId == -1){
-                    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::DerniereEtudeRedoublable,0);
-                }else{
-                    int nbEtu = dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(lastEtuId))->getNbEtude();
-                    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::DerniereEtudeRedoublable,nbEtu);
-                }
-            }
+            changeStatutLast(indPlayer,NbAnneeEtude,DerniereEtudeRedoublable,EP,-crt->getParam());
             break;
         case CarteType::carteFlirt:
-            mMonitor.lock()->incStatut(indPlayer,DetailPlateau::NombreFlirt,-1);
-            if(EP==EFlirt){
-                IdCarte lastFlirtId = mMonitor.lock()->getInfosJoueurs(indPlayer)->getLastByEP(EP);
-                if(lastFlirtId == -1){
-                    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::LieuDernierFlirt,0);
-                }else{
-                    CarteSousType lieuFlirt = dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(lastFlirtId))->getSType();
-                    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::LieuDernierFlirt,lieuFlirt);
-                }
-            }
+            changeStatutLast(indPlayer,NombreFlirt,LieuDernierFlirt,EP,-1);
+            break;
+        case CarteType::carteSalaire:
+            changeStatutLast(indPlayer,SalairesDisponibles,DernierSalaireDisponible,EP,-crt->getParam());
             break;
         case CarteType::carteMariage:
-            mMonitor.lock()->setStatut(indPlayer,DetailPlateau::estMarie,0);
+            setStatut(indPlayer,DetailPlateau::estMarie,0);
             break;
         case CarteType::carteMetier:
             effetQuitterPlateauMetier(indPlayer,crt);
-            break;
-        case CarteType::carteSalaire:
-            if(EP==ESalairesD){
-                mMonitor.lock()->incStatut(indPlayer,DetailPlateau::SalairesDisponibles,-crt->getSalaire());
-                IdCarte lastSalId = mMonitor.lock()->getInfosJoueurs(indPlayer)->getLastByEP(EP);
-                if(lastSalId == -1){
-                    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::DernierSalaireDisponible,0);
-                }else{
-                    int nbSal = dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(lastSalId))->getSalaire();
-                    mMonitor.lock()->setStatut(indPlayer,DetailPlateau::DernierSalaireDisponible,nbSal);
-                }
-            }
             break;
         case CarteType::carteSpecial:
             effetQuitterPlateauSpe(indPlayer,crt->getSType());
