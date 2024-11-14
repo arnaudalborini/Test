@@ -100,3 +100,23 @@ std::vector<std::vector<CardGame::IdCarte>> MSLMechanics::genMapCartePlateauInit
 {
 return vector<vector<IdCarte>>();
 }
+
+void MySmileLife::MSLMechanics::effetQuitterPlateau(const int indPlayer, const IdCarte idCrt, int EP)
+{
+    dynamic_pointer_cast<CartesAlgoMSL>(this->cAlgo)->effetQuitterPlateau( indPlayer, idCrt, EP );
+}
+
+void MySmileLife::MSLMechanics::effetQuitterHand(const int indPlayer, const IdCarte idCrt)
+{
+    dynamic_pointer_cast<CartesAlgoMSL>(this->cAlgo)->effetQuitterHand( indPlayer, idCrt );
+}
+
+void MySmileLife::MSLMechanics::effetEntrerPlateau(const int indPlayer, const IdCarte idCrt, int EP)
+{
+    dynamic_pointer_cast<CartesAlgoMSL>(this->cAlgo)->effetEntrerPlateau( indPlayer, idCrt, EP );
+}
+
+void MySmileLife::MSLMechanics::effetEntrerHand(const int indPlayer, const IdCarte idCrt)
+{
+    dynamic_pointer_cast<CartesAlgoMSL>(this->cAlgo)->effetQuitterHand( indPlayer, idCrt );
+}

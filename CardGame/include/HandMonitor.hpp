@@ -7,6 +7,7 @@ namespace CardGame{
 	class HandMonitor{
 		public:
 			virtual void effetQuitterHand(const int indPlayer, const IdCarte idCrt) = 0;
+  			virtual void effetEntrerHand(const int indPlayer, const IdCarte idCrt) = 0;
 	};
 }
 

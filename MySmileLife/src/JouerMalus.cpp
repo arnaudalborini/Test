@@ -11,27 +11,26 @@ bool JouerMalus::peutEtreJoueeMalus(CardGame::_pc_Player pp, CarteSousType st, C
     if(cible==nullptr){
         return false;
     }
-    CardGame::_p_Plateau plat       = getMonitor()->getPlateauPlayer(pp);
-    CardGame::_p_Plateau platCible  = getMonitor()->getPlateauPlayer(cible);
+    int indCible = getMonitor()->getIndPlayer(cible);
     switch(st){
         case csAccidents:
-            return (platCible->getStatut(ResistantAccident) == 0);
+            return (getMonitor()->getStatut(indCible,ResistantAccident) == 0);
         case csAttentat:
-            return ( getMonitor()->getPlateauGeneral()->getStatut(antiAttentat) == 0 );
+            return ( getMonitor()->getStatutGeneral(antiAttentat) == 0 );
         case csBurnOut:
-            return (platCible->getStatut(aUnTravail));
+            return (getMonitor()->getStatut(indCible,aUnTravail));
         case csDivorce:
-            return ( (platCible->getStatut(ResistantDivorce) == 0) && (platCible->getStatut(estMarie)) );
+            return ( (getMonitor()->getStatut(indCible,ResistantDivorce) == 0) && (getMonitor()->getStatut(indCible,estMarie)) );
         case csImpotsRevenus:
-            return ( (platCible->getStatut(ResistantImpots) == 0) && (platCible->getStatut(aUnTravail)) && (platCible->getStatut(SalairesDisponibles)>0) );
+            return ( (getMonitor()->getStatut(indCible,ResistantImpots) == 0) && (getMonitor()->getStatut(indCible,aUnTravail)) && (getMonitor()->getStatut(indCible,SalairesDisponibles)>0) );
         case csLicenciement:
-            return ( (platCible->getStatut(ResistantLicenciement) == 0) && (platCible->getStatut(aUnTravail)) );
+            return ( (getMonitor()->getStatut(indCible,ResistantLicenciement) == 0) && (getMonitor()->getStatut(indCible,aUnTravail)) );
         case csMaladie:
-            return (platCible->getStatut(ResistantMaladie) == 0);
+            return (getMonitor()->getStatut(indCible,ResistantMaladie) == 0);
         case csPrison:
-            return platCible->getStatut(RisquePrison);
+            return getMonitor()->getStatut(indCible,RisquePrison);
         case csRedoublement:
-            return ( (platCible->getStatut(aUnTravail) == 0) && (platCible->getStatut(DerniereEtudeRedoublable)>0) );
+            return ( (getMonitor()->getStatut(indCible,aUnTravail) == 0) && (getMonitor()->getStatut(indCible,DerniereEtudeRedoublable)>0) );
         default:
             return false;
     }
@@ -54,85 +53,89 @@ bool JouerMalus::peutEtreJoueeMalus(CardGame::_pc_Player pp,_pc_CarteMSL crt) co
     return false;
 }
 
-void JouerMalus::jouerAccident(CardGame::_pc_Player cible)const{
-    getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
+void JouerMalus::jouerAccident(int indCible)const{
+    getMonitor()->incStatut(indCible,TourAPasser,1);
 }
 void JouerMalus::jouerAttentat()const{
     for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
         getMonitor()->defausserTout( indPlayer, EEnfant );
     }
 }
-void JouerMalus::jouerBurnout(CardGame::_pc_Player cible)const{
-    getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
+void JouerMalus::jouerBurnout(int indCible)const{
+    getMonitor()->incStatut(indCible,TourAPasser,1);
 }
-void JouerMalus::jouerDivorce(CardGame::_pc_Player cible)const{
-    getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMariage );
+void JouerMalus::jouerDivorce(int indCible)const{
+    getMonitor()->defausserTout( indCible, EMariage );
 }
-void JouerMalus::jouerImpots(CardGame::_pc_Player cible)const{
-    getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), ESalairesD );
+void JouerMalus::jouerImpots(int indCible)const{
+    getMonitor()->defausserDernier( indCible, ESalairesD );
 }
-void JouerMalus::jouerLicenciement(CardGame::_pc_Player cible)const{
-    getMonitor()->defausserTout( getMonitor()->getIndPlayer(cible), EMetier );
+void JouerMalus::jouerLicenciement(int indCible)const{
+    getMonitor()->defausserTout( indCible, EMetier );
 }
-void JouerMalus::jouerMaladie(CardGame::_pc_Player cible)const{
-    getMonitor()->incStatut(getMonitor()->getIndPlayer(cible),TourAPasser,1);
+void JouerMalus::jouerMaladie(int indCible)const{
+    getMonitor()->incStatut(indCible,TourAPasser,1);
 }
 void JouerMalus::jouerPrison()const{
     for(int indPlayer=0;indPlayer<getMonitor()->getNbPlayer();indPlayer++){
-        CardGame::_p_Plateau p = getMonitor()->getInfosJoueurs(indPlayer)->getPlateau();
-        if(p->getStatut(RisquePrison)){
+        if(getMonitor()->getStatutGeneral(DetailPlateau::RisquePrison)){
             getMonitor()->defausserTout( indPlayer, EMetier );
             getMonitor()->incStatut(indPlayer,TourAPasser,3);
         }
     }
 }
-void JouerMalus::jouerRedoublement(CardGame::_pc_Player cible)const{
-    getMonitor()->defausserDernier( getMonitor()->getIndPlayer(cible), EEtudes );
+void JouerMalus::jouerRedoublement(int indCible)const{
+    getMonitor()->defausserDernier( indCible, EEtudes );
 }
 
 bool JouerMalus::jouerCarteMalus(CardGame::_pc_Player pp, _pc_CarteMSL crt) const
 {
+    int indPlayer = getMonitor()->getIndPlayer(pp);
+    IdCarte idCrt = crt->getId();
+    CarteSousType cstCrt = crt->getSType();
     if(peutEtreJoueeMalus(pp,crt)==false){
         return false;
     }
-    switch(crt->getSType()){
+    switch(cstCrt){
+        //Malus se jouant au niveau général, sans cible particulière
         case csAttentat:
             jouerAttentat();
-            getMonitor()->getPlateauPlayer( pp )->addCarteToEP(EMalus, crt->getId());
-            break;
+            getMonitor()->defausser(idCrt,indPlayer);
+            return true;
         case csPrison:
             jouerPrison();
-            break;
+            getMonitor()->defausser(idCrt,indPlayer);
+            return true;
         default:
             break;
     }
-    getMonitor()->defausser(crt->getId(),getMonitor()->getIndPlayer(pp));
-    CardGame::_pc_Player cible = getCible(pp,crt->getSType());
-    if(peutEtreJoueeMalus(pp,crt->getSType(),cible) == false ){
+    CardGame::_pc_Player cible = getCible(pp,cstCrt);
+    if(peutEtreJoueeMalus(pp,cstCrt,cible) == false ){
         return false;
     }
-    getMonitor()->getPlateauPlayer(cible)->addCarteToEP(EMalus,crt->getId());
-    switch(crt->getSType()){
+    int indCible = getMonitor()->getIndPlayer(cible);
+    getMonitor()->addCarteToEP(indCible,EMalus,idCrt);
+    switch(cstCrt){
         case csAccidents:
-            jouerAccident(cible);
+            jouerAccident(indCible);
             break;
         case csBurnOut:
-            jouerBurnout(cible);
+            jouerBurnout(indCible);
             break;
         case csDivorce:
-            jouerDivorce(cible);
+            jouerDivorce(indCible);
             break;
         case csImpotsRevenus:
-            jouerImpots(cible);
+            jouerImpots(indCible);
             break;
         case csLicenciement:
-            jouerLicenciement(cible);
+            jouerLicenciement(indCible);
             break;
         case csMaladie:
-            jouerMaladie(cible);
+            jouerMaladie(indCible);
             break;
         case csRedoublement:
-            jouerRedoublement(cible);
+            jouerRedoublement(indCible);
             break;
         default:
             break;

@@ -19,7 +19,12 @@ CardGame::_p_Plateau ConcreteMonitor::getPlateauGeneral() const { return mPlatea
 CardGame::_p_Plateau ConcreteMonitor::getPlateauPlayer(int indPlayer) const {
   return getInfosJoueurs(indPlayer)->getPlateau();
 }
-CardGame::_p_Plateau ConcreteMonitor::getPlateauPlayer(_pc_Player pp) const {
+void CardGame::ConcreteMonitor::addCarteToEP(_pc_Player pp, int EP, IdCarte id) const
+{
+  return addCarteToEP(getIndPlayer(pp),EP,id);
+}
+CardGame::_p_Plateau ConcreteMonitor::getPlateauPlayer(_pc_Player pp) const
+{
   return getInfosJoueurs(pp)->getPlateau();
 }
 CardGame::_p_PaquetCarte ConcreteMonitor::getPioche() const { return mPioche; }
@@ -112,17 +117,23 @@ CardGame::IdCarte ConcreteMonitor::joueurDefausse(int indPlayer) const
   return -1;
 }
 
-void CardGame::ConcreteMonitor::voirMainAutresJoueur(_pc_Player pp) const
+void ConcreteMonitor::voirMainAutresJoueur(_pc_Player pp) const
 {    
-  int indPlayer = this->getIndPlayer(pp);
+    voirMainAutresJoueur( getIndPlayer(pp) );
+}
+
+
+void ConcreteMonitor::voirMainAutresJoueur(int indPlayer) const
+{    
   for(int indice=0;indice<this->getNbPlayer();indice++){
       if(indice==indPlayer){
           continue;
       }
       CardGame::_pc_Hand jH = this->getInfosJoueurs(indice)->getHand();
-      pp->showHandAutreJoueur(jH,indice);
+      getPlayer(indPlayer)->showHandAutreJoueur(jH,indice);
   }
 }
+
 
 void ConcreteMonitor::voirNProchainesCartesPioche(_pc_Player pp, int N) const
 {
@@ -134,6 +145,18 @@ void ConcreteMonitor::voirNProchainesCartesPioche(_pc_Player pp, int N) const
       vecId.push_back(pioche->showNeme(indice));
   }
   pp->showNCartesPioche(vecId);
+}
+
+void ConcreteMonitor::voirNProchainesCartesPioche(int indPlayer, int N) const
+{
+  voirNProchainesCartesPioche(getPlayer(indPlayer),N);
+}
+
+void ConcreteMonitor::addCarteToEP(int indPlayer, int EP, IdCarte id) const
+{
+  if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+    mInfosJoueurs[indPlayer]->getPlateau()->addCarteToEP(EP,id);
+  }
 }
 
 void ConcreteMonitor::initiateElements(int nbJoueurs, _p_GameMechanics gm) {
@@ -162,10 +185,18 @@ CardGame::_pc_Carte ConcreteMonitor::getCarte(IdCarte idC) const {
   return mGameMechanics->getCarte(idC);
 }
 
-void ConcreteMonitor::effetQuitterPlateau(const int indPlayer, const IdCarte idCrt) {
-  mGameMechanics->effetQuitterPlateau(indPlayer, idCrt);
+void ConcreteMonitor::effetQuitterPlateau(const int indPlayer, const IdCarte idCrt, int EP) {
+  mGameMechanics->effetQuitterPlateau(indPlayer, idCrt,EP);
+}
+
+void CardGame::ConcreteMonitor::effetEntrerPlateau(const int indPlayer, const IdCarte idCrt, int EP)
+{
 }
 
 void ConcreteMonitor::effetQuitterHand(const int indPlayer, const IdCarte idCrt) {
   mGameMechanics->effetQuitterHand(indPlayer, idCrt);
+}
+
+void CardGame::ConcreteMonitor::effetEntrerHand(const int indPlayer, const IdCarte idCrt)
+{
 }

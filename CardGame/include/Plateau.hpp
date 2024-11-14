@@ -14,7 +14,7 @@ namespace CardGame{
         public:
             Plateau(_p_PlateauMonitor mm);
             Plateau(_p_PlateauMonitor mm,const vector<int> &vecStatut);
-            ~Plateau();
+            virtual ~Plateau();
 
             void addCarteToEP(int EP, IdCarte crt);
             int getNbCarteByEP(int EP)const;

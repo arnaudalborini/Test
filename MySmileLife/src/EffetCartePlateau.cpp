@@ -12,6 +12,7 @@ EffetCartePlateauMain::EffetCartePlateauMain(weak_ptr<const CarteGenerateurStand
 {
 }
 
+//Private
 void EffetCartePlateauMain::effetEntrerPlateauSpe(const int indPlayer, const CarteSousType cst) const
 {
     switch(cst){
@@ -50,7 +51,6 @@ void EffetCartePlateauMain::effetQuitterPlateauSpe(const int indPlayer, const Ca
             break;
     }
 }
-
 void EffetCartePlateauMain::effetEntrerPlateauMetier(const int indPlayer, _pc_CarteMSL crt) const
 {
     mMonitor.lock()->setStatut(indPlayer,DetailPlateau::aUnTravail,1);
@@ -175,6 +175,8 @@ void EffetCartePlateauMain::effetQuitterPlateauMetier(const int indPlayer, _pc_C
         break;
     }
 }
+
+//Public
 void EffetCartePlateauMain::effetEntrerPlateau(const int indPlayer, _pc_CarteMSL crt, EmplacementsPlateau EP) const
 {
     switch( crt->getType() ){
@@ -213,7 +215,6 @@ void EffetCartePlateauMain::effetEntrerPlateau(const int indPlayer, _pc_CarteMSL
             break;
     }
 }
-
 void EffetCartePlateauMain::effetQuitterPlateau(const int indPlayer, _pc_CarteMSL crt, EmplacementsPlateau EP) const
 {
     switch( crt->getType() ){
@@ -269,11 +270,9 @@ void EffetCartePlateauMain::effetQuitterPlateau(const int indPlayer, _pc_CarteMS
             break;
     }
 }
-
 void EffetCartePlateauMain::effetEntrerHand(const int indPlayer, _pc_CarteMSL crt) const
 {
 }
-
 void EffetCartePlateauMain::effetQuitterHand(const int indPlayer, _pc_CarteMSL crt) const
 {
 }

@@ -19,15 +19,15 @@ namespace MySmileLife{
         private:
             bool peutEtreJoueeMalus(CardGame::_pc_Player pp, CarteSousType st, CardGame::_pc_Player Cible) const;
 
-            void jouerAccident(CardGame::_pc_Player pp)const;
+            void jouerAccident(int indCible)const;
             void jouerAttentat()const;
-            void jouerBurnout(CardGame::_pc_Player pp)const;
-            void jouerDivorce(CardGame::_pc_Player pp)const;
-            void jouerImpots(CardGame::_pc_Player pp)const;
-            void jouerLicenciement(CardGame::_pc_Player pp)const;
-            void jouerMaladie(CardGame::_pc_Player pp)const;
+            void jouerBurnout(int indCible)const;
+            void jouerDivorce(int indCible)const;
+            void jouerImpots(int indCible)const;
+            void jouerLicenciement(int indCible)const;
+            void jouerMaladie(int indCible)const;
             void jouerPrison()const;
-            void jouerRedoublement(CardGame::_pc_Player pp)const;
+            void jouerRedoublement(int indCible)const;
 
     };
 }

@@ -47,8 +47,10 @@ public:
   virtual bool endGameCondition() const = 0;
   virtual int getWinnerPlayer() const = 0;
 
-  virtual void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt)=0;
+  virtual void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt, int EP)=0;
   virtual void effetQuitterHand(const int indPlayer, const IdCarte idCrt)=0;
+  virtual void effetEntrerPlateau(const int indPlayer, const IdCarte idCrt, int EP)=0;
+  virtual void effetEntrerHand(const int indPlayer, const IdCarte idCrt)=0;
 };
 } // namespace CardGame
 

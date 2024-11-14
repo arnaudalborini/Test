@@ -18,6 +18,8 @@ public:
 
   virtual void effetQuitterPlateau([[maybe_unused]]const int indPlayer, [[maybe_unused]]const IdCarte idCrt, int EP) {}
   virtual void effetQuitterHand([[maybe_unused]]const int indPlayer, [[maybe_unused]]const IdCarte idCrt) {}
+  virtual void effetEntrerPlateau([[maybe_unused]]const int indPlayer, [[maybe_unused]]const IdCarte idCrt, int EP) {}
+  virtual void effetEntrerHand([[maybe_unused]]const int indPlayer, [[maybe_unused]]const IdCarte idCrt) {}
 };
 } // namespace CardGame
 

@@ -31,6 +31,8 @@ public:
 
   void effetQuitterPlateau(const int indPlayer, const IdCarte idCrt, int EP) override;
   void effetQuitterHand(const int indPlayer, const IdCarte idCrt) override;
+  void effetEntrerPlateau(const int indPlayer, const IdCarte idCrt, int EP) override;
+  void effetEntrerHand(const int indPlayer, const IdCarte idCrt) override;
 };
 } // namespace MySmileLife
 
