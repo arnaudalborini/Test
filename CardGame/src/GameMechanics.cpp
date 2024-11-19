@@ -56,7 +56,8 @@ void GameMechanics::startGame()
 void GameMechanics::joueurPioche(int indPlayer)const{(mMonitor.lock())->getInfosJoueurs(indPlayer)->addCarteHand( (mMonitor.lock())->getPioche()->piocher() );}
 void GameMechanics::remplirMain(int indPlayer) const
 {
-    while( ( (mMonitor.lock())->getInfosJoueurs(indPlayer)->getNbCarteHand() < getStandardHandNbCarte()) && ((mMonitor.lock())->getPioche()->getNbCarte()) ){
+    int maxHandSize = mMonitor.lock()->getMaxHandSize(indPlayer);
+    while( ( (mMonitor.lock())->getInfosJoueurs(indPlayer)->getNbCarteHand() < maxHandSize) && ((mMonitor.lock())->getPioche()->getNbCarte()) ){
         joueurPioche( indPlayer );
     }
 }

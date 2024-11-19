@@ -52,6 +52,10 @@ public:
   int             getStatut(_pc_Player pp, int statut)const override;
   void            incStatut(_pc_Player pp, int statut, int inc)const override;
   void            setStatut(_pc_Player pp, int statut, int inc)const override;
+  void            setMaxHandSize( _pc_Player pp, int value )const override;
+  void            setMaxHandSize( int indPlayer, int value )const override;
+  int             getMaxHandSize( int indPlayer )const override;
+  int             getMaxHandSize(_pc_Player pp) const override;
   // GameMasterMonitor
   void initiateElements(int nbJoueurs, _p_GameMechanics gm) override;
   void addPlayer(_pc_Player pp, int index) override;

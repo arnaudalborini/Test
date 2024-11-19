@@ -162,6 +162,24 @@ void ConcreteMonitor::setStatut(_pc_Player pp, int statut, int inc) const
   setStatut(getIndPlayer(pp),statut,inc);
 }
 
+void ConcreteMonitor::setMaxHandSize(_pc_Player pp, int value) const{setMaxHandSize(getIndPlayer(pp),value);}
+int ConcreteMonitor::getMaxHandSize(_pc_Player pp) const{return getMaxHandSize(getIndPlayer(pp));}
+
+void ConcreteMonitor::setMaxHandSize(int indPlayer, int value) const
+{
+  if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+    mInfosJoueurs.at(indPlayer)->setMaxHandSize(value);
+  }
+}
+
+int ConcreteMonitor::getMaxHandSize(int indPlayer) const
+{
+  if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+    return mInfosJoueurs.at(indPlayer)->getMaxHandSize();
+  }
+  return -1;
+}
+
 void ConcreteMonitor::voirNProchainesCartesPioche(int indPlayer, int N) const
 {
   voirNProchainesCartesPioche(getPlayer(indPlayer),N);

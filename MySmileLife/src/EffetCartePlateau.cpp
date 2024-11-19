@@ -79,6 +79,7 @@ void EffetCartePlateauMain::effetEntrerPlateauMetier(const int indPlayer, _pc_Ca
         break;
     case csChercheur:
         setStatut(indPlayer,DetailPlateau::LimiteCarte6,1);
+        mMonitor.lock()->setMaxHandSize(indPlayer,6);
         break;
     case csGaragiste:
         setStatut(indPlayer,DetailPlateau::ResistantAccident,1);
@@ -141,6 +142,7 @@ void EffetCartePlateauMain::effetQuitterPlateauMetier(const int indPlayer, _pc_C
         break;
     case csChercheur:
         setStatut(indPlayer,DetailPlateau::LimiteCarte6,0);
+        mMonitor.lock()->setMaxHandSize(indPlayer,MySmileLife::DEFAULTMAXHANDSIZE);
         break;
     case csGaragiste:
         setStatut(indPlayer,DetailPlateau::ResistantAccident,0);
@@ -192,7 +194,7 @@ void EffetCartePlateauMain::changeStatutLast(int indPlayer, int mainStatut, int 
 }
 
 MySmileLife::_pc_CarteMSL EffetCartePlateauMain::getCrt(IdCarte id) const{
-    return dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(id));
+    return ToCarteMSL(cGen.lock()->getCarteById(id));
 }
 
 CardGame::IdCarte EffetCartePlateauMain::showIdLastByEP(int indPlayer, int EP) const

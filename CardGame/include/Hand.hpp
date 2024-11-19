@@ -8,6 +8,7 @@ namespace CardGame{
     class Hand{
         private:
             vector<IdCarte> mCartes;
+            int maxHandSize;
         protected:
             virtual weak_ptr<HandMonitor> getHandMonitor()const=0;
             virtual int getIdPlayer()const=0;
@@ -18,6 +19,9 @@ namespace CardGame{
             IdCarte getCarteHand(int ind);
             int getNbCarteHand()const;
             int getIdCarteHand(int ind)const;
+            void setMaxHandSize(int hSize);
+            int getMaxHandSize()const;
+            
     };
 }
 

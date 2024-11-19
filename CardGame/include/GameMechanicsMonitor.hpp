@@ -38,6 +38,10 @@ namespace CardGame{
             virtual int             getStatut(_pc_Player pp, int statut)const=0;
             virtual void            incStatut(_pc_Player pp, int statut, int inc)const=0;
             virtual void            setStatut(_pc_Player pp, int statut, int inc)const=0;
+            virtual void            setMaxHandSize( _pc_Player pp, int value )const=0;
+            virtual void            setMaxHandSize( int indPlayer, int value )const=0;
+            virtual int             getMaxHandSize( int indPlayer )const=0;
+            virtual int             getMaxHandSize(_pc_Player pp) const=0;
     };
 }
 
