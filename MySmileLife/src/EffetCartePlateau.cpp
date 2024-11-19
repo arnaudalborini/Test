@@ -178,7 +178,7 @@ void EffetCartePlateauMain::effetQuitterPlateauMetier(const int indPlayer, _pc_C
 
 void EffetCartePlateauMain::setStatut(int indPlayer, int statut, int value) const{mMonitor.lock()->setStatut(indPlayer,statut,value);}
 void EffetCartePlateauMain::incStatut(int indPlayer, int statut, int value) const{mMonitor.lock()->incStatut(indPlayer,statut,value);}
-void EffetCartePlateauMain::setStatutGeneral(int statut, int value) const{setStatutGeneral(statut,value);}
+void EffetCartePlateauMain::setStatutGeneral(int statut, int value) const{mMonitor.lock()->setStatutGeneral(statut,value);}
 
 void EffetCartePlateauMain::changeStatutLast(int indPlayer, int mainStatut, int dernierStatut, int EP, int value) const
 {

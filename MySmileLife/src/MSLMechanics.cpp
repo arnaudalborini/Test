@@ -30,7 +30,7 @@ void MSLMechanics::remplirMain(int indPlayer) const
     }
 }
 
-MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id) const { return dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(id)); }
+MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id) const { return ToCarteMSL(cGen->getCarteById(id)); }
 int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllIdAllEP() ){

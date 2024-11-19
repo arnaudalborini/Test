@@ -230,6 +230,11 @@ namespace MySmileLife{
     typedef shared_ptr<const MSLPlayer> _pc_MSLPlayer;
     typedef shared_ptr<MSLPlayer> _p_MSLPlayer;
 
+    CarteMSL*       ToCarteMSL(CardGame::Carte* crt);
+    const CarteMSL* ToCarteMSL(const CardGame::Carte* crt);
+    _pc_CarteMSL    ToCarteMSL(CardGame::_pc_Carte crt);
+    _p_CarteMSL     ToCarteMSL(CardGame::_p_Carte crt);
+
 }
 
 #endif

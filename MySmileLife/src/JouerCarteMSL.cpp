@@ -25,7 +25,7 @@ void JouerCarteMSL::incStatut(CardGame::_pc_Player pp, int statut, int value) co
 
 void MySmileLife::JouerCarteMSL::addCarteToEP(CardGame::_pc_Player pp, int EP, IdCarte id) const{mMonitor.lock()->addCarteToEP(pp,EP,id);}
 
-MySmileLife::_pc_CarteMSL JouerCarteMSL::getCarteMSL(IdCarte id) const { return dynamic_pointer_cast<const CarteMSL>(cGen.lock()->getCarteById(id)); }
+MySmileLife::_pc_CarteMSL JouerCarteMSL::getCarteMSL(IdCarte id) const { return ToCarteMSL(cGen.lock()->getCarteById(id)); }
 
 bool JouerCarteMSL::peutEtreJouee(CardGame::_pc_Player pp, IdCarte id) const
 {

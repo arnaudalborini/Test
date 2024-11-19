@@ -17,7 +17,7 @@ private:
 public:
   CartesAlgoMSL(weak_ptr<const CardGame::CarteGenerator> cc, weak_ptr<const CardGame::GameMechanicsMonitor> mm)
       : CardGame::CartesAlgo(cc, mm){
-        jCarte = make_shared<const JouerCarteMSL>(cc, mm);
+        jCarte = make_shared<const JouerCarteMSL>(cc.lock(), mm);
         mEffet = make_shared<const EffetCartePlateauMain>( dynamic_pointer_cast<const CarteGenerateurStandard>(cc.lock()), mm );
       }
   ~CartesAlgoMSL() {  }
