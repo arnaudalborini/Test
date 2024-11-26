@@ -53,7 +53,9 @@ void GameMechanics::startGame()
     }
 }
 
-void GameMechanics::joueurPioche(int indPlayer)const{(mMonitor.lock())->getInfosJoueurs(indPlayer)->addCarteHand( (mMonitor.lock())->getPioche()->piocher() );}
+CardGame::_pc_Carte GameMechanics::getCarteById(IdCarte id) const{return cGen->getCarteById(id);}
+
+void GameMechanics::joueurPioche(int indPlayer) const { (mMonitor.lock())->getInfosJoueurs(indPlayer)->addCarteHand((mMonitor.lock())->getPioche()->piocher()); }
 void GameMechanics::remplirMain(int indPlayer) const
 {
     int maxHandSize = mMonitor.lock()->getMaxHandSize(indPlayer);

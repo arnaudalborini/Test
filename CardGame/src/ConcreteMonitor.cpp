@@ -230,6 +230,28 @@ void ConcreteMonitor::effetQuitterHand(const int indPlayer, const IdCarte idCrt)
   mGameMechanics->effetQuitterHand(indPlayer, idCrt);
 }
 
-void CardGame::ConcreteMonitor::effetEntrerHand(const int indPlayer, const IdCarte idCrt)
+void ConcreteMonitor::effetEntrerHand(const int indPlayer, const IdCarte idCrt)
 {
+}
+
+
+std::vector<CardGame::IdCarte> ConcreteMonitor::showHand(int indPlayer)const
+{
+  vector<IdCarte> tmp = vector<IdCarte>();
+  if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+    int nbCarte = mInfosJoueurs[indPlayer]->getNbCarteHand();
+    for(auto ind=0;ind<nbCarte;ind++){
+      tmp.push_back(mInfosJoueurs[indPlayer]->getIdCarteHand(ind));
+    }
+  }
+  return tmp;
+}
+CardGame::IdCarte ConcreteMonitor::getCarteHand(int indPlayer, int indCarte)const
+{
+  if(indPlayer<static_cast<int>(mInfosJoueurs.size())){
+    if(mInfosJoueurs[indPlayer]->getNbCarteHand()>indCarte){
+      return mInfosJoueurs[indPlayer]->getCarteHand(indCarte);
+    }
+  }
+  return IdCarte(0);
 }

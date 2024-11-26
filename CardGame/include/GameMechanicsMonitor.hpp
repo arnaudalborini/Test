@@ -26,6 +26,10 @@ namespace CardGame{
             virtual int             getNbCarteHand(int indPlayer)const=0;
             virtual IdCarte         joueurPioche(int indPlayer)const=0;
             virtual IdCarte         joueurDefausse(int indPlayer)const=0;
+
+            virtual vector<IdCarte>     showHand(int indPlayer)const=0;
+            virtual IdCarte             getCarteHand(int indPlayer, int indCarte)const=0;
+
             virtual void voirMainAutresJoueur(int indPlayer) const=0;
             virtual void voirNProchainesCartesPioche(int indPlayer, int N)const=0;
             virtual void addCarteToEP(int indPlayer, int EP, IdCarte id)const=0;

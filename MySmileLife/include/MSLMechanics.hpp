@@ -9,7 +9,8 @@ namespace MySmileLife{
         private:
             void remplirMain(int indPlayer)const;
         protected:
-            _pc_CarteMSL getCarteFromId(IdCarte id)const;
+            _pc_CarteMSL getMSLCarteById(IdCarte id)const;
+            _pc_MSLPlayer getMSLPlayer(int indPlayer)const;
             int  countSmile(CardGame::_p_Plateau plateauJoueur)const;
         public:
             MSLMechanics();   

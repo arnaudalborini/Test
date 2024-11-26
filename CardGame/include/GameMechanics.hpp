@@ -10,6 +10,7 @@ protected:
   _p_CarteGenerator cGen;
   _p_CartesAlgo cAlgo;
 
+  _pc_Carte getCarteById(IdCarte id)const;
   void joueurPioche(int indPlayer) const;
   void remplirMain(int indPlayer) const;
   int getNbCartePioche() const;

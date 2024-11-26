@@ -17,7 +17,7 @@ MSLMechanicsTest::~MSLMechanicsTest() {}
 
 void MSLMechanicsTest::playTurn(int indPlayer) const {
   cout << "MSLMechanicsTest::playTurn: " << indPlayer << endl;
-  _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>(getPlayer(indPlayer));
+  _pc_MSLPlayer pp = getMSLPlayer(indPlayer);
   CardGame::_p_Hand jHand = getJoueurHand(indPlayer);
   CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
   CardGame::_p_Plateau platGeneral = getMainPlateau();
@@ -86,7 +86,7 @@ void MSLMechanicsTest::printHand(CardGame::_pc_Hand h) const
 {
   cout << "Hand: ";
   for(auto ind=0;ind<h->getNbCarteHand();ind++){
-    cout << getCarteFromId(h->getIdCarteHand(ind))->getName() << ",";
+    cout << getMSLCarteById(h->getIdCarteHand(ind))->getName() << ",";
   }
   cout << endl;
 }
@@ -107,7 +107,7 @@ void MSLMechanicsTest::printPlateau(CardGame::_pc_Plateau platJ) const
     if( platJ->getNbCarteByEP(ind)>0 ){
       cout << MySmileLife::toStringEP(EmplacementsPlateau(ind)) << " : " << endl;
       for (auto ind2 = 0; ind2 < platJ->getNbCarteByEP(ind); ind2++) {
-        cout << "    " << ind2 << " : " << getCarteFromId(platJ->showIdNByEP(ind, ind2))->getName() << endl;
+        cout << "    " << ind2 << " : " << getMSLCarteById(platJ->showIdNByEP(ind, ind2))->getName() << endl;
       }
     }
   }

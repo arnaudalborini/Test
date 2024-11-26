@@ -30,7 +30,11 @@ void MSLMechanics::remplirMain(int indPlayer) const
     }
 }
 
-MySmileLife::_pc_CarteMSL MSLMechanics::getCarteFromId(IdCarte id) const { return ToCarteMSL(cGen->getCarteById(id)); }
+MySmileLife::_pc_CarteMSL MSLMechanics::getMSLCarteById(IdCarte id) const
+{
+    return ToCarteMSL(getCarteById(id));
+}
+
 int  MSLMechanics::countSmile(CardGame::_p_Plateau plateauJoueur)const{
     int s=0;
     for(auto elt : plateauJoueur->showAllIdAllEP() ){
@@ -54,25 +58,33 @@ int  MSLMechanics::getWinnerPlayer()const{
     }
     return indBest;
 }
+
+MySmileLife::_pc_MSLPlayer MSLMechanics::getMSLPlayer(int indPlayer)const{return dynamic_pointer_cast<const MSLPlayer>( getPlayer(indPlayer) );}
+
 void MSLMechanics::playTurn(int indPlayer) const{
     cout << "MSLMechanics::playTurn: " << indPlayer << endl;
+    _pc_MSLPlayer pp = getMSLPlayer(indPlayer);
+    string jName = pp->getName();
     if(mMonitor.lock()->getInfosJoueurs(indPlayer)->getPlateau()->getStatut(TourAPasser)>0){
-        mMonitor.lock()->getInfosJoueurs(indPlayer)->getPlateau()->incStatut(TourAPasser,-1);
+        mMonitor.lock()->incStatut(indPlayer,TourAPasser,-1);
+        cout << indPlayer << " - " << jName << "passe son tour. Tour a passer restant: " << mMonitor.lock()->getStatut(indPlayer,DetailPlateau::TourAPasser)<< endl; 
         return;
     }
-    _pc_MSLPlayer pp = dynamic_pointer_cast<const MSLPlayer>( getPlayer(indPlayer) );
+    cout << "Phase initiale: " << jName << endl;
+
     CardGame::_p_Hand jHand = getJoueurHand(indPlayer);
     CardGame::_p_Plateau platJ = getJoueurPlateau(indPlayer);
     CardGame::_p_Plateau platGeneral = getMainPlateau();
     joueurPioche(indPlayer);
     //int nbCarte = jHand->getNbCarteHand();
     //int id = jHand->getIdCarteHand(nbCarte-1);
-    IdCarte idC = jHand->getCarteHand(0);
-    _pc_CarteMSL crt = dynamic_pointer_cast<const CarteMSL>(cGen->getCarteById(idC));
+    vector<IdCarte> mainJoueur = mMonitor.lock()->showHand(indPlayer);
+    IdCarte idC = mMonitor.lock()->getCarteHand(indPlayer,0);
+    _pc_CarteMSL crt = getMSLCarteById(idC);
     cout << "MSLMechanics::playTurn:peutEtreJouee: " << crt->getName() << endl;
 
     if((peutEtreJouee(pp,idC)) && (jouerCarte(pp,idC)) ){
-        cout << "Carte Jouee: "<< getCarteFromId(idC)->getName() << endl;
+        cout << "Carte Jouee: "<< getMSLCarteById(idC)->getName() << endl;
     }
     else{
         cout << "MSLMechanics::playTurn:addCarteDefausse" << endl;

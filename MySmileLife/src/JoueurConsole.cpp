@@ -1,0 +1,65 @@
+#include "JoueurConsole.hpp"
+#include "Hand.hpp"
+#include "MySmileLife.hpp"
+
+using MySmileLife::JoueurConsole;
+
+void JoueurConsole::afficherCarte(_pc_CarteMSL carte) const {
+  cout << "Carte : " << carte->getName() << endl;
+  cout << "Nombre de smileys : " << carte->getNbSmile() << endl;
+  cout << "Type : " << carte->getType() << endl;
+  cout << "Sous-type : " << carte->getSType() << endl;
+  cout << endl;
+}
+
+void JoueurConsole::afficherCarte(CardGame::IdCarte id) const {
+    afficherCarte(getCarteMSL(id));
+}
+
+void JoueurConsole::showNCartesPioche(const vector<IdCarte> &vecIdPioche) const {
+    cout << "showNCartesPioche: " << getName() << endl;
+    for (auto id : vecIdPioche) {
+        afficherCarte(id);
+    }
+}
+
+void JoueurConsole::showHandAutreJoueur(CardGame::_pc_Hand h, int indAutrePlayer) const {
+  cout << "showHandAutreJoueur: " << getName() << endl;
+  for (int indice = 0; indice < h->getNbCarteHand(); indice++) {
+    cout << h->getIdCarteHand(indice) << endl;
+  }
+}
+
+int JoueurConsole::choisirSalairePourPayer(
+    const vector<IdCarte> &vecIdSalairesDisponibles) const {
+  return 0;
+}
+/*
+void JoueurConsole::showNCartesPioche(const vector<IdCarte>& vecIdPioche) {
+    // Récupérer toutes les informations des cartes dans une structure adaptée
+au tri vector<const CarteMSL*> cartes; for (IdCarte id : vecIdPioche) { const
+CarteMSL* carte = getCarteById(id); if (carte) { cartes.push_back(carte);
+        }
+    }
+
+    // Trier les cartes par type puis par sous-type, dans l'ordre croissant
+    std::sort(cartes.begin(), cartes.end(), [](const CarteMSL* a, const
+CarteMSL* b) {
+        // Si les types sont différents, on trie par type
+        if (a->getType() != b->getType()) {
+            return a->getType() < b->getType();
+        } else {
+            // Si les types sont égaux, on trie par sous-type
+            return a->getSType() < b->getSType();
+        }
+    });
+
+    // Afficher les cartes triées
+    for (const CarteMSL* carte : cartes) {
+        cout << "Carte : " << carte->getName() << endl;
+        cout << "Nombre de smileys : " << carte->getNbSmile() << endl;
+        cout << "Type : " << carte->getType() << endl;
+        cout << "Sous-type : " << carte->getSType() << endl;
+        cout << endl;
+    }
+}*/

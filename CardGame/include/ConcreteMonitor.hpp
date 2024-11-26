@@ -43,6 +43,10 @@ public:
   void voirMainAutresJoueur(int indPlayer) const override;
   void voirNProchainesCartesPioche(int indPlayer, int N)const override;
   void addCarteToEP(int indPlayer, int EP, IdCarte id)const override;
+
+  vector<IdCarte>     showHand(int indPlayer)const override;
+  IdCarte             getCarteHand(int indPlayer, int indCarte)const override;
+
   
   void            addCarteToEP(_pc_Player pp, int EP, IdCarte id)const override;
   _p_Plateau      getPlateauPlayer(_pc_Player pp)const override;
